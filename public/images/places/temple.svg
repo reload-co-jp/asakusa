@@ -1,0 +1,7 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#7a5230"/>
+  <circle cx="200" cy="118" r="46" fill="#ffffff" opacity="0.16"/>
+  <path d="M200 84 C176 84 160 104 160 128 C160 152 200 190 200 190 C200 190 240 152 240 128 C240 104 224 84 200 84 Z" fill="#ffffff" opacity="0.9"/>
+  <circle cx="200" cy="126" r="14" fill="#7a5230"/>
+  <text x="200" y="240" font-size="26" fill="#ffffff" text-anchor="middle" font-family="Hiragino Sans, sans-serif">寺院</text>
+</svg>

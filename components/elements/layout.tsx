@@ -5,17 +5,60 @@ export const Title: FC<ComponentProps<"h1">> = ({
   children,
   ...props
 }) => (
-  <h1 style={{ fontSize: "1rem", margin: 0, ...style }} {...props}>
+  <h1
+    style={{
+      color: "#1a1a1a",
+      fontFamily: "'Yu Mincho', 'Hiragino Mincho ProN', serif",
+      fontSize: "1.1rem",
+      letterSpacing: ".05em",
+      margin: 0,
+      ...style,
+    }}
+    {...props}
+  >
     {children}
   </h1>
+)
+
+export const Nav: FC<{
+  links: { href: string; label: string }[]
+}> = ({ links }) => (
+  <nav>
+    <ul
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        gap: ".3rem 1.1rem",
+        listStyle: "none",
+        margin: ".6rem 0 0",
+        padding: 0,
+      }}
+    >
+      {links.map((link) => (
+        <li key={link.href}>
+          <a
+            href={link.href}
+            style={{
+              color: "#5c5c5c",
+              fontSize: ".8rem",
+              letterSpacing: ".02em",
+              textDecoration: "none",
+            }}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
 )
 
 export const Header: FC<{ children: ReactNode }> = ({ children }) => (
   <header
     style={{
-      backgroundColor: "#333",
-      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-      padding: ".5rem 1rem",
+      background: "#fff",
+      borderBottom: "1px solid #e5e2dc",
+      padding: ".9rem 1.25rem",
       position: "relative",
     }}
   >
@@ -26,9 +69,12 @@ export const Header: FC<{ children: ReactNode }> = ({ children }) => (
 export const Main: FC<{ children: ReactNode }> = ({ children }) => (
   <main
     style={{
-      background: "#222",
-      minHeight: "calc(100dvh - 5.625rem)",
-      padding: "1rem",
+      background: "#fff",
+      color: "#333",
+      margin: "0 auto",
+      maxWidth: "56rem",
+      minHeight: "calc(100dvh - 7rem)",
+      padding: "2rem 1.25rem",
     }}
   >
     {children}
@@ -38,10 +84,12 @@ export const Main: FC<{ children: ReactNode }> = ({ children }) => (
 export const Footer: FC<{ children: ReactNode }> = ({ children }) => (
   <footer
     style={{
-      backgroundColor: "#333",
-      boxShadow: "0 -4px 6px rgba(0, 0, 0, 0.1)",
+      background: "#faf9f6",
+      borderTop: "1px solid #e5e2dc",
+      color: "#8a8a8a",
       fontSize: ".75rem",
-      padding: "1rem",
+      padding: "1.25rem",
+      textAlign: "center",
     }}
   >
     {children}

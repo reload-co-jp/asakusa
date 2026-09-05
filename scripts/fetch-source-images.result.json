@@ -1,0 +1,108 @@
+[
+  {
+    "id": "taito-city",
+    "url": "https://www.city.taito.lg.jp/",
+    "status": "ok:fallback:img",
+    "imageUrl": "https://www.city.taito.lg.jp/index.images/20260724syougaigakusyuurenewalPC2.jpg",
+    "file": "/images/sources/taito-city.jpg",
+    "bytes": 110304
+  },
+  {
+    "id": "taito-event",
+    "url": "https://www.city.taito.lg.jp/bunka_kanko/event/index.html",
+    "status": "page_error_404"
+  },
+  {
+    "id": "e-asakusa",
+    "url": "https://e-asakusa.jp/",
+    "status": "ok:fallback:img",
+    "imageUrl": "https://e-asakusa.jp/wp-content/uploads/892b334317acaec88d811ed8cfad8561-1024x516.jpg",
+    "file": "/images/sources/e-asakusa.jpg",
+    "bytes": 258883
+  },
+  {
+    "id": "sensoji",
+    "url": "https://www.senso-ji.jp/annual_event/",
+    "status": "ok:fallback:logo",
+    "imageUrl": "https://www.senso-ji.jp/images/logo02.png",
+    "file": "/images/sources/sensoji.png",
+    "bytes": 4225
+  },
+  {
+    "id": "asakusajinja",
+    "url": "https://asakusajinja.jp/",
+    "status": "ok:fallback:img",
+    "imageUrl": "https://asakusajinja.jp/wp-content/uploads/2026/02/spacial-thumb202602-1.jpg",
+    "file": "/images/sources/asakusajinja.jpg",
+    "bytes": 186061
+  },
+  {
+    "id": "koukaidou",
+    "url": "https://asakusa-koukaidou.net/home/event.html",
+    "status": "ok:fallback:img",
+    "imageUrl": "https://asakusa-koukaidou.net/event/img/hall20260904_p1S.jpg",
+    "file": "/images/sources/koukaidou.jpg",
+    "bytes": 3661
+  },
+  {
+    "id": "engei-hall",
+    "url": "https://www.asakusaengei.com/schedule/",
+    "status": "ok:fallback:img",
+    "imageUrl": "https://www.asakusaengei.com/common_img/banner01s.jpg",
+    "file": "/images/sources/engei-hall.jpg",
+    "bytes": 45579
+  },
+  {
+    "id": "hanayashiki",
+    "url": "https://www.hanayashiki.net/event_this/",
+    "status": "ok:fallback:img",
+    "imageUrl": "https://www.hanayashiki.net/uploads/events/panda.png",
+    "file": "/images/sources/hanayashiki.png",
+    "bytes": 8205
+  },
+  {
+    "id": "rox",
+    "url": "https://www.rox.co.jp/news/",
+    "status": "ok:fallback:img",
+    "imageUrl": "https://www.rox.co.jp/news/images/thumb_d260905_1a.webp",
+    "file": "/images/sources/rox.webp",
+    "bytes": 75410
+  },
+  {
+    "id": "ekimise",
+    "url": "https://www.ekimise.jp/",
+    "status": "ok:og:image",
+    "imageUrl": "https://ekimise.jp/assets/img/OGP.jpg",
+    "file": "/images/sources/ekimise.jpg",
+    "bytes": 32142
+  },
+  {
+    "id": "matsuya",
+    "url": "https://www.matsuya.com/asakusa/",
+    "status": "ok:og:image",
+    "imageUrl": "https://www.matsuya.com/wp-content/uploads/2020/04/ogp_asakusa.png",
+    "file": "/images/sources/matsuya.png",
+    "bytes": 7858
+  },
+  {
+    "id": "chikagai",
+    "url": "https://asakusa-chikagai.com/",
+    "status": "exception:Command failed: curl -sL -A Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36 -m 15 https://asakusa-chikagai.com/\n"
+  },
+  {
+    "id": "prtimes",
+    "url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89",
+    "status": "ok:og:image",
+    "imageUrl": "https://prtimes.jp/common/pc_v4/og.png",
+    "file": "/images/sources/prtimes.png",
+    "bytes": 16888
+  },
+  {
+    "id": "tabelog",
+    "url": "https://tabelog.com/tokyo/A1311/A131102/",
+    "status": "ok:fallback:img",
+    "imageUrl": "https://tblg.k-img.com/restaurant/images/Rvw/122345/320x320_square_122345897.jpg",
+    "file": "/images/sources/tabelog.jpg",
+    "bytes": 45926
+  }
+]

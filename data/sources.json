@@ -1,0 +1,100 @@
+[
+  {
+    "id": "taito-city",
+    "name": "台東区",
+    "url": "https://www.city.taito.lg.jp/",
+    "source_type": "government",
+    "priority": 1
+  },
+  {
+    "id": "taito-event",
+    "name": "台東区イベント",
+    "url": "https://www.city.taito.lg.jp/bunka_kanko/event/index.html",
+    "source_type": "government",
+    "priority": 1
+  },
+  {
+    "id": "e-asakusa",
+    "name": "浅草観光連盟",
+    "url": "https://e-asakusa.jp/",
+    "source_type": "official",
+    "priority": 2
+  },
+  {
+    "id": "sensoji",
+    "name": "浅草寺",
+    "url": "https://www.senso-ji.jp/annual_event/",
+    "source_type": "official",
+    "priority": 2
+  },
+  {
+    "id": "asakusajinja",
+    "name": "浅草神社",
+    "url": "https://asakusajinja.jp/",
+    "source_type": "official",
+    "priority": 2
+  },
+  {
+    "id": "koukaidou",
+    "name": "浅草公会堂",
+    "url": "https://asakusa-koukaidou.net/home/event.html",
+    "source_type": "official",
+    "priority": 2
+  },
+  {
+    "id": "engei-hall",
+    "name": "浅草演芸ホール",
+    "url": "https://www.asakusaengei.com/schedule/",
+    "source_type": "official",
+    "priority": 2
+  },
+  {
+    "id": "hanayashiki",
+    "name": "浅草花やしき",
+    "url": "https://www.hanayashiki.net/event_this/",
+    "source_type": "official",
+    "priority": 2
+  },
+  {
+    "id": "rox",
+    "name": "浅草ROX",
+    "url": "https://www.rox.co.jp/news/",
+    "source_type": "official",
+    "priority": 2
+  },
+  {
+    "id": "ekimise",
+    "name": "浅草エキミセ",
+    "url": "https://www.ekimise.jp/",
+    "source_type": "official",
+    "priority": 2
+  },
+  {
+    "id": "matsuya",
+    "name": "松屋浅草",
+    "url": "https://www.matsuya.com/asakusa/",
+    "source_type": "official",
+    "priority": 2
+  },
+  {
+    "id": "chikagai",
+    "name": "浅草地下街",
+    "url": "https://asakusa-chikagai.com/",
+    "source_type": "official",
+    "priority": 2
+  },
+  {
+    "id": "prtimes",
+    "name": "PR TIMES「浅草」",
+    "url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89",
+    "source_type": "press_release",
+    "priority": 3
+  },
+  {
+    "id": "tabelog",
+    "name": "食べログ 浅草",
+    "url": "https://tabelog.com/tokyo/A1311/A131102/",
+    "source_type": "gourmet_site",
+    "priority": 5
+  }
+]

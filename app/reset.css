@@ -1,11 +1,11 @@
 * {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
   margin: 0;
 }
 
 :root {
-  background: #333;
-  color: #f0f0f0;
-  color-scheme: dark;
+  background: #fff;
+  color: #1a1a1a;
+  color-scheme: light;
 }
