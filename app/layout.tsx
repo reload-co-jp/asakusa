@@ -27,6 +27,20 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <head>
         <script
           async
+          src="https://www.googletagmanager.com/gtag/js?id=G-YER1QP2CXX"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-YER1QP2CXX');
+            `,
+          }}
+        />
+        <script
+          async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6542845006087970"
           crossOrigin="anonymous"
         />
