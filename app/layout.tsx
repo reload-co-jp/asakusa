@@ -24,6 +24,13 @@ const NAV_LINKS = [
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="ja">
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6542845006087970"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <Header>
           <Title>
