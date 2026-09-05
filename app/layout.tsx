@@ -1,8 +1,9 @@
 import { Footer, Header, Main, Nav, Title } from "@/components/elements/layout"
+import { SITE_URL } from "@/lib/json-ld"
 import "./reset.css"
 
 export const metadata = {
-  metadataBase: new URL("https://asakusa.reload.co.jp"),
+  metadataBase: new URL(SITE_URL),
   title: "浅草ライブ",
   description:
     "浅草エリアのイベント・新店舗・閉店・セール・POP UP・公演・祭り・地域ニュースを届ける浅草地域メディア",

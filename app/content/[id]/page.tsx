@@ -1,14 +1,38 @@
+import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { FC } from "react"
 import { CategoryLabel } from "@/components/elements/content"
 import { contents, getContent, getPlace, getSource } from "@/lib/data"
+import { jsonLdToHtml, SITE_URL } from "@/lib/json-ld"
+import { CATEGORIES } from "@/lib/types"
 
 export const generateStaticParams = () =>
   contents.map((content) => ({ id: content.id }))
 
 export const dynamicParams = false
+
+export const generateMetadata = async ({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}): Promise<Metadata> => {
+  const { id } = await params
+  const content = getContent(id)
+  if (!content) return {}
+  const title = `${content.title} | 浅草ライブ`
+  return {
+    title,
+    description: content.summary,
+    openGraph: {
+      title,
+      description: content.summary,
+      images: content.image_url ? [content.image_url] : undefined,
+      type: "article",
+    },
+  }
+}
 
 const formatDate = (date: string): string => {
   const [year, month, day] = date.split("-")
@@ -28,8 +52,43 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
   if (!content) notFound()
   const place = content.place_id ? getPlace(content.place_id) : undefined
   const source = content.source_id ? getSource(content.source_id) : undefined
+  const jsonLd =
+    content.start_at
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Event",
+          name: content.title,
+          description: content.summary,
+          startDate: content.start_at,
+          ...(content.end_at && { endDate: content.end_at }),
+          ...(content.image_url && { image: content.image_url }),
+          ...(place && {
+            location: {
+              "@type": "Place",
+              name: place.name,
+              address: place.address,
+            },
+          }),
+        }
+      : {
+          "@context": "https://schema.org",
+          "@type": "NewsArticle",
+          headline: content.title,
+          description: content.summary,
+          datePublished: content.published_at,
+          articleSection: CATEGORIES[content.category],
+          ...(content.image_url && { image: content.image_url }),
+          ...(source && {
+            isBasedOn: source.url,
+          }),
+          mainEntityOfPage: `${SITE_URL}/content/${content.id}/`,
+        }
   return (
     <article>
+      <script
+        dangerouslySetInnerHTML={{ __html: jsonLdToHtml(jsonLd) }}
+        type="application/ld+json"
+      />
       {content.image_url && (
         <Image
           alt=""

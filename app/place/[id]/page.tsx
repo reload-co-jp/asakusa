@@ -1,13 +1,36 @@
+import { Metadata } from "next"
 import Image from "next/image"
 import { notFound } from "next/navigation"
 import { FC } from "react"
 import { ContentList, Section } from "@/components/elements/content"
 import { getContentsByPlace, getPlace, places } from "@/lib/data"
+import { jsonLdToHtml } from "@/lib/json-ld"
 import { PLACE_TYPES } from "@/lib/types"
 
 export const generateStaticParams = () => places.map((place) => ({ id: place.id }))
 
 export const dynamicParams = false
+
+export const generateMetadata = async ({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}): Promise<Metadata> => {
+  const { id } = await params
+  const place = getPlace(id)
+  if (!place) return {}
+  const title = `${place.name}（${PLACE_TYPES[place.type]}・${place.area}） | 浅草ライブ`
+  return {
+    title,
+    description: place.description,
+    openGraph: {
+      title,
+      description: place.description,
+      images: place.image_url ? [place.image_url] : undefined,
+      type: "article",
+    },
+  }
+}
 
 const InfoRow: FC<{ label: string; value: string }> = ({ label, value }) => (
   <li style={{ display: "flex", fontSize: ".85rem", gap: ".5rem" }}>
@@ -20,8 +43,34 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
   const { id } = await params
   const place = getPlace(id)
   if (!place) notFound()
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: place.name,
+    description: place.description,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: place.area,
+      streetAddress: place.address,
+    },
+    ...(place.latitude != null &&
+      place.longitude != null && {
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: place.latitude,
+          longitude: place.longitude,
+        },
+      }),
+    ...(place.phone && { telephone: place.phone }),
+    ...(place.url && { url: place.url }),
+    ...(place.image_url && { image: place.image_url }),
+  }
   return (
     <>
+      <script
+        dangerouslySetInnerHTML={{ __html: jsonLdToHtml(jsonLd) }}
+        type="application/ld+json"
+      />
       <article style={{ margin: "0 0 2rem" }}>
         {place.image_url && (
           <Image
