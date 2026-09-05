@@ -19,7 +19,6 @@ const NAV_LINKS = [
   { href: "/category/sale/", label: "セール" },
   { href: "/category/popup/", label: "POP UP" },
   { href: "/category/exhibition/", label: "展示・アート" },
-  { href: "/area/", label: "エリア" },
 ]
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {

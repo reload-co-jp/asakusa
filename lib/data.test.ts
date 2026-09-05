@@ -1,14 +1,11 @@
 import { describe, expect, it } from "vitest"
 import {
   contents,
-  getArea,
-  getContentsByArea,
   getContentsByCategory,
   getEventsInPeriod,
   getLatestContents,
   getOngoingContentsByCategory,
   getPlace,
-  getPlacesByArea,
   places,
 } from "./data"
 
@@ -56,14 +53,5 @@ describe("data", () => {
     expect(ongoing.map((content) => content.id)).toContain(
       "rox-autumn-sale-2026",
     )
-  })
-
-  it("エリアからスポット・情報を辿れる", () => {
-    const area = getArea("rokku")
-    expect(area?.name).toBe("浅草六区")
-    const areaPlaces = getPlacesByArea("浅草六区")
-    expect(areaPlaces.map((place) => place.id)).toContain("rox")
-    const areaContents = getContentsByArea("浅草六区")
-    expect(areaContents.length).toBeGreaterThan(0)
   })
 })

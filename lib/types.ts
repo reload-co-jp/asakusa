@@ -16,21 +16,6 @@ export const CATEGORIES = {
 
 export type Category = keyof typeof CATEGORIES
 
-export const AREAS = [
-  { slug: "asakusa", name: "浅草" },
-  { slug: "kaminarimon", name: "雷門" },
-  { slug: "sensoji", name: "浅草寺周辺" },
-  { slug: "nakamise", name: "仲見世" },
-  { slug: "rokku", name: "浅草六区" },
-  { slug: "hanakawado", name: "花川戸" },
-  { slug: "nishi-asakusa", name: "西浅草" },
-  { slug: "senzoku", name: "千束" },
-  { slug: "asakusa-station", name: "浅草駅周辺" },
-] as const
-
-export type Area = (typeof AREAS)[number]
-export type AreaSlug = Area["slug"]
-
 export const PLACE_TYPES = {
   store: "店舗",
   facility: "施設",

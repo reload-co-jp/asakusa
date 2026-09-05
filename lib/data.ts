@@ -1,8 +1,7 @@
 import placesJson from "@/data/places.json"
 import contentsJson from "@/data/contents.json"
 import sourcesJson from "@/data/sources.json"
-import { AREAS } from "./types"
-import type { Area, Category, Content, Place, Source } from "./types"
+import type { Category, Content, Place, Source } from "./types"
 
 export const places = placesJson as Place[]
 export const contents = contentsJson as Content[]
@@ -30,21 +29,6 @@ export const getContentsByCategory = (category: Category): Content[] =>
 
 export const getContentsByPlace = (placeId: string): Content[] =>
   sortByLatest(contents.filter((content) => content.place_id === placeId))
-
-export const getArea = (slug: string): Area | undefined =>
-  AREAS.find((area) => area.slug === slug)
-
-export const getPlacesByArea = (areaName: string): Place[] =>
-  places.filter((place) => place.area === areaName)
-
-export const getContentsByArea = (areaName: string): Content[] => {
-  const placeIds = new Set(getPlacesByArea(areaName).map((place) => place.id))
-  return sortByLatest(
-    contents.filter(
-      (content) => content.place_id && placeIds.has(content.place_id),
-    ),
-  )
-}
 
 const toDateString = (date: Date): string => {
   const year = date.getFullYear()
