@@ -135,7 +135,7 @@ Webページのテキストから、浅草エリアのイベント・新規オ�
   "type": "event または news",
   "title": "記事タイトル(【浅草】は含めない、簡潔に)",
   "summary": "1〜2文の要約",
-  "body": "詳細本文(2〜4文程度)",
+  "body": "詳細本文(背景・詳細・見どころなどを含め6〜10文程度でしっかり記述)",
   "category": "${CATEGORIES.join(" | ")} のいずれか",
   "published_at": "YYYY-MM-DD",
   "start_at": "YYYY-MM-DD または null",
