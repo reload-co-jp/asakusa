@@ -62,6 +62,8 @@ export type Content = {
   place_id: string | null
   source_id: string | null
   source_url: string | null
+  // 同一記事が複数回クロールされ内容統合された場合に追記される、source_url以外の出典URL一覧
+  source_urls?: string[]
   image_url: string | null
 }
 

@@ -169,6 +169,13 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
           </a>
         </p>
       )}
+      {content.source_urls?.map((url) => (
+        <p key={url} style={{ fontSize: ".85rem", margin: ".6rem 0 0" }}>
+          <a href={url} rel="noreferrer" style={{ color: "var(--accent)" }} target="_blank">
+            公式情報を見る →
+          </a>
+        </p>
+      ))}
     </article>
   )
 }

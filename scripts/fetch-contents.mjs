@@ -61,13 +61,69 @@ const toDateString = (date) => {
 
 const normalizeTitle = (title) => title.replace(/\s+/g, "").toLowerCase()
 
-const isDuplicate = (existing, candidate, sourceId) =>
-  existing.some(
+// タイトルのbigram類似度(0〜1)。表記揺れ(全角/半角の括弧・句読点、語順の入れ替え程度)を
+// 同一記事として吸収するための緩い指標。完全一致(=1)以外は閾値で判定する
+const DUP_TITLE_SIM_THRESHOLD = 0.5
+
+const bigrams = (s) => {
+  const set = new Set()
+  for (let i = 0; i < s.length - 1; i++) set.add(s.slice(i, i + 2))
+  return set
+}
+
+const titleSimilarity = (a, b) => {
+  const A = bigrams(normalizeTitle(a))
+  const B = bigrams(normalizeTitle(b))
+  if (A.size === 0 || B.size === 0) return 0
+  let inter = 0
+  for (const x of A) if (B.has(x)) inter++
+  return (inter * 2) / (A.size + B.size)
+}
+
+// 同一ソースを日を変えて再クロールした際、生成AIの言い回しが毎回微妙に揺れることで
+// 完全一致では検出できない重複記事が発生する。同一source_id・同一開催日(あれば)を前提に、
+// タイトルの類似度で同一記事とみなせるものを既存contentsから探す
+const findDuplicate = (existing, candidate, sourceId) =>
+  existing.find(
     (c) =>
       c.source_id === sourceId &&
-      normalizeTitle(c.title) === normalizeTitle(candidate.title) &&
-      (!candidate.start_at || !c.start_at || candidate.start_at === c.start_at)
+      (!candidate.start_at || !c.start_at || candidate.start_at === c.start_at) &&
+      titleSimilarity(c.title, candidate.title) >= DUP_TITLE_SIM_THRESHOLD
   )
+
+// 重複記事を検出した場合、破棄せず既存記事を更新する。
+// - 出典URLは(既存と異なれば)source_urlsに追記して残す
+// - 本文はより情報量の多い(長い)方を採用し内容を合わせて更新する
+// - 開催日が既存側で欠けていれば補う
+const mergeIntoExisting = (existing, candidate, source) => {
+  let changed = false
+
+  const knownUrls = new Set(
+    [existing.source_url, ...(existing.source_urls ?? [])].filter(Boolean)
+  )
+  if (!knownUrls.has(source.url)) {
+    existing.source_urls = [...(existing.source_urls ?? []), source.url]
+    changed = true
+  }
+
+  const candidateBody = candidate.body ?? candidate.summary ?? ""
+  if (candidateBody.length > (existing.body?.length ?? 0)) {
+    existing.summary = candidate.summary ?? existing.summary
+    existing.body = candidateBody
+    changed = true
+  }
+
+  if (candidate.start_at && !existing.start_at) {
+    existing.start_at = candidate.start_at
+    changed = true
+  }
+  if (candidate.end_at && !existing.end_at) {
+    existing.end_at = candidate.end_at
+    changed = true
+  }
+
+  return changed
+}
 
 const findPlaceId = (places, placeName) => {
   const name = placeName?.trim()
@@ -280,7 +336,7 @@ const main = async () => {
     fetched: 0,
     failed: 0,
     extracted: 0,
-    duplicate: 0,
+    merged: 0,
     added: 0,
   }
 
@@ -317,8 +373,34 @@ const main = async () => {
 
     for (const candidate of candidates) {
       if (!candidate.title || !CATEGORIES.includes(candidate.category)) continue
-      if (isDuplicate([...contents, ...newContents], candidate, source.id)) {
-        summary.duplicate++
+
+      const duplicate = findDuplicate([...contents, ...newContents], candidate, source.id)
+      if (duplicate) {
+        const changed = mergeIntoExisting(duplicate, candidate, source)
+        if (changed) {
+          summary.merged++
+          console.log(`  [MERGE] ${duplicate.title}`)
+          if (!duplicate.image_url) {
+            const imgIndex = candidate.image_index
+            if (
+              typeof imgIndex === "number" &&
+              imgIndex >= 0 &&
+              imgIndex < Math.min(imgCandidates.length, MAX_IMAGE_CANDIDATES)
+            ) {
+              try {
+                duplicate.image_url = dryRun
+                  ? imgCandidates[imgIndex].url
+                  : await saveContentImage(
+                      imgCandidates[imgIndex].url,
+                      source.url,
+                      duplicate.id,
+                    )
+              } catch (err) {
+                console.warn(`  [WARN] 画像取得失敗: ${err.message}`)
+              }
+            }
+          }
+        }
         continue
       }
 
@@ -365,7 +447,7 @@ const main = async () => {
   console.log("\n--- サマリー ---")
   console.log(`source取得成功: ${summary.fetched} / 失敗: ${summary.failed}`)
   console.log(
-    `抽出候補: ${summary.extracted} / 重複除外: ${summary.duplicate} / 新規追加: ${summary.added}`
+    `抽出候補: ${summary.extracted} / 重複統合: ${summary.merged} / 新規追加: ${summary.added}`
   )
 
   if (dryRun) {
@@ -373,11 +455,13 @@ const main = async () => {
     return
   }
 
-  if (newContents.length > 0) {
+  if (newContents.length > 0 || summary.merged > 0) {
     writeJson(contentsPath, [...contents, ...newContents])
-    console.log(`\ndata/contents.json に ${newContents.length} 件追加`)
+    console.log(
+      `\ndata/contents.json を更新(新規${newContents.length}件・統合${summary.merged}件)`
+    )
   } else {
-    console.log("\n新規記事なし")
+    console.log("\n更新なし")
   }
 }
 
