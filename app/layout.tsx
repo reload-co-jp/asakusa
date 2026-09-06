@@ -1,3 +1,4 @@
+import Script from "next/script"
 import { Footer, Header, Main, Nav, Title } from "@/components/elements/layout"
 import { SITE_URL } from "@/lib/json-ld"
 import "./reset.css"
@@ -24,31 +25,29 @@ const NAV_LINKS = [
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="ja">
-      <head>
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-YER1QP2CXX"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-YER1QP2CXX');
-            `,
-          }}
-        />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6542845006087970"
-          crossOrigin="anonymous"
-        />
-      </head>
+      <head />
       <body>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-YER1QP2CXX"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YER1QP2CXX');
+          `}
+        </Script>
+        <Script
+          async
+          crossOrigin="anonymous"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6542845006087970"
+          strategy="afterInteractive"
+        />
         <Header>
           <Title>
-            <a href="/" style={{ color: "#1a1a1a", textDecoration: "none" }}>
+            <a href="/" style={{ color: "var(--ink)", textDecoration: "none" }}>
               浅草ライブ
             </a>
           </Title>
@@ -56,7 +55,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         </Header>
         <Main>{children}</Main>
         <Footer>
-          <p>&copy; 浅草ライブ</p>
+          <p>&copy; Asakusa Live</p>
         </Footer>
       </body>
     </html>

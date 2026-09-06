@@ -41,8 +41,10 @@ const formatDate = (date: string): string => {
 
 const InfoRow: FC<{ label: string; value: string }> = ({ label, value }) => (
   <li style={{ display: "flex", fontSize: ".85rem", gap: ".5rem" }}>
-    <span style={{ color: "#999", flexShrink: 0, width: "6rem" }}>{label}</span>
-    <span style={{ color: "#333" }}>{value}</span>
+    <span style={{ color: "var(--muted)", flexShrink: 0, width: "6rem" }}>
+      {label}
+    </span>
+    <span style={{ color: "var(--ink-soft)" }}>{value}</span>
   </li>
 )
 
@@ -95,32 +97,43 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
           height={315}
           src={content.image_url}
           style={{
+            aspectRatio: "800 / 315",
             height: "auto",
-            margin: "0 0 1rem",
+            margin: "0 0 1.5rem",
+            objectFit: "cover",
             width: "100%",
           }}
           width={800}
         />
       )}
       <CategoryLabel category={content.category} />
-      <h2 style={{ color: "#1a1a1a", fontSize: "1.3rem", margin: ".6rem 0" }}>
+      <h2
+        style={{
+          color: "var(--ink)",
+          fontFamily: "var(--font-serif)",
+          fontSize: "1.5rem",
+          letterSpacing: ".02em",
+          lineHeight: 1.5,
+          margin: ".9rem 0 .6rem",
+        }}
+      >
         {content.title}
       </h2>
-      <p style={{ color: "#999", fontSize: ".8rem", margin: "0 0 1rem" }}>
+      <p style={{ color: "var(--muted)", fontSize: ".78rem", margin: "0 0 1.5rem" }}>
         {formatDate(content.published_at)} 公開
       </p>
-      <p style={{ color: "#333", fontSize: ".95rem", lineHeight: 1.8 }}>
+      <p style={{ color: "var(--ink-soft)", fontSize: ".95rem", lineHeight: 1.9 }}>
         {content.body}
       </p>
       <ul
         style={{
-          backgroundColor: "#faf9f6",
-          border: "1px solid #e5e2dc",
+          background: "#fff",
+          borderLeft: "2px solid var(--accent)",
           display: "grid",
-          gap: ".5rem",
+          gap: ".6rem",
           listStyle: "none",
-          margin: "1.5rem 0 0",
-          padding: "1rem",
+          margin: "2rem 0 0",
+          padding: "1.25rem 1.5rem",
         }}
       >
         {content.start_at && (
@@ -138,21 +151,21 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
         {source && <InfoRow label="情報源" value={source.name} />}
       </ul>
       {place && (
-        <p style={{ fontSize: ".85rem", margin: "1rem 0 0" }}>
-          <Link href={`/place/${place.id}/`} style={{ color: "#8c3a3a" }}>
-            {place.name}の詳細を見る
+        <p style={{ fontSize: ".85rem", margin: "1.5rem 0 0" }}>
+          <Link href={`/place/${place.id}/`} style={{ color: "var(--accent)" }}>
+            {place.name}の詳細を見る →
           </Link>
         </p>
       )}
       {content.source_url && (
-        <p style={{ fontSize: ".85rem", margin: ".5rem 0 0" }}>
+        <p style={{ fontSize: ".85rem", margin: ".6rem 0 0" }}>
           <a
             href={content.source_url}
             rel="noreferrer"
-            style={{ color: "#8c3a3a" }}
+            style={{ color: "var(--accent)" }}
             target="_blank"
           >
-            公式情報を見る
+            公式情報を見る →
           </a>
         </p>
       )}

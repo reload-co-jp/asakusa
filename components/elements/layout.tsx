@@ -7,10 +7,11 @@ export const Title: FC<ComponentProps<"h1">> = ({
 }) => (
   <h1
     style={{
-      color: "#1a1a1a",
-      fontFamily: "'Yu Mincho', 'Hiragino Mincho ProN', serif",
-      fontSize: "3rem",
-      letterSpacing: ".05em",
+      color: "var(--ink)",
+      fontFamily: "var(--font-serif)",
+      fontSize: "clamp(1.9rem, 4.5vw, 2.6rem)",
+      letterSpacing: ".12em",
+      lineHeight: 1,
       margin: 0,
       fontWeight: 500,
       padding: 0,
@@ -30,9 +31,9 @@ export const Nav: FC<{
       style={{
         display: "flex",
         flexWrap: "wrap",
-        gap: ".3rem 1.1rem",
+        gap: ".4rem 1.4rem",
         listStyle: "none",
-        margin: ".6rem 0 0",
+        margin: ".9rem 0 0",
         padding: 0,
       }}
     >
@@ -41,10 +42,11 @@ export const Nav: FC<{
           <a
             href={link.href}
             style={{
-              color: "#5c5c5c",
-              fontSize: ".8rem",
-              letterSpacing: ".02em",
+              color: "var(--ink-soft)",
+              fontSize: ".78rem",
+              letterSpacing: ".08em",
               textDecoration: "none",
+              transition: "color .2s ease",
             }}
           >
             {link.label}
@@ -59,41 +61,57 @@ export const Header: FC<{ children: ReactNode }> = ({ children }) => (
   <header
     style={{
       background: "#fff",
-      borderBottom: "1px solid #e5e2dc",
-      padding: ".9rem 1.25rem",
+      borderBottom: "1px solid var(--border)",
+      padding: "1.4rem 1.5rem",
       position: "relative",
     }}
   >
-    <div style={{ maxWidth: "56rem", margin: "auto" }}>{children}</div>
+    <div style={{ maxWidth: "60rem", margin: "auto" }}>{children}</div>
   </header>
 )
 
 export const Main: FC<{ children: ReactNode }> = ({ children }) => (
   <main
     style={{
-      background: "#fff",
-      color: "#333",
-      margin: "0 auto",
-      maxWidth: "56rem",
+      background: "var(--paper)",
+      color: "var(--ink-soft)",
       minHeight: "calc(100dvh - 7rem)",
-      padding: "2rem 1.25rem",
     }}
   >
-    {children}
+    <div style={{ margin: "0 auto", maxWidth: "60rem", padding: "3rem 1.5rem" }}>
+      {children}
+    </div>
   </main>
 )
 
 export const Footer: FC<{ children: ReactNode }> = ({ children }) => (
   <footer
     style={{
-      background: "#faf9f6",
-      borderTop: "1px solid #e5e2dc",
-      color: "#8a8a8a",
-      fontSize: ".75rem",
-      padding: "1.25rem",
+      background: "#fff",
+      borderTop: "1px solid var(--border)",
+      padding: "2.5rem 1.5rem 1.75rem",
       textAlign: "center",
     }}
   >
-    {children}
+    <p
+      style={{
+        color: "var(--ink)",
+        fontFamily: "var(--font-serif)",
+        fontSize: "1.1rem",
+        letterSpacing: ".16em",
+        margin: "0 0 .75rem",
+      }}
+    >
+      浅草ライブ
+    </p>
+    <div
+      style={{
+        color: "var(--faint)",
+        fontSize: ".72rem",
+        letterSpacing: ".04em",
+      }}
+    >
+      {children}
+    </div>
   </footer>
 )

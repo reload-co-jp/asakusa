@@ -34,8 +34,10 @@ export const generateMetadata = async ({
 
 const InfoRow: FC<{ label: string; value: string }> = ({ label, value }) => (
   <li style={{ display: "flex", fontSize: ".85rem", gap: ".5rem" }}>
-    <span style={{ color: "#999", flexShrink: 0, width: "6rem" }}>{label}</span>
-    <span style={{ color: "#333" }}>{value}</span>
+    <span style={{ color: "var(--muted)", flexShrink: 0, width: "6rem" }}>
+      {label}
+    </span>
+    <span style={{ color: "var(--ink-soft)" }}>{value}</span>
   </li>
 )
 
@@ -78,31 +80,43 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
             height={315}
             src={place.image_url}
             style={{
+              aspectRatio: "800 / 315",
               height: "auto",
-              margin: "0 0 1rem",
+              margin: "0 0 1.5rem",
+              objectFit: "cover",
               width: "100%",
             }}
             width={800}
           />
         )}
-        <span style={{ color: "#999", fontSize: ".75rem" }}>
+        <span
+          style={{ color: "var(--muted)", fontSize: ".75rem", letterSpacing: ".04em" }}
+        >
           {PLACE_TYPES[place.type]} / {place.area}
         </span>
-        <h2 style={{ color: "#1a1a1a", fontSize: "1.3rem", margin: ".3rem 0 .75rem" }}>
+        <h2
+          style={{
+            color: "var(--ink)",
+            fontFamily: "var(--font-serif)",
+            fontSize: "1.5rem",
+            letterSpacing: ".02em",
+            margin: ".5rem 0 1rem",
+          }}
+        >
           {place.name}
         </h2>
-        <p style={{ color: "#333", fontSize: ".95rem", lineHeight: 1.8 }}>
+        <p style={{ color: "var(--ink-soft)", fontSize: ".95rem", lineHeight: 1.9 }}>
           {place.description}
         </p>
         <ul
           style={{
-            backgroundColor: "#faf9f6",
-            border: "1px solid #e5e2dc",
+            background: "#fff",
+            borderLeft: "2px solid var(--accent)",
             display: "grid",
-            gap: ".5rem",
+            gap: ".6rem",
             listStyle: "none",
-            margin: "1rem 0 0",
-            padding: "1rem",
+            margin: "1.5rem 0 0",
+            padding: "1.25rem 1.5rem",
           }}
         >
           <InfoRow label="住所" value={place.address} />
@@ -112,14 +126,14 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
           {place.phone && <InfoRow label="電話" value={place.phone} />}
         </ul>
         {place.url && (
-          <p style={{ fontSize: ".85rem", margin: "1rem 0 0" }}>
+          <p style={{ fontSize: ".85rem", margin: "1.5rem 0 0" }}>
             <a
               href={place.url}
               rel="noreferrer"
-              style={{ color: "#8c3a3a" }}
+              style={{ color: "var(--accent)" }}
               target="_blank"
             >
-              公式サイト
+              公式サイト →
             </a>
           </p>
         )}

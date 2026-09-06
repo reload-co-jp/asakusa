@@ -21,13 +21,12 @@ export const CategoryLabel: FC<{ category: Content["category"] }> = ({
 }) => (
   <span
     style={{
-      border: "1px solid #8c3a3a",
-      borderRadius: "1px",
-      color: "#8c3a3a",
+      background: "var(--accent-soft)",
+      color: "var(--accent)",
       display: "inline-block",
-      fontSize: ".7rem",
-      letterSpacing: ".03em",
-      padding: ".1rem .5rem",
+      fontSize: ".68rem",
+      letterSpacing: ".08em",
+      padding: ".25rem .65rem",
     }}
   >
     {CATEGORIES[category]}
@@ -40,45 +39,59 @@ export const ContentCard: FC<{ content: Content }> = ({ content }) => {
   return (
     <article
       style={{
-        backgroundColor: "#fff",
-        border: "1px solid #e5e2dc",
+        background: "#fff",
         display: "flex",
-        gap: "1.25rem",
-        padding: "1.25rem",
+        gap: "1.5rem",
+        padding: "1.5rem",
+        transition: "box-shadow .25s ease",
       }}
     >
       {content.image_url && (
         <Link
           href={`/content/${content.id}/`}
-          style={{ flexShrink: 0, position: "relative" }}
+          style={{ flexShrink: 0, overflow: "hidden", position: "relative" }}
         >
           <Image
             alt=""
-            height={80}
+            height={84}
             src={content.image_url}
             style={{ objectFit: "cover" }}
-            width={107}
+            width={112}
           />
         </Link>
       )}
       <div style={{ minWidth: 0 }}>
         <CategoryLabel category={content.category} />
-        <h3 style={{ fontSize: "1rem", margin: ".6rem 0" }}>
+        <h3
+          style={{
+            fontSize: "1.02rem",
+            letterSpacing: ".01em",
+            lineHeight: 1.5,
+            margin: ".7rem 0 .5rem",
+          }}
+        >
           <Link
             href={`/content/${content.id}/`}
-            style={{ color: "#1a1a1a", textDecoration: "none" }}
+            style={{ color: "var(--ink)", textDecoration: "none" }}
           >
             {content.title}
           </Link>
         </h3>
-        <p style={{ color: "#666", fontSize: ".85rem", margin: 0 }}>
+        <p style={{ color: "var(--ink-soft)", fontSize: ".85rem", margin: 0 }}>
           {content.summary}
         </p>
-        <p style={{ color: "#999", fontSize: ".75rem", margin: ".5rem 0 0" }}>
+        <p
+          style={{
+            color: "var(--muted)",
+            fontSize: ".72rem",
+            letterSpacing: ".02em",
+            margin: ".6rem 0 0",
+          }}
+        >
           {period
-            ? `開催: ${period}`
-            : `公開: ${formatDate(content.published_at)}`}
-          {place ? ` / ${place.name}` : ""}
+            ? `開催 ${period}`
+            : `公開 ${formatDate(content.published_at)}`}
+          {place ? `　${place.name}` : ""}
         </p>
       </div>
     </article>
@@ -87,9 +100,11 @@ export const ContentCard: FC<{ content: Content }> = ({ content }) => {
 
 export const ContentList: FC<{ contents: Content[] }> = ({ contents }) =>
   contents.length === 0 ? (
-    <p style={{ color: "#999", fontSize: ".85rem" }}>現在情報はありません。</p>
+    <p style={{ color: "var(--muted)", fontSize: ".85rem" }}>
+      現在情報はありません。
+    </p>
   ) : (
-    <div style={{ display: "grid", gap: "1rem" }}>
+    <div style={{ display: "grid", gap: "1px", background: "var(--border)" }}>
       {contents.map((content) => (
         <ContentCard content={content} key={content.id} />
       ))}
@@ -100,17 +115,22 @@ export const Section: FC<{ title: string; children: ReactNode }> = ({
   title,
   children,
 }) => (
-  <section style={{ margin: "0 0 3rem" }}>
+  <section style={{ margin: "0 0 4rem" }}>
     <h2
       style={{
-        borderBottom: "2px solid #1a1a1a",
-        color: "#1a1a1a",
-        fontSize: "1.15rem",
-        letterSpacing: ".03em",
-        margin: "0 0 1.25rem",
-        paddingBottom: ".6rem",
+        alignItems: "baseline",
+        color: "var(--ink)",
+        display: "flex",
+        fontFamily: "var(--font-serif)",
+        fontSize: "1.4rem",
+        gap: ".75rem",
+        letterSpacing: ".06em",
+        margin: "0 0 1.5rem",
       }}
     >
+      <span
+        style={{ background: "var(--accent)", height: "1px", width: "1.75rem" }}
+      />
       {title}
     </h2>
     {children}

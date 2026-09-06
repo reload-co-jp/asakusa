@@ -8,4 +8,14 @@
   background: #fff;
   color: #1a1a1a;
   color-scheme: light;
+
+  --font-serif: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --ink: #1a1a1a;
+  --ink-soft: #3a3a3a;
+  --muted: #8a8a8a;
+  --faint: #b3b0aa;
+  --border: #e5e2dc;
+  --paper: #faf9f6;
+  --accent: #8c3a3a;
+  --accent-soft: #fbf1ef;
 }
