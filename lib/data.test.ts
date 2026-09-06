@@ -37,12 +37,8 @@ describe("data", () => {
 
   it("getEventsInPeriod は期間重複イベントを返す", () => {
     const events = getEventsInPeriod("2026-09-05", "2026-09-05")
-    expect(events.some((event) => event.id === "rox-autumn-sale-2026")).toBe(
-      true,
-    )
-    expect(
-      events.some((event) => event.id === "sensoji-chrysanthemum-2026"),
-    ).toBe(false)
+    expect(events.some((event) => event.id === 3)).toBe(true)
+    expect(events.some((event) => event.id === 4)).toBe(false)
   })
 
   it("getOngoingContentsByCategory は開催中のみ返す", () => {
@@ -50,8 +46,6 @@ describe("data", () => {
       "sale",
       new Date("2026-09-05"),
     )
-    expect(ongoing.map((content) => content.id)).toContain(
-      "rox-autumn-sale-2026",
-    )
+    expect(ongoing.map((content) => content.id)).toContain(3)
   })
 })

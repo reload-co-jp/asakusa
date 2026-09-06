@@ -9,7 +9,7 @@ import { jsonLdToHtml, SITE_URL } from "@/lib/json-ld"
 import { CATEGORIES } from "@/lib/types"
 
 export const generateStaticParams = () =>
-  contents.map((content) => ({ id: content.id }))
+  contents.map((content) => ({ id: String(content.id) }))
 
 export const dynamicParams = false
 
@@ -19,7 +19,7 @@ export const generateMetadata = async ({
   params: Promise<{ id: string }>
 }): Promise<Metadata> => {
   const { id } = await params
-  const content = getContent(id)
+  const content = getContent(Number(id))
   if (!content) return {}
   const title = `${content.title} | 浅草ライブ`
   return {
@@ -48,7 +48,7 @@ const InfoRow: FC<{ label: string; value: string }> = ({ label, value }) => (
 
 const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
   const { id } = await params
-  const content = getContent(id)
+  const content = getContent(Number(id))
   if (!content) notFound()
   const place = content.place_id ? getPlace(content.place_id) : undefined
   const source = content.source_id ? getSource(content.source_id) : undefined

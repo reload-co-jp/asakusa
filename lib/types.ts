@@ -50,7 +50,7 @@ export type Place = {
 export type ContentType = "event" | "news"
 
 export type Content = {
-  id: string
+  id: number
   type: ContentType
   title: string
   summary: string

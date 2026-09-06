@@ -2,7 +2,6 @@
 // 認証はCLAUDE_CODE_OAUTH_TOKEN または ANTHROPIC_API_KEY をclaude CLIが自動解決する
 import { readFileSync, writeFileSync } from "fs"
 import { fileURLToPath } from "url"
-import { randomUUID } from "crypto"
 import { execFile } from "child_process"
 import path from "path"
 import * as cheerio from "cheerio"
@@ -57,16 +56,6 @@ const toDateString = (date) => {
   const d = `${date.getDate()}`.padStart(2, "0")
   return `${y}-${m}-${d}`
 }
-
-const slugify = (text) =>
-  text
-    .toLowerCase()
-    .replace(/[^\p{L}\p{N}]+/gu, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 40)
-
-const generateId = (sourceId, title) =>
-  `${sourceId}-${slugify(title) || "content"}-${randomUUID().slice(0, 8)}`
 
 const normalizeTitle = (title) => title.replace(/\s+/g, "").toLowerCase()
 
@@ -258,6 +247,7 @@ const main = async () => {
   }
 
   const today = toDateString(new Date())
+  let nextId = contents.reduce((max, c) => Math.max(max, c.id), 0) + 1
   const newContents = []
   const summary = {
     fetched: 0,
@@ -297,7 +287,7 @@ const main = async () => {
       }
 
       const content = {
-        id: generateId(source.id, candidate.title),
+        id: nextId++,
         type: candidate.type === "event" ? "event" : "news",
         title: candidate.title,
         summary: candidate.summary ?? "",

@@ -10,7 +10,7 @@ export const sources = sourcesJson as Source[]
 export const getPlace = (id: string): Place | undefined =>
   places.find((place) => place.id === id)
 
-export const getContent = (id: string): Content | undefined =>
+export const getContent = (id: number): Content | undefined =>
   contents.find((content) => content.id === id)
 
 export const getSource = (id: string): Source | undefined =>
