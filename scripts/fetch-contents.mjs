@@ -1,17 +1,19 @@
 // Webソースを巡回しClaude Code CLI(headless)でイベント・ニュースを抽出、data/contents.jsonへ新規追加
 // 認証はCLAUDE_CODE_OAUTH_TOKEN または ANTHROPIC_API_KEY をclaude CLIが自動解決する
-import { readFileSync, writeFileSync } from "fs"
+import { readFileSync, writeFileSync, mkdirSync } from "fs"
 import { fileURLToPath } from "url"
 import { execFile } from "child_process"
 import path from "path"
 import * as cheerio from "cheerio"
 import { fetch as undiciFetch, Agent } from "undici"
+import { extractImgCandidates, downloadImage, guessExt } from "./lib/images.mjs"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, "..")
 const sourcesPath = path.join(root, "data/sources.json")
 const placesPath = path.join(root, "data/places.json")
 const contentsPath = path.join(root, "data/contents.json")
+const imagesOutDir = path.join(root, "public/images/contents")
 
 const CATEGORIES = [
   "event",
@@ -129,7 +131,8 @@ Webページのテキストから、浅草エリアのイベント・新規オ�
   "published_at": "YYYY-MM-DD",
   "start_at": "YYYY-MM-DD または null",
   "end_at": "YYYY-MM-DD または null",
-  "place_name": "関連する店舗・施設名 または null"
+  "place_name": "関連する店舗・施設名 または null",
+  "image_index": "本文に最も合う画像候補の番号(整数) または該当なしならnull"
 }
 
 ルール:
@@ -137,7 +140,8 @@ Webページのテキストから、浅草エリアのイベント・新規オ�
 - 日付が不明な場合は推測せずnullにする
 - 今日より前にend_atが過ぎているイベントは除外する
 - トップページの案内文など一般的すぎる情報は抽出しない
-- start_at/end_atのあるイベント系はtype="event"、それ以外はtype="news"`
+- start_at/end_atのあるイベント系はtype="event"、それ以外はtype="news"
+- image_indexは入力の「画像候補」リストから、その記事の内容(タイトル・見出し画像・alt文言)と最も合致するものを1つ選ぶ。ロゴやバナーなど記事と無関係なものは選ばない`
 
 // claude CLIをheadlessで呼び出す。認証(CLAUDE_CODE_OAUTH_TOKEN / ANTHROPIC_API_KEY)はCLIが環境変数から自動解決する
 // stdinは即座にEOFを送る(繋がったままだとCLIが入力待ちと誤認し数秒遅延する)
@@ -202,14 +206,26 @@ const runClaudeWithRetry = async (userPrompt, sourceId) => {
   }
 }
 
-const extractContents = async (source, text, today) => {
+const MAX_IMAGE_CANDIDATES = 20
+
+// Claudeへの画像選択プロンプト用に候補一覧を整形する(ロゴ等は除外済みのものを渡す想定)
+const formatImageCandidates = (candidates) =>
+  candidates
+    .slice(0, MAX_IMAGE_CANDIDATES)
+    .map((c, i) => `${i}: ${c.url}${c.alt ? ` (alt: ${c.alt})` : ""}`)
+    .join("\n")
+
+const extractContents = async (source, text, imgCandidates, today) => {
   if (!text) return []
+  const imageBlock = imgCandidates.length
+    ? `\n\n--- 画像候補 ---\n${formatImageCandidates(imgCandidates)}`
+    : ""
   const userPrompt = `情報源: ${source.name}
 URL: ${source.url}
 今日の日付: ${today}
 
 --- ページ本文 ---
-${text}`
+${text}${imageBlock}`
 
   const result = await runClaudeWithRetry(userPrompt, source.id)
 
@@ -233,7 +249,18 @@ ${text}`
   }
 }
 
+// 選ばれた画像をダウンロードしpublic/images/contents/{id}.extへ保存、相対パスを返す
+const saveContentImage = async (imageUrl, referer, id) => {
+  const buf = await downloadImage(imageUrl, referer)
+  if (!buf || buf.length < 2000) return null
+  const ext = guessExt(imageUrl, null)
+  const outPath = path.join(imagesOutDir, `${id}.${ext}`)
+  writeFileSync(outPath, buf)
+  return `/images/contents/${id}.${ext}`
+}
+
 const main = async () => {
+  if (!dryRun) mkdirSync(imagesOutDir, { recursive: true })
   const sources = readJson(sourcesPath)
   const places = readJson(placesPath)
   const contents = readJson(contentsPath)
@@ -270,9 +297,18 @@ const main = async () => {
       continue
     }
 
+    const imgCandidates = extractImgCandidates(html, source.url).filter(
+      (c) => !c.excluded,
+    )
+
     let candidates
     try {
-      candidates = await extractContents(source, htmlToText(html), today)
+      candidates = await extractContents(
+        source,
+        htmlToText(html),
+        imgCandidates,
+        today,
+      )
     } catch (err) {
       console.warn(`  [SKIP] 抽出失敗: ${err.message}`)
       continue
@@ -286,8 +322,25 @@ const main = async () => {
         continue
       }
 
+      const id = nextId++
+      let imageUrl = null
+      const imgIndex = candidate.image_index
+      if (
+        typeof imgIndex === "number" &&
+        imgIndex >= 0 &&
+        imgIndex < Math.min(imgCandidates.length, MAX_IMAGE_CANDIDATES)
+      ) {
+        try {
+          imageUrl = dryRun
+            ? imgCandidates[imgIndex].url
+            : await saveContentImage(imgCandidates[imgIndex].url, source.url, id)
+        } catch (err) {
+          console.warn(`  [WARN] 画像取得失敗: ${err.message}`)
+        }
+      }
+
       const content = {
-        id: nextId++,
+        id,
         type: candidate.type === "event" ? "event" : "news",
         title: candidate.title,
         summary: candidate.summary ?? "",
@@ -299,11 +352,11 @@ const main = async () => {
         place_id: findPlaceId(places, candidate.place_name),
         source_id: source.id,
         source_url: source.url,
-        image_url: null,
+        image_url: imageUrl,
       }
       newContents.push(content)
       summary.added++
-      console.log(`  [NEW] ${content.title}`)
+      console.log(`  [NEW] ${content.title}${imageUrl ? " (画像あり)" : ""}`)
     }
 
     await sleep(SOURCE_INTERVAL_MS)

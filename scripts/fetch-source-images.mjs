@@ -2,10 +2,18 @@
 import { writeFileSync, mkdirSync } from "fs"
 import { fileURLToPath } from "url"
 import path from "path"
-import { execFile } from "child_process"
-import { promisify } from "util"
-
-const execFileAsync = promisify(execFile)
+import {
+  UA,
+  extOf,
+  hasExcludedKeyword,
+  extractMetaImage,
+  extractImgCandidates,
+  pickFallback,
+  guessExt,
+  fetchWithRetry,
+  curlText,
+  curlBinary,
+} from "./lib/images.mjs"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, "..")
@@ -15,153 +23,6 @@ mkdirSync(outDir, { recursive: true })
 const sources = JSON.parse(
   (await import("fs")).readFileSync(path.join(root, "data/sources.json"), "utf-8"),
 )
-
-const UA =
-  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
-
-const EXCLUDE_KEYWORDS = [
-  "logo",
-  "icon",
-  "favicon",
-  "btn",
-  "button",
-  "bt_",
-  "menu",
-  "nav",
-  "arrow",
-  "spacer",
-  "blank",
-  "pixel",
-  "tel",
-  "contact",
-  "spmenu",
-  "slider_start",
-  "slider_stop",
-  "close",
-  "hamburger",
-  "sns",
-  "twitter",
-  "facebook",
-  "instagram",
-  "taxfree",
-  "unionpay",
-  "toycard",
-]
-
-const EXT_RANK = { jpg: 0, jpeg: 0, png: 1, webp: 1, gif: 2 }
-
-const extOf = (url) => {
-  const m = url.split("?")[0].match(/\.([a-zA-Z0-9]+)$/)
-  return m ? m[1].toLowerCase() : ""
-}
-
-const hasExcludedKeyword = (url) => {
-  const lower = url.toLowerCase()
-  return EXCLUDE_KEYWORDS.some((kw) => lower.includes(kw))
-}
-
-// ファイル名に日付・記事番号らしき数字列 or thumb/news 等があれば記事画像とみなす
-const looksLikeArticleImage = (url) => /\d{6,8}/.test(url.toLowerCase())
-
-const extractMetaImage = (html, baseUrl) => {
-  const metaRe =
-    /<meta[^>]+(?:property|name)=["'](?:og:image(?::secure_url)?|twitter:image(?::src)?)["'][^>]+content=["']([^"']+)["']/i
-  const metaRe2 =
-    /<meta[^>]+content=["']([^"']+)["'][^>]+(?:property|name)=["'](?:og:image(?::secure_url)?|twitter:image(?::src)?)["']/i
-  const m = html.match(metaRe) || html.match(metaRe2)
-  if (!m || !m[1]) return null
-  try {
-    return new URL(m[1], baseUrl).toString()
-  } catch {
-    return null
-  }
-}
-
-const extractImgCandidates = (html, baseUrl) => {
-  const tagRe = /<img\b[^>]*>/gi
-  const tags = html.match(tagRe) ?? []
-  const candidates = []
-  for (const tag of tags) {
-    const srcM = tag.match(/\bsrc=["']([^"']+)["']/i)
-    const lazyM = tag.match(
-      /\b(?:data-src|data-original|data-lazy-src)=["']([^"']+)["']/i,
-    )
-    const raw =
-      lazyM?.[1] ??
-      (srcM?.[1] && !srcM[1].startsWith("data:") ? srcM[1] : null)
-    if (!raw) continue
-    const widthM = tag.match(/\bwidth=["']?(\d+)/i)
-    const heightM = tag.match(/\bheight=["']?(\d+)/i)
-    const width = widthM ? Number(widthM[1]) : null
-    const height = heightM ? Number(heightM[1]) : null
-    if (width !== null && width < 40) continue
-    if (height !== null && height < 40) continue
-    let abs
-    try {
-      abs = new URL(raw, baseUrl).toString()
-    } catch {
-      continue
-    }
-    const ext = extOf(abs)
-    if (ext === "svg" || !ext) continue
-    candidates.push({
-      url: abs,
-      ext,
-      excluded: hasExcludedKeyword(abs),
-      isArticle: looksLikeArticleImage(abs),
-    })
-  }
-  return candidates
-}
-
-const pickFallback = (candidates) => {
-  const rank = (c) =>
-    (c.excluded ? 100 : 0) +
-    (c.isArticle ? -50 : 0) +
-    (EXT_RANK[c.ext] ?? 3)
-  const sorted = [...candidates].sort((a, b) => rank(a) - rank(b))
-  return sorted[0] ?? null
-}
-
-const guessExt = (url, contentType) => {
-  if (contentType?.includes("png")) return "png"
-  if (contentType?.includes("webp")) return "webp"
-  if (contentType?.includes("gif")) return "gif"
-  if (contentType?.includes("jpeg") || contentType?.includes("jpg")) return "jpg"
-  const e = extOf(url)
-  return e || "jpg"
-}
-
-const fetchWithRetry = async (url, opts, retries = 1) => {
-  for (let i = 0; i <= retries; i++) {
-    try {
-      return await fetch(url, opts)
-    } catch (err) {
-      if (i === retries) throw err
-      await new Promise((r) => setTimeout(r, 1500))
-    }
-  }
-}
-
-// Node undici が失敗するサイト向けcurlフォールバック（テキスト取得）
-const curlText = async (url, ua) => {
-  const { stdout } = await execFileAsync(
-    "curl",
-    ["-sL", "-A", ua, "-m", "15", url],
-    { maxBuffer: 1024 * 1024 * 20 },
-  )
-  return stdout
-}
-
-// curlでバイナリ取得（画像ダウンロード用）
-const curlBinary = async (url, ua, referer) => {
-  const { stdout } = await execFileAsync(
-    "curl",
-    ["-sL", "-A", ua, "-e", referer, "-m", "15", url],
-    { maxBuffer: 1024 * 1024 * 20, encoding: "buffer" },
-  )
-  return stdout
-}
 
 const results = []
 
