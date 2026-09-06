@@ -9,7 +9,7 @@
   {
     "id": "taito-event",
     "name": "台東区イベント",
-    "url": "https://www.city.taito.lg.jp/bunka_kanko/event/index.html",
+    "url": "https://www.city.taito.lg.jp/event/index.html",
     "source_type": "government",
     "priority": 1
   },
@@ -79,7 +79,7 @@
   {
     "id": "chikagai",
     "name": "浅草地下街",
-    "url": "https://asakusa-chikagai.com/",
+    "url": "https://asakusachikagai.com/",
     "source_type": "official",
     "priority": 2
   },
