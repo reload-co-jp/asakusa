@@ -9,9 +9,11 @@ export const Title: FC<ComponentProps<"h1">> = ({
     style={{
       color: "#1a1a1a",
       fontFamily: "'Yu Mincho', 'Hiragino Mincho ProN', serif",
-      fontSize: "1.1rem",
+      fontSize: "3rem",
       letterSpacing: ".05em",
       margin: 0,
+      fontWeight: 500,
+      padding: 0,
       ...style,
     }}
     {...props}
@@ -62,7 +64,7 @@ export const Header: FC<{ children: ReactNode }> = ({ children }) => (
       position: "relative",
     }}
   >
-    {children}
+    <div style={{ maxWidth: "56rem", margin: "auto" }}>{children}</div>
   </header>
 )
 
