@@ -7,6 +7,8 @@ export const dynamic = "force-static"
 
 const sitemap = (): MetadataRoute.Sitemap => [
   { url: `${SITE_URL}/`, changeFrequency: "hourly", priority: 1 },
+  { url: `${SITE_URL}/today/`, changeFrequency: "hourly", priority: 0.8 },
+  { url: `${SITE_URL}/this-week/`, changeFrequency: "daily", priority: 0.8 },
   ...Object.keys(CATEGORIES).map((category) => ({
     url: `${SITE_URL}/category/${category}/`,
     changeFrequency: "daily" as const,

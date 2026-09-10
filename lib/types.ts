@@ -2,6 +2,8 @@ export const CATEGORIES = {
   event: "イベント",
   festival: "祭り・季節行事",
   performance: "公演・演芸",
+  theater: "演劇",
+  concert: "コンサート",
   new_opening: "新規オープン",
   closing: "閉店",
   renewal: "リニューアル",

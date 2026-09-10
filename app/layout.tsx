@@ -12,6 +12,8 @@ export const metadata = {
 
 const NAV_LINKS = [
   { href: "/", label: "最新情報" },
+  { href: "/today/", label: "今日の公演・祭" },
+  { href: "/this-week/", label: "今週の公演・祭" },
   { href: "/category/event/", label: "イベント" },
   { href: "/category/festival/", label: "祭り・季節行事" },
   { href: "/category/performance/", label: "公演・演芸" },
