@@ -96,5 +96,40 @@
     "url": "https://tabelog.com/tokyo/A1311/A131102/",
     "source_type": "gourmet_site",
     "priority": 5
+  },
+  {
+    "id": "asakusa-koukaidou",
+    "name": "浅草公会堂",
+    "url": "https://asakusa-koukaidou.net/home/event.html",
+    "source_type": "official",
+    "priority": 2
+  },
+  {
+    "id": "hanayashiki-kagekijo",
+    "name": "花やしき歌劇場",
+    "url": "https://www.hanayashiki-kagekijo.com/",
+    "source_type": "official",
+    "priority": 2
+  },
+  {
+    "id": "asakusa-engei-hall",
+    "name": "浅草演芸ホール",
+    "url": "https://www.asakusaengei.com/schedule/",
+    "source_type": "official",
+    "priority": 2
+  },
+  {
+    "id": "asakusa-toyokan",
+    "name": "浅草東洋館",
+    "url": "https://www.asakusatoyokan.com/timetable/",
+    "source_type": "official",
+    "priority": 2
+  },
+  {
+    "id": "asakusa-kyugeki",
+    "name": "浅草九劇",
+    "url": "https://asakusa-kokono.com/kyugeki/calendar/",
+    "source_type": "official",
+    "priority": 2
   }
 ]
