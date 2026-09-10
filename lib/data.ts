@@ -69,23 +69,6 @@ export const getWeekendEvents = (today = new Date()): Content[] => {
   return getEventsInPeriod(toDateString(saturday), toDateString(sunday))
 }
 
-// 「公演・演劇・コンサート・演芸・祭」検索向けページ用カテゴリ
-const SCHEDULE_CATEGORIES: Category[] = [
-  "performance",
-  "theater",
-  "concert",
-  "festival",
-]
-
-const isScheduleCategory = (content: Content): boolean =>
-  SCHEDULE_CATEGORIES.includes(content.category)
-
-export const getTodaySchedule = (today = new Date()): Content[] =>
-  getTodayEvents(today).filter(isScheduleCategory)
-
-export const getThisWeekSchedule = (today = new Date()): Content[] =>
-  getThisWeekEvents(today).filter(isScheduleCategory)
-
 export const getOngoingContentsByCategory = (
   category: Category,
   today = new Date(),
