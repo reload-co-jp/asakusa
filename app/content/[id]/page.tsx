@@ -1,3 +1,5 @@
+import DOMPurify from "isomorphic-dompurify"
+import { marked } from "marked"
 import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
@@ -54,6 +56,9 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
   if (!content) notFound()
   const place = content.place_id ? getPlace(content.place_id) : undefined
   const source = content.source_id ? getSource(content.source_id) : undefined
+  const bodyHtml = DOMPurify.sanitize(
+    marked.parse(content.body, { breaks: true }) as string
+  )
   const jsonLd =
     content.start_at
       ? {
@@ -122,9 +127,10 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
       <p style={{ color: "var(--muted)", fontSize: ".78rem", margin: "0 0 1.5rem" }}>
         {formatDate(content.published_at)} 公開
       </p>
-      <p style={{ color: "var(--ink-soft)", fontSize: ".95rem", lineHeight: 1.9 }}>
-        {content.body}
-      </p>
+      <div
+        dangerouslySetInnerHTML={{ __html: bodyHtml }}
+        style={{ color: "var(--ink-soft)", fontSize: ".95rem", lineHeight: 1.9 }}
+      />
       <ul
         style={{
           background: "#fff",

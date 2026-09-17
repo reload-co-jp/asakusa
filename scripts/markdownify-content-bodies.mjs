@@ -1,5 +1,5 @@
-// data/contents.json の既存bodyを、新事実を追加せず(捏造禁止)既存title/summary/bodyの情報のみで
-// 6〜10文程度に書き伸ばす。claude CLI(headless)を1件ずつ呼び出す。
+// data/contents.json のうち開催中・開催前(start_atがありend_atが未到来 or 未設定)のcontentについて、
+// 既存bodyの内容・情報量を変えずMarkdown形式に整形しなおす。claude CLI(headless)を1件ずつ呼び出す。
 import { readFileSync, writeFileSync } from "fs"
 import { fileURLToPath } from "url"
 import { execFile } from "child_process"
@@ -12,23 +12,36 @@ const contentsPath = path.join(root, "data/contents.json")
 const CLAUDE_TIMEOUT_MS = 120000
 const MODEL = process.env.ANTHROPIC_MODEL || "sonnet"
 const SLEEP_MS = 1000
-const MIN_BODY_LEN = Number(process.env.MIN_BODY_LEN || 150)
 
 const args = process.argv.slice(2)
 const dryRun = args.includes("--dry-run")
+
+const toDateString = (date) => {
+  const y = date.getFullYear()
+  const m = `${date.getMonth() + 1}`.padStart(2, "0")
+  const d = `${date.getDate()}`.padStart(2, "0")
+  return `${y}-${m}-${d}`
+}
+const today = toDateString(new Date())
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 const readJson = (p) => JSON.parse(readFileSync(p, "utf-8"))
 const writeJson = (p, data) => writeFileSync(p, JSON.stringify(data, null, 2) + "\n")
 
+const isOngoingOrUpcoming = (content) =>
+  Boolean(content.start_at) && (!content.end_at || content.end_at >= today)
+
+// 既に見出し・強調・箇条書きなどMarkdown記法を含む本文は変換済みとみなす
+const looksLikeMarkdown = (body) => /(^#{1,6}\s|\*\*[^*]+\*\*|^[-*]\s|\n\n)/m.test(body || "")
+
 const SYSTEM_PROMPT = `あなたは地域メディア「浅草ライブ」の編集者。
-与えられた記事(タイトル・要約・既存本文)を元に、本文を6〜10文程度に書き伸ばす。
+与えられた記事本文(プレーンテキスト)を、Markdown形式に整形しなおす。
 
 厳守ルール:
-- 与えられた情報に無い新しい事実(日付・場所・数量・固有名詞など)を作り出さない
-- 既存の要約・本文に含まれる情報を、言い換え・詳細な言葉遣い・背景説明・読みどころの提示などで自然に膨らませるのみ
-- 事実の水増しが不可能な場合は、文章の丁寧さ・情景描写・読者への呼びかけなど文体面で長さを補ってよい
-- 出力はMarkdown形式の本文テキストのみ。前置きの説明文・引用符は一切含めない。段落は空行で区切り、必要に応じて見出し・強調・箇条書きなどのMarkdown記法を使ってよい`
+- 文章の意味・情報量・言い回しを変えない。新しい事実を追加も削除もしない
+- 単なる整形作業。段落は空行で区切り、内容に応じて見出し(##)・強調(**)・箇条書きなどのMarkdown記法を必要な範囲で付与してよい
+- 記法を無理に詰め込まない。地の文のままで自然なら段落分けのみでよい
+- 出力はMarkdown形式の本文テキストのみ。前置きの説明文・引用符・コードブロック(\`\`\`)は一切含めない`
 
 const runClaude = (userPrompt) =>
   new Promise((resolve, reject) => {
@@ -66,11 +79,9 @@ const runClaude = (userPrompt) =>
     child.stdin?.end()
   })
 
-const expandBody = async (content) => {
+const markdownifyBody = async (content) => {
   const userPrompt = `タイトル: ${content.title}
-要約: ${content.summary}
-既存本文: ${content.body}
-カテゴリ: ${content.category}`
+既存本文: ${content.body}`
   const result = await runClaude(userPrompt)
   if (result.is_error) {
     throw new Error(String(result.result ?? "").slice(0, 200))
@@ -80,20 +91,23 @@ const expandBody = async (content) => {
 
 const main = async () => {
   const contents = readJson(contentsPath)
+  const targets = contents.filter(isOngoingOrUpcoming)
+  console.log(`対象(開催中・開催前): ${targets.length} / 全体: ${contents.length}`)
+
   let updated = 0
   let skipped = 0
   let failed = 0
 
-  for (let i = 0; i < contents.length; i++) {
-    const content = contents[i]
-    if ((content.body || "").length >= MIN_BODY_LEN) {
+  for (let i = 0; i < targets.length; i++) {
+    const content = targets[i]
+    if (looksLikeMarkdown(content.body)) {
       skipped++
       continue
     }
-    process.stdout.write(`[${i + 1}/${contents.length}] ${content.title} ... `)
+    process.stdout.write(`[${i + 1}/${targets.length}] ${content.title} ... `)
     try {
-      const newBody = await expandBody(content)
-      if (newBody && newBody.length > content.body.length) {
+      const newBody = await markdownifyBody(content)
+      if (newBody) {
         console.log(`${content.body.length} -> ${newBody.length}字`)
         if (!dryRun) content.body = newBody
         updated++
