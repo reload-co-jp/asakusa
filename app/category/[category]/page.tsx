@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import { FC } from "react"
 import { ContentList, Section } from "@/components/elements/content"
 import { getContentsByCategory } from "@/lib/data"
-import { CATEGORIES, Category } from "@/lib/types"
+import { CATEGORIES, CATEGORY_DESCRIPTIONS, Category } from "@/lib/types"
 
 export const generateStaticParams = () =>
   Object.keys(CATEGORIES).map((category) => ({ category }))
@@ -17,7 +17,7 @@ export const generateMetadata = async ({
   const { category } = await params
   const label = CATEGORIES[category]
   const title = `${label}の情報 | 浅草ライブ`
-  const description = `浅草エリアの${label}に関する最新情報一覧`
+  const description = CATEGORY_DESCRIPTIONS[category]
   return {
     title,
     description,
@@ -29,8 +29,9 @@ const Page: FC<{ params: Promise<{ category: Category }> }> = async ({
   params,
 }) => {
   const { category } = await params
+  const label = CATEGORIES[category]
   return (
-    <Section title={CATEGORIES[category]}>
+    <Section title={label} description={CATEGORY_DESCRIPTIONS[category]}>
       <ContentList contents={getContentsByCategory(category)} />
     </Section>
   )

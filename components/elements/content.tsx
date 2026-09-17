@@ -111,10 +111,11 @@ export const ContentList: FC<{ contents: Content[] }> = ({ contents }) =>
     </div>
   )
 
-export const Section: FC<{ title: string; children: ReactNode }> = ({
-  title,
-  children,
-}) => (
+export const Section: FC<{
+  title: string
+  description?: string
+  children: ReactNode
+}> = ({ title, description, children }) => (
   <section style={{ margin: "0 0 4rem" }}>
     <h2
       style={{
@@ -133,6 +134,17 @@ export const Section: FC<{ title: string; children: ReactNode }> = ({
       />
       {title}
     </h2>
+    {description && (
+      <p
+        style={{
+          color: "var(--muted)",
+          fontSize: ".85rem",
+          margin: "-1rem 0 1.5rem",
+        }}
+      >
+        {description}
+      </p>
+    )}
     {children}
   </section>
 )

@@ -18,6 +18,24 @@ export const CATEGORIES = {
 
 export type Category = keyof typeof CATEGORIES
 
+export const CATEGORY_DESCRIPTIONS: Record<Category, string> = {
+  event: "浅草エリアで開催されるイベント情報をまとめてお届け",
+  festival: "浅草の祭り・季節行事の開催情報をまとめてお届け",
+  performance: "浅草の公演・演芸情報をまとめてお届け",
+  theater: "浅草の演劇公演情報をまとめてお届け",
+  concert: "浅草エリアのコンサート情報をまとめてお届け",
+  new_opening: "浅草エリアの新規オープン店舗・施設情報をまとめてお届け",
+  closing: "浅草エリアの閉店情報をまとめてお届け",
+  renewal: "浅草エリアのリニューアル情報をまとめてお届け",
+  sale: "浅草エリアで開催中のセール情報をまとめてお届け",
+  campaign: "浅草エリアのキャンペーン情報をまとめてお届け",
+  popup: "浅草エリアのPOP UP出店情報をまとめてお届け",
+  new_product: "浅草エリアの新商品情報をまとめてお届け",
+  exhibition: "浅草エリアの展示会情報をまとめてお届け",
+  facility_news: "浅草エリアの施設ニュースをまとめてお届け",
+  local_news: "浅草エリアの地域ニュースをまとめてお届け",
+}
+
 export const PLACE_TYPES = {
   store: "店舗",
   facility: "施設",
