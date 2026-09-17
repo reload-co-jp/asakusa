@@ -55,7 +55,20 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           </Title>
           <Nav links={NAV_LINKS} />
         </Header>
-        <Main>{children}</Main>
+        <Main>
+          {children}
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-client="ca-pub-6542845006087970"
+            data-ad-slot="4829146611"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          />
+          <Script id="adsbygoogle-push" strategy="afterInteractive">
+            {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+          </Script>
+        </Main>
         <Footer>
           <p>&copy; Asakusa Live</p>
         </Footer>
