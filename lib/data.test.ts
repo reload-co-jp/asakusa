@@ -1,8 +1,13 @@
 import { describe, expect, it } from "vitest"
 import {
   contents,
+  getArchiveMonths,
+  ARCHIVE_MIN_EVENTS,
   getContentsByCategory,
   getEventsInPeriod,
+  getMonthEvents,
+  getPlaceContents,
+  getRelatedContents,
   getLatestContents,
   getOngoingContentsByCategory,
   getPlace,
@@ -23,9 +28,7 @@ describe("data", () => {
   it("getLatestContents は公開日降順", () => {
     const latest = getLatestContents()
     for (let i = 1; i < latest.length; i++) {
-      expect(
-        latest[i - 1].published_at >= latest[i].published_at,
-      ).toBe(true)
+      expect(latest[i - 1].published_at >= latest[i].published_at).toBe(true)
     }
   })
 
@@ -44,8 +47,35 @@ describe("data", () => {
   it("getOngoingContentsByCategory は開催中のみ返す", () => {
     const ongoing = getOngoingContentsByCategory(
       "sale",
-      new Date("2026-09-05"),
+      new Date("2026-09-05T12:00:00+09:00")
     )
     expect(ongoing.map((content) => content.id)).toContain(3)
+  })
+
+  it("getPlaceContents は開催中・今後・その他に重複なく分類", () => {
+    const now = new Date("2026-09-25T12:00:00+09:00")
+    const { ongoing, upcoming, others } = getPlaceContents("sensoji", now)
+    const ids = [...ongoing, ...upcoming, ...others].map((c) => c.id)
+    expect(new Set(ids).size).toBe(ids.length)
+    expect(ids.length).toBe(
+      contents.filter((c) => c.place_id === "sensoji").length
+    )
+    expect(upcoming.every((c) => (c.start_at ?? "") > "2026-09-25")).toBe(true)
+  })
+
+  it("getRelatedContents は自分を含まず上限以内", () => {
+    const target = contents.find((c) => c.place_id === "sensoji")!
+    const related = getRelatedContents(target, 6)
+    expect(related.length).toBeLessThanOrEqual(6)
+    expect(related.some((c) => c.id === target.id)).toBe(false)
+    expect(related[0]?.place_id).toBe("sensoji")
+  })
+
+  it("getArchiveMonths はしきい値以上の月のみ", () => {
+    for (const { year, month } of getArchiveMonths()) {
+      expect(getMonthEvents(year, month).length).toBeGreaterThanOrEqual(
+        ARCHIVE_MIN_EVENTS
+      )
+    }
   })
 })

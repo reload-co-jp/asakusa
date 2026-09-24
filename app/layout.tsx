@@ -12,9 +12,11 @@ export const metadata = {
 
 const NAV_LINKS = [
   { href: "/", label: "最新情報" },
+  { href: "/events/", label: "イベント" },
   { href: "/today/", label: "今日" },
   { href: "/this-week/", label: "今週" },
-  { href: "/category/event/", label: "イベント" },
+  { href: "/weekend/", label: "今週末" },
+  { href: "/this-month/", label: "今月" },
   { href: "/category/festival/", label: "祭り・季節行事" },
   { href: "/category/performance/", label: "公演・演芸" },
   { href: "/category/new_opening/", label: "新店舗" },
@@ -22,6 +24,7 @@ const NAV_LINKS = [
   { href: "/category/sale/", label: "セール" },
   { href: "/category/popup/", label: "POP UP" },
   { href: "/category/exhibition/", label: "展示・アート" },
+  { href: "/place/", label: "施設" },
 ]
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
@@ -48,7 +51,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           strategy="afterInteractive"
         />
         <Header>
-          <Title>
+          <Title as="p">
             <a href="/" style={{ color: "var(--ink)", textDecoration: "none" }}>
               浅草ライブ
             </a>

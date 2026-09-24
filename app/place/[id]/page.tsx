@@ -2,12 +2,31 @@ import { Metadata } from "next"
 import Image from "next/image"
 import { notFound } from "next/navigation"
 import { FC } from "react"
+import {
+  Breadcrumbs,
+  JsonLd,
+  LinkList,
+} from "@/components/elements/breadcrumbs"
 import { ContentList, Section } from "@/components/elements/content"
-import { getContentsByPlace, getPlace, places } from "@/lib/data"
-import { jsonLdToHtml } from "@/lib/json-ld"
-import { PLACE_TYPES } from "@/lib/types"
+import { getPlace, getPlaceContents, places } from "@/lib/data"
+import { SITE_URL } from "@/lib/json-ld"
+import { PLACE_TYPES, PlaceType } from "@/lib/types"
 
-export const generateStaticParams = () => places.map((place) => ({ id: place.id }))
+// 施設種別ごとのSchema.org型。汎用施設(商業施設・遊園地等)は種別から判別できないためPlace
+const SCHEMA_TYPES: Record<PlaceType, string> = {
+  store: "Store",
+  facility: "Place",
+  temple: "BuddhistTemple",
+  shrine: "PlaceOfWorship",
+  museum: "Museum",
+  theater: "PerformingArtsTheater",
+  park: "Park",
+  tourist_spot: "TouristAttraction",
+  other: "Place",
+}
+
+export const generateStaticParams = () =>
+  places.map((place) => ({ id: place.id }))
 
 export const dynamicParams = false
 
@@ -19,13 +38,21 @@ export const generateMetadata = async ({
   const { id } = await params
   const place = getPlace(id)
   if (!place) return {}
-  const title = `${place.name}（${PLACE_TYPES[place.type]}・${place.area}） | 浅草ライブ`
+  const title = `${place.name}のイベント・最新情報｜${PLACE_TYPES[place.type]}・${place.area}｜浅草ライブ`
+  const { ongoing, upcoming } = getPlaceContents(place.id)
+  const description = `${place.description}${
+    ongoing.length + upcoming.length > 0
+      ? ` 開催中・今後のイベント${ongoing.length + upcoming.length}件を掲載。`
+      : ""
+  }`
   return {
     title,
-    description: place.description,
+    description,
+    alternates: { canonical: `/place/${place.id}/` },
     openGraph: {
       title,
-      description: place.description,
+      description,
+      url: `/place/${place.id}/`,
       images: place.image_url ? [place.image_url] : undefined,
       type: "article",
     },
@@ -45,9 +72,11 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
   const { id } = await params
   const place = getPlace(id)
   if (!place) notFound()
+  const { ongoing, upcoming, others } = getPlaceContents(place.id)
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": SCHEMA_TYPES[place.type],
+    "@id": `${SITE_URL}/place/${place.id}/`,
     name: place.name,
     description: place.description,
     address: {
@@ -65,18 +94,21 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
       }),
     ...(place.phone && { telephone: place.phone }),
     ...(place.url && { url: place.url }),
-    ...(place.image_url && { image: place.image_url }),
+    ...(place.image_url && { image: `${SITE_URL}${place.image_url}` }),
   }
   return (
     <>
-      <script
-        dangerouslySetInnerHTML={{ __html: jsonLdToHtml(jsonLd) }}
-        type="application/ld+json"
+      <Breadcrumbs
+        items={[
+          { name: "施設", href: "/place/" },
+          { name: place.name, href: `/place/${place.id}/` },
+        ]}
       />
+      <JsonLd data={jsonLd} />
       <article style={{ margin: "0 0 2rem" }}>
         {place.image_url && (
           <Image
-            alt=""
+            alt={`${place.name}の外観`}
             height={315}
             src={place.image_url}
             style={{
@@ -90,11 +122,15 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
           />
         )}
         <span
-          style={{ color: "var(--muted)", fontSize: ".75rem", letterSpacing: ".04em" }}
+          style={{
+            color: "var(--muted)",
+            fontSize: ".75rem",
+            letterSpacing: ".04em",
+          }}
         >
           {PLACE_TYPES[place.type]} / {place.area}
         </span>
-        <h2
+        <h1
           style={{
             color: "var(--ink)",
             fontFamily: "var(--font-serif)",
@@ -104,8 +140,14 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
           }}
         >
           {place.name}
-        </h2>
-        <p style={{ color: "var(--ink-soft)", fontSize: ".95rem", lineHeight: 1.9 }}>
+        </h1>
+        <p
+          style={{
+            color: "var(--ink-soft)",
+            fontSize: ".95rem",
+            lineHeight: 1.9,
+          }}
+        >
           {place.description}
         </p>
         <ul
@@ -138,8 +180,30 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
           </p>
         )}
       </article>
-      <Section title={`${place.name}の情報`}>
-        <ContentList contents={getContentsByPlace(place.id)} />
+      {ongoing.length > 0 && (
+        <Section title={`${place.name}で開催中のイベント`}>
+          <ContentList contents={ongoing} />
+        </Section>
+      )}
+      {upcoming.length > 0 && (
+        <Section title={`${place.name}の今後のイベント・行事`}>
+          <ContentList contents={upcoming} />
+        </Section>
+      )}
+      {others.length > 0 && (
+        <Section title={`${place.name}の関連ニュース・過去のイベント`}>
+          <ContentList contents={others} />
+        </Section>
+      )}
+      <Section title="浅草のほかの施設">
+        <LinkList
+          links={places
+            .filter((other) => other.id !== place.id)
+            .map((other) => ({
+              name: other.name,
+              href: `/place/${other.id}/`,
+            }))}
+        />
       </Section>
     </>
   )

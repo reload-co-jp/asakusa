@@ -1,19 +1,52 @@
 import { MetadataRoute } from "next"
-import { contents, places } from "@/lib/data"
+import {
+  contents,
+  getArchiveMonths,
+  getCategoryCount,
+  places,
+} from "@/lib/data"
 import { SITE_URL } from "@/lib/json-ld"
-import { CATEGORIES } from "@/lib/types"
+import { CATEGORIES, Category } from "@/lib/types"
 
 export const dynamic = "force-static"
 
+// 日付ページはビルド毎に内容が変わるため、ビルド時刻をlastModifiedに使う
+const buildTime = new Date().toISOString()
+
 const sitemap = (): MetadataRoute.Sitemap => [
-  { url: `${SITE_URL}/`, changeFrequency: "hourly", priority: 1 },
-  { url: `${SITE_URL}/today/`, changeFrequency: "hourly", priority: 0.8 },
-  { url: `${SITE_URL}/this-week/`, changeFrequency: "daily", priority: 0.8 },
-  ...Object.keys(CATEGORIES).map((category) => ({
-    url: `${SITE_URL}/category/${category}/`,
+  {
+    url: `${SITE_URL}/`,
+    lastModified: buildTime,
+    changeFrequency: "daily",
+    priority: 1,
+  },
+  ...[
+    "/events/",
+    "/today/",
+    "/this-week/",
+    "/weekend/",
+    "/next-week/",
+    "/this-month/",
+  ].map((path) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified: buildTime,
     changeFrequency: "daily" as const,
-    priority: 0.7,
+    priority: 0.8,
   })),
+  ...getArchiveMonths().map(({ year, month }) => ({
+    url: `${SITE_URL}/events/${year}/${month}/`,
+    changeFrequency: "weekly" as const,
+    priority: 0.5,
+  })),
+  // 記事0件のカテゴリはnoindexのため除外
+  ...(Object.keys(CATEGORIES) as Category[])
+    .filter((category) => getCategoryCount(category) > 0)
+    .map((category) => ({
+      url: `${SITE_URL}/category/${category}/`,
+      changeFrequency: "daily" as const,
+      priority: 0.7,
+    })),
+  { url: `${SITE_URL}/place/`, changeFrequency: "weekly", priority: 0.7 },
   ...places.map((place) => ({
     url: `${SITE_URL}/place/${place.id}/`,
     changeFrequency: "weekly" as const,

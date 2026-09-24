@@ -4,12 +4,16 @@ import {
   PeriodPageConfig,
   periodMetadata,
 } from "@/components/elements/event-hub"
-import { todayPeriod } from "@/lib/date"
+import { thisMonthPeriod } from "@/lib/date"
 
 const config: PeriodPageConfig = {
-  path: "/today/",
-  label: "今日",
-  getPeriod: todayPeriod,
+  path: "/this-month/",
+  label: "今月",
+  getPeriod: thisMonthPeriod,
+  title: ({ from }) => {
+    const [year, month] = from.split("-")
+    return `${year}年${Number(month)}月の浅草イベント・祭り・公演`
+  },
 }
 
 export const metadata = periodMetadata(config)

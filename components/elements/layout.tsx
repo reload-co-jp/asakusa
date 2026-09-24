@@ -1,11 +1,13 @@
 import { ComponentProps, FC, ReactNode } from "react"
 
-export const Title: FC<ComponentProps<"h1">> = ({
+// ページ毎のH1と重複させないため、共通ヘッダーのサイト名は as="p" で使う
+export const Title: FC<ComponentProps<"h1"> & { as?: "h1" | "p" }> = ({
+  as: Tag = "h1",
   style,
   children,
   ...props
 }) => (
-  <h1
+  <Tag
     style={{
       color: "var(--ink)",
       fontFamily: "var(--font-serif)",
@@ -20,7 +22,7 @@ export const Title: FC<ComponentProps<"h1">> = ({
     {...props}
   >
     {children}
-  </h1>
+  </Tag>
 )
 
 export const Nav: FC<{
@@ -78,7 +80,9 @@ export const Main: FC<{ children: ReactNode }> = ({ children }) => (
       minHeight: "calc(100dvh - 7rem)",
     }}
   >
-    <div style={{ margin: "0 auto", maxWidth: "60rem", padding: "3rem 1.5rem" }}>
+    <div
+      style={{ margin: "0 auto", maxWidth: "60rem", padding: "3rem 1.5rem" }}
+    >
       {children}
     </div>
   </main>

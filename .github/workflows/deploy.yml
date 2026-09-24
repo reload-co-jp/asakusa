@@ -5,6 +5,9 @@ on:
     branches:
       - main
   workflow_dispatch:
+  # 静的exportのため/today/等の日付ページはビルド時に確定する。日付変更直後(JST 0:05)に毎日再ビルド
+  schedule:
+    - cron: "5 15 * * *"
 
 permissions:
   contents: read

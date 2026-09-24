@@ -36,6 +36,36 @@ export const CATEGORY_DESCRIPTIONS: Record<Category, string> = {
   local_news: "浅草エリアの地域ニュースをまとめてお届け",
 }
 
+// カテゴリページのtitle/H1。検索意図(例: 浅草 新店舗)に合わせる
+export const CATEGORY_TITLES: Record<Category, string> = {
+  event: "浅草のイベント・体験情報",
+  festival: "浅草の祭り・伝統行事・季節行事",
+  performance: "浅草の公演・演芸・落語情報",
+  theater: "浅草の演劇・舞台公演情報",
+  concert: "浅草のコンサート・ライブ情報",
+  new_opening: "浅草の新店舗・新規オープン情報",
+  closing: "浅草の閉店情報",
+  renewal: "浅草のリニューアル情報",
+  sale: "浅草のセール情報",
+  campaign: "浅草のキャンペーン情報",
+  popup: "浅草のPOP UP・期間限定ショップ情報",
+  new_product: "浅草の新商品・限定商品情報",
+  exhibition: "浅草の展示・展覧会情報",
+  facility_news: "浅草の施設ニュース",
+  local_news: "浅草の地域ニュース",
+}
+
+// パンくずで「イベント」配下に置くカテゴリ
+export const EVENT_CATEGORIES: Category[] = [
+  "event",
+  "festival",
+  "performance",
+  "theater",
+  "concert",
+  "exhibition",
+  "popup",
+]
+
 export const PLACE_TYPES = {
   store: "店舗",
   facility: "施設",

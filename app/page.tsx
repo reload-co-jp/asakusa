@@ -1,5 +1,8 @@
+import { Metadata } from "next"
 import { FC } from "react"
+import { LinkList } from "@/components/elements/breadcrumbs"
 import { ContentList, Section } from "@/components/elements/content"
+import { EventNavigation } from "@/components/elements/event-hub"
 import {
   getLatestContents,
   getOngoingContentsByCategory,
@@ -7,11 +10,26 @@ import {
   getTodayEvents,
   getWeekendEvents,
   getContentsByCategory,
+  places,
 } from "@/lib/data"
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+}
 
 const Page: FC = () => {
   return (
     <>
+      <h1
+        style={{
+          color: "var(--muted)",
+          fontSize: ".85rem",
+          fontWeight: 400,
+          margin: "0 0 2.5rem",
+        }}
+      >
+        浅草のイベント・祭り・公演・新店舗・地域ニュース
+      </h1>
       <Section title="今日の浅草">
         <ContentList contents={getTodayEvents()} />
       </Section>
@@ -29,6 +47,15 @@ const Page: FC = () => {
       </Section>
       <Section title="浅草の最新情報">
         <ContentList contents={getLatestContents(10)} />
+      </Section>
+      <EventNavigation />
+      <Section title="施設から探す">
+        <LinkList
+          links={places.map((place) => ({
+            name: place.name,
+            href: `/place/${place.id}/`,
+          }))}
+        />
       </Section>
     </>
   )

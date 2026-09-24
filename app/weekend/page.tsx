@@ -4,12 +4,12 @@ import {
   PeriodPageConfig,
   periodMetadata,
 } from "@/components/elements/event-hub"
-import { todayPeriod } from "@/lib/date"
+import { weekendPeriod } from "@/lib/date"
 
 const config: PeriodPageConfig = {
-  path: "/today/",
-  label: "今日",
-  getPeriod: todayPeriod,
+  path: "/weekend/",
+  label: "今週末",
+  getPeriod: weekendPeriod,
 }
 
 export const metadata = periodMetadata(config)
