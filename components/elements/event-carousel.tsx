@@ -2,7 +2,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { FC } from "react"
 import {
-  CategoryLabel,
   contentImageAlt,
   formatContentPeriod,
 } from "@/components/elements/content"
@@ -27,8 +26,7 @@ const CarouselCard: FC<{ content: Content; today: string }> = ({
   return (
     <li
       style={{
-        background: "#fff",
-        flex: "0 0 min(17rem, 80%)",
+        flex: "0 0 min(28rem, 90%)",
         listStyle: "none",
         scrollSnapAlign: "start",
       }}
@@ -36,61 +34,59 @@ const CarouselCard: FC<{ content: Content; today: string }> = ({
       <Link
         href={`/content/${content.id}/`}
         style={{
-          color: "var(--ink)",
+          aspectRatio: "4 / 3",
+          background: "var(--accent-soft)",
+          color: "#fff",
           display: "block",
-          height: "100%",
+          overflow: "hidden",
+          position: "relative",
           textDecoration: "none",
         }}
       >
-        <div
+        {content.image_url && (
+          <Image
+            alt={contentImageAlt(content)}
+            fill
+            sizes="28rem"
+            src={content.image_url}
+            style={{ objectFit: "cover" }}
+          />
+        )}
+        <span
           style={{
-            aspectRatio: "4 / 3",
-            background: "var(--accent-soft)",
-            overflow: "hidden",
-            position: "relative",
+            background: "var(--accent)",
+            fontSize: ".7rem",
+            left: 0,
+            letterSpacing: ".08em",
+            padding: ".3rem .7rem",
+            position: "absolute",
+            top: 0,
           }}
         >
-          {content.image_url && (
-            <Image
-              alt={contentImageAlt(content)}
-              fill
-              sizes="17rem"
-              src={content.image_url}
-              style={{ objectFit: "cover" }}
-            />
-          )}
-          <span
-            style={{
-              background: "var(--accent)",
-              color: "#fff",
-              fontSize: ".7rem",
-              left: 0,
-              letterSpacing: ".08em",
-              padding: ".3rem .7rem",
-              position: "absolute",
-              top: 0,
-            }}
-          >
-            {eventStatus(content, today)}
-          </span>
-        </div>
-        <div style={{ padding: "1rem 1.1rem 1.2rem" }}>
-          <CategoryLabel category={content.category} />
+          {eventStatus(content, today)}
+        </span>
+        <div
+          style={{
+            background:
+              "linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,.35) 60%, transparent)",
+            bottom: 0,
+            left: 0,
+            padding: "2.5rem 1rem 1rem",
+            position: "absolute",
+            right: 0,
+          }}
+        >
           <h3
-            style={{
-              fontSize: ".95rem",
-              lineHeight: 1.5,
-              margin: ".6rem 0 .4rem",
-            }}
+            style={{ fontSize: ".95rem", lineHeight: 1.5, margin: "0 0 .3rem" }}
           >
             {content.title}
           </h3>
           <p
             style={{
-              color: "var(--muted)",
               fontSize: ".72rem",
               letterSpacing: ".02em",
               margin: 0,
+              opacity: 0.9,
             }}
           >
             {period && `開催 ${period}`}
@@ -115,7 +111,7 @@ export const EventCarousel: FC<{ contents: Content[]; now?: Date }> = ({
       style={{
         display: "flex",
         gap: "1rem",
-        margin: 0,
+        margin: "0 0 3rem",
         overflowX: "auto",
         overscrollBehaviorX: "contain",
         padding: "0 0 1rem",

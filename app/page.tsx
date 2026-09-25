@@ -32,9 +32,7 @@ const Page: FC = () => {
       >
         浅草のイベント・祭り・公演・新店舗・地域ニュース
       </h1>
-      <Section title="開催中・もうすぐ開催のイベント">
-        <EventCarousel contents={getUpcomingDaysEvents()} />
-      </Section>
+      <EventCarousel contents={getUpcomingDaysEvents().slice(0, 5)} />
       <Section title="今日の浅草">
         <ContentList contents={getTodayEvents()} />
       </Section>
