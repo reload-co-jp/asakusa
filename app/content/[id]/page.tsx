@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { FC } from "react"
+import { InArticleAd } from "@/components/elements/ad"
 import { Breadcrumbs, Crumb, JsonLd } from "@/components/elements/breadcrumbs"
 import {
   CategoryLabel,
@@ -178,6 +179,7 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
             lineHeight: 1.9,
           }}
         />
+        <InArticleAd />
         <ul
           style={{
             background: "#fff",

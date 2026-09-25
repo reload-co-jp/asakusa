@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
-import { FC, ReactNode } from "react"
+import { FC, Fragment, ReactNode } from "react"
+import { InArticleAd } from "@/components/elements/ad"
 import { getPlace } from "@/lib/data"
 import { formatDate } from "@/lib/date"
 import { CATEGORIES, Content } from "@/lib/types"
@@ -102,6 +103,9 @@ export const ContentCard: FC<{ content: Content }> = ({ content }) => {
   )
 }
 
+// 一覧の途中に広告を挟む間隔（件数）
+const AD_INTERVAL = 5
+
 export const ContentList: FC<{ contents: Content[] }> = ({ contents }) =>
   contents.length === 0 ? (
     <p style={{ color: "var(--muted)", fontSize: ".85rem" }}>
@@ -109,8 +113,15 @@ export const ContentList: FC<{ contents: Content[] }> = ({ contents }) =>
     </p>
   ) : (
     <div style={{ display: "grid", gap: "1px", background: "var(--border)" }}>
-      {contents.map((content) => (
-        <ContentCard content={content} key={content.id} />
+      {contents.map((content, i) => (
+        <Fragment key={content.id}>
+          <ContentCard content={content} />
+          {(i + 1) % AD_INTERVAL === 0 && i < contents.length - 1 && (
+            <div style={{ background: "#fff", display: "flow-root" }}>
+              <InArticleAd />
+            </div>
+          )}
+        </Fragment>
       ))}
     </div>
   )
