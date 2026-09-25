@@ -6,6 +6,7 @@ import {
   Period,
   thisWeekPeriod,
   todayPeriod,
+  upcomingDaysPeriod,
   weekendPeriod,
 } from "./date"
 import type { Category, Content, Place, Source } from "./types"
@@ -59,6 +60,10 @@ const eventsIn = ({ from, to }: Period): Content[] =>
 
 export const getTodayEvents = (now = new Date()): Content[] =>
   eventsIn(todayPeriod(now))
+
+// 開催中または明日・明後日に開催のイベント
+export const getUpcomingDaysEvents = (now = new Date()): Content[] =>
+  eventsIn(upcomingDaysPeriod(now))
 
 export const getThisWeekEvents = (now = new Date()): Content[] =>
   eventsIn(thisWeekPeriod(now))

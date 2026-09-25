@@ -5,6 +5,7 @@ import {
   ARCHIVE_MIN_EVENTS,
   getContentsByCategory,
   getEventsInPeriod,
+  getUpcomingDaysEvents,
   getMonthEvents,
   getPlaceContents,
   getRelatedContents,
@@ -42,6 +43,12 @@ describe("data", () => {
     const events = getEventsInPeriod("2026-09-05", "2026-09-05")
     expect(events.some((event) => event.id === 3)).toBe(true)
     expect(events.some((event) => event.id === 4)).toBe(false)
+  })
+
+  it("getUpcomingDaysEvents は今日〜明後日の期間と重複するイベントを返す", () => {
+    const now = new Date("2026-09-03T12:00:00+09:00")
+    const expected = getEventsInPeriod("2026-09-03", "2026-09-05")
+    expect(getUpcomingDaysEvents(now)).toEqual(expected)
   })
 
   it("getOngoingContentsByCategory は開催中のみ返す", () => {

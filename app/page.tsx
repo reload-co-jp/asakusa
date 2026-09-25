@@ -2,12 +2,14 @@ import { Metadata } from "next"
 import { FC } from "react"
 import { LinkList } from "@/components/elements/breadcrumbs"
 import { ContentList, Section } from "@/components/elements/content"
+import { EventCarousel } from "@/components/elements/event-carousel"
 import { EventNavigation } from "@/components/elements/event-hub"
 import {
   getLatestContents,
   getOngoingContentsByCategory,
   getThisWeekEvents,
   getTodayEvents,
+  getUpcomingDaysEvents,
   getWeekendEvents,
   getContentsByCategory,
   places,
@@ -30,6 +32,9 @@ const Page: FC = () => {
       >
         浅草のイベント・祭り・公演・新店舗・地域ニュース
       </h1>
+      <Section title="開催中・もうすぐ開催のイベント">
+        <EventCarousel contents={getUpcomingDaysEvents()} />
+      </Section>
       <Section title="今日の浅草">
         <ContentList contents={getTodayEvents()} />
       </Section>

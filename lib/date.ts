@@ -23,6 +23,12 @@ export const todayPeriod = (now = new Date()): Period => {
   return { from: today, to: today }
 }
 
+// 直近 = 今日〜明後日
+export const upcomingDaysPeriod = (now = new Date()): Period => {
+  const today = jstDateString(now)
+  return { from: today, to: addDays(today, 2) }
+}
+
 // 今週 = 今日〜今週日曜(月曜始まり)
 export const thisWeekPeriod = (now = new Date()): Period => {
   const today = jstDateString(now)
