@@ -296,7 +296,7 @@
     "end_at": "2026-10-29",
     "place_id": "sensoji",
     "source_id": "sensoji",
-    "source_url": "https://www.senso-ji.jp/annual_event/",
+    "source_url": "https://www.senso-ji.jp/annual_event/17.html",
     "image_url": null
   },
   {
@@ -326,7 +326,7 @@
     "end_at": "2026-11-15",
     "place_id": "sensoji",
     "source_id": "sensoji",
-    "source_url": "https://www.senso-ji.jp/annual_event/",
+    "source_url": "https://www.senso-ji.jp/annual_event/18.html",
     "image_url": null
   },
   {
@@ -356,7 +356,7 @@
     "end_at": "2026-12-19",
     "place_id": "sensoji",
     "source_id": "sensoji",
-    "source_url": "https://www.senso-ji.jp/annual_event/",
+    "source_url": "https://www.senso-ji.jp/annual_event/21.html",
     "image_url": null
   },
   {
@@ -371,7 +371,7 @@
     "end_at": "2026-12-31",
     "place_id": "sensoji",
     "source_id": "sensoji",
-    "source_url": "https://www.senso-ji.jp/annual_event/",
+    "source_url": "https://www.senso-ji.jp/annual_event/24.html",
     "image_url": null
   },
   {
@@ -566,7 +566,7 @@
     "end_at": "2026-09-30",
     "place_id": "rox",
     "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/",
+    "source_url": "https://komeda-sankaku.com/announcements/ezmv6jsd1dd5xtgl",
     "image_url": "/images/contents/45.webp"
   },
   {
@@ -716,8 +716,8 @@
     "end_at": null,
     "place_id": "rox",
     "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/",
-    "image_url": null
+    "source_url": "https://www.rox.co.jp/shop/detail.html?shop_id=1343",
+    "image_url": "/images/contents/67.png"
   },
   {
     "id": 70,
@@ -806,7 +806,7 @@
     "end_at": "2026-12-13",
     "place_id": "sensoji",
     "source_id": "sensoji",
-    "source_url": "https://www.senso-ji.jp/annual_event/",
+    "source_url": "https://www.senso-ji.jp/annual_event/20.html",
     "image_url": null
   },
   {
@@ -821,7 +821,7 @@
     "end_at": "2026-12-22",
     "place_id": "sensoji",
     "source_id": "sensoji",
-    "source_url": "https://www.senso-ji.jp/annual_event/",
+    "source_url": "https://www.senso-ji.jp/annual_event/22.html",
     "image_url": null
   },
   {
@@ -956,7 +956,7 @@
     "end_at": "2026-11-05",
     "place_id": "rox",
     "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/",
+    "source_url": "https://www.rox.co.jp/shop/detail.html?shop_id=1006",
     "image_url": "/images/contents/108.webp"
   },
   {
@@ -1031,7 +1031,7 @@
     "end_at": null,
     "place_id": "rox",
     "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/",
+    "source_url": "https://www.rox.co.jp/shop/detail.html?shop_id=1342",
     "image_url": "/images/contents/115.webp"
   },
   {
@@ -1046,7 +1046,7 @@
     "end_at": null,
     "place_id": "ekimise",
     "source_id": "ekimise",
-    "source_url": "https://www.ekimise.jp/",
+    "source_url": "https://bbq.urban-earth.jp/asakusa/",
     "image_url": "/images/contents/117.webp"
   },
   {
@@ -1091,7 +1091,7 @@
     "end_at": "2026-10-18",
     "place_id": "sensoji",
     "source_id": "sensoji",
-    "source_url": "https://www.senso-ji.jp/annual_event/",
+    "source_url": "https://www.senso-ji.jp/annual_event/16.html",
     "image_url": null
   },
   {
@@ -1601,7 +1601,7 @@
     "end_at": "2026-09-30",
     "place_id": null,
     "source_id": "asakusa-kyugeki",
-    "source_url": "https://asakusa-kokono.com/kyugeki/calendar/",
+    "source_url": "https://asakusa-kokono.com/kyugeki/2026/08/id-15246",
     "image_url": "/images/contents/156.png"
   },
   {
@@ -1616,7 +1616,7 @@
     "end_at": "2026-10-11",
     "place_id": null,
     "source_id": "asakusa-kyugeki",
-    "source_url": "https://asakusa-kokono.com/kyugeki/calendar/",
+    "source_url": "https://asakusa-kokono.com/kyugeki/2026/04/id-15112",
     "image_url": null
   },
   {
@@ -1631,7 +1631,7 @@
     "end_at": "2026-10-18",
     "place_id": null,
     "source_id": "asakusa-kyugeki",
-    "source_url": "https://asakusa-kokono.com/kyugeki/calendar/",
+    "source_url": "https://asakusa-kokono.com/kyugeki/2026/08/id-15251",
     "image_url": null
   },
   {
@@ -1646,7 +1646,7 @@
     "end_at": "2026-10-25",
     "place_id": null,
     "source_id": "asakusa-kyugeki",
-    "source_url": "https://asakusa-kokono.com/kyugeki/calendar/",
+    "source_url": "https://asakusa-kokono.com/kyugeki/2026/07/id-15225",
     "image_url": null
   },
   {
@@ -1661,7 +1661,7 @@
     "end_at": "2026-11-01",
     "place_id": null,
     "source_id": "asakusa-kyugeki",
-    "source_url": "https://asakusa-kokono.com/kyugeki/calendar/",
+    "source_url": "https://asakusa-kokono.com/kyugeki/2026/07/id-15210",
     "image_url": null
   },
   {
@@ -1691,7 +1691,7 @@
     "end_at": "2026-11-14",
     "place_id": null,
     "source_id": "e-asakusa",
-    "source_url": "https://e-asakusa.jp/",
+    "source_url": "https://e-asakusa.jp/culture-experience/111245",
     "image_url": "/images/contents/162.jpg"
   },
   {
@@ -1811,7 +1811,7 @@
     "end_at": "2026-09-27",
     "place_id": null,
     "source_id": "asakusa-kyugeki",
-    "source_url": "https://asakusa-kokono.com/kyugeki/calendar/",
+    "source_url": "https://asakusa-kokono.com/kyugeki/2026/08/id-15249",
     "image_url": "/images/contents/170.png"
   },
   {
@@ -1901,7 +1901,7 @@
     "end_at": "2026-10-12",
     "place_id": null,
     "source_id": "e-asakusa",
-    "source_url": "https://e-asakusa.jp/",
+    "source_url": "https://e-asakusa.jp/photos/111301",
     "image_url": "/images/contents/176.jpg"
   },
   {
@@ -1916,7 +1916,7 @@
     "end_at": "2026-09-26",
     "place_id": "sensoji",
     "source_id": "e-asakusa",
-    "source_url": "https://e-asakusa.jp/",
+    "source_url": "https://e-asakusa.jp/photos/111329",
     "image_url": "/images/contents/177.jpg"
   },
   {
@@ -1931,7 +1931,7 @@
     "end_at": "2026-09-29",
     "place_id": "matsuya-asakusa",
     "source_id": "matsuya",
-    "source_url": "https://www.matsuya.com/asakusa/",
+    "source_url": "https://www.matsuya.com/asakusa/news/2026/0915/leonartjewelry-oksana-pop-up/",
     "image_url": null
   },
   {
@@ -2021,7 +2021,7 @@
     "end_at": null,
     "place_id": "rox",
     "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/",
+    "source_url": "https://www.rox.co.jp/access/index.html",
     "image_url": "/images/contents/184.webp"
   },
   {
@@ -2216,22 +2216,22 @@
     "end_at": null,
     "place_id": "asakusajinja",
     "source_id": "asakusajinja",
-    "source_url": "https://asakusajinja.jp/",
+    "source_url": "https://asakusajinja.jp/2026/05/25/%e5%8d%81%e7%a4%be%e6%a8%a9%e7%8f%be%e7%a4%be%e5%bb%ba%e7%ab%8b%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b/",
     "image_url": "/images/contents/197.jpg"
   },
   {
     "id": 198,
     "type": "news",
     "title": "花やしきで「手ぶらで楽しめるハロウィン」開催",
-    "summary": "浅草花やしきが、仮装レンタルアトラクションや参加型パレードなど手ぶらで楽しめるハロウィン企画を発表した。",
-    "body": "浅草花やしきが、**「手ぶらで楽しめるハロウィン」**をテーマにした秋の特別企画を発表した。\n\n今回の目玉は、衣装や小物を持参しなくても気軽に仮装が楽しめる**仮装レンタルアトラクション**。子供から大人まで、思い立ったその場でハロウィンムードを満喫できる仕組みが用意されている。\n\nあわせて、来園者が仮装のまま園内を練り歩ける**参加型パレード**も実施予定で、浅草花やしきならではのレトロな雰囲気の中でハロウィンの非日常感を味わえる内容となっている。\n\n- 仮装レンタルアトラクション\n- 参加型ハロウィンパレード\n\n詳細な開催期間や料金については、公式サイトでの続報が待たれる。都内屈指の遊園地である花やしきの新たな季節イベントとして、浅草観光の新しい楽しみ方を提案している。",
+    "summary": "仮装レンタルや参加型パレードが登場する、手ぶらで楽しめるハロウィン企画が浅草花やしきで開催される。",
+    "body": "浅草花やしきにて、「手ぶらで楽しめるハロウィン」をテーマにしたイベントが開催される。仮装衣装を持っていなくても気軽に参加できるレンタルアトラクションが用意されるほか、来園者が仮装のまま参加できる参加型パレードも実施される。\n\n近年、ハロウィンイベントは衣装準備のハードルが参加のネックになりがちだが、本企画ではレンタルサービスを活用することで、思い立った時に気軽に仮装を楽しめる点が特徴。家族連れやカップル、友人同士のグループなど幅広い層の来園が見込まれる。\n\n浅草花やしきは日本最古の遊園地として、レトロな雰囲気を活かした季節イベントを積極的に展開しており、今回のハロウィン企画もその一環。パレードでは来園者同士の仮装を見せ合う楽しみもあり、SNS映えする写真撮影スポットとしても注目されそうだ。\n\n開催期間や参加方法の詳細は公式サイト等で案内される見込み。",
     "category": "event",
     "published_at": "2026-09-20",
     "start_at": null,
     "end_at": null,
     "place_id": "hanayashiki",
     "source_id": "prtimes",
-    "source_url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89",
+    "source_url": "https://prtimes.jp/main/html/rd/p/000000160.000082301.html",
     "image_url": "/images/contents/198.jpg"
   },
   {
@@ -2261,22 +2261,26 @@
     "end_at": "2026-09-26",
     "place_id": "matsuya-asakusa",
     "source_id": "matsuya",
-    "source_url": "https://www.matsuya.com/asakusa/",
-    "image_url": "/images/contents/200.jpg"
+    "source_url": "https://www.matsuya.com/asakusa/news/2026/0922/autumn-asakusa-thanksgiving-2/",
+    "image_url": "/images/contents/200.jpg",
+    "source_urls": [
+      "https://www.matsuya.com/asakusa/news/2026/0922/watches-special-sales/",
+      "https://www.matsuya.com/asakusa/news/2026/0922/tokyo-megane-special-sales/"
+    ]
   },
   {
     "id": 201,
     "type": "event",
     "title": "ムー認定！なつかし噂話で怪奇花やしき",
-    "summary": "浅草花やしきで、昭和の都市伝説をテーマにしたイベント「ムー認定！なつかし噂話で怪奇花やしき」が開催される。",
-    "body": "浅草の遊園地「花やしき」にて、昭和の都市伝説・怪奇現象を集めた特別企画「ムー認定！なつかし噂話で怪奇花やしき」の開催が発表された。\n\n本企画は、オカルト専門誌『ムー』とのコラボレーションによるもので、昭和時代に語り継がれた都市伝説や怖い噂話をテーマにした演出やコンテンツが園内に登場する予定。\n\n花やしきは1853年創業の日本最古の遊園地として知られ、レトロな雰囲気を活かしたイベントを数多く展開しており、今回もその世界観を存分に活かした内容が期待される。\n\n家族連れだけでなく、昭和カルチャーやオカルトファンにも楽しめる内容となっており、夏から秋にかけての浅草観光の新たな目玉となりそうだ。\n\n詳細な開催期間やコンテンツ内容は今後の続報が待たれる。",
+    "summary": "昭和の都市伝説をテーマにしたイベントが浅草花やしきで開催され、オカルト雑誌『ムー』とのコラボ企画として話題を集めている。",
+    "body": "浅草の遊園地「浅草花やしき」にて、昭和時代に流行した都市伝説や怪奇噂話をテーマにしたイベント『ムー認定！なつかし噂話で怪奇花やしき』が開催される。\n\n本企画は、オカルト・都市伝説専門誌として知られる『ムー』の監修・認定のもと実施されるもので、昭和レトロな雰囲気を持つ花やしきの園内で、当時語り継がれた怪談や噂話の世界観を体験できる内容となっている。\n\n花やしきは日本最古の遊園地として知られ、レトロな乗り物や園内の雰囲気が「怖さ」や「懐かしさ」を演出する舞台として親和性が高い。ハロウィンシーズンを前に、家族連れや若年層はもちろん、昭和の空気感を懐かしむ大人の来園者にも楽しめる内容が期待される。\n\n園内の装飾やイベント演出の詳細については、公式発表を随時確認したい。",
     "category": "event",
     "published_at": "2026-09-22",
     "start_at": null,
     "end_at": null,
     "place_id": "hanayashiki",
     "source_id": "prtimes",
-    "source_url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89",
+    "source_url": "https://prtimes.jp/main/html/rd/p/000000161.000082301.html",
     "image_url": "/images/contents/201.jpg"
   },
   {
@@ -2328,15 +2332,15 @@
     "id": 205,
     "type": "event",
     "title": "ROXフィットネスクラブbegin「秋のトリプルZEROキャンペーン」",
-    "summary": "入会金・事務手数料・月会費が無料になる秋の入会キャンペーンを10月30日まで開催。",
-    "body": "浅草ROX 8・9Fの「ROXフィットネスクラブbegin」では、秋の入会キャンペーン「秋のトリプルZEROキャンペーン」を実施している。\n\n**期間**は10月30日（金）まで。運動を始めるのにちょうど良い季節ということで、以下の特典が用意されている。\n\n- 入会金無料\n- 事務手数料無料\n- 月会費1ヶ月分無料\n- 9月中の入会なら9月分の月会費も無料\n- 水素水サーバー・プロテインサーバー・フリーパスの2ヶ月分無料（入会から6ヶ月以上の在籍が条件）\n\nこれから運動習慣を身につけたい人にとって、初期費用を大幅に抑えられる好機となっている。詳細はROXフィットネスクラブbeginの公式ホームページで確認できる。",
+    "summary": "ROXフィットネスクラブbeginにて、入会金・事務手数料・月会費が無料になる「秋のトリプルZEROキャンペーン」を10月30日まで開催。",
+    "body": "浅草ROX 8・9Fの「ROXフィットネスクラブbegin」では、10月30日（金）まで「秋のトリプルZEROキャンペーン」を実施中です。\n\n運動を始めるのにちょうどいい季節に合わせ、入会のハードルを大きく下げる内容となっています。\n\n**特典内容**\n- 入会金無料・事務手数料・月会費1ヶ月分無料\n- 9月中の入会で9月分の会費も無料\n- 水素水サーバー、プロテインサーバー、フリーパス2ヶ月分無料（※入会から6ヶ月の在籍が必要）\n\n運動不足が気になる方や、新しい習慣を始めたい方にとって始めどきのキャンペーンです。\n\n詳細な条件や利用規約については、ROXフィットネスクラブbeginの公式ホームページで確認できます。",
     "category": "campaign",
     "published_at": "2026-09-24",
     "start_at": "2026-09-24",
     "end_at": "2026-10-30",
     "place_id": null,
     "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/",
+    "source_url": "https://www.asakusa-begin.com/news/998/",
     "image_url": "/images/contents/205.png"
   },
   {
@@ -2358,15 +2362,15 @@
     "id": 207,
     "type": "news",
     "title": "「笑顔プラス親子食堂」浅草浅一でひとり親家庭向けに開催",
-    "summary": "ひとり親家庭の親子にお腹いっぱい食べてもらう活動「笑顔プラス親子食堂」が、浅草の飲食店「浅草浅一」で開催される。",
-    "body": "一般社団法人笑顔プラス子供支援協会は、ひとり親家庭の親子を対象とした食事支援イベント「笑顔プラス親子食堂」を、浅草の飲食店「浅草浅一」にて開催する。\n\nこの取り組みは、経済的に厳しい状況に置かれがちなひとり親家庭の親子に、温かい食事をお腹いっぱい食べてもらうことを目的とした社会貢献活動。\n\n浅草の地元飲食店が会場として協力することで、地域に根差した支援の形を実現しており、子どもたちにとっても地元の味を楽しめる貴重な機会となる。\n\n同協会はこれまでも各地で同様の食堂支援活動を展開しており、地域コミュニティと連携した継続的な子育て支援を推進している。\n\n浅草エリアにおける地域密着型の福祉活動として、今後も注目される取り組みといえる。",
+    "summary": "ひとり親家庭の親子を対象に、お腹いっぱい食べてもらう食堂イベントが浅草の飲食店「浅草浅一」で開催される。",
+    "body": "一般社団法人笑顔プラス子供支援協会が運営する【笑顔プラス親子食堂】が、浅草エリアの飲食店「浅草浅一」にて開催されることが発表された。\n\nこの取り組みは、経済的な事情などで十分な食事を取ることが難しいひとり親家庭の親子に、温かい食事をお腹いっぱい食べてもらうことを目的とした支援活動。地域に根差した飲食店が会場となることで、子どもたちにとって身近な場所で安心して食事を楽しめる機会を提供する。\n\nこうした子ども支援・食支援の取り組みは全国的に広がりを見せており、浅草エリアでも地域の店舗と協力団体が連携する形で実施される点が特徴。開催の具体的な日時や申込方法など詳細は主催団体からの案内を確認する必要がある。\n\n地域住民や近隣店舗にとっても、こうした支援活動への関心・協力の輪が広がることが期待される。",
     "category": "local_news",
     "published_at": "2026-09-24",
     "start_at": null,
     "end_at": null,
     "place_id": null,
     "source_id": "prtimes",
-    "source_url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89",
+    "source_url": "https://prtimes.jp/main/html/rd/p/000000018.000121268.html",
     "image_url": null
   },
   {
@@ -2398,5 +2402,35 @@
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000495.000045277.html",
     "image_url": "/images/contents/209.jpg"
+  },
+  {
+    "id": 210,
+    "type": "event",
+    "title": "秋分切り絵特別御朱印",
+    "summary": "浅草神社にて秋分の日を記念した切り絵特別御朱印を9月23日から25日まで頒布。",
+    "body": "浅草神社では、9月23日の「秋分」を記念して切り絵特別御朱印を頒布している。\n\n頒布期間は9月23日（水・祝）から25日（金）までを予定しているが、数に限りがあるため無くなり次第受付終了となる点に注意が必要だ。\n\n受付時間は祝日が9時から午後4時30分まで、平日は9時から午後4時までとなっている。初穂料は1,000円。\n\n頒布は御朱印帳に貼り付ける形での授与となるため、**必ず御朱印帳を持参する必要がある**。紙のみでの授与は行っていない。\n\nまた、頒布は一人1体までとなっており、デザインは変更となる可能性がある点もあらかじめ了承しておきたい。\n\n秋分の節目に合わせた限定御朱印を求める参拝者は、早めの来訪がおすすめだ。",
+    "category": "campaign",
+    "published_at": "2026-09-21",
+    "start_at": "2026-09-23",
+    "end_at": "2026-09-25",
+    "place_id": "asakusajinja",
+    "source_id": "asakusajinja",
+    "source_url": "https://asakusajinja.jp/2026/09/21/%e7%a7%8b%e5%88%86%e5%88%87%e3%82%8a%e7%b5%b5%e7%89%b9%e5%88%a5%e5%be%a1%e6%9c%b1%e5%8d%b0/",
+    "image_url": "/images/contents/210.jpeg"
+  },
+  {
+    "id": 211,
+    "type": "event",
+    "title": "『羽田美智子、素敵なおばさんやってます』発売記念トークショー＆サイン本お渡し会",
+    "summary": "女優・羽田美智子の最新エッセイ発売を記念したトークショーとサイン本お渡し会が浅草九劇で開催される。",
+    "body": "女優・羽田美智子の最新エッセイ『羽田美智子、素敵なおばさんやってます』が2026年10月2日に発売されるのを記念し、浅草九劇にて発売記念トークショー＆サイン本お渡し会が開催される。\n\n会場は東京都台東区浅草2-16-2にある浅草九倶楽部2階の浅草九劇。開催日は2026年10月12日（月・祝）の一日限りで、《1部》は11:00開場・11:30開演、《2部》は13:30開場・14:00開演の2部制となっている。\n\n内容はトークショー（約20分程度）に続き、サイン本のお渡し会が行われる構成。チケット料金は6,000円（税込）で、羽田美智子本人のサイン入りの書籍代が含まれている。\n\nチケットの取扱は「TicketDive」にて行われる。エッセイ発売と合わせて、著者本人から直接話を聞ける貴重な機会となっており、ファンにとって見逃せないイベントとなっている。",
+    "category": "event",
+    "published_at": "2026-09-25",
+    "start_at": "2026-10-12",
+    "end_at": "2026-10-12",
+    "place_id": null,
+    "source_id": "asakusa-kyugeki",
+    "source_url": "https://asakusa-kokono.com/kyugeki/2026/09/id-15271",
+    "image_url": "/images/contents/211.png"
   }
 ]
