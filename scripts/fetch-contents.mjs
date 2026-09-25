@@ -89,17 +89,38 @@ const titleContains = (a, b) => {
   return Math.min(A.length, B.length) >= 6 && (A.includes(B) || B.includes(A))
 }
 
+// 「9月の休診日」「10月の休診日」のように月だけ異なる定期告知は別記事とみなす
+const monthsOf = (title) =>
+  (title.normalize("NFKC").match(/\d+月/g) ?? []).sort().join(",")
+const monthsConflict = (a, b) => {
+  const A = monthsOf(a)
+  const B = monthsOf(b)
+  return A !== "" && B !== "" && A !== B
+}
+
 // 同一ソースを日を変えて再クロールした際、生成AIの言い回しが毎回微妙に揺れることで
 // 完全一致では検出できない重複記事が発生する。同一source_id・同一開催日(あれば)を前提に、
-// タイトルの類似度で同一記事とみなせるものを既存contentsから探す
-const findDuplicate = (existing, candidate, sourceId) =>
-  existing.find(
-    (c) =>
-      c.source_id === sourceId &&
-      (!candidate.start_at || !c.start_at || candidate.start_at === c.start_at) &&
-      (titleSimilarity(c.title, candidate.title) >= DUP_TITLE_SIM_THRESHOLD ||
-        titleContains(c.title, candidate.title))
-  )
+// タイトルの類似度で同一記事とみなせるものを既存contentsから探す。
+// 「〇〇 浅草ROX・3Gに新規オープン」のように定型部分が共通する別記事もあるため、最も類似度の高いものを選ぶ
+const findDuplicate = (existing, candidate, sourceId) => {
+  let best = null
+  let bestScore = 0
+  for (const c of existing) {
+    if (c.source_id !== sourceId) continue
+    if (candidate.start_at && c.start_at && candidate.start_at !== c.start_at) {
+      continue
+    }
+    if (monthsConflict(c.title, candidate.title)) continue
+    const score = titleContains(c.title, candidate.title)
+      ? 1
+      : titleSimilarity(c.title, candidate.title)
+    if (score >= DUP_TITLE_SIM_THRESHOLD && score > bestScore) {
+      best = c
+      bestScore = score
+    }
+  }
+  return best
+}
 
 // 重複記事を検出した場合、破棄せず既存記事を更新する。
 // - 出典URLは(既存と異なれば)source_urlsに追記して残す
@@ -401,8 +422,8 @@ const main = async () => {
     added: 0,
   }
 
-  const isKnownUrl = (url) =>
-    [...contents, ...newContents].some(
+  const findByUrl = (url) =>
+    [...contents, ...newContents].find(
       (c) => c.source_url === url || c.source_urls?.includes(url)
     )
 
@@ -425,24 +446,33 @@ const main = async () => {
   }
 
   // page: 記事の取得元(個別ページならそのURL、一覧から直接抽出した場合は一覧URL)
+  const mergeCandidate = async (
+    existing,
+    candidate,
+    page,
+    listingUrl,
+    imgCandidates
+  ) => {
+    const changed = mergeIntoExisting(existing, candidate, page, listingUrl)
+    if (!changed) return
+    summary.merged++
+    console.log(`  [MERGE] ${existing.title} ← ${candidate.title}`)
+    if (!existing.image_url) {
+      existing.image_url = await pickImage(
+        imgCandidates,
+        candidate.image_index,
+        page.url,
+        existing.id
+      )
+    }
+  }
+
   const addCandidate = async (candidate, page, listingUrl, imgCandidates) => {
     if (!candidate.title || !CATEGORIES.includes(candidate.category)) return
 
     const duplicate = findDuplicate([...contents, ...newContents], candidate, page.id)
     if (duplicate) {
-      const changed = mergeIntoExisting(duplicate, candidate, page, listingUrl)
-      if (changed) {
-        summary.merged++
-        console.log(`  [MERGE] ${duplicate.title}`)
-        if (!duplicate.image_url) {
-          duplicate.image_url = await pickImage(
-            imgCandidates,
-            candidate.image_index,
-            page.url,
-            duplicate.id
-          )
-        }
-      }
+      await mergeCandidate(duplicate, candidate, page, listingUrl, imgCandidates)
       return
     }
 
@@ -535,12 +565,24 @@ const main = async () => {
       const detailUrl = Number.isInteger(candidate.link_index)
         ? linkCandidates[candidate.link_index]?.url
         : null
-      if (!detailUrl || visited.size >= MAX_DETAIL_PAGES) {
-        await addCandidate(candidate, source, source.url, imgCandidates)
+      if (!candidate.title || !CATEGORIES.includes(candidate.category)) continue
+
+      // 既存記事があれば個別ページは取得せず、一覧で得た情報を既存記事に反映する
+      const existing =
+        (detailUrl && findByUrl(detailUrl)) ||
+        findDuplicate([...contents, ...newContents], candidate, source.id)
+      if (existing) {
+        const page = detailUrl ? { ...source, url: detailUrl } : source
+        await mergeCandidate(existing, candidate, page, source.url, imgCandidates)
         continue
       }
-      if (visited.has(detailUrl) || isKnownUrl(detailUrl)) {
-        console.log(`  [SKIP] 取得済み: ${detailUrl}`)
+
+      if (
+        !detailUrl ||
+        visited.has(detailUrl) ||
+        visited.size >= MAX_DETAIL_PAGES
+      ) {
+        await addCandidate(candidate, source, source.url, imgCandidates)
         continue
       }
       visited.add(detailUrl)
