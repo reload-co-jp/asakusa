@@ -59,7 +59,9 @@ const toDateString = (date) => {
   return `${y}-${m}-${d}`
 }
 
-const normalizeTitle = (title) => title.replace(/\s+/g, "").toLowerCase()
+// 空白・括弧・記号は表記揺れとして無視する
+const normalizeTitle = (title) =>
+  title.replace(/[\s\p{P}\p{S}]/gu, "").toLowerCase()
 
 // タイトルのbigram類似度(0〜1)。表記揺れ(全角/半角の括弧・句読点、語順の入れ替え程度)を
 // 同一記事として吸収するための緩い指標。完全一致(=1)以外は閾値で判定する
@@ -80,6 +82,13 @@ const titleSimilarity = (a, b) => {
   return (inter * 2) / (A.size + B.size)
 }
 
+// 一方のタイトルが他方を含む場合(施設名等の前置きの有無)も同一記事とみなす
+const titleContains = (a, b) => {
+  const A = normalizeTitle(a)
+  const B = normalizeTitle(b)
+  return Math.min(A.length, B.length) >= 6 && (A.includes(B) || B.includes(A))
+}
+
 // 同一ソースを日を変えて再クロールした際、生成AIの言い回しが毎回微妙に揺れることで
 // 完全一致では検出できない重複記事が発生する。同一source_id・同一開催日(あれば)を前提に、
 // タイトルの類似度で同一記事とみなせるものを既存contentsから探す
@@ -88,20 +97,25 @@ const findDuplicate = (existing, candidate, sourceId) =>
     (c) =>
       c.source_id === sourceId &&
       (!candidate.start_at || !c.start_at || candidate.start_at === c.start_at) &&
-      titleSimilarity(c.title, candidate.title) >= DUP_TITLE_SIM_THRESHOLD
+      (titleSimilarity(c.title, candidate.title) >= DUP_TITLE_SIM_THRESHOLD ||
+        titleContains(c.title, candidate.title))
   )
 
 // 重複記事を検出した場合、破棄せず既存記事を更新する。
 // - 出典URLは(既存と異なれば)source_urlsに追記して残す
 // - 本文はより情報量の多い(長い)方を採用し内容を合わせて更新する
+// - 既存の出典が一覧ページURLで、今回個別ページURLが得られた場合は出典を個別URLに差し替える
 // - 開催日が既存側で欠けていれば補う
-const mergeIntoExisting = (existing, candidate, source) => {
+const mergeIntoExisting = (existing, candidate, source, listingUrl) => {
   let changed = false
 
   const knownUrls = new Set(
     [existing.source_url, ...(existing.source_urls ?? [])].filter(Boolean)
   )
-  if (!knownUrls.has(source.url)) {
+  if (existing.source_url === listingUrl && source.url !== listingUrl) {
+    existing.source_url = source.url
+    changed = true
+  } else if (!knownUrls.has(source.url)) {
     existing.source_urls = [...(existing.source_urls ?? []), source.url]
     changed = true
   }
@@ -188,7 +202,8 @@ Webページのテキストから、浅草エリアのイベント・新規オ�
   "start_at": "YYYY-MM-DD または null",
   "end_at": "YYYY-MM-DD または null",
   "place_name": "関連する店舗・施設名 または null",
-  "image_index": "本文に最も合う画像候補の番号(整数) または該当なしならnull"
+  "image_index": "本文に最も合う画像候補の番号(整数) または該当なしならnull",
+  "link_index": "その記事の個別詳細ページに当たるリンク候補の番号(整数) または該当なしならnull"
 }
 
 ルール:
@@ -197,7 +212,8 @@ Webページのテキストから、浅草エリアのイベント・新規オ�
 - 今日より前にend_atが過ぎているイベントは除外する
 - トップページの案内文など一般的すぎる情報は抽出しない
 - start_at/end_atのあるイベント系はtype="event"、それ以外はtype="news"
-- image_indexは入力の「画像候補」リストから、その記事の内容(タイトル・見出し画像・alt文言)と最も合致するものを1つ選ぶ。ロゴやバナーなど記事と無関係なものは選ばない`
+- image_indexは入力の「画像候補」リストから、その記事の内容(タイトル・見出し画像・alt文言)と最も合致するものを1つ選ぶ。ロゴやバナーなど記事と無関係なものは選ばない
+- link_indexは入力の「リンク候補」リストから、その記事の個別詳細ページ(記事単体のページ)へのリンクを1つ選ぶ。カテゴリ一覧・ページ送り・外部サービス等は選ばない。リンク候補がない場合はnull`
 
 // claude CLIをheadlessで呼び出す。認証(CLAUDE_CODE_OAUTH_TOKEN / ANTHROPIC_API_KEY)はCLIが環境変数から自動解決する
 // stdinは即座にEOFを送る(繋がったままだとCLIが入力待ちと誤認し数秒遅延する)
@@ -271,17 +287,33 @@ const formatImageCandidates = (candidates) =>
     .map((c, i) => `${i}: ${c.url}${c.alt ? ` (alt: ${c.alt})` : ""}`)
     .join("\n")
 
-const extractContents = async (source, text, imgCandidates, today) => {
+const formatLinkCandidates = (candidates) =>
+  candidates.map((c, i) => `${i}: ${c.text} (${c.url})`).join("\n")
+
+// detail=true: 個別記事ページとして主題の記事1件のみ抽出させる
+const extractContents = async (
+  source,
+  text,
+  imgCandidates,
+  today,
+  { linkCandidates = [], detail = false } = {}
+) => {
   if (!text) return []
   const imageBlock = imgCandidates.length
     ? `\n\n--- 画像候補 ---\n${formatImageCandidates(imgCandidates)}`
     : ""
+  const linkBlock = linkCandidates.length
+    ? `\n\n--- リンク候補 ---\n${formatLinkCandidates(linkCandidates)}`
+    : ""
+  const detailNote = detail
+    ? "\n※このページは個別記事ページ。ページの主題となる記事1件のみを抽出する(関連記事・おすすめ等は除外)。"
+    : ""
   const userPrompt = `情報源: ${source.name}
 URL: ${source.url}
-今日の日付: ${today}
+今日の日付: ${today}${detailNote}
 
 --- ページ本文 ---
-${text}${imageBlock}`
+${text}${imageBlock}${linkBlock}`
 
   const result = await runClaudeWithRetry(userPrompt, source.id)
 
@@ -315,6 +347,35 @@ const saveContentImage = async (imageUrl, referer, id) => {
   return `/images/contents/${id}.${ext}`
 }
 
+const MAX_LINK_CANDIDATES = 100
+const MAX_DETAIL_PAGES = 20
+
+// 一覧ページ内のリンクを個別記事ページの候補として抽出する(ヘッダー・フッター・ナビは除外)
+const extractLinkCandidates = (html, baseUrl) => {
+  const $ = cheerio.load(html)
+  $("header, footer, nav").remove()
+  const base = new URL(baseUrl)
+  base.hash = ""
+  const seen = new Set()
+  const links = []
+  $("body a[href]").each((_, el) => {
+    let url
+    try {
+      url = new URL($(el).attr("href"), baseUrl)
+    } catch {
+      return
+    }
+    if (!/^https?:$/.test(url.protocol)) return
+    if (/\.(pdf|jpe?g|png|gif|webp|zip)$/i.test(url.pathname)) return
+    url.hash = ""
+    const text = $(el).text().replace(/\s+/g, " ").trim().slice(0, 80)
+    if (text.length < 4 || url.href === base.href || seen.has(url.href)) return
+    seen.add(url.href)
+    links.push({ url: url.href, text })
+  })
+  return links.slice(0, MAX_LINK_CANDIDATES)
+}
+
 const main = async () => {
   if (!dryRun) mkdirSync(imagesOutDir, { recursive: true })
   const sources = readJson(sourcesPath)
@@ -340,6 +401,101 @@ const main = async () => {
     added: 0,
   }
 
+  const isKnownUrl = (url) =>
+    [...contents, ...newContents].some(
+      (c) => c.source_url === url || c.source_urls?.includes(url)
+    )
+
+  const pickImage = async (imgCandidates, imgIndex, referer, id) => {
+    if (
+      typeof imgIndex !== "number" ||
+      imgIndex < 0 ||
+      imgIndex >= Math.min(imgCandidates.length, MAX_IMAGE_CANDIDATES)
+    ) {
+      return null
+    }
+    try {
+      return dryRun
+        ? imgCandidates[imgIndex].url
+        : await saveContentImage(imgCandidates[imgIndex].url, referer, id)
+    } catch (err) {
+      console.warn(`  [WARN] 画像取得失敗: ${err.message}`)
+      return null
+    }
+  }
+
+  // page: 記事の取得元(個別ページならそのURL、一覧から直接抽出した場合は一覧URL)
+  const addCandidate = async (candidate, page, listingUrl, imgCandidates) => {
+    if (!candidate.title || !CATEGORIES.includes(candidate.category)) return
+
+    const duplicate = findDuplicate([...contents, ...newContents], candidate, page.id)
+    if (duplicate) {
+      const changed = mergeIntoExisting(duplicate, candidate, page, listingUrl)
+      if (changed) {
+        summary.merged++
+        console.log(`  [MERGE] ${duplicate.title}`)
+        if (!duplicate.image_url) {
+          duplicate.image_url = await pickImage(
+            imgCandidates,
+            candidate.image_index,
+            page.url,
+            duplicate.id
+          )
+        }
+      }
+      return
+    }
+
+    const id = nextId++
+    const imageUrl = await pickImage(
+      imgCandidates,
+      candidate.image_index,
+      page.url,
+      id
+    )
+    const content = {
+      id,
+      type: candidate.type === "event" ? "event" : "news",
+      title: candidate.title,
+      summary: candidate.summary ?? "",
+      body: candidate.body ?? candidate.summary ?? "",
+      category: candidate.category,
+      published_at: candidate.published_at ?? today,
+      start_at: candidate.start_at ?? null,
+      end_at: candidate.end_at ?? null,
+      place_id: findPlaceId(places, candidate.place_name),
+      source_id: page.id,
+      source_url: page.url,
+      image_url: imageUrl,
+    }
+    newContents.push(content)
+    summary.added++
+    console.log(`  [NEW] ${content.title}${imageUrl ? " (画像あり)" : ""}`)
+  }
+
+  // 個別ページを取得し主題の記事1件を抽出する。取得・抽出に失敗した場合はnull、記事なしならcandidate=null
+  const extractFromDetail = async (page) => {
+    await sleep(SOURCE_INTERVAL_MS)
+    console.log(`  取得中: ${page.url}`)
+    try {
+      const html = await fetchHtml(page.url)
+      const imgCandidates = extractImgCandidates(html, page.url).filter(
+        (c) => !c.excluded
+      )
+      const results = await extractContents(
+        page,
+        htmlToText(html),
+        imgCandidates,
+        today,
+        { detail: true }
+      )
+      return { candidate: results[0] ?? null, imgCandidates }
+    } catch (err) {
+      console.warn(`  [WARN] 個別ページ取得失敗: ${err.message}`)
+      return null
+    }
+  }
+
   for (const source of targetSources) {
     console.log(`[${source.id}] 取得中: ${source.url}`)
 
@@ -354,8 +510,9 @@ const main = async () => {
     }
 
     const imgCandidates = extractImgCandidates(html, source.url).filter(
-      (c) => !c.excluded,
+      (c) => !c.excluded
     )
+    const linkCandidates = extractLinkCandidates(html, source.url)
 
     let candidates
     try {
@@ -364,6 +521,7 @@ const main = async () => {
         htmlToText(html),
         imgCandidates,
         today,
+        { linkCandidates }
       )
     } catch (err) {
       console.warn(`  [SKIP] 抽出失敗: ${err.message}`)
@@ -371,78 +529,34 @@ const main = async () => {
     }
     summary.extracted += candidates.length
 
+    // 個別ページがあれば取得してそちらを出典にする。取得失敗・記事なしの場合は一覧の抽出結果を使う
+    const visited = new Set()
     for (const candidate of candidates) {
-      if (!candidate.title || !CATEGORIES.includes(candidate.category)) continue
-
-      const duplicate = findDuplicate([...contents, ...newContents], candidate, source.id)
-      if (duplicate) {
-        const changed = mergeIntoExisting(duplicate, candidate, source)
-        if (changed) {
-          summary.merged++
-          console.log(`  [MERGE] ${duplicate.title}`)
-          if (!duplicate.image_url) {
-            const imgIndex = candidate.image_index
-            if (
-              typeof imgIndex === "number" &&
-              imgIndex >= 0 &&
-              imgIndex < Math.min(imgCandidates.length, MAX_IMAGE_CANDIDATES)
-            ) {
-              try {
-                duplicate.image_url = dryRun
-                  ? imgCandidates[imgIndex].url
-                  : await saveContentImage(
-                      imgCandidates[imgIndex].url,
-                      source.url,
-                      duplicate.id,
-                    )
-              } catch (err) {
-                console.warn(`  [WARN] 画像取得失敗: ${err.message}`)
-              }
-            }
-          }
-        }
+      const detailUrl = Number.isInteger(candidate.link_index)
+        ? linkCandidates[candidate.link_index]?.url
+        : null
+      if (!detailUrl || visited.size >= MAX_DETAIL_PAGES) {
+        await addCandidate(candidate, source, source.url, imgCandidates)
         continue
       }
-
-      const id = nextId++
-      let imageUrl = null
-      const imgIndex = candidate.image_index
-      if (
-        typeof imgIndex === "number" &&
-        imgIndex >= 0 &&
-        imgIndex < Math.min(imgCandidates.length, MAX_IMAGE_CANDIDATES)
-      ) {
-        try {
-          imageUrl = dryRun
-            ? imgCandidates[imgIndex].url
-            : await saveContentImage(imgCandidates[imgIndex].url, source.url, id)
-        } catch (err) {
-          console.warn(`  [WARN] 画像取得失敗: ${err.message}`)
-        }
+      if (visited.has(detailUrl) || isKnownUrl(detailUrl)) {
+        console.log(`  [SKIP] 取得済み: ${detailUrl}`)
+        continue
       }
+      visited.add(detailUrl)
 
-      const content = {
-        id,
-        type: candidate.type === "event" ? "event" : "news",
-        title: candidate.title,
-        summary: candidate.summary ?? "",
-        body: candidate.body ?? candidate.summary ?? "",
-        category: candidate.category,
-        published_at: candidate.published_at ?? today,
-        start_at: candidate.start_at ?? null,
-        end_at: candidate.end_at ?? null,
-        place_id: findPlaceId(places, candidate.place_name),
-        source_id: source.id,
-        source_url: source.url,
-        image_url: imageUrl,
+      const page = { ...source, url: detailUrl }
+      const detail = await extractFromDetail(page)
+      if (detail?.candidate) {
+        await addCandidate(detail.candidate, page, source.url, detail.imgCandidates)
+      } else {
+        await addCandidate(candidate, source, source.url, imgCandidates)
       }
-      newContents.push(content)
-      summary.added++
-      console.log(`  [NEW] ${content.title}${imageUrl ? " (画像あり)" : ""}`)
     }
 
     await sleep(SOURCE_INTERVAL_MS)
   }
+
 
   console.log("\n--- サマリー ---")
   console.log(`source取得成功: ${summary.fetched} / 失敗: ${summary.failed}`)
