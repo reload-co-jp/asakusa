@@ -1,6 +1,6 @@
 "use client"
 
-import { FC, useEffect } from "react"
+import { FC, useEffect, useRef } from "react"
 
 declare global {
   interface Window {
@@ -10,7 +10,11 @@ declare global {
 
 // クライアント遷移でも記事ごとに広告を読み込むため useEffect で push する
 export const InArticleAd: FC = () => {
+  const pushed = useRef(false)
   useEffect(() => {
+    // StrictMode の effect 二重実行で空き ins 無しの push が走るのを防ぐ
+    if (pushed.current) return
+    pushed.current = true
     try {
       ;(window.adsbygoogle = window.adsbygoogle || []).push({})
     } catch {
