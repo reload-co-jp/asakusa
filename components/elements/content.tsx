@@ -104,7 +104,7 @@ export const ContentCard: FC<{ content: Content }> = ({ content }) => {
 }
 
 // 一覧の途中に広告を挟む間隔（件数）
-const AD_INTERVAL = 5
+const AD_INTERVAL = 3
 
 export const ContentList: FC<{ contents: Content[] }> = ({ contents }) =>
   contents.length === 0 ? (
