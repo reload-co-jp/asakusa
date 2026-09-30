@@ -3,9 +3,10 @@ import {
   contents,
   getArchiveMonths,
   getCategoryCount,
+  isTranslated,
   places,
 } from "@/lib/data"
-import { HTML_LANG, LOCALES, localePath } from "@/lib/i18n-config"
+import { HTML_LANG, Locale, LOCALES, localePath } from "@/lib/i18n-config"
 import { SITE_URL } from "@/lib/json-ld"
 import { CATEGORIES, Category } from "@/lib/types"
 
@@ -15,7 +16,10 @@ export const dynamic = "force-static"
 const buildTime = new Date().toISOString()
 
 // url は日本語版のパスで書き、各言語版(hreflang付き)に展開する
-const pages = (): MetadataRoute.Sitemap => [
+// locales 省略時は全言語。未翻訳記事の翻訳版はnoindexのため除外する
+type Page = MetadataRoute.Sitemap[number] & { locales?: readonly Locale[] }
+
+const pages = (): Page[] => [
   {
     url: `/`,
     lastModified: buildTime,
@@ -56,6 +60,7 @@ const pages = (): MetadataRoute.Sitemap => [
   })),
   ...contents.map((content) => ({
     url: `/content/${content.id}/`,
+    locales: LOCALES.filter((locale) => isTranslated(content, locale)),
     lastModified: content.published_at,
     changeFrequency: "weekly" as const,
     priority: 0.6,
@@ -63,13 +68,13 @@ const pages = (): MetadataRoute.Sitemap => [
 ]
 
 const sitemap = (): MetadataRoute.Sitemap =>
-  pages().flatMap((page) =>
-    LOCALES.map((locale) => ({
+  pages().flatMap(({ locales = LOCALES, ...page }) =>
+    locales.map((locale) => ({
       ...page,
       url: `${SITE_URL}${localePath(locale, page.url)}`,
       alternates: {
         languages: Object.fromEntries(
-          LOCALES.map((l) => [
+          locales.map((l) => [
             HTML_LANG[l],
             `${SITE_URL}${localePath(l, page.url)}`,
           ])

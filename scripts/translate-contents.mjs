@@ -1,5 +1,6 @@
 // data/contents.json・data/places.json を英語・簡体字中国語に翻訳し data/translations/{en,zh}.json に保存する。
-// 未翻訳のものだけ処理する(--force で全件やり直し)。claude CLI(headless)を1件ずつ呼び出す。
+// 直近の記事(未終了のイベント + RECENT_DAYS日以内に公開)のうち未翻訳のものだけ処理する
+// (--force で対象を全件やり直し)。claude CLI(headless)を1件ずつ呼び出す。
 import { existsSync, readFileSync, writeFileSync } from "fs"
 import { fileURLToPath } from "url"
 import { execFile } from "child_process"
@@ -12,6 +13,18 @@ const LOCALES = ["en", "zh"]
 const CLAUDE_TIMEOUT_MS = 180000
 const MODEL = process.env.ANTHROPIC_MODEL || "sonnet"
 const CONCURRENCY = Number(process.env.CONCURRENCY || 4)
+const RECENT_DAYS = Number(process.env.RECENT_DAYS || 30)
+const DAY_MS = 24 * 60 * 60 * 1000
+// サイト側(lib/date.ts)と同じくJST基準の日付
+const jstDate = (offsetDays = 0) =>
+  new Date(Date.now() + 9 * 60 * 60 * 1000 + offsetDays * DAY_MS)
+    .toISOString()
+    .slice(0, 10)
+const today = jstDate()
+const since = jstDate(-RECENT_DAYS)
+const isRecent = (content) =>
+  (content.end_at ?? content.start_at ?? "") >= today ||
+  content.published_at >= since
 
 const args = process.argv.slice(2)
 const force = args.includes("--force")
@@ -112,12 +125,14 @@ const main = async () => {
         "area",
       ]),
     })),
-    ...readJson(path.join(root, "data/contents.json")).map((content) => ({
-      kind: "contents",
-      id: String(content.id),
-      label: content.title,
-      fields: pick(content, ["title", "summary", "body"]),
-    })),
+    ...readJson(path.join(root, "data/contents.json"))
+      .filter(isRecent)
+      .map((content) => ({
+        kind: "contents",
+        id: String(content.id),
+        label: content.title,
+        fields: pick(content, ["title", "summary", "body"]),
+      })),
   ]
     .filter(
       ({ kind, id }) =>
