@@ -2,7 +2,7 @@
 // 認証はCLAUDE_CODE_OAUTH_TOKEN または ANTHROPIC_API_KEY をclaude CLIが自動解決する
 import { readFileSync, writeFileSync, mkdirSync } from "fs"
 import { fileURLToPath } from "url"
-import { execFile } from "child_process"
+import { execFile, execFileSync } from "child_process"
 import path from "path"
 import * as cheerio from "cheerio"
 import { fetch as undiciFetch, Agent } from "undici"
@@ -615,6 +615,12 @@ const main = async () => {
     writeJson(contentsPath, [...contents, ...newContents])
     console.log(
       `\ndata/contents.json を更新(新規${newContents.length}件・統合${summary.merged}件)`
+    )
+    // 新規記事(未翻訳分)を続けて翻訳する
+    execFileSync(
+      process.execPath,
+      [path.join(__dirname, "translate-contents.mjs")],
+      { stdio: "inherit" }
     )
   } else {
     console.log("\n更新なし")
