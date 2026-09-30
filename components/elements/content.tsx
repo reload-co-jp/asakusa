@@ -2,28 +2,43 @@ import Image from "next/image"
 import Link from "next/link"
 import { FC, Fragment, ReactNode } from "react"
 import { InArticleAd } from "@/components/elements/ad"
-import { getPlace } from "@/lib/data"
+import { getPlace, localizeContent, localizePlace } from "@/lib/data"
 import { formatDate } from "@/lib/date"
-import { CATEGORIES, Content } from "@/lib/types"
+import { DICTIONARIES, getDictionary, Locale, localePath } from "@/lib/i18n"
+import { Content } from "@/lib/types"
 
-export const formatContentPeriod = (content: Content): string | null => {
+export const formatContentPeriod = (
+  content: Content,
+  locale: Locale
+): string | null => {
   if (!content.start_at) return null
   if (!content.end_at || content.end_at === content.start_at)
-    return formatDate(content.start_at)
-  return `${formatDate(content.start_at)} 〜 ${formatDate(content.end_at)}`
+    return formatDate(content.start_at, locale)
+  return `${formatDate(content.start_at, locale)} 〜 ${formatDate(content.end_at, locale)}`
 }
 
-// 画像altは内容を具体的に(施設名があれば「◯◯の」を付与)
-export const contentImageAlt = (content: Content): string => {
+// 翻訳済みのcontentと施設を返す
+export const localized = (content: Content, locale: Locale) => {
   const place = content.place_id ? getPlace(content.place_id) : undefined
-  return place && !content.title.includes(place.name)
-    ? `${place.name}の${content.title}`
+  return {
+    content: localizeContent(content, locale),
+    place: place && localizePlace(place, locale),
+  }
+}
+
+// 画像altは内容を具体的に(施設名があれば「◯◯の」を付与)。contentは翻訳済みを渡す
+export const contentImageAlt = (content: Content, locale: Locale): string => {
+  const place = content.place_id ? getPlace(content.place_id) : undefined
+  const name = place && localizePlace(place, locale).name
+  return name && !content.title.includes(name)
+    ? DICTIONARIES[locale].imageAlt(name, content.title)
     : content.title
 }
 
-export const CategoryLabel: FC<{ category: Content["category"] }> = ({
-  category,
-}) => (
+export const CategoryLabel: FC<{
+  category: Content["category"]
+  locale: Locale
+}> = ({ category, locale }) => (
   <span
     style={{
       background: "var(--accent-soft)",
@@ -34,13 +49,18 @@ export const CategoryLabel: FC<{ category: Content["category"] }> = ({
       padding: ".25rem .65rem",
     }}
   >
-    {CATEGORIES[category]}
+    {DICTIONARIES[locale].categories[category]}
   </span>
 )
 
-export const ContentCard: FC<{ content: Content }> = ({ content }) => {
-  const place = content.place_id ? getPlace(content.place_id) : undefined
-  const period = formatContentPeriod(content)
+export const ContentCard: FC<{ content: Content; locale: Locale }> = ({
+  content: original,
+  locale,
+}) => {
+  const { content, place } = localized(original, locale)
+  const t = DICTIONARIES[locale]
+  const href = localePath(locale, `/content/${content.id}/`)
+  const period = formatContentPeriod(content, locale)
   return (
     <article
       style={{
@@ -53,11 +73,11 @@ export const ContentCard: FC<{ content: Content }> = ({ content }) => {
     >
       {content.image_url && (
         <Link
-          href={`/content/${content.id}/`}
+          href={href}
           style={{ flexShrink: 0, overflow: "hidden", position: "relative" }}
         >
           <Image
-            alt={contentImageAlt(content)}
+            alt={contentImageAlt(content, locale)}
             height={84}
             src={content.image_url}
             style={{ objectFit: "cover" }}
@@ -66,7 +86,7 @@ export const ContentCard: FC<{ content: Content }> = ({ content }) => {
         </Link>
       )}
       <div style={{ minWidth: 0 }}>
-        <CategoryLabel category={content.category} />
+        <CategoryLabel category={content.category} locale={locale} />
         <h3
           style={{
             fontSize: "1.02rem",
@@ -76,7 +96,7 @@ export const ContentCard: FC<{ content: Content }> = ({ content }) => {
           }}
         >
           <Link
-            href={`/content/${content.id}/`}
+            href={href}
             style={{ color: "var(--ink)", textDecoration: "none" }}
           >
             {content.title}
@@ -94,8 +114,8 @@ export const ContentCard: FC<{ content: Content }> = ({ content }) => {
           }}
         >
           {period
-            ? `開催 ${period}`
-            : `公開 ${formatDate(content.published_at)}`}
+            ? t.card.held(period)
+            : t.card.published(formatDate(content.published_at, locale))}
           {place ? `　${place.name}` : ""}
         </p>
       </div>
@@ -106,16 +126,17 @@ export const ContentCard: FC<{ content: Content }> = ({ content }) => {
 // 一覧の途中に広告を挟む間隔（件数）
 const AD_INTERVAL = 3
 
-export const ContentList: FC<{ contents: Content[] }> = ({ contents }) =>
-  contents.length === 0 ? (
-    <p style={{ color: "var(--muted)", fontSize: ".85rem" }}>
-      現在情報はありません。
-    </p>
+export const ContentList: FC<{ contents: Content[] }> = async ({
+  contents,
+}) => {
+  const { locale, t } = await getDictionary()
+  return contents.length === 0 ? (
+    <p style={{ color: "var(--muted)", fontSize: ".85rem" }}>{t.card.empty}</p>
   ) : (
     <div style={{ display: "grid", gap: "1px", background: "var(--border)" }}>
       {contents.map((content, i) => (
         <Fragment key={content.id}>
-          <ContentCard content={content} />
+          <ContentCard content={content} locale={locale} />
           {(i + 1) % AD_INTERVAL === 0 && i < contents.length - 1 && (
             <div style={{ background: "#fff", display: "flow-root" }}>
               <InArticleAd />
@@ -125,6 +146,7 @@ export const ContentList: FC<{ contents: Content[] }> = ({ contents }) =>
       ))}
     </div>
   )
+}
 
 export const Section: FC<{
   title: string

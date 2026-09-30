@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { FC, Fragment } from "react"
+import { getDictionary, localePath } from "@/lib/i18n"
 import { jsonLdToHtml, SITE_URL } from "@/lib/json-ld"
 
 export type Crumb = { name: string; href: string }
@@ -11,9 +12,14 @@ export const JsonLd: FC<{ data: unknown }> = ({ data }) => (
   />
 )
 
-// 先頭の「浅草ライブ」は自動で付与。最後の要素は現在ページとしてリンクにしない
-export const Breadcrumbs: FC<{ items: Crumb[] }> = ({ items }) => {
-  const crumbs = [{ name: "浅草ライブ", href: "/" }, ...items]
+// 先頭のサイト名は自動で付与。最後の要素は現在ページとしてリンクにしない。
+// hrefは言語プレフィックス無しで渡す
+export const Breadcrumbs: FC<{ items: Crumb[] }> = async ({ items }) => {
+  const { locale, t } = await getDictionary()
+  const crumbs = [{ name: t.siteName, href: "/" }, ...items].map((crumb) => ({
+    ...crumb,
+    href: localePath(locale, crumb.href),
+  }))
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -25,7 +31,7 @@ export const Breadcrumbs: FC<{ items: Crumb[] }> = ({ items }) => {
     })),
   }
   return (
-    <nav aria-label="パンくずリスト" style={{ margin: "0 0 2rem" }}>
+    <nav aria-label={t.breadcrumbLabel} style={{ margin: "0 0 2rem" }}>
       <JsonLd data={jsonLd} />
       <ol
         style={{
@@ -58,35 +64,38 @@ export const Breadcrumbs: FC<{ items: Crumb[] }> = ({ items }) => {
   )
 }
 
-// SEOハブ間の内部リンク
-export const LinkList: FC<{ links: Crumb[] }> = ({ links }) => (
-  <ul
-    style={{
-      display: "flex",
-      flexWrap: "wrap",
-      gap: ".5rem",
-      listStyle: "none",
-      margin: 0,
-      padding: 0,
-    }}
-  >
-    {links.map((link) => (
-      <li key={link.href}>
-        <Link
-          href={link.href}
-          style={{
-            background: "#fff",
-            border: "1px solid var(--border)",
-            color: "var(--ink-soft)",
-            display: "inline-block",
-            fontSize: ".8rem",
-            padding: ".4rem .8rem",
-            textDecoration: "none",
-          }}
-        >
-          {link.name}
-        </Link>
-      </li>
-    ))}
-  </ul>
-)
+// SEOハブ間の内部リンク。hrefは言語プレフィックス無しで渡す
+export const LinkList: FC<{ links: Crumb[] }> = async ({ links }) => {
+  const { locale } = await getDictionary()
+  return (
+    <ul
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        gap: ".5rem",
+        listStyle: "none",
+        margin: 0,
+        padding: 0,
+      }}
+    >
+      {links.map((link) => (
+        <li key={link.href}>
+          <Link
+            href={localePath(locale, link.href)}
+            style={{
+              background: "#fff",
+              border: "1px solid var(--border)",
+              color: "var(--ink-soft)",
+              display: "inline-block",
+              fontSize: ".8rem",
+              padding: ".4rem .8rem",
+              textDecoration: "none",
+            }}
+          >
+            {link.name}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  )
+}

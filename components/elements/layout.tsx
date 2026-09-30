@@ -88,7 +88,10 @@ export const Main: FC<{ children: ReactNode }> = ({ children }) => (
   </main>
 )
 
-export const Footer: FC<{ children: ReactNode }> = ({ children }) => (
+export const Footer: FC<{ children: ReactNode; siteName?: string }> = ({
+  children,
+  siteName = "浅草ライブ",
+}) => (
   <footer
     style={{
       background: "#fff",
@@ -106,7 +109,7 @@ export const Footer: FC<{ children: ReactNode }> = ({ children }) => (
         margin: "0 0 .75rem",
       }}
     >
-      浅草ライブ
+      {siteName}
     </p>
     <div
       style={{

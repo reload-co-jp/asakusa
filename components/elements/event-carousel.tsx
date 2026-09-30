@@ -4,25 +4,32 @@ import { FC } from "react"
 import {
   contentImageAlt,
   formatContentPeriod,
+  localized,
 } from "@/components/elements/content"
-import { getPlace } from "@/lib/data"
 import { addDays, jstDateString } from "@/lib/date"
+import { DICTIONARIES, getDictionary, Locale, localePath } from "@/lib/i18n"
 import { Content } from "@/lib/types"
 
 // 静的exportのため「開催中/明日から」はビルド時(JST)に確定する
-const eventStatus = (content: Content, today: string): string => {
+const eventStatus = (
+  content: Content,
+  today: string,
+  locale: Locale
+): string => {
+  const { carousel } = DICTIONARIES[locale]
   const start = content.start_at ?? today
-  if (start <= today) return "開催中"
-  if (start === addDays(today, 1)) return "明日から"
-  return "明後日から"
+  if (start <= today) return carousel.ongoing
+  if (start === addDays(today, 1)) return carousel.tomorrow
+  return carousel.dayAfter
 }
 
-const CarouselCard: FC<{ content: Content; today: string }> = ({
-  content,
+const CarouselCard: FC<{ content: Content; today: string; locale: Locale }> = ({
+  content: original,
   today,
+  locale,
 }) => {
-  const place = content.place_id ? getPlace(content.place_id) : undefined
-  const period = formatContentPeriod(content)
+  const { content, place } = localized(original, locale)
+  const period = formatContentPeriod(content, locale)
   return (
     <li
       style={{
@@ -32,7 +39,7 @@ const CarouselCard: FC<{ content: Content; today: string }> = ({
       }}
     >
       <Link
-        href={`/content/${content.id}/`}
+        href={localePath(locale, `/content/${content.id}/`)}
         style={{
           aspectRatio: "4 / 3",
           background: "var(--accent-soft)",
@@ -45,7 +52,7 @@ const CarouselCard: FC<{ content: Content; today: string }> = ({
       >
         {content.image_url && (
           <Image
-            alt={contentImageAlt(content)}
+            alt={contentImageAlt(content, locale)}
             fill
             sizes="28rem"
             src={content.image_url}
@@ -63,7 +70,7 @@ const CarouselCard: FC<{ content: Content; today: string }> = ({
             top: 0,
           }}
         >
-          {eventStatus(content, today)}
+          {eventStatus(content, today, locale)}
         </span>
         <div
           style={{
@@ -89,7 +96,7 @@ const CarouselCard: FC<{ content: Content; today: string }> = ({
               opacity: 0.9,
             }}
           >
-            {period && `開催 ${period}`}
+            {period && DICTIONARIES[locale].card.held(period)}
             {place ? `\u3000${place.name}` : ""}
           </p>
         </div>
@@ -99,15 +106,16 @@ const CarouselCard: FC<{ content: Content; today: string }> = ({
 }
 
 // JS不要のCSS scroll-snapによる横スクロールカルーセル
-export const EventCarousel: FC<{ contents: Content[]; now?: Date }> = ({
+export const EventCarousel: FC<{ contents: Content[]; now?: Date }> = async ({
   contents,
   now = new Date(),
 }) => {
   if (contents.length === 0) return null
+  const { locale, t } = await getDictionary()
   const today = jstDateString(now)
   return (
     <ul
-      aria-label="開催中・近日開催のイベント"
+      aria-label={t.carousel.label}
       style={{
         display: "flex",
         gap: "1rem",
@@ -120,7 +128,12 @@ export const EventCarousel: FC<{ contents: Content[]; now?: Date }> = ({
       }}
     >
       {contents.map((content) => (
-        <CarouselCard content={content} key={content.id} today={today} />
+        <CarouselCard
+          content={content}
+          key={content.id}
+          locale={locale}
+          today={today}
+        />
       ))}
     </ul>
   )

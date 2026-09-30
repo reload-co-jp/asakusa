@@ -1,0 +1,480 @@
+import { locale as localeParam } from "next/root-params"
+import {
+  CATEGORIES,
+  CATEGORY_DESCRIPTIONS,
+  CATEGORY_TITLES,
+  Category,
+  PLACE_TYPES,
+  PlaceType,
+} from "./types"
+import { Locale } from "./i18n-config"
+
+export * from "./i18n-config"
+
+// 日本語ページ((ja)ルートグループ)には[locale]が無くundefinedになる
+export const getLocale = async (): Promise<Locale> =>
+  ((await localeParam()) as Locale | undefined) ?? "ja"
+
+const ja = {
+  siteName: "浅草ライブ",
+  siteDescription:
+    "浅草エリアのイベント・新店舗・閉店・セール・POP UP・公演・祭り・地域ニュースを届ける浅草地域メディア",
+  nav: {
+    latest: "最新情報",
+    events: "イベント",
+    today: "今日",
+    thisWeek: "今週",
+    weekend: "今週末",
+    nextWeek: "来週",
+    thisMonth: "今月",
+    festival: "祭り・季節行事",
+    performance: "公演・演芸",
+    newOpening: "新店舗",
+    closing: "閉店",
+    sale: "セール",
+    popup: "POP UP",
+    exhibition: "展示・アート",
+    places: "施設",
+  },
+  breadcrumbLabel: "パンくずリスト",
+  languageLabel: "言語",
+  home: {
+    heading: "浅草のイベント・祭り・公演・新店舗・地域ニュース",
+    today: "今日の浅草",
+    thisWeek: "今週の浅草",
+    weekend: "今週末の浅草イベント",
+    newOpening: "浅草の新店舗",
+    sale: "現在開催中のセール",
+    latest: "浅草の最新情報",
+    places: "施設から探す",
+  },
+  carousel: {
+    label: "開催中・近日開催のイベント",
+    ongoing: "開催中",
+    tomorrow: "明日から",
+    dayAfter: "明後日から",
+  },
+  card: {
+    held: (period: string) => `開催 ${period}`,
+    published: (date: string) => `公開 ${date}`,
+    empty: "現在情報はありません。",
+  },
+  imageAlt: (place: string, title: string) => `${place}の${title}`,
+  hub: {
+    byPeriod: "期間から探す",
+    byGenre: "ジャンルから探す",
+    periodTitle: (label: string, period: string) =>
+      `${label}の浅草イベント｜${period}`,
+    thisMonthTitle: (month: string) => `${month}の浅草イベント・祭り・公演`,
+    periodDescription: (period: string) =>
+      `${period}に浅草で開催されるイベント・祭り・公演・演芸・展示・POP UP情報を一覧でまとめています。浅草寺・浅草公会堂・浅草ROXなど施設別の開催情報も掲載。`,
+    periodLead: (period: string, count: number, updated: string) =>
+      `${period}に浅草で開催中・開催予定のイベント ${count}件（${updated}更新）`,
+  },
+  events: {
+    title: "浅草のイベント情報｜祭り・公演・演芸・展示・POP UP｜浅草ライブ",
+    description:
+      "浅草で開催中・開催予定のイベントを開催日順に掲載。浅草寺・浅草神社の祭りや伝統行事、浅草公会堂・浅草演芸ホールの公演・演芸、展示やPOP UPまで、今日・今週末・今月の予定から探せます。",
+    heading: "浅草のイベント情報",
+    lead: (count: number) => `浅草で開催中・開催予定のイベント ${count}件`,
+    archive: "月別アーカイブ",
+    monthTitle: (month: string) =>
+      `${month}の浅草イベント・祭り・公演一覧｜浅草ライブ`,
+    monthDescription: (month: string, count: number) =>
+      `${month}に浅草で開催された・開催されるイベント${count}件の一覧。祭り・伝統行事、公演・演芸、展示、POP UPなどの開催日・会場をまとめています。`,
+    monthHeading: (month: string) => `${month}の浅草イベント`,
+    monthLead: (month: string, count: number) =>
+      `${month}に浅草で開催のイベント ${count}件`,
+  },
+  category: {
+    description: (base: string, count: number) =>
+      `${base}。掲載${count}件を開催日・公開日順に紹介。`,
+  },
+  content: {
+    ended: "開催終了",
+    published: (date: string) => `${date} 公開`,
+    period: "開催期間",
+    place: "場所",
+    address: "住所",
+    source: "情報源",
+    placeLink: (place: string) => `${place}のイベント・施設情報を見る →`,
+    categoryLink: (category: string) => `浅草の${category}情報一覧 →`,
+    official: "公式情報を見る →",
+    related: "関連する浅草の情報",
+  },
+  place: {
+    listTitle: "浅草の観光スポット・施設情報｜寺社・劇場・商業施設｜浅草ライブ",
+    listDescription: (count: number) =>
+      `浅草寺・浅草神社などの寺社、浅草公会堂・浅草演芸ホールなどの劇場、浅草ROX・松屋浅草などの商業施設まで、浅草の施設${count}件の基本情報と開催中・今後のイベントをまとめています。`,
+    listHeading: "浅草の観光スポット・施設",
+    listLead: "施設ごとに開催中・今後のイベントや関連ニュースを掲載",
+    eventCount: (count: number) => `開催中・今後のイベント ${count}件`,
+    title: (name: string, type: string, area: string) =>
+      `${name}のイベント・最新情報｜${type}・${area}｜浅草ライブ`,
+    descriptionSuffix: (count: number) =>
+      ` 開催中・今後のイベント${count}件を掲載。`,
+    imageAlt: (name: string) => `${name}の外観`,
+    address: "住所",
+    hours: "営業時間",
+    phone: "電話",
+    official: "公式サイト →",
+    ongoing: (name: string) => `${name}で開催中のイベント`,
+    upcoming: (name: string) => `${name}の今後のイベント・行事`,
+    others: (name: string) => `${name}の関連ニュース・過去のイベント`,
+    otherPlaces: "浅草のほかの施設",
+  },
+  categories: CATEGORIES as Record<Category, string>,
+  categoryTitles: CATEGORY_TITLES,
+  categoryDescriptions: CATEGORY_DESCRIPTIONS,
+  placeTypes: PLACE_TYPES as Record<PlaceType, string>,
+}
+
+type Dictionary = typeof ja
+
+const en: Dictionary = {
+  siteName: "Asakusa Live",
+  siteDescription:
+    "Local media covering Asakusa, Tokyo: events, festivals, performances, new shops, closures, sales, pop-ups and neighborhood news.",
+  nav: {
+    latest: "Latest",
+    events: "Events",
+    today: "Today",
+    thisWeek: "This Week",
+    weekend: "This Weekend",
+    nextWeek: "Next Week",
+    thisMonth: "This Month",
+    festival: "Festivals",
+    performance: "Performances",
+    newOpening: "New Shops",
+    closing: "Closures",
+    sale: "Sales",
+    popup: "Pop-ups",
+    exhibition: "Exhibitions",
+    places: "Places",
+  },
+  breadcrumbLabel: "Breadcrumb",
+  languageLabel: "Language",
+  home: {
+    heading:
+      "Events, festivals, performances, new shops and local news in Asakusa, Tokyo",
+    today: "Today in Asakusa",
+    thisWeek: "This Week in Asakusa",
+    weekend: "Asakusa Events This Weekend",
+    newOpening: "New Shops in Asakusa",
+    sale: "Sales Now On",
+    latest: "Latest from Asakusa",
+    places: "Browse by Place",
+  },
+  carousel: {
+    label: "Ongoing and upcoming events",
+    ongoing: "Ongoing",
+    tomorrow: "From tomorrow",
+    dayAfter: "In 2 days",
+  },
+  card: {
+    held: (period) => `Dates: ${period}`,
+    published: (date) => `Published ${date}`,
+    empty: "No information at the moment.",
+  },
+  imageAlt: (place, title) => `${title} at ${place}`,
+  hub: {
+    byPeriod: "Browse by Date",
+    byGenre: "Browse by Genre",
+    periodTitle: (label, period) => `Asakusa Events ${label} | ${period}`,
+    thisMonthTitle: (month) =>
+      `Asakusa Events, Festivals & Performances in ${month}`,
+    periodDescription: (period) =>
+      `Events, festivals, performances, rakugo, exhibitions and pop-ups in Asakusa on ${period}, including listings by venue such as Senso-ji, Asakusa Public Hall and Asakusa ROX.`,
+    periodLead: (period, count, updated) =>
+      `${count} events ongoing or scheduled in Asakusa on ${period} (updated ${updated})`,
+  },
+  events: {
+    title:
+      "Asakusa Events | Festivals, Performances, Rakugo, Exhibitions & Pop-ups | Asakusa Live",
+    description:
+      "Ongoing and upcoming events in Asakusa, sorted by date: festivals and traditional rituals at Senso-ji and Asakusa Shrine, shows at Asakusa Public Hall and Asakusa Engei Hall, exhibitions and pop-ups. Browse by today, this weekend or this month.",
+    heading: "Asakusa Events",
+    lead: (count) => `${count} ongoing and upcoming events in Asakusa`,
+    archive: "Monthly Archive",
+    monthTitle: (month) =>
+      `Asakusa Events, Festivals & Performances in ${month} | Asakusa Live`,
+    monthDescription: (month, count) =>
+      `A list of ${count} events held in Asakusa in ${month}, including festivals, traditional rituals, performances, exhibitions and pop-ups, with dates and venues.`,
+    monthHeading: (month) => `Asakusa Events in ${month}`,
+    monthLead: (month, count) => `${count} events in Asakusa in ${month}`,
+  },
+  category: {
+    description: (base, count) =>
+      `${base}. ${count} listings sorted by event or publication date.`,
+  },
+  content: {
+    ended: "Ended",
+    published: (date) => `Published ${date}`,
+    period: "Dates",
+    place: "Venue",
+    address: "Address",
+    source: "Source",
+    placeLink: (place) => `Events and info for ${place} →`,
+    categoryLink: (category) => `All ${category} in Asakusa →`,
+    official: "Official information →",
+    related: "Related in Asakusa",
+  },
+  place: {
+    listTitle:
+      "Asakusa Sightseeing Spots & Venues | Temples, Theaters & Shopping | Asakusa Live",
+    listDescription: (count) =>
+      `Basic information and ongoing/upcoming events for ${count} venues in Asakusa, from temples and shrines such as Senso-ji and Asakusa Shrine to theaters and shopping complexes.`,
+    listHeading: "Asakusa Sightseeing Spots & Venues",
+    listLead: "Ongoing and upcoming events and news for each venue",
+    eventCount: (count) => `${count} ongoing/upcoming events`,
+    title: (name, type, area) =>
+      `${name} Events & News | ${type}, ${area} | Asakusa Live`,
+    descriptionSuffix: (count) => ` ${count} ongoing and upcoming events.`,
+    imageAlt: (name) => `Exterior of ${name}`,
+    address: "Address",
+    hours: "Hours",
+    phone: "Phone",
+    official: "Official website →",
+    ongoing: (name) => `Ongoing Events at ${name}`,
+    upcoming: (name) => `Upcoming Events at ${name}`,
+    others: (name) => `News & Past Events at ${name}`,
+    otherPlaces: "Other Places in Asakusa",
+  },
+  categories: {
+    event: "Events",
+    festival: "Festivals & Seasonal Events",
+    performance: "Performances & Rakugo",
+    theater: "Theater",
+    concert: "Concerts",
+    new_opening: "New Openings",
+    closing: "Closures",
+    renewal: "Renewals",
+    sale: "Sales",
+    campaign: "Campaigns",
+    popup: "Pop-ups",
+    new_product: "New Products",
+    exhibition: "Exhibitions",
+    facility_news: "Venue News",
+    local_news: "Local News",
+  },
+  categoryTitles: {
+    event: "Asakusa Events & Experiences",
+    festival: "Asakusa Festivals, Traditional & Seasonal Events",
+    performance: "Asakusa Performances, Rakugo & Variety Shows",
+    theater: "Asakusa Theater & Stage Shows",
+    concert: "Asakusa Concerts & Live Music",
+    new_opening: "New Shops & Openings in Asakusa",
+    closing: "Closures in Asakusa",
+    renewal: "Renewals in Asakusa",
+    sale: "Sales in Asakusa",
+    campaign: "Campaigns in Asakusa",
+    popup: "Pop-up & Limited-time Shops in Asakusa",
+    new_product: "New & Limited Products in Asakusa",
+    exhibition: "Exhibitions in Asakusa",
+    facility_news: "Asakusa Venue News",
+    local_news: "Asakusa Local News",
+  },
+  categoryDescriptions: {
+    event: "Events happening around Asakusa",
+    festival: "Festivals and seasonal events in Asakusa",
+    performance: "Performances and rakugo in Asakusa",
+    theater: "Theater performances in Asakusa",
+    concert: "Concerts around Asakusa",
+    new_opening: "Newly opened shops and venues around Asakusa",
+    closing: "Shop closures around Asakusa",
+    renewal: "Renewals around Asakusa",
+    sale: "Sales happening around Asakusa",
+    campaign: "Campaigns around Asakusa",
+    popup: "Pop-up shops around Asakusa",
+    new_product: "New products around Asakusa",
+    exhibition: "Exhibitions around Asakusa",
+    facility_news: "News from venues around Asakusa",
+    local_news: "Local news from around Asakusa",
+  },
+  placeTypes: {
+    store: "Shop",
+    facility: "Facility",
+    temple: "Temple",
+    shrine: "Shrine",
+    museum: "Museum",
+    theater: "Theater",
+    park: "Park",
+    tourist_spot: "Sightseeing Spot",
+    other: "Other",
+  },
+}
+
+const zh: Dictionary = {
+  siteName: "浅草Live",
+  siteDescription:
+    "介绍东京浅草地区活动、节庆、演出、新店、闭店、促销、快闪店及地区新闻的本地媒体",
+  nav: {
+    latest: "最新资讯",
+    events: "活动",
+    today: "今天",
+    thisWeek: "本周",
+    weekend: "本周末",
+    nextWeek: "下周",
+    thisMonth: "本月",
+    festival: "祭典・节庆",
+    performance: "演出・曲艺",
+    newOpening: "新店",
+    closing: "闭店",
+    sale: "促销",
+    popup: "快闪店",
+    exhibition: "展览・艺术",
+    places: "设施",
+  },
+  breadcrumbLabel: "面包屑导航",
+  languageLabel: "语言",
+  home: {
+    heading: "东京浅草的活动・祭典・演出・新店・地区新闻",
+    today: "今天的浅草",
+    thisWeek: "本周的浅草",
+    weekend: "本周末浅草活动",
+    newOpening: "浅草新店",
+    sale: "正在进行的促销",
+    latest: "浅草最新资讯",
+    places: "按设施查找",
+  },
+  carousel: {
+    label: "正在举办・即将举办的活动",
+    ongoing: "举办中",
+    tomorrow: "明天开始",
+    dayAfter: "后天开始",
+  },
+  card: {
+    held: (period) => `举办 ${period}`,
+    published: (date) => `发布 ${date}`,
+    empty: "目前暂无信息。",
+  },
+  imageAlt: (place, title) => `${place}的${title}`,
+  hub: {
+    byPeriod: "按日期查找",
+    byGenre: "按类别查找",
+    periodTitle: (label, period) => `${label}浅草活动｜${period}`,
+    thisMonthTitle: (month) => `${month}浅草活动・祭典・演出`,
+    periodDescription: (period) =>
+      `汇总${period}在浅草举办的活动、祭典、演出、曲艺、展览及快闪店信息，并按浅草寺、浅草公会堂、浅草ROX等设施分类介绍。`,
+    periodLead: (period, count, updated) =>
+      `${period}在浅草举办中・即将举办的活动 ${count}项（${updated}更新）`,
+  },
+  events: {
+    title: "浅草活动信息｜祭典・演出・曲艺・展览・快闪店｜浅草Live",
+    description:
+      "按日期介绍浅草正在举办和即将举办的活动。从浅草寺、浅草神社的祭典与传统仪式，到浅草公会堂、浅草演艺厅的演出与曲艺，以及展览和快闪店，可按今天、本周末、本月查找。",
+    heading: "浅草活动信息",
+    lead: (count) => `浅草正在举办・即将举办的活动 ${count}项`,
+    archive: "按月归档",
+    monthTitle: (month) => `${month}浅草活动・祭典・演出一览｜浅草Live`,
+    monthDescription: (month, count) =>
+      `${month}在浅草举办的${count}项活动一览，汇总祭典、传统仪式、演出、曲艺、展览、快闪店等的日期与会场。`,
+    monthHeading: (month) => `${month}浅草活动`,
+    monthLead: (month, count) => `${month}在浅草举办的活动 ${count}项`,
+  },
+  category: {
+    description: (base, count) =>
+      `${base}。共${count}条，按举办日・发布日排序。`,
+  },
+  content: {
+    ended: "已结束",
+    published: (date) => `${date} 发布`,
+    period: "举办期间",
+    place: "地点",
+    address: "地址",
+    source: "信息来源",
+    placeLink: (place) => `查看${place}的活动・设施信息 →`,
+    categoryLink: (category) => `浅草${category}信息一览 →`,
+    official: "查看官方信息 →",
+    related: "浅草相关信息",
+  },
+  place: {
+    listTitle: "浅草观光景点・设施信息｜寺社・剧场・商业设施｜浅草Live",
+    listDescription: (count) =>
+      `汇总浅草寺、浅草神社等寺社，浅草公会堂、浅草演艺厅等剧场，以及浅草ROX、松屋浅草等商业设施共${count}处的基本信息与正在举办・即将举办的活动。`,
+    listHeading: "浅草观光景点・设施",
+    listLead: "按设施介绍正在举办・即将举办的活动及相关新闻",
+    eventCount: (count) => `举办中・即将举办的活动 ${count}项`,
+    title: (name, type, area) =>
+      `${name}的活动・最新资讯｜${type}・${area}｜浅草Live`,
+    descriptionSuffix: (count) => ` 收录举办中・即将举办的活动${count}项。`,
+    imageAlt: (name) => `${name}外观`,
+    address: "地址",
+    hours: "营业时间",
+    phone: "电话",
+    official: "官方网站 →",
+    ongoing: (name) => `${name}正在举办的活动`,
+    upcoming: (name) => `${name}即将举办的活动・仪式`,
+    others: (name) => `${name}的相关新闻・往期活动`,
+    otherPlaces: "浅草其他设施",
+  },
+  categories: {
+    event: "活动",
+    festival: "祭典・节庆",
+    performance: "演出・曲艺",
+    theater: "戏剧",
+    concert: "音乐会",
+    new_opening: "新店开业",
+    closing: "闭店",
+    renewal: "重新装修",
+    sale: "促销",
+    campaign: "优惠活动",
+    popup: "快闪店",
+    new_product: "新品",
+    exhibition: "展览",
+    facility_news: "设施新闻",
+    local_news: "地区新闻",
+  },
+  categoryTitles: {
+    event: "浅草活动・体验信息",
+    festival: "浅草祭典・传统仪式・节庆活动",
+    performance: "浅草演出・曲艺・落语信息",
+    theater: "浅草戏剧・舞台演出信息",
+    concert: "浅草音乐会・现场演出信息",
+    new_opening: "浅草新店・新开业信息",
+    closing: "浅草闭店信息",
+    renewal: "浅草重新装修信息",
+    sale: "浅草促销信息",
+    campaign: "浅草优惠活动信息",
+    popup: "浅草快闪店・限时店铺信息",
+    new_product: "浅草新品・限定商品信息",
+    exhibition: "浅草展览・展会信息",
+    facility_news: "浅草设施新闻",
+    local_news: "浅草地区新闻",
+  },
+  categoryDescriptions: {
+    event: "汇总浅草地区举办的活动信息",
+    festival: "汇总浅草的祭典・节庆活动信息",
+    performance: "汇总浅草的演出・曲艺信息",
+    theater: "汇总浅草的戏剧演出信息",
+    concert: "汇总浅草地区的音乐会信息",
+    new_opening: "汇总浅草地区新开业的店铺・设施信息",
+    closing: "汇总浅草地区的闭店信息",
+    renewal: "汇总浅草地区的重新装修信息",
+    sale: "汇总浅草地区正在进行的促销信息",
+    campaign: "汇总浅草地区的优惠活动信息",
+    popup: "汇总浅草地区的快闪店信息",
+    new_product: "汇总浅草地区的新品信息",
+    exhibition: "汇总浅草地区的展览信息",
+    facility_news: "汇总浅草地区的设施新闻",
+    local_news: "汇总浅草地区的地区新闻",
+  },
+  placeTypes: {
+    store: "店铺",
+    facility: "设施",
+    temple: "寺院",
+    shrine: "神社",
+    museum: "博物馆",
+    theater: "剧场",
+    park: "公园",
+    tourist_spot: "观光景点",
+    other: "其他",
+  },
+}
+
+export const DICTIONARIES: Record<Locale, Dictionary> = { ja, en, zh }
+
+export const getDictionary = async () => {
+  const locale = await getLocale()
+  return { locale, t: DICTIONARIES[locale] }
+}

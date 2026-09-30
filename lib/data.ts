@@ -1,6 +1,8 @@
 import placesJson from "@/data/places.json"
 import contentsJson from "@/data/contents.json"
 import sourcesJson from "@/data/sources.json"
+import enJson from "@/data/translations/en.json"
+import zhJson from "@/data/translations/zh.json"
 import {
   jstDateString,
   Period,
@@ -9,11 +11,39 @@ import {
   upcomingDaysPeriod,
   weekendPeriod,
 } from "./date"
+import type { Locale } from "./i18n-config"
 import type { Category, Content, Place, Source } from "./types"
 
 export const places = placesJson as Place[]
 export const contents = contentsJson as Content[]
 export const sources = sourcesJson as Source[]
+
+type Translation = {
+  contents: Record<string, Pick<Content, "title" | "summary" | "body">>
+  places: Record<
+    string,
+    Pick<Place, "name" | "description" | "address" | "opening_hours" | "area">
+  >
+}
+
+const translations: Record<Exclude<Locale, "ja">, Translation> = {
+  en: enJson as Translation,
+  zh: zhJson as Translation,
+}
+
+// 未翻訳は日本語のまま返す
+export const isTranslated = (content: Content, locale: Locale): boolean =>
+  locale === "ja" || String(content.id) in translations[locale].contents
+
+export const localizeContent = (content: Content, locale: Locale): Content =>
+  locale === "ja"
+    ? content
+    : { ...content, ...translations[locale].contents[String(content.id)] }
+
+export const localizePlace = (place: Place, locale: Locale): Place =>
+  locale === "ja"
+    ? place
+    : { ...place, ...translations[locale].places[place.id] }
 
 export const getPlace = (id: string): Place | undefined =>
   places.find((place) => place.id === id)

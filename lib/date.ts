@@ -1,3 +1,5 @@
+import type { Locale } from "./i18n-config"
+
 // ビルド環境(GitHub ActionsはUTC)に依存せず、常に日本時間(JST)で日付を扱う
 const JST_OFFSET_MS = 9 * 60 * 60 * 1000
 const DAY_MS = 24 * 60 * 60 * 1000
@@ -59,21 +61,55 @@ export const thisMonthPeriod = (now = new Date()): Period => {
   return { from: today, to: format(lastDay) }
 }
 
-export const formatDate = (date: string): string => {
+const EN_MONTHS = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+]
+
+// 日本語・簡体字は同じ「2026年9月26日」表記
+export const formatDate = (date: string, locale: Locale = "ja"): string => {
   const [year, month, day] = date.split("-")
-  return `${year}年${Number(month)}月${Number(day)}日`
+  return locale === "en"
+    ? `${EN_MONTHS[Number(month) - 1]} ${Number(day)}, ${year}`
+    : `${year}年${Number(month)}月${Number(day)}日`
 }
+
+export const formatMonth = (
+  year: string,
+  month: string,
+  locale: Locale = "ja"
+): string =>
+  locale === "en"
+    ? `${EN_MONTHS[Number(month) - 1]} ${year}`
+    : `${year}年${Number(month)}月`
 
 export const formatDateWithWeekday = (date: string): string =>
   `${formatDate(date)}（${WEEKDAYS[weekday(date)]}）`
 
 // 同年同月の範囲は「2026年9月26日・27日」「2026年9月22日〜28日」のように短縮
-export const formatPeriod = ({ from, to }: Period): string => {
-  if (from === to) return formatDate(from)
-  const [fromYear, fromMonth] = from.split("-")
+export const formatPeriod = (
+  { from, to }: Period,
+  locale: Locale = "ja"
+): string => {
+  if (from === to) return formatDate(from, locale)
+  const [fromYear, fromMonth, fromDay] = from.split("-")
   const [toYear, toMonth, toDay] = to.split("-")
+  const sameMonth = fromYear === toYear && fromMonth === toMonth
+  if (locale === "en")
+    return sameMonth
+      ? `${EN_MONTHS[Number(fromMonth) - 1]} ${Number(fromDay)}–${Number(toDay)}, ${toYear}`
+      : `${formatDate(from, locale)} – ${formatDate(to, locale)}`
   const separator = addDays(from, 1) === to ? "・" : "〜"
-  if (fromYear === toYear && fromMonth === toMonth)
-    return `${formatDate(from)}${separator}${Number(toDay)}日`
+  if (sameMonth) return `${formatDate(from)}${separator}${Number(toDay)}日`
   return `${formatDate(from)}${separator}${formatDate(to)}`
 }

@@ -89,4 +89,13 @@ describe("date", () => {
       "2026年9月28日〜2026年10月4日"
     )
   })
+
+  it("formatPeriod en", () => {
+    expect(formatPeriod({ from: "2026-09-26", to: "2026-09-27" }, "en")).toBe(
+      "Sep 26–27, 2026"
+    )
+    expect(formatPeriod({ from: "2026-09-28", to: "2026-10-04" }, "en")).toBe(
+      "Sep 28, 2026 – Oct 4, 2026"
+    )
+  })
 })
