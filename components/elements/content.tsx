@@ -2,8 +2,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { FC, Fragment, ReactNode } from "react"
 import { InArticleAd } from "@/components/elements/ad"
+import { imageWidth, isLargeImage } from "@/lib/image-size"
 import { getPlace, localizeContent, localizePlace } from "@/lib/data"
-import { formatDate } from "@/lib/date"
+import { addDays, formatDate, formatShortDate, jstDateString } from "@/lib/date"
 import { DICTIONARIES, getDictionary, Locale, localePath } from "@/lib/i18n"
 import { Content } from "@/lib/types"
 
@@ -39,84 +40,124 @@ export const CategoryLabel: FC<{
   category: Content["category"]
   locale: Locale
 }> = ({ category, locale }) => (
-  <span
-    style={{
-      background: "var(--accent-soft)",
-      color: "var(--accent)",
-      display: "inline-block",
-      fontSize: ".68rem",
-      letterSpacing: ".08em",
-      padding: ".25rem .65rem",
-    }}
-  >
-    {DICTIONARIES[locale].categories[category]}
-  </span>
+  <span className="label">{DICTIONARIES[locale].categories[category]}</span>
 )
 
-export const ContentCard: FC<{ content: Content; locale: Locale }> = ({
-  content: original,
+// 静的exportのためステータスはビルド時(JST)に確定し、毎日のスケジュールビルドで更新する
+export const eventStatus = (
+  content: Content,
+  today: string,
+  locale: Locale
+): { text: string; live?: boolean; urgent?: boolean } | null => {
+  const t = DICTIONARIES[locale].carousel
+  if (!content.start_at) return null
+  const end = content.end_at ?? content.start_at
+  if (end < today) return null
+  if (content.start_at > today) {
+    if (content.start_at === addDays(today, 1)) return { text: t.tomorrow }
+    if (content.start_at === addDays(today, 2)) return { text: t.dayAfter }
+    return null
+  }
+  if (content.start_at === end) return { text: t.today, live: true }
+  if (end === today) return { text: t.endsToday, urgent: true }
+  if (end === addDays(today, 1)) return { text: t.endsTomorrow, urgent: true }
+  for (let days = 2; days <= 3; days++)
+    if (end === addDays(today, days))
+      return { text: t.daysLeft(days), live: true }
+  return { text: t.ongoing, live: true }
+}
+
+export const StatusBadge: FC<{ content: Content; locale: Locale }> = ({
+  content,
   locale,
 }) => {
+  const status = eventStatus(content, jstDateString(), locale)
+  if (!status) return null
+  const variant = status.urgent ? "urgent" : status.live ? "live" : ""
+  return (
+    <span className={`badge${variant ? ` badge--${variant}` : ""}`}>
+      {status.text}
+    </span>
+  )
+}
+
+const cardDate = (content: Content): string | null => {
+  if (!content.start_at) return null
+  const start = formatShortDate(content.start_at, true)
+  return !content.end_at || content.end_at === content.start_at
+    ? start
+    : `${start} → ${formatShortDate(content.end_at, true)}`
+}
+
+export const ContentCard: FC<{
+  content: Content
+  locale: Locale
+  feature?: boolean
+}> = ({ content: original, locale, feature }) => {
   const { content, place } = localized(original, locale)
   const t = DICTIONARIES[locale]
   const href = localePath(locale, `/content/${content.id}/`)
-  const period = formatContentPeriod(content, locale)
+  const date = cardDate(content)
+  const image = content.image_url
+  // 低解像度画像は大判にせず、カード内でも引き伸ばさない
+  const large = isLargeImage(image)
+  const small = !!image && imageWidth(image) < 400
+  const isFeature = feature && large
+  const className = [
+    "card",
+    isFeature && "card--feature",
+    !image && "card--text",
+  ]
+    .filter(Boolean)
+    .join(" ")
   return (
-    <article
-      style={{
-        background: "#fff",
-        display: "flex",
-        gap: "1.5rem",
-        padding: "1.5rem",
-        transition: "box-shadow .25s ease",
-      }}
-    >
-      {content.image_url && (
-        <Link
-          href={href}
-          style={{ flexShrink: 0, overflow: "hidden", position: "relative" }}
-        >
+    <article className={className}>
+      {image && (
+        <div className={`card__media${small ? " card__media--small" : ""}`}>
           <Image
             alt={contentImageAlt(content, locale)}
-            height={84}
-            src={content.image_url}
-            style={{ objectFit: "cover" }}
-            width={112}
+            fill
+            sizes={
+              isFeature
+                ? "(min-width: 720px) 50vw, 100vw"
+                : "(min-width: 720px) 25vw, 100vw"
+            }
+            src={image}
           />
-        </Link>
+          <span className="card__badge">
+            <StatusBadge content={original} locale={locale} />
+          </span>
+        </div>
       )}
-      <div style={{ minWidth: 0 }}>
+      <div className="card__body">
         <CategoryLabel category={content.category} locale={locale} />
-        <h3
-          style={{
-            fontSize: "1.02rem",
-            letterSpacing: ".01em",
-            lineHeight: 1.5,
-            margin: ".7rem 0 .5rem",
-          }}
-        >
-          <Link
-            href={href}
-            style={{ color: "var(--ink)", textDecoration: "none" }}
-          >
-            {content.title}
-          </Link>
+        {!image && (
+          <>
+            {" "}
+            <StatusBadge content={original} locale={locale} />
+          </>
+        )}
+        <h3 className="card__title">
+          <Link href={href}>{content.title}</Link>
         </h3>
-        <p style={{ color: "var(--ink-soft)", fontSize: ".85rem", margin: 0 }}>
-          {content.summary}
-        </p>
-        <p
-          style={{
-            color: "var(--muted)",
-            fontSize: ".72rem",
-            letterSpacing: ".02em",
-            margin: ".6rem 0 0",
-          }}
-        >
-          {period
-            ? t.card.held(period)
-            : t.card.published(formatDate(content.published_at, locale))}
-          {place ? `　${place.name}` : ""}
+        {(!image || isFeature) && (
+          <p className="card__summary">{content.summary}</p>
+        )}
+        <p className="card__meta">
+          {date ? (
+            <span className="card__date">{date}</span>
+          ) : (
+            t.card.published(formatDate(content.published_at, locale))
+          )}
+          {place && (
+            <>
+              <br />
+              {place.name}
+            </>
+          )}
+          <span aria-hidden="true" className="card__arrow">
+            →
+          </span>
         </p>
       </div>
     </article>
@@ -124,21 +165,37 @@ export const ContentCard: FC<{ content: Content; locale: Locale }> = ({
 }
 
 // 一覧の途中に広告を挟む間隔（件数）
-const AD_INTERVAL = 3
+const AD_INTERVAL = 6
+// 大きく見せるカードの間隔（件数）
+const FEATURE_INTERVAL = 7
 
 export const ContentList: FC<{ contents: Content[] }> = async ({
   contents,
 }) => {
   const { locale, t } = await getDictionary()
+  // 区間ごとに最初の高解像度画像の記事を大きく見せる
+  const featured = new Set<number>()
+  let next = 0
+  if (contents.length >= 4)
+    contents.forEach((content, i) => {
+      if (i >= next && isLargeImage(content.image_url)) {
+        featured.add(i)
+        next = i + FEATURE_INTERVAL
+      }
+    })
   return contents.length === 0 ? (
-    <p style={{ color: "var(--muted)", fontSize: ".85rem" }}>{t.card.empty}</p>
+    <p style={{ color: "var(--muted)", fontSize: ".9rem" }}>{t.card.empty}</p>
   ) : (
-    <div style={{ display: "grid", gap: "1px", background: "var(--border)" }}>
+    <div className="card-grid">
       {contents.map((content, i) => (
         <Fragment key={content.id}>
-          <ContentCard content={content} locale={locale} />
+          <ContentCard
+            content={content}
+            feature={featured.has(i)}
+            locale={locale}
+          />
           {(i + 1) % AD_INTERVAL === 0 && i < contents.length - 1 && (
-            <div style={{ background: "#fff", display: "flow-root" }}>
+            <div className="ad-slot" style={{ display: "flow-root" }}>
               <InArticleAd />
             </div>
           )}
@@ -150,46 +207,26 @@ export const ContentList: FC<{ contents: Content[] }> = async ({
 
 export const Section: FC<{
   title: string
-  description?: string
+  // 英字の小見出し(装飾)
+  eyebrow?: string
+  description?: ReactNode
   // ページの主見出しとして使う場合はh1
   level?: 1 | 2
+  id?: string
   children: ReactNode
-}> = ({ title, description, level = 2, children }) => {
+}> = ({ title, eyebrow, description, level = 2, id, children }) => {
   const Heading = level === 1 ? "h1" : "h2"
   return (
-    <section style={{ margin: "0 0 4rem" }}>
-      <Heading
-        style={{
-          alignItems: "baseline",
-          color: "var(--ink)",
-          display: "flex",
-          fontFamily: "var(--font-serif)",
-          fontSize: "1.4rem",
-          gap: ".75rem",
-          letterSpacing: ".06em",
-          margin: "0 0 1.5rem",
-        }}
-      >
-        <span
-          style={{
-            background: "var(--accent)",
-            height: "1px",
-            width: "1.75rem",
-          }}
-        />
-        {title}
-      </Heading>
-      {description && (
-        <p
-          style={{
-            color: "var(--muted)",
-            fontSize: ".85rem",
-            margin: "-1rem 0 1.5rem",
-          }}
-        >
-          {description}
-        </p>
-      )}
+    <section className="section" id={id}>
+      <header className="section__head">
+        {eyebrow && (
+          <span aria-hidden="true" className="section__eyebrow">
+            {eyebrow}
+          </span>
+        )}
+        <Heading className="section__title">{title}</Heading>
+        {description && <p className="section__lead">{description}</p>}
+      </header>
       {children}
     </section>
   )

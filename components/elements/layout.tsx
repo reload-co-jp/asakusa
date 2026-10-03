@@ -3,85 +3,38 @@ import { ComponentProps, FC, ReactNode } from "react"
 // ページ毎のH1と重複させないため、共通ヘッダーのサイト名は as="p" で使う
 export const Title: FC<ComponentProps<"h1"> & { as?: "h1" | "p" }> = ({
   as: Tag = "h1",
-  style,
   children,
   ...props
-}) => (
-  <Tag
-    style={{
-      color: "var(--ink)",
-      fontFamily: "var(--font-serif)",
-      fontSize: "clamp(1.9rem, 4.5vw, 2.6rem)",
-      letterSpacing: ".12em",
-      lineHeight: 1,
-      margin: 0,
-      fontWeight: 500,
-      padding: 0,
-      ...style,
-    }}
-    {...props}
-  >
-    {children}
-  </Tag>
-)
+}) => <Tag {...props}>{children}</Tag>
 
 export const Nav: FC<{
   links: { href: string; label: string }[]
-}> = ({ links }) => (
-  <nav>
-    <ul
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: ".4rem 1.4rem",
-        listStyle: "none",
-        margin: ".9rem 0 0",
-        padding: 0,
-      }}
-    >
+  className?: string
+  label?: string
+}> = ({ links, className, label }) => (
+  <nav aria-label={label} className={className}>
+    <ul>
       {links.map((link) => (
         <li key={link.href}>
-          <a
-            href={link.href}
-            style={{
-              color: "var(--ink-soft)",
-              fontSize: ".78rem",
-              letterSpacing: ".08em",
-              textDecoration: "none",
-              transition: "color .2s ease",
-            }}
-          >
-            {link.label}
-          </a>
+          <a href={link.href}>{link.label}</a>
         </li>
       ))}
     </ul>
   </nav>
 )
 
+// スクロールでコンパクトになるstickyヘッダー(CSS scroll-driven animation)
 export const Header: FC<{ children: ReactNode }> = ({ children }) => (
-  <header
-    style={{
-      background: "#fff",
-      borderBottom: "1px solid var(--border)",
-      padding: "1.4rem 1.5rem",
-      position: "relative",
-    }}
-  >
-    <div style={{ maxWidth: "60rem", margin: "auto" }}>{children}</div>
+  <header className="site-header">
+    <div className="container site-header__inner">{children}</div>
   </header>
 )
 
 export const Main: FC<{ children: ReactNode }> = ({ children }) => (
-  <main
-    style={{
-      background: "var(--paper)",
-      color: "var(--ink-soft)",
-      minHeight: "calc(100dvh - 7rem)",
-    }}
-  >
+  <main style={{ color: "var(--ink-soft)", overflowX: "clip" }}>
     <div
-      style={{ margin: "0 auto", maxWidth: "60rem", padding: "3rem 1.5rem" }}
+      className="container"
+      style={{ minHeight: "60vh", paddingBlock: "2rem 4rem" }}
     >
       {children}
     </div>
@@ -92,33 +45,10 @@ export const Footer: FC<{ children: ReactNode; siteName?: string }> = ({
   children,
   siteName = "浅草ライブ",
 }) => (
-  <footer
-    style={{
-      background: "#fff",
-      borderTop: "1px solid var(--border)",
-      padding: "2.5rem 1.5rem 1.75rem",
-      textAlign: "center",
-    }}
-  >
-    <p
-      style={{
-        color: "var(--ink)",
-        fontFamily: "var(--font-serif)",
-        fontSize: "1.1rem",
-        letterSpacing: ".16em",
-        margin: "0 0 .75rem",
-      }}
-    >
-      {siteName}
-    </p>
-    <div
-      style={{
-        color: "var(--faint)",
-        fontSize: ".72rem",
-        letterSpacing: ".04em",
-      }}
-    >
-      {children}
+  <footer className="site-footer">
+    <div className="container">
+      <p className="site-logo">{siteName}</p>
+      <div style={{ fontSize: ".75rem" }}>{children}</div>
     </div>
   </footer>
 )

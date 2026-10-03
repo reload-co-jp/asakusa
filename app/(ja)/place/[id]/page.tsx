@@ -110,7 +110,7 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
         ]}
       />
       <JsonLd data={jsonLd} />
-      <article style={{ margin: "0 0 2rem" }}>
+      <article className="readable" style={{ margin: "0 0 2rem" }}>
         {place.image_url && (
           <Image
             alt={t.place.imageAlt(place.name)}
@@ -138,8 +138,8 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
         <h1
           style={{
             color: "var(--ink)",
-            fontFamily: "var(--font-serif)",
-            fontSize: "1.5rem",
+            fontWeight: 800,
+            fontSize: "clamp(1.6rem, 4vw, 2.2rem)",
             letterSpacing: ".02em",
             margin: ".5rem 0 1rem",
           }}

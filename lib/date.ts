@@ -18,6 +18,15 @@ export const addDays = (date: string, days: number): string =>
 
 export const weekday = (date: string): number => parse(date).getUTCDay()
 
+const WEEKDAYS_EN = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
+
+// カード・見出し用の言語非依存な短い日付(例: "10.04 SUN")
+export const formatShortDate = (date: string, withWeekday = false): string => {
+  const [, month, day] = date.split("-")
+  const short = `${month}.${day}`
+  return withWeekday ? `${short} ${WEEKDAYS_EN[weekday(date)]}` : short
+}
+
 export type Period = { from: string; to: string }
 
 export const todayPeriod = (now = new Date()): Period => {

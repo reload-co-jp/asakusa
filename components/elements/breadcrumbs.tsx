@@ -68,30 +68,10 @@ export const Breadcrumbs: FC<{ items: Crumb[] }> = async ({ items }) => {
 export const LinkList: FC<{ links: Crumb[] }> = async ({ links }) => {
   const { locale } = await getDictionary()
   return (
-    <ul
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: ".5rem",
-        listStyle: "none",
-        margin: 0,
-        padding: 0,
-      }}
-    >
+    <ul className="pills">
       {links.map((link) => (
         <li key={link.href}>
-          <Link
-            href={localePath(locale, link.href)}
-            style={{
-              background: "#fff",
-              border: "1px solid var(--border)",
-              color: "var(--ink-soft)",
-              display: "inline-block",
-              fontSize: ".8rem",
-              padding: ".4rem .8rem",
-              textDecoration: "none",
-            }}
-          >
+          <Link className="pill" href={localePath(locale, link.href)}>
             {link.name}
           </Link>
         </li>

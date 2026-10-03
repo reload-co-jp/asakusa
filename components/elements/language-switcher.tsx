@@ -13,17 +13,7 @@ export const LanguageSwitcher: FC<{ label: string; locale: Locale }> = ({
   const basePath =
     locale === "ja" ? pathname : pathname.replace(`/${locale}`, "") || "/"
   return (
-    <nav
-      aria-label={label}
-      style={{
-        display: "flex",
-        fontSize: ".72rem",
-        gap: ".8rem",
-        position: "absolute",
-        right: "1.5rem",
-        top: ".6rem",
-      }}
-    >
+    <nav aria-label={label} className="lang-switch">
       {LOCALES.map((l) => (
         <a
           aria-current={l === locale ? "true" : undefined}

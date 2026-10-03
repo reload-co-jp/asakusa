@@ -124,6 +124,7 @@ export const PeriodPage: FC<{ config: PeriodPageConfig }> = async ({
           events.length,
           jstDateString()
         )}
+        eyebrow="EVENTS"
         level={1}
         title={pageTitle(config, locale)}
       >
@@ -140,14 +141,14 @@ export const EventNavigation: FC<{ current?: string }> = async ({
   const { locale, t } = await getDictionary()
   return (
     <>
-      <Section title={t.hub.byPeriod}>
+      <Section eyebrow="BY PERIOD" title={t.hub.byPeriod}>
         <LinkList
           links={PERIOD_LINKS.filter((link) => link.href !== current).map(
             ({ key, href }) => ({ name: t.nav[key], href })
           )}
         />
       </Section>
-      <Section title={t.hub.byGenre}>
+      <Section eyebrow="BY GENRE" title={t.hub.byGenre}>
         <LinkList links={genreLinks(locale)} />
       </Section>
     </>

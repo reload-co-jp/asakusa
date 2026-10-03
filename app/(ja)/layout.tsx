@@ -37,6 +37,12 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
     { href: "/category/exhibition/", label: t.nav.exhibition },
     { href: "/place/", label: t.nav.places },
   ].map((link) => ({ ...link, href: href(link.href) }))
+  const mainLinks = [
+    { href: "/today/", label: t.nav.today },
+    { href: "/events/", label: t.nav.events },
+    { href: "/place/", label: t.nav.spots },
+    { href: "/category/local_news/", label: t.nav.news },
+  ].map((link) => ({ ...link, href: href(link.href) }))
   return (
     <html lang={HTML_LANG[locale]}>
       <head />
@@ -61,15 +67,12 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
         />
         <Header>
           <Title as="p">
-            <a
-              href={href("/")}
-              style={{ color: "var(--ink)", textDecoration: "none" }}
-            >
+            <a className="site-logo" href={href("/")}>
               {t.siteName}
             </a>
           </Title>
+          <Nav className="site-nav" links={mainLinks} />
           <LanguageSwitcher label={t.languageLabel} locale={locale} />
-          <Nav links={navLinks} />
         </Header>
         <Main>
           {children}
@@ -86,6 +89,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
           </Script>
         </Main>
         <Footer siteName={t.siteName}>
+          <Nav links={navLinks} />
           <p>&copy; Asakusa Live</p>
         </Footer>
       </body>

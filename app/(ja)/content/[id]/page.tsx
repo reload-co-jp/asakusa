@@ -131,7 +131,7 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
   return (
     <>
       <Breadcrumbs items={crumbs} />
-      <article>
+      <article className="readable">
         <JsonLd data={jsonLd} />
         {content.image_url && (
           <Image
@@ -163,8 +163,8 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
         <h1
           style={{
             color: "var(--ink)",
-            fontFamily: "var(--font-serif)",
-            fontSize: "1.5rem",
+            fontWeight: 800,
+            fontSize: "clamp(1.6rem, 4vw, 2.2rem)",
             letterSpacing: ".02em",
             lineHeight: 1.5,
             margin: ".9rem 0 .6rem",

@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import Image from "next/image"
 import { FC } from "react"
 import { LinkList } from "@/components/elements/breadcrumbs"
 import { ContentList, Section } from "@/components/elements/content"
@@ -9,13 +10,13 @@ import {
   getOngoingContentsByCategory,
   getThisWeekEvents,
   getTodayEvents,
-  getUpcomingDaysEvents,
   getWeekendEvents,
   getContentsByCategory,
   localizePlace,
   places,
 } from "@/lib/data"
-import { alternates, getDictionary } from "@/lib/i18n"
+import { formatShortDate, jstDateString } from "@/lib/date"
+import { alternates, getDictionary, localePath } from "@/lib/i18n"
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const { locale } = await getDictionary()
@@ -24,39 +25,69 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
 const Page: FC = async () => {
   const { locale, t } = await getDictionary()
+  const href = (path: string) => localePath(locale, path)
+  const today = getTodayEvents()
+  const latest = getLatestContents(12)
   return (
     <>
-      <h1
-        style={{
-          color: "var(--muted)",
-          fontSize: ".85rem",
-          fontWeight: 400,
-          margin: "0 0 2.5rem",
-        }}
+      <section className="hero" style={{ marginTop: "-2rem" }}>
+        <Image
+          alt={t.home.heroAlt}
+          fill
+          priority
+          sizes="100vw"
+          src="/images/hero.webp"
+        />
+        <h1 className="hero__eyebrow">{t.home.heading}</h1>
+        <p className="hero__title">{t.home.hero}</p>
+        <div className="hero__actions">
+          <a className="hero__action" href={href("/today/")}>
+            {t.nav.today} {formatShortDate(jstDateString(), true)}
+          </a>
+          <a
+            className="hero__action hero__action--ghost"
+            href={href("/weekend/")}
+          >
+            {t.nav.weekend} →
+          </a>
+        </div>
+      </section>
+
+      <div style={{ height: "clamp(3rem, 7vw, 5.5rem)" }} />
+      <Section
+        description={t.home.todayLead}
+        eyebrow={`TODAY — ${formatShortDate(jstDateString(), true)}`}
+        title={t.home.today}
       >
-        {t.home.heading}
-      </h1>
-      <EventCarousel contents={getUpcomingDaysEvents().slice(0, 5)} />
-      <Section title={t.home.today}>
-        <ContentList contents={getTodayEvents()} />
+        <ContentList contents={today} />
       </Section>
-      <Section title={t.home.thisWeek}>
+
+      <div className="band band--gray">
+        <Section eyebrow="THIS WEEKEND" title={t.home.weekend}>
+          <EventCarousel contents={getWeekendEvents()} />
+        </Section>
+      </div>
+
+      <div style={{ height: "clamp(3rem, 7vw, 5.5rem)" }} />
+      <Section eyebrow="THIS WEEK" title={t.home.thisWeek}>
         <ContentList contents={getThisWeekEvents()} />
       </Section>
-      <Section title={t.home.weekend}>
-        <ContentList contents={getWeekendEvents()} />
+      <Section eyebrow="NEW OPEN" title={t.home.newOpening}>
+        <EventCarousel contents={getContentsByCategory("new_opening")} />
       </Section>
-      <Section title={t.home.newOpening}>
-        <ContentList contents={getContentsByCategory("new_opening")} />
-      </Section>
-      <Section title={t.home.sale}>
+      <Section eyebrow="SALE" title={t.home.sale}>
         <ContentList contents={getOngoingContentsByCategory("sale")} />
       </Section>
-      <Section title={t.home.latest}>
-        <ContentList contents={getLatestContents(10)} />
-      </Section>
+
+      <div className="band band--paper">
+        <Section eyebrow="LATEST" id="latest" title={t.home.latest}>
+          <ContentList contents={latest} />
+        </Section>
+      </div>
+
+      <div style={{ height: "clamp(3rem, 7vw, 5.5rem)" }} />
       <EventNavigation />
-      <Section title={t.home.places}>
+      <Section eyebrow="SPOTS" title={t.home.places}>
         <LinkList
           links={places.map((place) => ({
             name: localizePlace(place, locale).name,
