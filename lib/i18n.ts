@@ -74,6 +74,8 @@ const ja = {
     byGenre: "ジャンルから探す",
     periodTitle: (label: string, period: string) =>
       `${label}の浅草イベント｜${period}`,
+    periodMetaTitle: (label: string) =>
+      `${label}の浅草イベント・祭り情報【毎日更新】`,
     thisMonthTitle: (month: string) => `${month}の浅草イベント・祭り・公演`,
     periodDescription: (period: string) =>
       `${period}に浅草で開催されるイベント・祭り・公演・演芸・展示・POP UP情報を一覧でまとめています。浅草寺・浅草公会堂・浅草ROXなど施設別の開催情報も掲載。`,
@@ -199,6 +201,8 @@ const en: Dictionary = {
     byPeriod: "Browse by Date",
     byGenre: "Browse by Genre",
     periodTitle: (label, period) => `Asakusa Events ${label} | ${period}`,
+    periodMetaTitle: (label) =>
+      `Asakusa Events ${label} | Festivals & Shows, Updated Daily`,
     thisMonthTitle: (month) =>
       `Asakusa Events, Festivals & Performances in ${month}`,
     periodDescription: (period) =>
@@ -380,6 +384,7 @@ const zh: Dictionary = {
     byPeriod: "按日期查找",
     byGenre: "按类别查找",
     periodTitle: (label, period) => `${label}浅草活动｜${period}`,
+    periodMetaTitle: (label) => `${label}浅草活动・祭典信息【每日更新】`,
     thisMonthTitle: (month) => `${month}浅草活动・祭典・演出`,
     periodDescription: (period) =>
       `汇总${period}在浅草举办的活动、祭典、演出、曲艺、展览及快闪店信息，并按浅草寺、浅草公会堂、浅草ROX等设施分类介绍。`,

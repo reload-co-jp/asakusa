@@ -79,7 +79,12 @@ const pageTitle = (
 export const periodMetadata =
   (config: PeriodPageConfig) => async (): Promise<Metadata> => {
     const { locale, t } = await getDictionary()
-    const title = `${pageTitle(config, locale)}｜${t.siteName}`
+    // 日付入りtitleは再クロールまで検索結果に古い日付が残るため、日付なしにする(日付はh1に表示)
+    const title = `${
+      config.title
+        ? pageTitle(config, locale)
+        : t.hub.periodMetaTitle(t.nav[config.label])
+    }｜${t.siteName}`
     const description = t.hub.periodDescription(
       formatPeriod(config.getPeriod(), locale)
     )
@@ -117,6 +122,16 @@ export const PeriodPage: FC<{ config: PeriodPageConfig }> = async ({
           events.map((content) => content.id),
           locale
         )}
+      />
+      {/* 毎日のビルドで内容が変わることを検索エンジンに伝える */}
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: pageTitle(config, locale),
+          url: `${SITE_URL}${localePath(locale, config.path)}`,
+          dateModified: new Date().toISOString(),
+        }}
       />
       <Section
         description={t.hub.periodLead(
