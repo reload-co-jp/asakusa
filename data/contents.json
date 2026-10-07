@@ -56,8 +56,12 @@
     "end_at": "2026-10-18",
     "place_id": "sensoji",
     "source_id": "sensoji",
-    "source_url": "https://www.senso-ji.jp/annual_event/",
-    "image_url": "/images/sources/sensoji.png"
+    "source_url": "https://www.senso-ji.jp/annual_event/16.html",
+    "image_url": "/images/sources/sensoji.png",
+    "source_urls": [
+      "https://www.senso-ji.jp/annual_event/23.html",
+      "https://www.senso-ji.jp/annual_event/"
+    ]
   },
   {
     "id": 5,
@@ -357,7 +361,10 @@
     "place_id": "sensoji",
     "source_id": "sensoji",
     "source_url": "https://www.senso-ji.jp/annual_event/21.html",
-    "image_url": null
+    "image_url": null,
+    "source_urls": [
+      "https://www.senso-ji.jp/annual_event/"
+    ]
   },
   {
     "id": 26,
@@ -402,7 +409,7 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
+    "image_url": "/images/contents/175.jpg"
   },
   {
     "id": 29,
@@ -417,7 +424,7 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
+    "image_url": "/images/contents/141.jpg"
   },
   {
     "id": 31,
@@ -432,7 +439,7 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
+    "image_url": "/images/contents/143.jpg"
   },
   {
     "id": 32,
@@ -462,7 +469,7 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
+    "image_url": "/images/contents/145.jpg"
   },
   {
     "id": 34,
@@ -477,7 +484,7 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
+    "image_url": "/images/contents/146.jpg"
   },
   {
     "id": 35,
@@ -492,7 +499,7 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
+    "image_url": "/images/contents/147.jpg"
   },
   {
     "id": 36,
@@ -507,7 +514,7 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
+    "image_url": "/images/contents/148.jpg"
   },
   {
     "id": 37,
@@ -522,7 +529,7 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
+    "image_url": "/images/contents/150.jpg"
   },
   {
     "id": 38,
@@ -536,8 +543,11 @@
     "end_at": "2026-09-29",
     "place_id": "koukaidou",
     "source_id": "koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
+    "source_url": "https://prtimes.jp/main/html/rd/p/000005115.000019470.html",
+    "image_url": "/images/contents/151.jpg",
+    "source_urls": [
+      "https://asakusa-koukaidou.net/home/event.html"
+    ]
   },
   {
     "id": 39,
@@ -552,7 +562,7 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
+    "image_url": "/images/contents/152.jpg"
   },
   {
     "id": 45,
@@ -823,12 +833,15 @@
     "body": "## 星供養会(星まつり)\n\n冬至の日、浅草寺本堂では「星供養会(星まつり)」が執り行われる。星まつりは、一人ひとりの運命を司るとされる**本命星・当年星**を供養し、無病息災や厄除けを祈願する伝統的な行事である。\n\n冬至は一年で最も昼が短く夜が長い日とされ、古来より陰から陽へ転じる特別な節目として重視されてきた。浅草寺でもこの日に合わせて法要が営まれ、多くの参拝者が一年の無事を感謝し、新たな年の健康を祈願する。\n\n境内は年末の慌ただしさの中にも静かで厳かな空気に包まれる。冬至の柚子湯やかぼちゃの風習とあわせて、日本の伝統的な季節行事として親しまれている。",
     "category": "festival",
     "published_at": "2026-09-06",
-    "start_at": "2026-12-22",
+    "start_at": "2026-12-21",
     "end_at": "2026-12-22",
     "place_id": "sensoji",
     "source_id": "sensoji",
     "source_url": "https://www.senso-ji.jp/annual_event/22.html",
-    "image_url": null
+    "image_url": null,
+    "source_urls": [
+      "https://www.senso-ji.jp/annual_event/"
+    ]
   },
   {
     "id": 100,
@@ -1043,7 +1056,10 @@
     "place_id": "rox",
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/shop/detail.html?shop_id=1342",
-    "image_url": "/images/contents/115.webp"
+    "image_url": "/images/contents/115.webp",
+    "source_urls": [
+      "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89"
+    ]
   },
   {
     "id": 117,
@@ -1091,54 +1107,6 @@
     "image_url": "/images/contents/121.jpg"
   },
   {
-    "id": 122,
-    "type": "event",
-    "title": "菊供養会・金龍の舞",
-    "summary": "菊の花を供える法要とともに「金龍の舞」が奉演される。",
-    "body": "## 菊供養会・金龍の舞\n\n10月18日、浅草寺本堂では「菊供養会」が営まれ、あわせて「金龍の舞」が奉演される。\n\n**菊供養会**は参拝者が持ち寄った菊の花を観音さまに供え、代わりに邪気を払うとされる菊の花を授かるという古くからの行事である。\n\n**金龍の舞**は浅草寺の本尊示現にちなむ舞で、金色に輝く龍が境内を練り歩く姿は見応えがあり、多くの参拝客や観光客の注目を集める。\n\n秋の澄んだ空気の中で行われるこの行事は、浅草の秋の風物詩の一つとなっている。写真撮影を楽しむ観光客も多く、雷門から本堂にかけて賑わいを見せる。\n\n当日は境内が混雑するため、時間に余裕を持った来訪がすすめられる。",
-    "category": "performance",
-    "published_at": "2026-09-07",
-    "start_at": "2026-10-18",
-    "end_at": "2026-10-18",
-    "place_id": "sensoji",
-    "source_id": "sensoji",
-    "source_url": "https://www.senso-ji.jp/annual_event/16.html",
-    "image_url": null,
-    "source_urls": [
-      "https://www.senso-ji.jp/annual_event/23.html"
-    ]
-  },
-  {
-    "id": 123,
-    "type": "news",
-    "title": "9月の「社子屋」開催案内",
-    "summary": "浅草神社が地域の子どもたちに向けて実施している教化活動「社子屋」の9月分案内が公開された。",
-    "body": "浅草神社では青少年への教化活動の一環として「社子屋」を継続的に開催しており、2026年8月22日に9月分の開催案内が発表された。社子屋は子どもたちが日本の伝統文化や風習、そして浅草の歴史や心を学ぶことを目的とした取り組みで、地域に根差した神社ならではの活動として知られる。今回の案内では第146回となる内容が予告されており、地域の家族連れなどの参加が見込まれる。浅草神社は「古きものを維ぎ、新しきものを諾う」という理念のもと、次世代への文化継承にも力を入れている。詳しい開催日時や申込方法については公式サイトの案内を確認する必要がある。地域コミュニティにとって浅草の伝統を学べる貴重な機会となっている。",
-    "category": "exhibition",
-    "published_at": "2026-08-22",
-    "start_at": null,
-    "end_at": null,
-    "place_id": "asakusajinja",
-    "source_id": "asakusajinja",
-    "source_url": "https://asakusajinja.jp/",
-    "image_url": "/images/contents/123.jpg"
-  },
-  {
-    "id": 124,
-    "type": "event",
-    "title": "無添くら寿司 営業時間延長のお知らせ",
-    "summary": "浅草ROX店の無添くら寿司が、9月18日〜20日を含む特定期間に営業時間を延長。",
-    "body": "## 無添くら寿司 営業時間延長のお知らせ\n\n浅草ROX 4Fの『無添 くら寿司』では、8月21日〜23日、9月4日〜6日、9月18日〜20日の期間中、営業時間を延長して営業する。\n\n延長期間中の営業時間は**10:20〜24:00**（最終入場23:30、ラストオーダー23:50）となり、通常の営業時間である平日11:00〜23:00、土日祝10:20〜23:00（最終入場22:30、L.O.22:50）よりも長く利用できる。\n\n夜遅くまで営業することで、観光やショッピングを楽しんだ後に食事に立ち寄りたい客にも対応した措置といえる。特に9月18日から20日の連休にあたる期間は、浅草エリアを訪れる観光客の増加も見込まれ、延長営業により混雑緩和や利便性向上が期待される。",
-    "category": "facility_news",
-    "published_at": "2026-07-13",
-    "start_at": "2026-09-18",
-    "end_at": "2026-09-20",
-    "place_id": null,
-    "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/",
-    "image_url": null
-  },
-  {
     "id": 125,
     "type": "news",
     "title": "ひとり親家庭の親子を花やしきに招待「夏の笑顔イベント2026」開催",
@@ -1167,21 +1135,6 @@
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
     "image_url": "/images/contents/126.jpg"
-  },
-  {
-    "id": 127,
-    "type": "event",
-    "title": "アイシティ、初めての方対象の使い捨てレンズ30%OFF",
-    "summary": "コンタクトのアイシティ浅草ROX店で、初めて利用する人向けに使い捨てレンズが店頭価格から30%OFFになるキャンペーンを9月23日まで実施中。",
-    "body": "## アイシティ、初めての方対象の使い捨てレンズ30%OFF\n\n浅草ROX・3G2階の「コンタクトのアイシティ」にて、アイシティを初めて利用する人を対象に、使い捨てレンズが店頭価格（税抜）から**30%OFF**になるキャンペーンが**9月23日（水・祝）**まで実施されている。キャンペーンはまもなく終了となるため、対象となる人はお早めの来店がおすすめだ。\n\nなお、コンタクトレンズは高度管理医療機器にあたるため、購入には眼科医の処方（指示書等）が必要となる。眼科受診の際にはマイナ保険証等の持参も呼びかけられている。\n\n詳細な条件やレンズの種類については、コンタクトのアイシティ公式ホームページで確認できる。浅草エリアで新たにコンタクトレンズ利用を検討している人にとってお得な機会となりそうだ。",
-    "category": "sale",
-    "published_at": "2026-09-01",
-    "start_at": "2026-09-01",
-    "end_at": "2026-09-23",
-    "place_id": null,
-    "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/127.webp"
   },
   {
     "id": 128,
@@ -1304,51 +1257,6 @@
     "image_url": null
   },
   {
-    "id": 136,
-    "type": "event",
-    "title": "白鷺の舞(11月3日)",
-    "summary": "11月3日、浅草寺境内にて優雅な伝統芸能「白鷺の舞」が奉演される。",
-    "body": "## 白鷺の舞(11月3日)\n\n浅草寺の伝統芸能「白鷺の舞」は、白鷺の姿を模した衣装をまとった踊り手が境内を優雅に練り歩く行事で、年に数回奉演されるうちの一つが11月3日に行われる。\n\n白い羽根をあしらった華やかな衣装と、雅楽の調べにあわせたゆったりとした舞は、見る者を幽玄な世界へと誘う。\n\n浅草の秋の風物詩として観光客にも人気が高く、多くのカメラを構えた見物客で境内が賑わう。伝統文化に触れられる貴重な機会として、浅草観光の見どころのひとつとなっている。",
-    "category": "performance",
-    "published_at": "2026-09-09",
-    "start_at": "2026-11-03",
-    "end_at": "2026-11-03",
-    "place_id": "sensoji",
-    "source_id": "sensoji",
-    "source_url": "https://www.senso-ji.jp/annual_event/",
-    "image_url": null
-  },
-  {
-    "id": 137,
-    "type": "event",
-    "title": "羽子板市",
-    "summary": "納めの観音ご縁日にあわせて境内で開催される、年末恒例の羽子板市。",
-    "body": "## 羽子板市\n\n浅草寺境内では毎年12月17日から19日にかけて、年末恒例の「羽子板市」が開催される。これは12月18日の「納めの観音ご縁日」にあわせて行われるもので、江戸時代から続く伝統的な市として知られる。\n\n境内にはずらりと露店が並び、豪華な押絵で飾られた羽子板が所狭しと並べられる。歌舞伎役者や話題の人物を模した**変わり羽子板**も人気で、毎年多くの見物客や観光客で賑わう。\n\n売り手と買い手の威勢の良い掛け声や、商談成立時に**手締め**を行う光景も羽子板市ならではの風物詩である。\n\n浅草の年の瀬を彩るこの市は、地域住民にとっても一年の締めくくりを感じさせる大切な行事となっている。",
-    "category": "event",
-    "published_at": "2026-09-09",
-    "start_at": "2026-12-17",
-    "end_at": "2026-12-19",
-    "place_id": "sensoji",
-    "source_id": "sensoji",
-    "source_url": "https://www.senso-ji.jp/annual_event/",
-    "image_url": null
-  },
-  {
-    "id": 138,
-    "type": "event",
-    "title": "木製雑貨の「ヨロズスクエア」が浅草ROX 1Fに期間限定出店",
-    "summary": "木製カトラリーや弁当箱を扱う「ヨロズスクエア」が浅草ROX 1F特設会場で営業中。9月15日まで。",
-    "body": "浅草ROX 1F特設会場では、8月14日（金）から9月15日（火）まで「ヨロズスクエア」が期間限定営業している。「いつもの食事をもっと楽しく」をコンセプトに、木製品の販売を通じて心地よい時間を届けることを目指すショップ。専門店ならではの低価格とバリエーション豊富な商品ラインナップが魅力で、天然木のスプーンやフォーク、れんげ、マドラーといったカトラリー（110〜550円）や、7つのポケットを備えた曲げわっぱ弁当箱（2,750円）などを取り揃える。日用使いできる木製アイテムを探している人におすすめの期間限定ショップだ。",
-    "category": "popup",
-    "published_at": "2026-07-23",
-    "start_at": "2026-08-14",
-    "end_at": "2026-09-15",
-    "place_id": "rox",
-    "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/138.webp"
-  },
-  {
     "id": 139,
     "type": "event",
     "title": "花やしきのうきうきシルバーウィーク2026",
@@ -1377,186 +1285,6 @@
     "source_id": "e-asakusa",
     "source_url": "https://e-asakusa.jp/",
     "image_url": null
-  },
-  {
-    "id": 141,
-    "type": "event",
-    "title": "二見颯一 やまびこコンサート2026 in 東京",
-    "summary": "演歌歌手・二見颯一によるコンサートが浅草公会堂で開催される。",
-    "body": "浅草公会堂で「二見颯一 やまびこコンサート2026 in 東京」が開催される。開場14時15分、開演15時、終演予定17時。座席はSS席8,500円、S席8,000円、A席6,500円、B席5,500円の全席指定制で、未就学児の入場はできない。演歌ファンにとっては見逃せない公演で、力強い歌声を間近で楽しめる機会となる。主催はベルワールドミュージックで、平日12時から17時まで電話での問い合わせを受け付けている。浅草の伝統ある文化施設で開催される秋の音楽イベントの一つ。",
-    "category": "performance",
-    "published_at": "2026-09-10",
-    "start_at": "2026-09-10",
-    "end_at": "2026-09-10",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/141.jpg"
-  },
-  {
-    "id": 142,
-    "type": "event",
-    "title": "KIMONO×DANCE PROJECT主催公演『桜咲み』",
-    "summary": "着物と舞踊を融合させた公演『桜咲み』が浅草公会堂で2日間開催される。",
-    "body": "KIMONO×DANCE PROJECT主催による舞台公演『桜咲み』が、浅草公会堂にて9月12日・13日の2日間にわたり上演される。着物姿のダンサーたちが繰り広げる舞台は、和の美しさと現代的なダンス表現を融合させた見どころの多い内容となっている。12日は16時開場・16時30分開演、13日は14時開場・14時30分開演で、いずれも20時前後の終演を予定している。料金は全席自由で5,000円。伝統と革新が交差する舞台演出は、浅草ならではの文化的雰囲気の中で楽しめる。詳細・お問い合わせはKIMONO×DANCE PROJECT公式サイトまで。",
-    "category": "performance",
-    "published_at": "2026-09-10",
-    "start_at": "2026-09-12",
-    "end_at": "2026-09-13",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/142.jpg"
-  },
-  {
-    "id": 143,
-    "type": "event",
-    "title": "悦ちゃん推し！歌まつり",
-    "summary": "歌謡ファン参加型の音楽イベント「悦ちゃん推し！歌まつり」が浅草公会堂で開催される。",
-    "body": "## 悦ちゃん推し！歌まつり\n\n9月17日（木）、浅草公会堂にて「悦ちゃん推し！歌まつり」が開催される。13時開場、13時30分開演で、終演は18時20分を予定。歌謡曲ファンに向けたステージイベントで、出演者を「推す」ファンが集うにぎやかな内容となる見込み。\n\n座席は以下の複数のグレードが用意されており、幅広い層が参加しやすい構成になっている。\n\n- **VIP席**：7,500円\n- **S席**：6,500円\n- **A席**：5,000円\n- **車いす席**：500円\n\n地域の伝統的な演芸文化を受け継ぐ浅草公会堂らしい催しの一つ。\n\nお問い合わせは悦ちゃん推し歌まつり事務局まで。",
-    "category": "performance",
-    "published_at": "2026-09-10",
-    "start_at": "2026-09-17",
-    "end_at": "2026-09-17",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/143.jpg"
-  },
-  {
-    "id": 144,
-    "type": "event",
-    "title": "JUST JESUS ダガヨ 礼拝",
-    "summary": "浅草公会堂で行われる礼拝イベント、入場無料。",
-    "body": "## 開催概要\n\n浅草公会堂にて「JUST JESUS ダガヨ 礼拝」が開催される。\n\n- **開場**:15:00\n- **開演**:16:00\n- **終演**:19:00(予定)\n- **入場**:無料(全席自由)\n- **主催**:株式会社ケイジェイシー(メールでの問い合わせが可能)\n\n宗教的な集会イベントとして、多くの参加者が見込まれる。\n\n浅草公会堂は普段は舞踊や音楽公演が多いホールだが、こうした礼拝イベントの会場としても利用されている。",
-    "category": "event",
-    "published_at": "2026-09-10",
-    "start_at": "2026-09-19",
-    "end_at": "2026-09-19",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
-  },
-  {
-    "id": 145,
-    "type": "event",
-    "title": "浅草音楽祭2026第一夜 浅草「夏」吹奏楽祭",
-    "summary": "入場無料・予約不要の吹奏楽イベントが浅草公会堂で開催される。",
-    "body": "## 浅草音楽祭2026第一夜 浅草「夏」吹奏楽祭\n\n浅草公会堂にて「浅草音楽祭2026第一夜 浅草『夏』吹奏楽祭」が開催される。\n\n- **開場**:13時\n- **開演**:13時30分\n- **終演予定**:17時\n\n**入場は無料でチケット不要**。先着順で満席になり次第入場締切となる点に注意が必要。\n\n吹奏楽の演奏を気軽に楽しめる催しで、地域住民や音楽ファンが多く訪れることが見込まれる。主催は東谷慶太氏で、詳細は公式サイトまたはメールで案内されている。\n\n浅草の夏の終わりを彩る音楽イベントとして、家族連れでも楽しめる内容となっている。",
-    "category": "festival",
-    "published_at": "2026-09-10",
-    "start_at": "2026-09-20",
-    "end_at": "2026-09-20",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/145.jpg"
-  },
-  {
-    "id": 146,
-    "type": "event",
-    "title": "第166回 創作邦舞 河藤流合同公演",
-    "summary": "日本舞踊の流派「創作邦舞 河藤流」による合同公演が浅草公会堂で開催される。",
-    "body": "## 第166回 創作邦舞 河藤流合同公演\n\n浅草公会堂にて「第166回 創作邦舞 河藤流合同公演」が開催される。\n\n- **開場**：11時30分\n- **開演**：12時\n- **終演予定**：18時\n- **入場**：無料・全席自由\n\n伝統ある創作邦舞の流派による舞踊公演で、長年にわたり継承されてきた技と美しさを堪能できる。日本舞踊に馴染みのない人でも気軽に鑑賞できる無料公演として、地域の文化発信の場となっている。\n\n問い合わせは創作邦舞 河藤流事務局まで。祝日を利用した文化イベントとして注目される。",
-    "category": "performance",
-    "published_at": "2026-09-10",
-    "start_at": "2026-09-21",
-    "end_at": "2026-09-21",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/146.jpg"
-  },
-  {
-    "id": 147,
-    "type": "event",
-    "title": "第十回 扇菊会",
-    "summary": "日本舞踊「扇菊会」の第十回公演が浅草公会堂で開催される。",
-    "body": "## 開催概要\n\n浅草公会堂で「第十回 扇菊会」が開催される。開場10時30分、開演11時、終演予定19時と一日を通した公演となる。\n\n## 料金\n\n1階自由席は5,000円、2階・3階自由席は無料と、来場のハードルを下げた料金設定がされている。\n\n## 見どころ\n\n節目となる第十回の公演で、これまでの歩みを振り返る演目も期待される。日本舞踊 坂東流に連なる会として、伝統芸能に触れる貴重な機会を提供する。\n\n## 問い合わせ\n\n問い合わせは扇菊会事務局または公式サイトまで。祝日開催のため家族連れの来場も見込まれる。",
-    "category": "performance",
-    "published_at": "2026-09-10",
-    "start_at": "2026-09-22",
-    "end_at": "2026-09-22",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/147.jpg"
-  },
-  {
-    "id": 148,
-    "type": "event",
-    "title": "Akira Kohama 70th Birthday Concert",
-    "summary": "音楽家Akira Kohama氏の70歳を祝うバースデーコンサートが浅草公会堂で開催される。",
-    "body": "## 開催概要\n\n浅草公会堂にて「Akira Kohama 70th Birthday Concert」が開催される。開場13時、開演13時30分、終演予定16時10分。\n\n料金は**2,000円**で**全席自由**と、比較的リーズナブルな価格設定となっている。\n\n70歳という節目を祝う記念コンサートで、長年のファンにとっては感慨深いステージとなりそうだ。\n\n問い合わせは主催者の井出氏まで電話で受け付けている。\n\n祝日の午後に開催されるコンサートで、気軽に立ち寄れる音楽イベントとして地域でも注目されている。",
-    "category": "performance",
-    "published_at": "2026-09-10",
-    "start_at": "2026-09-23",
-    "end_at": "2026-09-23",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/148.jpg"
-  },
-  {
-    "id": 149,
-    "type": "event",
-    "title": "第48回 クラウン吟詠家ジョイントリサイタル",
-    "summary": "吟詠の会「クラウン吟詠家」による第48回のジョイントリサイタルが浅草公会堂で開催される。",
-    "body": "## 第48回 クラウン吟詠家ジョイントリサイタル\n\n浅草公会堂で「第48回 クラウン吟詠家ジョイントリサイタル」が開催される。開場12時、開演13時、終演予定17時。\n\n座席はSS席6,500円、S席5,500円、A席2,000円の全席指定で、幅広い価格帯が用意されている。\n\n詩吟・吟詠の伝統を受け継ぐ出演者たちが一堂に会するリサイタルで、回を重ねてきた歴史あるイベントとなっている。\n\n問い合わせは主催の清水錦州氏まで。日本の伝統的な詩吟文化に触れられる貴重な機会として、愛好家の来場が見込まれる。",
-    "category": "performance",
-    "published_at": "2026-09-10",
-    "start_at": "2026-09-26",
-    "end_at": "2026-09-26",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/149.jpg"
-  },
-  {
-    "id": 150,
-    "type": "event",
-    "title": "コロムビア舞踊大行進関東大会",
-    "summary": "社交ダンス・舞踊の大会「コロムビア舞踊大行進」の関東大会が浅草公会堂で開催される。",
-    "body": "## コロムビア舞踊大行進関東大会\n\n浅草公会堂にて「コロムビア舞踊大行進関東大会」が開催される。\n\n**開場11時、開演11時30分、終演予定16時30分。**\n\n料金は3,000円で全席自由、当日券のみの販売となる点に注意が必要。\n\n関東各地から集まる出演者による舞踊の祭典で、日頃の練習成果を披露する場として盛り上がりを見せる。\n\n問い合わせは実行委員会まで電話で受け付けている。地域の踊り愛好家にとって年に一度の大きな大会であり、観覧に訪れるファンも多い。",
-    "category": "performance",
-    "published_at": "2026-09-10",
-    "start_at": "2026-09-27",
-    "end_at": "2026-09-27",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/150.jpg"
-  },
-  {
-    "id": 151,
-    "type": "event",
-    "title": "田川寿美デビュー35周年記念コンサート",
-    "summary": "演歌歌手・田川寿美のデビュー35周年を記念したコンサートが浅草公会堂で開催される。",
-    "body": "## 田川寿美デビュー35周年記念コンサート\n\n浅草公会堂で「田川寿美デビュー35周年記念コンサート」が開催される。\n\n**開場15時30分、開演16時、終演予定18時。**\n\n座席はSS席8,000円、S席7,000円、A席5,000円の全席指定で、未就学児の入場は不可となっている。\n\nデビュー35周年という大きな節目を記念する特別なステージで、長年のキャリアを彩るヒット曲の数々が披露されることが期待される。\n\n主催のベルワールドミュージックが平日12時から17時まで問い合わせを受け付けている。演歌ファンにとって見逃せない記念公演となっている。",
-    "category": "performance",
-    "published_at": "2026-09-10",
-    "start_at": "2026-09-29",
-    "end_at": "2026-09-29",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/151.jpg"
-  },
-  {
-    "id": 152,
-    "type": "event",
-    "title": "石田社長「私のおススメ」夢コンサート",
-    "summary": "夢グループによる人気企画「石田社長の夢コンサート」が浅草公会堂で開催される。",
-    "body": "## 石田社長「私のおススメ」夢コンサート\n\n浅草公会堂にて「石田社長『私のおススメ』夢コンサート」が開催される。\n\n**開場**:17時30分\n**開演**:18時\n**終演予定**:20時20分\n\n座席はSS席6,800円、S席3,500円の全席指定。\n\n夢グループの人気企画として知られ、石田社長自らが選りすぐったアーティストによるステージが展開される。エンターテインメント性の高い構成で、幅広い年代のファンから支持されている企画である。\n\n問い合わせは夢グループのコールセンターまで、8時から18時まで受け付けている。浅草での秋の夜を彩るコンサートとして人気が高い。",
-    "category": "performance",
-    "published_at": "2026-09-10",
-    "start_at": "2026-09-30",
-    "end_at": "2026-09-30",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/152.jpg"
   },
   {
     "id": 153,
@@ -1592,16 +1320,19 @@
     "id": 155,
     "type": "event",
     "title": "ミュージカル「キル-道-」",
-    "summary": "K-MUSICAL PROJECTによるミュージカル公演が浅草九劇で開催。",
-    "body": "## 公演概要\n\n浅草九劇にてK-MUSICAL PROJECTによるミュージカル公演『キル-道-』が上演される。公演期間は2026年9月26日(土)から9月27日(日)までの2日間で、ミュージカルジャンルの新作として注目を集めている。\n\nチケットは九劇先行発売を経て一般発売中となっており、迫力あるステージングと音楽性の高さが特徴の公演とされる。\n\n浅草エリアでミュージカルを楽しめる貴重な機会であり、劇場ならではの臨場感あふれる体験が期待できる。K-MUSICAL PROJECTの新たな挑戦作として演劇・音楽ファンから関心を集めている。",
+    "summary": "K-MUSICAL PROJECTによるミュージカル「キル-道-」が浅草九劇で2日間上演される。",
+    "body": "## K-MUSICAL PROJECT「キル-道-」\n\n浅草九劇にて、K-MUSICAL PROJECTによるミュージカル作品「キル-道-」が**2026年9月26日から27日**にかけて上演される。\n\n韓国発のミュージカルプロジェクトとして注目される同カンパニーは、独自の音楽性とダイナミックな演出で知られ、今作も見応えのあるステージが期待されている。\n\n公演は週末の2日間限定で、九劇先行や一般発売などチケットの販売区分も複数設定されている。ミュージカルファンはもちろん、初めて観劇する人にもおすすめの内容となっている。\n\n浅草九劇という都心にありながら趣のある劇場空間で、迫力の舞台を楽しむことができる。**チケットは早期に売り切れる可能性もあるため注意が必要。**",
     "category": "performance",
     "published_at": "2026-09-10",
     "start_at": "2026-09-26",
     "end_at": "2026-09-27",
     "place_id": null,
     "source_id": "asakusa-kyugeki",
-    "source_url": "https://asakusa-kokono.com/kyugeki/calendar/",
-    "image_url": "/images/contents/155.png"
+    "source_url": "https://asakusa-kokono.com/kyugeki/2026/08/id-15249",
+    "image_url": "/images/contents/155.png",
+    "source_urls": [
+      "https://asakusa-kokono.com/kyugeki/calendar/"
+    ]
   },
   {
     "id": 156,
@@ -1814,36 +1545,6 @@
     "image_url": null
   },
   {
-    "id": 170,
-    "type": "event",
-    "title": "K-MUSICAL PROJECT「キル-道-」",
-    "summary": "K-MUSICAL PROJECTによるミュージカル「キル-道-」が浅草九劇で2日間上演される。",
-    "body": "## K-MUSICAL PROJECT「キル-道-」\n\n浅草九劇にて、K-MUSICAL PROJECTによるミュージカル作品「キル-道-」が**2026年9月26日から27日**にかけて上演される。\n\n韓国発のミュージカルプロジェクトとして注目される同カンパニーは、独自の音楽性とダイナミックな演出で知られ、今作も見応えのあるステージが期待されている。\n\n公演は週末の2日間限定で、九劇先行や一般発売などチケットの販売区分も複数設定されている。ミュージカルファンはもちろん、初めて観劇する人にもおすすめの内容となっている。\n\n浅草九劇という都心にありながら趣のある劇場空間で、迫力の舞台を楽しむことができる。**チケットは早期に売り切れる可能性もあるため注意が必要。**",
-    "category": "performance",
-    "published_at": "2026-09-11",
-    "start_at": "2026-09-26",
-    "end_at": "2026-09-27",
-    "place_id": null,
-    "source_id": "asakusa-kyugeki",
-    "source_url": "https://asakusa-kokono.com/kyugeki/2026/08/id-15249",
-    "image_url": "/images/contents/170.png"
-  },
-  {
-    "id": 171,
-    "type": "event",
-    "title": "星供養会(星まつり)",
-    "summary": "冬至の日に本堂で営まれる星供養の法要。",
-    "body": "## 星供養会(星まつり)\n\n浅草寺では冬至の日に「星供養会(星まつり)」が本堂にて執り行われる。星まつりは各自の生まれ年にあたる本命星を供養し、一年の無病息災や厄除けを祈願する伝統行事である。\n\n一年で最も昼が短くなる冬至の日に営まれることから、**陰から陽への転換を祈る意味合い**も込められている。\n\n本堂では僧侶による読経とともに星々への祈りが捧げられ、参拝者は静かにその様子を見守ることができる。年末が近づき慌ただしさを増す浅草の街にあって、心を落ち着けて新たな年への願いを込める機会となる。",
-    "category": "festival",
-    "published_at": "2026-09-13",
-    "start_at": "2026-12-21",
-    "end_at": "2026-12-22",
-    "place_id": "sensoji",
-    "source_id": "sensoji",
-    "source_url": "https://www.senso-ji.jp/annual_event/",
-    "image_url": null
-  },
-  {
     "id": 172,
     "type": "event",
     "title": "第60回記念 推薦名流舞踊大会",
@@ -1859,21 +1560,6 @@
     "image_url": "/images/contents/172.jpg"
   },
   {
-    "id": 173,
-    "type": "news",
-    "title": "Gap浅草ROX店、9月18日オープン",
-    "summary": "MARUGapが浅草エリア初出店となる「Gap浅草ROX店」を9月18日(金)にオープンする。",
-    "body": "## Gap浅草ROX店、9月18日オープン\n\nアパレルブランド「Gap」を運営する株式会社MARUGapが、浅草エリア初出店となる「Gap浅草ROX店」を**9月18日(金)にオープン**する。\n\n浅草ROXは浅草エリアの複合商業施設として地元住民や観光客に親しまれており、そこへの新規出店はエリアの商業活性化にもつながる注目のニュースとなっている。\n\nGapはカジュアルウェアを中心に展開する米国発のグローバルブランドで、幅広い年齢層に支持されている。浅草エリアではこれまで大型アパレルチェーンの出店例が少なかったこともあり、地元では新たな買い物スポットとしての期待が高まっている。\n\nオープン初日にはセールやキャンペーンが実施される可能性もあり、今後の詳細発表が待たれる。観光客の回遊性向上や地域経済への波及効果も見込まれている。",
-    "category": "new_opening",
-    "published_at": "2026-09-14",
-    "start_at": "2026-09-18",
-    "end_at": null,
-    "place_id": "rox",
-    "source_id": "prtimes",
-    "source_url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89",
-    "image_url": null
-  },
-  {
     "id": 174,
     "type": "news",
     "title": "縁がわ SUMIDA Japanese French Dining 浅草雷門がオープン",
@@ -1887,21 +1573,6 @@
     "source_id": "tabelog",
     "source_url": "https://tabelog.com/tokyo/A1311/A131102/",
     "image_url": null
-  },
-  {
-    "id": 175,
-    "type": "event",
-    "title": "伊東四朗一座リターンズ!? in浅草公会堂",
-    "summary": "伊東四朗一座の初期2作品の上映会と、伊東・三宅・東による爆笑トークイベントが浅草公会堂で開催される。",
-    "body": "浅草公会堂にて「伊東四朗一座リターンズ!?」と題したイベントが開催される。伊東四朗一座の初期の2作品が上映されるほか、伊東氏・三宅氏・東氏によるトークショーが行われる。開場は16時30分、開演17時、終演予定は20時で、途中休憩も予定されている。チケットはS席(1階・2階)7,000円、A席(3階)4,500円で全席指定。往年のコントファンだけでなく、幅広い世代が楽しめる内容となっている。問い合わせ・チケット購入はチケットスペースまで。浅草の伝統的な演芸文化に触れられる貴重な機会となりそうだ。",
-    "category": "performance",
-    "published_at": "2026-09-14",
-    "start_at": "2026-09-09",
-    "end_at": "2026-09-09",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/175.jpg"
   },
   {
     "id": 176,
@@ -2049,12 +1720,15 @@
     "body": "浅草の劇場**浅草九劇**を拠点とした新たなトークイベントシリーズ**「浅草九劇界隈」**の記念すべき第0回として、「俳優個人企画界隈」が開催されることが決定した。\n\n本企画は、舞台俳優たちが自ら手がける個人企画にフォーカスし、制作の裏側や思いをトーク形式で掘り下げる内容となっており、舞台ファンや演劇関係者から注目を集めている。\n\n浅草九劇は近年、演劇・エンタメの発信拠点として存在感を増しているスポットであり、今回のトークイベントもその活動の一環として企画された。\n\n第0回という位置づけからも、今後シリーズ化していく可能性がうかがえ、浅草エリアにおける演劇文化の広がりを示す取り組みとして期待される。開催日時やチケット情報の詳細は、主催の株式会社レプロエンタテインメントからの続報を待ちたい。",
     "category": "event",
     "published_at": "2026-09-17",
-    "start_at": null,
-    "end_at": null,
+    "start_at": "2026-09-22",
+    "end_at": "2026-09-22",
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89",
-    "image_url": null
+    "image_url": "/images/contents/196.png",
+    "source_urls": [
+      "https://asakusa-kokono.com/kyugeki/calendar/"
+    ]
   },
   {
     "id": 186,
@@ -2147,21 +1821,6 @@
     "image_url": null
   },
   {
-    "id": 192,
-    "type": "event",
-    "title": "浅草九劇界隈",
-    "summary": "浅草九劇にてイベント「浅草九劇界隈」が1日限定で開催される。",
-    "body": "浅草九劇で「浅草九劇界隈」と題したイベントが開催される。\n\n詳細なプログラム内容はページ上では明らかにされていないが、九劇先行発売や一般発売のチケット販売が行われており、劇場に集うファンや出演者が交流できる企画であることがうかがえる。\n\n浅草九劇ならではの雰囲気を楽しめる1日限定イベントとして注目される。",
-    "category": "event",
-    "published_at": "2026-09-17",
-    "start_at": "2026-09-22",
-    "end_at": "2026-09-22",
-    "place_id": null,
-    "source_id": "asakusa-kyugeki",
-    "source_url": "https://asakusa-kokono.com/kyugeki/calendar/",
-    "image_url": null
-  },
-  {
     "id": 193,
     "type": "event",
     "title": "アンドエスティ「ポイント2倍キャンペーン」",
@@ -2207,26 +1866,11 @@
     "image_url": null
   },
   {
-    "id": 196,
-    "type": "event",
-    "title": "浅草九劇界隈#0 「俳優個人企画界隈」",
-    "summary": "浅草九劇で俳優個人企画による公演「俳優個人企画界隈#0」が開催される。",
-    "body": "浅草九劇にて、俳優個人による企画公演シリーズの第0弾となる「浅草九劇界隈#0『俳優個人企画界隈』」が上演される。\n\n劇場所属の枠を超え、俳優自身が発案・企画する公演として注目される企画で、通常の劇団公演とは異なる切り口のステージが楽しめる。\n\n公演日は2026年9月22日の1日限りとなっており、九劇先行や一般発売など複数のチケット販売枠が設けられている。\n\n浅草エリアの小劇場文化を体現する試みとして、演劇ファンはもちろん、新しい才能に触れたい観客にもおすすめの公演。",
-    "category": "performance",
-    "published_at": "2026-09-19",
-    "start_at": "2026-09-22",
-    "end_at": "2026-09-22",
-    "place_id": null,
-    "source_id": "asakusa-kyugeki",
-    "source_url": "https://asakusa-kokono.com/kyugeki/calendar/",
-    "image_url": "/images/contents/196.png"
-  },
-  {
     "id": 197,
     "type": "news",
     "title": "十社権現社建立のお知らせ",
-    "summary": "浅草神社境内に「十社権現社」が新たに建立されることが発表された。",
-    "body": "浅草神社境内において、新たに「十社権現社」が建立される運びとなったことが発表された。\n\n十社権現社は、各地の権現信仰にゆかりのある神々を合祀する社とされ、浅草神社の境内整備事業の一環として計画されている。詳細な竣工時期や祭事の内容については、今後神社側から順次案内される見込みである。\n\n浅草神社は「三社様」の通称で親しまれ、浅草の氏神として古くから地域の信仰を集めてきた。今回の権現社建立も、こうした地域の歴史と信仰を継承する取り組みの一つと位置づけられている。\n\n参拝者や地元住民にとっては、境内に新たな見どころが加わることになり、今後の完成が待たれる。",
+    "summary": "浅草神社の境内整備事業の一環として、新たに「十社権現社」が建立されたことが発表された。",
+    "body": "浅草神社では社殿維持・境内整備事業の一環として、新たに「十社権現社」を建立したことを発表した。境内の歴史的・信仰的な価値をさらに高める取り組みとして注目される。\n\n浅草神社はかねてより社殿の維持管理や境内の整備に力を入れており、今回の権現社建立もその一環として位置づけられている。浅草の氏神として長年地域に根付いてきた同社にとって、境内の新たな見どころが増えることは、参拝者や観光客にとっても喜ばしいニュースといえる。\n\n建立の経緯や十社権現社の由緒については、公式サイトの詳細ページで案内されている。浅草寺と並ぶ浅草のシンボルである浅草神社を訪れる際は、あわせて参拝してみてはいかがだろうか。",
     "category": "facility_news",
     "published_at": "2026-05-25",
     "start_at": null,
@@ -2234,7 +1878,10 @@
     "place_id": "asakusajinja",
     "source_id": "asakusajinja",
     "source_url": "https://asakusajinja.jp/2026/05/25/%e5%8d%81%e7%a4%be%e6%a8%a9%e7%8f%be%e7%a4%be%e5%bb%ba%e7%ab%8b%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b/",
-    "image_url": "/images/contents/197.jpg"
+    "image_url": "/images/contents/197.jpg",
+    "source_urls": [
+      "https://asakusajinja.jp/"
+    ]
   },
   {
     "id": 198,
@@ -2249,7 +1896,10 @@
     "place_id": "hanayashiki",
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000160.000082301.html",
-    "image_url": "/images/contents/198.jpg"
+    "image_url": "/images/contents/198.jpg",
+    "source_urls": [
+      "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89"
+    ]
   },
   {
     "id": 199,
@@ -2331,21 +1981,6 @@
     "image_url": "/images/contents/203.jpg"
   },
   {
-    "id": 204,
-    "type": "news",
-    "title": "浅草神社境内に十社権現社を建立",
-    "summary": "浅草神社の境内整備事業の一環として、新たに「十社権現社」が建立されたことが発表された。",
-    "body": "浅草神社では社殿維持・境内整備事業の一環として、新たに「十社権現社」を建立したことを発表した。境内の歴史的・信仰的な価値をさらに高める取り組みとして注目される。\n\n浅草神社はかねてより社殿の維持管理や境内の整備に力を入れており、今回の権現社建立もその一環として位置づけられている。浅草の氏神として長年地域に根付いてきた同社にとって、境内の新たな見どころが増えることは、参拝者や観光客にとっても喜ばしいニュースといえる。\n\n建立の経緯や十社権現社の由緒については、公式サイトの詳細ページで案内されている。浅草寺と並ぶ浅草のシンボルである浅草神社を訪れる際は、あわせて参拝してみてはいかがだろうか。",
-    "category": "facility_news",
-    "published_at": "2026-05-25",
-    "start_at": null,
-    "end_at": null,
-    "place_id": "asakusajinja",
-    "source_id": "asakusajinja",
-    "source_url": "https://asakusajinja.jp/",
-    "image_url": "/images/contents/204.jpg"
-  },
-  {
     "id": 205,
     "type": "event",
     "title": "ROXフィットネスクラブbegin「秋のトリプルZEROキャンペーン」",
@@ -2359,21 +1994,6 @@
     "source_id": "rox",
     "source_url": "https://www.asakusa-begin.com/news/998/",
     "image_url": "/images/contents/205.png"
-  },
-  {
-    "id": 206,
-    "type": "event",
-    "title": "花やしきで手ぶらハロウィン、仮装レンタル＆参加型パレード開催",
-    "summary": "浅草花やしきで「手ぶらで楽しめるハロウィン」をテーマに、仮装レンタルアトラクションや参加型パレードが登場する。",
-    "body": "浅草花やしきは、今年のハロウィン企画として「手ぶらで楽しめるハロウィン」をコンセプトにしたイベントを開催する。\n\n衣装を用意しなくても気軽に仮装が楽しめる「仮装レンタルアトラクション」が新たに登場するほか、来園者が仮装のまま参加できる参加型パレードも実施される。\n\nこれにより、小さな子どもから大人まで、事前準備の手間なくハロウィン気分を満喫できるのが特徴。花やしき恒例の秋のイベントとして、例年多くの来園者で賑わっている。\n\n浅草の下町情緒とハロウィンの非日常感が融合した独特の雰囲気を楽しめる企画で、SNS映えするフォトスポットも用意される見込み。\n\n開催期間中は園内装飾もハロウィン仕様に変更される予定で、家族連れやカップルの来園が見込まれる。",
-    "category": "campaign",
-    "published_at": "2026-09-20",
-    "start_at": null,
-    "end_at": null,
-    "place_id": "hanayashiki",
-    "source_id": "prtimes",
-    "source_url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89",
-    "image_url": "/images/contents/206.jpg"
   },
   {
     "id": 207,
@@ -2418,7 +2038,10 @@
     "place_id": "sensoji",
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000495.000045277.html",
-    "image_url": "/images/contents/209.jpg"
+    "image_url": "/images/contents/209.jpg",
+    "source_urls": [
+      "https://e-asakusa.jp/photos/111334"
+    ]
   },
   {
     "id": 210,
@@ -2449,21 +2072,6 @@
     "source_id": "asakusa-kyugeki",
     "source_url": "https://asakusa-kokono.com/kyugeki/2026/09/id-15271",
     "image_url": "/images/contents/211.png"
-  },
-  {
-    "id": 212,
-    "type": "event",
-    "title": "Discover Fukushima Hamadori 2026",
-    "summary": "福島県「浜通り」のおいしいもの・伝統文化・地域の自然の魅力を紹介するイベントが浅草寺境内で開催。",
-    "body": "浅草寺境内にて、福島県「浜通り」地域の魅力を発信するイベント「Discover Fukushima Hamadori 2026」が開催されます。\n\n浜通りは福島県の太平洋沿岸に広がるエリアで、豊かな食文化や伝統芸能、雄大な自然など多彩な魅力を持つ地域です。本イベントでは、その土地ならではの**おいしいもの**や**伝統文化**、**地域の自然**の数々が紹介・披露されます。\n\n開催日時は9月26日(土)・27日(日)の10:00〜17:00で、浅草寺を訪れる観光客が気軽に立ち寄れる内容となっています。\n\n浅草観光と合わせて、福島の地域文化に触れられる貴重な機会です。詳細はイベント公式サイトでも確認できます。",
-    "category": "event",
-    "published_at": "2026-09-26",
-    "start_at": "2026-09-26",
-    "end_at": "2026-09-27",
-    "place_id": "sensoji",
-    "source_id": "e-asakusa",
-    "source_url": "https://e-asakusa.jp/photos/111334",
-    "image_url": "/images/contents/212.jpg"
   },
   {
     "id": 213,
@@ -2835,8 +2443,8 @@
     "id": 237,
     "type": "event",
     "title": "真田ナオキ LIVE2026 浅草ディスコ",
-    "summary": "10月23日(金)・24日(土)の2日間、浅草公会堂で真田ナオキのライブが開催される。",
-    "body": "浅草公会堂で「真田ナオキ LIVE2026 浅草ディスコ」が開催されます。\n\n## 開催概要\n\n- **日時**:2026年10月23日(金)・24日(土) 開場15:30/開演16:30/終演予定18:30\n- **会場**:浅草公会堂\n- **料金**:S席9,000円/A席8,000円/B席5,000円(全席指定)\n- 未就学児入場不可\n\nお問い合わせはベルワールドミュージック(TEL.03-3222-7982/平日12:00~17:00)まで。",
+    "summary": "2026年10月23日・24日の2日間、浅草公会堂で真田ナオキのライブが開催される。",
+    "body": "浅草公会堂にて、**「真田ナオキ LIVE2026 浅草ディスコ」**が2日間にわたり開催されます。\n\n## 開催概要\n\n- 日程:10月23日(金)、24日(土)\n- 開場:15:30\n- 開演:16:30\n- 終演予定:18:30\n- 料金:S席9,000円/A席8,000円/B席5,000円(全席指定・税込)\n- 未就学児は入場不可\n\n詳細はベルワールドミュージック(TEL.03-3222-7982、平日12:00～17:00)までお問い合わせください。",
     "category": "performance",
     "published_at": "2026-10-01",
     "start_at": "2026-10-23",
@@ -2933,8 +2541,12 @@
     "end_at": "2026-10-31",
     "place_id": "rox",
     "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/243.webp"
+    "source_url": "https://www.eyecity.jp/service/member/app/?from=mall",
+    "image_url": "/images/contents/243.webp",
+    "source_urls": [
+      "https://www.rox.co.jp/shop/detail.html?shop_id=1238",
+      "https://www.rox.co.jp/news/"
+    ]
   },
   {
     "id": 244,
@@ -2982,21 +2594,6 @@
     "image_url": "/images/contents/246.png"
   },
   {
-    "id": 247,
-    "type": "event",
-    "title": "田川寿美 デビュー35周年記念コンサートを浅草公会堂で開催",
-    "summary": "演歌歌手・田川寿美が9月29日、浅草公会堂でデビュー35周年記念コンサートを開催し、新曲「いのち陽炎」など全20曲を熱唱した。",
-    "body": "演歌歌手の田川寿美さんが2026年9月29日、台東区の**浅草公会堂**でデビュー35周年記念コンサートを開催しました。\n\n1992年4月1日に「女…ひとり旅」でデビューして以来、NHK紅白歌合戦に4回出場するなど数々のヒット曲を生み出してきました。今年4月22日発売の記念曲「いのち陽炎」は、「月間USEN HIT 演歌/歌謡曲ランキング」で第1位を獲得するロングヒットとなっています。\n\n## コンサートの見どころ\n\n- 約1000人のファンが来場\n- 前半は「哀愁港」「華観月」「しゃくなげの花」のほか、「北の宿から」「愛燦燦」などのカバー曲を披露\n- 後半は学生ダンサー6人をバックに、6月発売の「仮面ライダー音頭」を披露\n- 新曲「いのち陽炎」を歌唱し、アンコールではデビュー曲「女…ひとり旅」を熱唱\n\n作家の五木寛之さんやヘアスタイル監修のIKKOさんからはお祝いメッセージが届けられ、田川さんは感激していました。\n\n田川さんは「出会いに感謝して、ずっと成長し続けていきたい」と語っています。なお、10月24日には大阪・サンケイホールブリーゼで大阪公演も予定されています。",
-    "category": "performance",
-    "published_at": "2026-09-29",
-    "start_at": "2026-09-29",
-    "end_at": "2026-09-29",
-    "place_id": "koukaidou",
-    "source_id": "prtimes",
-    "source_url": "https://prtimes.jp/main/html/rd/p/000005115.000019470.html",
-    "image_url": "/images/contents/247.jpg"
-  },
-  {
     "id": 248,
     "type": "news",
     "title": "宇奈とと浅草店など、秋冬限定「特製おでん」「出汁割」を10月1日から販売開始",
@@ -3010,141 +2607,6 @@
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000562.000023530.html",
     "image_url": "/images/contents/248.png"
-  },
-  {
-    "id": 249,
-    "type": "event",
-    "title": "ナイツ独演会「国民の皆さん」ではなく「国民の一部の皆さん」",
-    "summary": "浅草公会堂で10月1日・2日にナイツの独演会が開催される。全席指定6,000円。",
-    "body": "浅草公会堂にて、人気漫才コンビ・ナイツによる独演会が2日間にわたり開催されます。\n\n- **日程**:10月1日(木)・2日(金)\n- **開場/開演**:18:15 / 19:00(終演予定21:00)\n- **料金**:6,000円(全席指定・税込)\n\n未就学児は入場できません。チケットなどのお問い合わせは主催のSLUSH-PILE(TEL 03-6451-0554)まで。",
-    "category": "performance",
-    "published_at": "2026-10-01",
-    "start_at": "2026-10-01",
-    "end_at": "2026-10-02",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/249.jpg"
-  },
-  {
-    "id": 250,
-    "type": "event",
-    "title": "2026真木ことみコンサート～春夏秋冬～",
-    "summary": "2026年10月9日、浅草公会堂で「2026真木ことみコンサート～春夏秋冬～」が開催される。",
-    "body": "浅草公会堂にて、**「2026真木ことみコンサート～春夏秋冬～」**が開催されます。\n\n季節の移ろいをテーマにしたコンサートで、タイトルの通り春夏秋冬を感じさせる構成が期待されます。\n\n## 開催概要\n\n- 開場:14:30\n- 開演:15:00\n- 終演予定:17:30\n- 料金:5,000円(全席指定・税込)\n\nチケットの購入方法などの詳細は、主催のにこにこ倶楽部(TEL.080-8834-0419、木曜日14:00～17:00)までお問い合わせください。",
-    "category": "performance",
-    "published_at": "2026-10-01",
-    "start_at": "2026-10-09",
-    "end_at": "2026-10-09",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/250.jpg"
-  },
-  {
-    "id": 251,
-    "type": "event",
-    "title": "太皷人のまつり タヲリズム2026",
-    "summary": "2026年10月11日、浅草公会堂で和太皷タヲによる「太皷人のまつり タヲリズム2026」が開催される。",
-    "body": "浅草公会堂にて、和太皷タヲが主催する**「太皷人のまつり タヲリズム2026」**が開催されます。\n\n和太鼓の迫力ある演奏を楽しめるステージです。\n\n## 開催概要\n\n- 開場:14:45\n- 開演:15:15\n- 終演予定:18:30\n- 料金:前売5,000円/当日5,000円/小学生2,000円/未就学児無料(全席自由・税込)\n- ロビーでの物販は12:30開始\n\n詳細は和太皷タヲ(office@tawoo.tv)までお問い合わせください。",
-    "category": "performance",
-    "published_at": "2026-10-01",
-    "start_at": "2026-10-11",
-    "end_at": "2026-10-11",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/251.jpg"
-  },
-  {
-    "id": 252,
-    "type": "event",
-    "title": "木村徹二 LIVE Ⅳ～アイアン浅草大作戦～",
-    "summary": "10月12日(祝)、浅草公会堂で木村徹二のライブが開催される。",
-    "body": "浅草公会堂で、**木村徹二 LIVE Ⅳ~アイアン浅草大作戦~**が開催されます。\n\n祝日の10月12日に行われるライブ公演です。\n\n## 開催概要\n\n- 開場:15:15\n- 開演:16:00\n- 終演予定:18:00\n- 入場料:S席7,000円、A席5,000円(全席指定・税込)\n- 未就学児は入場不可\n\n問い合わせは、ベルワールドミュージック(TEL.03-3222-7982、平日12:00~17:00)まで。",
-    "category": "performance",
-    "published_at": "2026-10-01",
-    "start_at": "2026-10-12",
-    "end_at": "2026-10-12",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/252.jpg"
-  },
-  {
-    "id": 253,
-    "type": "event",
-    "title": "デビュー40周年記念 中村美律子コンサート～人生万歳～",
-    "summary": "2026年10月14日、浅草公会堂で中村美律子のデビュー40周年記念コンサートが開催される。",
-    "body": "浅草公会堂にて、**デビュー40周年記念 中村美律子コンサート ～人生万歳～**が開催されます。\n\n節目の記念公演として、これまでの歩みを感じられるステージが期待されます。\n\n## 開催概要\n\n- 開場:14:15\n- 開演:15:00\n- 終演:未定\n- 料金:S席7,000円/A席5,000円(全席指定・税込)\n- 未就学児は入場不可\n\n詳細はベルワールドミュージック(TEL.03-3222-7982、平日12:00～17:00)までお問い合わせください。",
-    "category": "performance",
-    "published_at": "2026-10-01",
-    "start_at": "2026-10-14",
-    "end_at": "2026-10-14",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/253.jpg"
-  },
-  {
-    "id": 254,
-    "type": "event",
-    "title": "真田ナオキ LIVE2026 浅草ディスコ",
-    "summary": "2026年10月23日・24日の2日間、浅草公会堂で真田ナオキのライブが開催される。",
-    "body": "浅草公会堂にて、**「真田ナオキ LIVE2026 浅草ディスコ」**が2日間にわたり開催されます。\n\n## 開催概要\n\n- 日程:10月23日(金)、24日(土)\n- 開場:15:30\n- 開演:16:30\n- 終演予定:18:30\n- 料金:S席9,000円/A席8,000円/B席5,000円(全席指定・税込)\n- 未就学児は入場不可\n\n詳細はベルワールドミュージック(TEL.03-3222-7982、平日12:00～17:00)までお問い合わせください。",
-    "category": "performance",
-    "published_at": "2026-10-01",
-    "start_at": "2026-10-23",
-    "end_at": "2026-10-24",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/254.jpg"
-  },
-  {
-    "id": 255,
-    "type": "event",
-    "title": "パク・ジュニョン15周年記念コンサート",
-    "summary": "10月26日、浅草公会堂でパク・ジュニョンの15周年記念コンサートが開催される。",
-    "body": "浅草公会堂にて、パク・ジュニョンのデビュー15周年記念コンサート「ありがとう!そしてこれからも♡」が開催されます。\n\n- **日程**:10月26日(月)\n- **開場/開演**:14:30 / 15:00(終演予定16:50)\n- **料金**:6,600円(全席指定・税込)\n\nお問い合わせはアイエス(TEL 03-3355-3553、平日10:00〜17:00)まで。",
-    "category": "performance",
-    "published_at": "2026-10-01",
-    "start_at": "2026-10-26",
-    "end_at": "2026-10-26",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/255.jpg"
-  },
-  {
-    "id": 256,
-    "type": "event",
-    "title": "日本歌手協会 第53回歌謡祭",
-    "summary": "10月28日・29日、浅草公会堂で日本歌手協会の第53回歌謡祭が開催される。",
-    "body": "浅草公会堂で、**日本歌手協会 第53回歌謡祭**が開催されます。\n\n## 開催概要\n\n- 日程:10月28日(水)、29日(木)\n- 昼公演:開場10:30/開演11:00/終演予定13:45\n- 夜公演:28日は開場16:30/開演17:00/終演予定19:45、29日は開場15:30/開演16:00/終演予定18:45\n- 入場料:SS席13,000円、S席10,000円、A席5,000円、車椅子席5,000円、学生席1,000円(全席指定・税込)\n\n問い合わせは、日本歌手協会事務局(TEL.03-6280-4230、平日11:00~20:00)まで。",
-    "category": "performance",
-    "published_at": "2026-10-01",
-    "start_at": "2026-10-28",
-    "end_at": "2026-10-29",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/256.jpg"
-  },
-  {
-    "id": 257,
-    "type": "event",
-    "title": "第六十二回坂東流チャリティー舞踊会",
-    "summary": "2026年10月31日、浅草公会堂で第六十二回坂東流チャリティー舞踊会が開催される。",
-    "body": "浅草公会堂にて、坂東会が主催する**第六十二回坂東流チャリティー舞踊会**が開催されます。\n\n## 開催概要\n\n- 開場:10:30\n- 開演:11:00\n- 終演予定:18:30\n- 料金:5,000円(全席自由・税込)\n\n詳細は坂東会(TEL.03-3518-8210、bandokai@crux.ocn.ne.jp)までお問い合わせください。",
-    "category": "performance",
-    "published_at": "2026-10-01",
-    "start_at": "2026-10-31",
-    "end_at": "2026-10-31",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/257.jpg"
   },
   {
     "id": 258,
@@ -3258,8 +2720,8 @@
     "id": 265,
     "type": "event",
     "title": "ROX 1F特設会場「Robot Planet」期間限定ショップ",
-    "summary": "浅草ROX 1F特設会場で、話題のパートナーロボットを体験・購入できる『Robot Planet』が10/8〜10/13に開催されます。",
-    "body": "浅草ROX 1F特設会場に、期間限定で『Robot Planet＜ロボットプラネット＞』がオープンします。話題のロボットと出会える体験＆販売会です。\n\n## 登場するロボット\n\n- **RoBoHoN（ロボホン）**:かわいいダンスや日常会話を楽しめるAIロボット\n- **LOVOT（らぼっと）**:最先端のテクノロジーが詰まった、心を満たすロボット\n- **Moflin（モフリン）**:ふわふわで思わずなでたくなる、心に元気をくれるバディ\n\n会場では「ロボットコンシェルジュ」が、あなたにぴったりの“家族”を紹介してくれます。\n\n## 価格の一例\n\n- ロボホン:4,400円（税込）×72回\n- らぼっと:9,518円（税込）×7回\n\nロボホンとらぼっとは体験予約も受付中です。最先端のテクノロジーをぜひ体験してみてください。",
+    "summary": "10月8日から13日まで、ROX 1F特設会場でロボットの体験&販売会「Robot Planet」が開催される。ロボホン、LOVOT、Moflinなどが集結する。",
+    "body": "浅草ROX 1F特設会場にて、2026年10月8日(木)から13日(火)までの期間限定で、パートナーロボットの体験&販売会『Robot Planet<ロボットプラネット>』が開催されます。\n\n## 注目のロボットたち\n\n- **RoBoHoN(ロボホン)**:かわいいダンスや日常会話を楽しめるAIロボット\n- **LOVOT(らぼっと)**:最先端のテクノロジーが詰まった、心を満たすロボット\n- **Moflin(モフリン)**:ふわふわで思わずなでたくなる、心に元気をくれるバディ\n\n会場には「ロボットコンシェルジュ」が常駐し、あなたにぴったりの“家族”を紹介してくれます。\n\n## 価格の一例\n\n- ロボホン:4,400円(税込)×72回\n- らぼっと:9,518円(税込)×7回\n\nロボホンとらぼっとは体験予約も受付中です。最先端のテクノロジーを体験できる貴重な機会となっています。",
     "category": "popup",
     "published_at": "2026-10-01",
     "start_at": "2026-10-08",
@@ -3268,24 +2730,6 @@
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/news/",
     "image_url": "/images/contents/265.webp"
-  },
-  {
-    "id": 266,
-    "type": "event",
-    "title": "アイシティ「アプリ仮登録でコンタクト25%OFF」",
-    "summary": "ROX･3G 2Fのコンタクトのアイシティで、初めての方がアプリ仮登録をするとコンタクトレンズが店頭価格(税抜)から25%OFFになります。期間は10/1〜10/31です。",
-    "body": "ROX･3G 2Fの「コンタクトのアイシティ」で、キャンペーンが開催されています。\n\n## キャンペーン内容\n\nアイシティを初めて利用する方が、アイシティのアプリに仮登録すると、コンタクトレンズが**店頭価格(税抜)から25%OFF**になります。\n\n期間は10月1日(木)から10月31日(土)までです。\n\n## ご注意\n\n- コンタクトレンズは高度管理医療機器です。眼科医の処方(指示書等)によりお求めください。\n- 眼科を受診する際は、マイナ保険証等をお持ちください。\n\n詳細はコンタクトのアイシティのホームページで確認できます。",
-    "category": "campaign",
-    "published_at": "2026-10-01",
-    "start_at": "2026-10-01",
-    "end_at": "2026-10-31",
-    "place_id": "rox",
-    "source_id": "rox",
-    "source_url": "https://www.eyecity.jp/service/member/app/?from=mall",
-    "image_url": "/images/contents/266.webp",
-    "source_urls": [
-      "https://www.rox.co.jp/shop/detail.html?shop_id=1238"
-    ]
   },
   {
     "id": 267,
@@ -3391,51 +2835,6 @@
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000024.000114802.html",
     "image_url": "/images/contents/273.jpg"
-  },
-  {
-    "id": 274,
-    "type": "event",
-    "title": "クラウン舞踊まつり 全国大会",
-    "summary": "浅草公会堂で10月4日、クラウン舞踊まつり全国大会が開催される。全席自由で2,500円。",
-    "body": "浅草公会堂で、**クラウン舞踊まつり 全国大会**が開催されます。\n\n全国から舞踊愛好家が集う大会で、日本舞踊や歌謡舞踊など多彩な演目が披露される見込みです。\n\n## 開催概要\n\n- 開場:10:30\n- 開演:11:00\n- 終演予定:16:30\n- 入場料:2,500円(全席自由・税込)\n\n主催は株式会社クラウンミュージックです。詳細はお問い合わせ先(TEL.03-6435-3289)までご確認ください。",
-    "category": "performance",
-    "published_at": "2026-10-02",
-    "start_at": "2026-10-04",
-    "end_at": "2026-10-04",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
-  },
-  {
-    "id": 275,
-    "type": "event",
-    "title": "さらばのこの本ダレが書いとんねん!LIVE2026",
-    "summary": "2026年10月10日、浅草公会堂で「さらばのこの本ダレが書いとんねん!LIVE2026」が昼夜2回公演で開催される。",
-    "body": "浅草公会堂にて、テレビ大阪が主催する**「さらばのこの本ダレが書いとんねん!LIVE2026」**が開催されます。\n\n昼夜の2回公演で、都合の良い時間帯を選んで楽しめます。\n\n## 開催概要\n\n- 昼公演:開場13:00/開演14:00/終演予定15:40\n- 夜公演:開場17:00/開演18:00/終演予定19:40\n- 料金:5,000円(全席指定・税込)\n\n詳細はテレビ大阪 代表電話(TEL.06-6947-7777)までお問い合わせください。",
-    "category": "performance",
-    "published_at": "2026-10-02",
-    "start_at": "2026-10-10",
-    "end_at": "2026-10-10",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
-  },
-  {
-    "id": 276,
-    "type": "event",
-    "title": "第69回 台東区合唱祭",
-    "summary": "2026年10月18日、浅草公会堂で第69回台東区合唱祭が入場無料で開催される。",
-    "body": "浅草公会堂にて、台東区合唱連盟が主催する**第69回 台東区合唱祭**が開催されます。\n\n区内の合唱団が集まる恒例の催しで、入場無料のため気軽に立ち寄れます。\n\n## 開催概要\n\n- 開場:10:00\n- 開演:10:30\n- 終演予定:15:45\n- 料金:入場無料\n\n詳細は台東区合唱連盟 高木(TEL.090-5563-1406)までお問い合わせください。",
-    "category": "event",
-    "published_at": "2026-10-02",
-    "start_at": "2026-10-18",
-    "end_at": "2026-10-18",
-    "place_id": "koukaidou",
-    "source_id": "asakusa-koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
   },
   {
     "id": 277,
@@ -3697,21 +3096,6 @@
     "source_id": "e-asakusa",
     "source_url": "https://e-asakusa.jp/photos/111515",
     "image_url": "/images/contents/293.jpg"
-  },
-  {
-    "id": 294,
-    "type": "event",
-    "title": "Robot Planet(ロボットプラネット)が浅草ROXに期間限定オープン",
-    "summary": "10月8日から13日まで、ROX 1F特設会場でロボットの体験&販売会「Robot Planet」が開催される。ロボホン、LOVOT、Moflinなどが集結する。",
-    "body": "浅草ROX 1F特設会場にて、2026年10月8日(木)から13日(火)までの期間限定で、パートナーロボットの体験&販売会『Robot Planet<ロボットプラネット>』が開催されます。\n\n## 注目のロボットたち\n\n- **RoBoHoN(ロボホン)**:かわいいダンスや日常会話を楽しめるAIロボット\n- **LOVOT(らぼっと)**:最先端のテクノロジーが詰まった、心を満たすロボット\n- **Moflin(モフリン)**:ふわふわで思わずなでたくなる、心に元気をくれるバディ\n\n会場には「ロボットコンシェルジュ」が常駐し、あなたにぴったりの“家族”を紹介してくれます。\n\n## 価格の一例\n\n- ロボホン:4,400円(税込)×72回\n- らぼっと:9,518円(税込)×7回\n\nロボホンとらぼっとは体験予約も受付中です。最先端のテクノロジーを体験できる貴重な機会となっています。",
-    "category": "popup",
-    "published_at": "2026-10-01",
-    "start_at": "2026-10-08",
-    "end_at": "2026-10-13",
-    "place_id": "rox",
-    "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/294.webp"
   },
   {
     "id": 295,
