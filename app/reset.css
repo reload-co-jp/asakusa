@@ -374,13 +374,6 @@ img {
   margin-left: 0.4rem;
   transition: transform var(--ease);
 }
-/* 画像なしはテキストカード */
-.card--text {
-  border-top: 2px solid var(--ink);
-}
-.card--text .card__body {
-  padding-top: 1rem;
-}
 @media (hover: hover) {
   .card:hover .card__media {
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);

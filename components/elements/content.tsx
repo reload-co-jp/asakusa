@@ -98,49 +98,39 @@ export const ContentCard: FC<{
   const t = DICTIONARIES[locale]
   const href = localePath(locale, `/content/${content.id}/`)
   const date = cardDate(content)
-  const image = content.image_url
+  // 画像なしの記事はスポット画像、それもなければブランド画像をplaceholderにする
+  const image =
+    content.image_url ?? place?.image_url ?? "/images/brand.jpeg"
   // 低解像度画像は大判にせず、カード内でも引き伸ばさない
-  const large = isLargeImage(image)
-  const small = !!image && imageWidth(image) < 400
-  const isFeature = feature && large
-  const className = [
-    "card",
-    isFeature && "card--feature",
-    !image && "card--text",
-  ]
-    .filter(Boolean)
-    .join(" ")
+  const isFeature = feature && isLargeImage(content.image_url)
+  const small = imageWidth(image) < 400
   return (
-    <article className={className}>
-      {image && (
-        <div className={`card__media${small ? " card__media--small" : ""}`}>
-          <Image
-            alt={contentImageAlt(content, locale)}
-            fill
-            sizes={
-              isFeature
-                ? "(min-width: 720px) 50vw, 100vw"
-                : "(min-width: 720px) 25vw, 100vw"
-            }
-            src={image}
-          />
-          <span className="card__badge">
-            <StatusBadge content={original} locale={locale} />
-          </span>
-        </div>
-      )}
+    <article className={`card${isFeature ? " card--feature" : ""}`}>
+      <div className={`card__media${small ? " card__media--small" : ""}`}>
+        <Image
+          alt={
+            content.image_url
+              ? contentImageAlt(content, locale)
+              : (place?.image_url && place.name) || ""
+          }
+          fill
+          sizes={
+            isFeature
+              ? "(min-width: 720px) 50vw, 100vw"
+              : "(min-width: 720px) 25vw, 100vw"
+          }
+          src={image}
+        />
+        <span className="card__badge">
+          <StatusBadge content={original} locale={locale} />
+        </span>
+      </div>
       <div className="card__body">
         <CategoryLabel category={content.category} locale={locale} />
-        {!image && (
-          <>
-            {" "}
-            <StatusBadge content={original} locale={locale} />
-          </>
-        )}
         <h3 className="card__title">
           <Link href={href}>{content.title}</Link>
         </h3>
-        {(!image || isFeature) && (
+        {isFeature && (
           <p className="card__summary">{content.summary}</p>
         )}
         <p className="card__meta">
