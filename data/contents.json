@@ -3140,7 +3140,10 @@
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000063.000150374.html",
-    "image_url": "/images/contents/297.png"
+    "image_url": "/images/contents/297.png",
+    "source_urls": [
+      "https://prtimes.jp/main/html/rd/p/000000005.000128233.html"
+    ]
   },
   {
     "id": 298,
@@ -3184,7 +3187,7 @@
     "end_at": "2026-10-14",
     "place_id": null,
     "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/",
+    "source_url": "https://www.rox.co.jp/shop/detail.html?shop_id=1323",
     "image_url": "/images/contents/300.webp"
   },
   {
@@ -3246,5 +3249,35 @@
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000033.000047662.html",
     "image_url": "/images/contents/304.jpg"
+  },
+  {
+    "id": 305,
+    "type": "event",
+    "title": "台東区×松坂屋「花を楽しむ日」",
+    "summary": "台東区花の心プロジェクト10周年を記念し、2026年11月3日に松坂屋上野店屋上で花と緑に触れるワークショップを開催する。",
+    "body": "台東区花の心プロジェクト10周年を記念し、江戸時代創業の老舗「松坂屋上野店」と連携したイベント「花を楽しむ日」が開催されます。台東区に息づく花や緑に親しむ園芸文化の継承と、区民や来店者の環境意識の向上、地域の花と緑の魅力発信、持続可能な園芸活動の推進を目的としています。\n\n## 開催概要\n\n- **日時**:2026年11月3日(祝) 10:30〜15:00\n- **会場**:松坂屋上野店 屋上(上野3丁目29番5号)\n\n## ワークショップ\n\n花や緑に触れ合える複数のワークショップが用意されます。\n\n### 寄せ植え体験\n\n台東区みどりのボランティア「台東区グリーン・リーダー」の協力のもと、花の寄せ植えを体験できます。容器に花苗を植え、その日のうちに持ち帰れます。気軽に短時間で参加できます。\n\n- 対象:どなたでも\n- 定員:50人(先着順)\n- 費用:無料\n- 受付開始:10:30(寄せ植え開始11:00)\n- 順番待ちが発生する場合があります\n\n### リース作り・ブーケ作り(子供向け)\n\n子供向けのリース作りとブーケ作りも予定されており、詳細は内容が確定次第掲載されます。\n\nお問い合わせは台東区環境課 花の心・みどり担当(03-5246-1292)まで。",
+    "category": "event",
+    "published_at": "2026-10-08",
+    "start_at": "2026-11-03",
+    "end_at": "2026-11-03",
+    "place_id": null,
+    "source_id": "taito-city",
+    "source_url": "https://www.city.taito.lg.jp/kenchiku/hanamidori/hananokokoro/oshirase/hanapuro_matuzakaya.html",
+    "image_url": "/images/contents/305.png"
+  },
+  {
+    "id": 306,
+    "type": "news",
+    "title": "浅草東洋館、11月のスケジュールは10月20日前後に公開予定",
+    "summary": "浅草東洋館の2026年11月公演スケジュールは、10月20日前後に公開される予定。",
+    "body": "浅草東洋館は、2026年11月の公演スケジュールを10月20日前後に公開する予定であると案内しています。\n\n11月分の出演者や公演内容を確認したい方は、公開時期になったら公式サイトのスケジュールページをチェックしてください。",
+    "category": "facility_news",
+    "published_at": "2026-10-09",
+    "start_at": null,
+    "end_at": null,
+    "place_id": null,
+    "source_id": "asakusa-toyokan",
+    "source_url": "https://www.asakusatoyokan.com/timetable/",
+    "image_url": null
   }
 ]
