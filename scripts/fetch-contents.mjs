@@ -196,6 +196,57 @@ const fetchHtml = async (url) => {
   }
 }
 
+// RSSフィードを一覧ページ相当のHTMLに変換する(以降の抽出処理を共通化するため)
+const rssToHtml = (xml) => {
+  const $ = cheerio.load(xml, { xml: true })
+  const items = $("item")
+    .map((_, el) => {
+      const item = $(el)
+      const a = $("<a>").attr("href", item.find("link").text().trim())
+      a.text(item.find("title").text())
+      return `<p>${$.html(a)} ${item.find("pubDate").text()}</p>`
+    })
+    .get()
+  return `<html><body>${items.join("\n")}</body></html>`
+}
+
+// Google ニュースの記事リンク(news.google.com/rss/articles/...)を元記事URLに変換する。失敗時はnull
+const resolveGoogleNewsUrl = async (url) => {
+  const id = new URL(url).pathname.split("/").pop()
+  try {
+    const html = await fetchHtml(`https://news.google.com/articles/${id}`)
+    const sg = html.match(/data-n-a-sg="([^"]+)"/)?.[1]
+    const ts = html.match(/data-n-a-ts="([^"]+)"/)?.[1]
+    if (!sg || !ts) return null
+    const inner = JSON.stringify([
+      "garturlreq",
+      [["X", "X", ["X", "X"], null, null, 1, 1, "US:en", null, 1, null, null, null, null, null, 0, 1], "X", "X", 1, [1, 1, 1], 1, 1, null, 0, 0, null, 0],
+      id,
+      Number(ts),
+      sg,
+    ])
+    const res = await fetch(
+      "https://news.google.com/_/DotsSplashUi/data/batchexecute",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+          "User-Agent": UA,
+        },
+        body: new URLSearchParams({
+          "f.req": JSON.stringify([[["Fbv4je", inner, null, "generic"]]]),
+        }),
+      }
+    )
+    const json = JSON.parse((await res.text()).split("\n\n")[1])
+    const resolved = JSON.parse(json[0][2])[1]
+    return /^https?:\/\//.test(resolved) ? resolved : null
+  } catch (err) {
+    console.warn(`  [WARN] Google ニュースURL解決失敗: ${err.message}`)
+    return null
+  }
+}
+
 const htmlToText = (html) => {
   const $ = cheerio.load(html)
   $("script, style, noscript, svg, header, footer, nav").remove()
@@ -532,6 +583,7 @@ const main = async () => {
     let html
     try {
       html = await fetchHtml(source.url)
+      if (/^\s*(<\?xml[^>]*>\s*)?<rss/.test(html)) html = rssToHtml(html)
       summary.fetched++
     } catch (err) {
       console.warn(`  [SKIP] 取得失敗: ${err.message}`)
@@ -562,10 +614,13 @@ const main = async () => {
     // 個別ページがあれば取得してそちらを出典にする。取得失敗・記事なしの場合は一覧の抽出結果を使う
     const visited = new Set()
     for (const candidate of candidates) {
-      const detailUrl = Number.isInteger(candidate.link_index)
+      let detailUrl = Number.isInteger(candidate.link_index)
         ? linkCandidates[candidate.link_index]?.url
         : null
       if (!candidate.title || !CATEGORIES.includes(candidate.category)) continue
+      if (detailUrl?.startsWith("https://news.google.com/rss/articles/")) {
+        detailUrl = await resolveGoogleNewsUrl(detailUrl)
+      }
 
       // 既存記事があれば個別ページは取得せず、一覧で得た情報を既存記事に反映する
       const existing =

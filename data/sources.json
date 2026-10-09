@@ -124,5 +124,12 @@
     "url": "https://asakusa-kokono.com/kyugeki/calendar/",
     "source_type": "official",
     "priority": 2
+  },
+  {
+    "id": "google-news",
+    "name": "Google ニュース「浅草」",
+    "url": "https://news.google.com/rss/search?q=%E6%B5%85%E8%8D%89&hl=ja&gl=JP&ceid=JP:ja",
+    "source_type": "web_media",
+    "priority": 4
   }
 ]
