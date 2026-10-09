@@ -214,7 +214,7 @@ const rssToHtml = (xml) => {
 const resolveGoogleNewsUrl = async (url) => {
   const id = new URL(url).pathname.split("/").pop()
   try {
-    const html = await fetchHtml(`https://news.google.com/articles/${id}`)
+    const html = await fetchHtml(url)
     const sg = html.match(/data-n-a-sg="([^"]+)"/)?.[1]
     const ts = html.match(/data-n-a-ts="([^"]+)"/)?.[1]
     if (!sg || !ts) return null
