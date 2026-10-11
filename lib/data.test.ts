@@ -45,6 +45,18 @@ describe("data", () => {
     expect(events.some((event) => event.id === 4)).toBe(false)
   })
 
+  it("getEventsInPeriod は開始が近い順(開催中は開始が新しい順で先頭)", () => {
+    const from = "2026-09-05"
+    const key = (start: string) => (start > from ? start : from)
+    const starts = getEventsInPeriod(from, "2026-12-31").map(
+      (event) => event.start_at ?? ""
+    )
+    for (let i = 1; i < starts.length; i++) {
+      const [a, b] = [starts[i - 1], starts[i]]
+      expect(key(a) < key(b) || (key(a) === key(b) && a >= b)).toBe(true)
+    }
+  })
+
   it("getUpcomingDaysEvents は今日〜明後日の期間と重複するイベントを返す", () => {
     const now = new Date("2026-09-03T12:00:00+09:00")
     const expected = getEventsInPeriod("2026-09-03", "2026-09-05")

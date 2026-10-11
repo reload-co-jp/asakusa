@@ -78,11 +78,23 @@ const isInPeriod = (content: Content, from: string, to: string): boolean => {
 const sortByStart = (items: Content[]): Content[] =>
   [...items].sort((a, b) => (a.start_at ?? "").localeCompare(b.start_at ?? ""))
 
+// 開始が近い順。期間開始前から開催中のものは期間開始日扱いで先頭、その中は開始が新しい順
+const sortBySoonest = (items: Content[], from: string): Content[] => {
+  const key = (content: Content) =>
+    (content.start_at ?? "") > from ? (content.start_at ?? "") : from
+  return [...items].sort(
+    (a, b) =>
+      key(a).localeCompare(key(b)) ||
+      (b.start_at ?? "").localeCompare(a.start_at ?? "")
+  )
+}
+
 export const getEventsInPeriod = (from: string, to: string): Content[] =>
-  sortByStart(
+  sortBySoonest(
     contents.filter(
       (content) => content.type === "event" && isInPeriod(content, from, to)
-    )
+    ),
+    from
   )
 
 const eventsIn = ({ from, to }: Period): Content[] =>
