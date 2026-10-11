@@ -157,7 +157,7 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
         </p>
         <ul
           style={{
-            background: "#fff",
+            background: "var(--surface)",
             borderLeft: "2px solid var(--accent)",
             display: "grid",
             gap: ".6rem",

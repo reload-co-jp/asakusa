@@ -50,7 +50,7 @@ const Page: FC = async () => {
             return (
               <li
                 key={place.id}
-                style={{ background: "#fff", padding: "1.25rem 1.5rem" }}
+                style={{ background: "var(--surface)", padding: "1.25rem 1.5rem" }}
               >
                 <span style={{ color: "var(--muted)", fontSize: ".72rem" }}>
                   {t.placeTypes[place.type]} / {place.area}

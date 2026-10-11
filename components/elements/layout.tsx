@@ -23,7 +23,7 @@ export const Nav: FC<{
   </nav>
 )
 
-// スクロールでコンパクトになるstickyヘッダー(CSS scroll-driven animation)
+// 新聞の題字風マストヘッド
 export const Header: FC<{ children: ReactNode }> = ({ children }) => (
   <header className="site-header">
     <div className="container site-header__inner">{children}</div>
@@ -41,14 +41,8 @@ export const Main: FC<{ children: ReactNode }> = ({ children }) => (
   </main>
 )
 
-export const Footer: FC<{ children: ReactNode; siteName?: string }> = ({
-  children,
-  siteName = "浅草ライブ",
-}) => (
+export const Footer: FC<{ children: ReactNode }> = ({ children }) => (
   <footer className="site-footer">
-    <div className="container">
-      <p className="site-logo">{siteName}</p>
-      <div style={{ fontSize: ".75rem" }}>{children}</div>
-    </div>
+    <div className="container">{children}</div>
   </footer>
 )

@@ -163,7 +163,7 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
         <h1
           style={{
             color: "var(--ink)",
-            fontWeight: 800,
+            fontWeight: 700,
             fontSize: "clamp(1.6rem, 4vw, 2.2rem)",
             letterSpacing: ".02em",
             lineHeight: 1.5,
@@ -192,7 +192,7 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
         <InArticleAd />
         <ul
           style={{
-            background: "#fff",
+            background: "var(--surface)",
             borderLeft: "2px solid var(--accent)",
             display: "grid",
             gap: ".6rem",

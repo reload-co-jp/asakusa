@@ -2,6 +2,8 @@ import { Metadata } from "next"
 import Script from "next/script"
 import { LanguageSwitcher } from "@/components/elements/language-switcher"
 import { Footer, Header, Main, Nav, Title } from "@/components/elements/layout"
+import { Logo } from "@/components/elements/logo"
+import { display, serif } from "@/lib/fonts"
 import { getDictionary, HTML_LANG, localePath } from "@/lib/i18n"
 import { SITE_URL } from "@/lib/json-ld"
 import "../reset.css"
@@ -39,12 +41,22 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
   ].map((link) => ({ ...link, href: href(link.href) }))
   const mainLinks = [
     { href: "/today/", label: t.nav.today },
+    { href: "/weekend/", label: t.nav.weekend },
     { href: "/events/", label: t.nav.events },
-    { href: "/place/", label: t.nav.spots },
+    { href: "/category/festival/", label: t.nav.festival },
+    { href: "/category/performance/", label: t.nav.performance },
+    { href: "/category/exhibition/", label: t.nav.exhibition },
+    { href: "/category/popup/", label: t.nav.popup },
+    { href: "/category/sale/", label: t.nav.sale },
+    { href: "/category/new_opening/", label: t.nav.newOpening },
     { href: "/category/local_news/", label: t.nav.news },
+    { href: "/place/", label: t.nav.spots },
   ].map((link) => ({ ...link, href: href(link.href) }))
   return (
-    <html lang={HTML_LANG[locale]}>
+    <html
+      className={`${serif.variable} ${display.variable}`}
+      lang={HTML_LANG[locale]}
+    >
       <head />
       <body>
         <Script
@@ -66,13 +78,46 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
           strategy="afterInteractive"
         />
         <Header>
-          <Title as="p">
-            <a className="site-logo" href={href("/")}>
-              {t.siteName}
-            </a>
-          </Title>
-          <Nav className="site-nav" links={mainLinks} />
-          <LanguageSwitcher label={t.languageLabel} locale={locale} />
+          <div className="masthead">
+            <p aria-hidden="true" className="masthead__tagline">
+              {t.home.hero}
+            </p>
+            <Title as="p" className="masthead__logo">
+              <a className="site-logo" href={href("/")}>
+                <Logo sub={t.siteName} />
+              </a>
+            </Title>
+            <LanguageSwitcher label={t.languageLabel} locale={locale} />
+          </div>
+          <div className="masthead__bar">
+            <Nav
+              className="site-nav"
+              label={t.home.byCategory}
+              links={mainLinks}
+            />
+            <form
+              action="https://www.google.com/search"
+              className="search"
+              method="get"
+              role="search"
+            >
+              <input
+                name="as_sitesearch"
+                type="hidden"
+                value={new URL(SITE_URL).host}
+              />
+              <input
+                aria-label={t.search.label}
+                className="search__input"
+                name="q"
+                placeholder={t.search.placeholder}
+                type="search"
+              />
+              <button className="search__button" type="submit">
+                {t.search.submit}
+              </button>
+            </form>
+          </div>
         </Header>
         <Main>
           {children}
@@ -88,9 +133,33 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
             {`(adsbygoogle = window.adsbygoogle || []).push({});`}
           </Script>
         </Main>
-        <Footer siteName={t.siteName}>
-          <Nav links={navLinks} />
-          <p>&copy; Asakusa Live</p>
+        <Footer>
+          <div className="site-footer__grid">
+            <div>
+              <a className="site-logo" href={href("/")}>
+                <Logo sub={t.siteName} />
+              </a>
+              <p className="site-footer__tagline">{t.home.hero}</p>
+            </div>
+            <section>
+              <h2 className="site-footer__heading">{t.footer.about}</h2>
+              <p>{t.footer.aboutText}</p>
+            </section>
+            <section>
+              <h2 className="site-footer__heading">{t.footer.operator}</h2>
+              <p>
+                <a href="https://reload.co.jp/">{t.footer.operatorName}</a>
+              </p>
+              <h2 className="site-footer__heading">{t.footer.contact}</h2>
+              <p>
+                <a href="https://reload.co.jp/">{t.footer.contactText}</a>
+              </p>
+            </section>
+          </div>
+          <Nav className="site-footer__nav" links={navLinks} />
+          <p className="site-footer__copy">
+            &copy; Asakusa Live — ASAKUSA JOURNAL
+          </p>
         </Footer>
       </body>
     </html>

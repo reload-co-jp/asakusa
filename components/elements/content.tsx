@@ -81,7 +81,48 @@ export const StatusBadge: FC<{ content: Content; locale: Locale }> = ({
   )
 }
 
-const cardDate = (content: Content): string | null => {
+// 画像なしの記事はスポット画像、それもなければ誌面風のplaceholderを表示する
+export const Media: FC<{
+  content: Content
+  locale: Locale
+  sizes: string
+  className?: string
+  priority?: boolean
+  children?: ReactNode
+}> = ({ content: original, locale, sizes, className, priority, children }) => {
+  const { content, place } = localized(original, locale)
+  const image = content.image_url ?? place?.image_url
+  const small = image !== undefined && imageWidth(image) < 400
+  return (
+    <div
+      className={`media${small ? " media--small" : ""}${className ? ` ${className}` : ""}`}
+    >
+      {image ? (
+        <Image
+          alt={
+            content.image_url
+              ? contentImageAlt(content, locale)
+              : (place?.name ?? "")
+          }
+          fill
+          priority={priority}
+          sizes={sizes}
+          src={image}
+        />
+      ) : (
+        <span aria-hidden="true" className="placeholder">
+          <span className="placeholder__mark">A.</span>
+          <span className="placeholder__label">
+            {DICTIONARIES[locale].categories[content.category]}
+          </span>
+        </span>
+      )}
+      {children}
+    </div>
+  )
+}
+
+export const cardDate = (content: Content): string | null => {
   if (!content.start_at) return null
   const start = formatShortDate(content.start_at, true)
   return !content.end_at || content.end_at === content.start_at
@@ -98,41 +139,29 @@ export const ContentCard: FC<{
   const t = DICTIONARIES[locale]
   const href = localePath(locale, `/content/${content.id}/`)
   const date = cardDate(content)
-  // 画像なしの記事はスポット画像、それもなければブランド画像をplaceholderにする
-  const image =
-    content.image_url ?? place?.image_url ?? "/images/brand.jpeg"
   // 低解像度画像は大判にせず、カード内でも引き伸ばさない
   const isFeature = feature && isLargeImage(content.image_url)
-  const small = imageWidth(image) < 400
   return (
     <article className={`card${isFeature ? " card--feature" : ""}`}>
-      <div className={`card__media${small ? " card__media--small" : ""}`}>
-        <Image
-          alt={
-            content.image_url
-              ? contentImageAlt(content, locale)
-              : (place?.image_url && place.name) || ""
-          }
-          fill
-          sizes={
-            isFeature
-              ? "(min-width: 720px) 50vw, 100vw"
-              : "(min-width: 720px) 25vw, 100vw"
-          }
-          src={image}
-        />
+      <Media
+        content={original}
+        locale={locale}
+        sizes={
+          isFeature
+            ? "(min-width: 720px) 50vw, 100vw"
+            : "(min-width: 720px) 25vw, 100vw"
+        }
+      >
         <span className="card__badge">
           <StatusBadge content={original} locale={locale} />
         </span>
-      </div>
+      </Media>
       <div className="card__body">
         <CategoryLabel category={content.category} locale={locale} />
         <h3 className="card__title">
           <Link href={href}>{content.title}</Link>
         </h3>
-        {isFeature && (
-          <p className="card__summary">{content.summary}</p>
-        )}
+        {isFeature && <p className="card__summary">{content.summary}</p>}
         <p className="card__meta">
           {date ? (
             <span className="card__date">{date}</span>
@@ -174,7 +203,7 @@ export const ContentList: FC<{ contents: Content[] }> = async ({
       }
     })
   return contents.length === 0 ? (
-    <p style={{ color: "var(--muted)", fontSize: ".9rem" }}>{t.card.empty}</p>
+    <Empty text={t.card.empty} />
   ) : (
     <div className="card-grid">
       {contents.map((content, i) => (
@@ -195,6 +224,142 @@ export const ContentList: FC<{ contents: Content[] }> = async ({
   )
 }
 
+const Empty: FC<{ text: string }> = ({ text }) => (
+  <p className="empty">{text}</p>
+)
+
+// 日付を主役にしたイベント一覧(今日・今週)
+export const EventList: FC<{ contents: Content[] }> = async ({ contents }) => {
+  const { locale, t } = await getDictionary()
+  if (contents.length === 0) return <Empty text={t.card.empty} />
+  const today = jstDateString()
+  return (
+    <ol className="event-list">
+      {contents.map((original) => {
+        const { content, place } = localized(original, locale)
+        const day = content.start_at ?? today
+        return (
+          <li className="event-row" key={content.id}>
+            <p aria-hidden="true" className="event-row__date">
+              <span className="event-row__day">{formatShortDate(day)}</span>
+              <span className="event-row__weekday">
+                {formatShortDate(day, true).slice(6)}
+              </span>
+            </p>
+            <div className="event-row__body">
+              <p className="event-row__meta">
+                <StatusBadge content={original} locale={locale} />
+                <CategoryLabel category={content.category} locale={locale} />
+              </p>
+              <h3 className="event-row__title">
+                <Link href={localePath(locale, `/content/${content.id}/`)}>
+                  {content.title}
+                </Link>
+              </h3>
+              <p className="event-row__info">
+                <span className="card__date">{cardDate(content)}</span>
+                {place && <span>{place.name}</span>}
+              </p>
+            </div>
+            <Media
+              className="event-row__media"
+              content={original}
+              locale={locale}
+              sizes="(min-width: 720px) 10rem, 6rem"
+            />
+          </li>
+        )
+      })}
+    </ol>
+  )
+}
+
+// 公開日と見出しで読ませるニュース一覧。compactはカテゴリー欄用
+export const NewsList: FC<{ contents: Content[]; compact?: boolean }> = async ({
+  contents,
+  compact,
+}) => {
+  const { locale, t } = await getDictionary()
+  if (contents.length === 0) return <Empty text={t.card.empty} />
+  return (
+    <ol className={`news-list${compact ? " news-list--compact" : ""}`}>
+      {contents.map((original) => {
+        const { content } = localized(original, locale)
+        return (
+          <li className="news-row" key={content.id}>
+            <Media
+              className="news-row__media"
+              content={original}
+              locale={locale}
+              sizes="(min-width: 720px) 12rem, 6rem"
+            />
+            <div className="news-row__body">
+              <p className="news-row__meta">
+                <CategoryLabel category={content.category} locale={locale} />
+                <time dateTime={content.published_at}>
+                  {formatDate(content.published_at, locale)}
+                </time>
+              </p>
+              <h3 className="news-row__title">
+                <Link href={localePath(locale, `/content/${content.id}/`)}>
+                  {content.title}
+                </Link>
+              </h3>
+              {!compact && (
+                <p className="news-row__summary">{content.summary}</p>
+              )}
+            </div>
+          </li>
+        )
+      })}
+    </ol>
+  )
+}
+
+// トップの注目記事。大きな写真と余白で見せる
+export const FeatureStory: FC<{ content: Content }> = async ({
+  content: original,
+}) => {
+  const { locale, t } = await getDictionary()
+  const { content, place } = localized(original, locale)
+  const date = cardDate(content)
+  return (
+    <article className="feature">
+      <Media
+        className="feature__media"
+        content={original}
+        locale={locale}
+        priority
+        sizes="(min-width: 960px) 40vw, 100vw"
+      >
+        <span className="card__badge">
+          <StatusBadge content={original} locale={locale} />
+        </span>
+      </Media>
+      <div className="feature__body">
+        <p className="feature__kicker">
+          <span className="eyebrow">{t.home.featured}</span>
+          <CategoryLabel category={content.category} locale={locale} />
+        </p>
+        <h2 className="feature__title">
+          <Link href={localePath(locale, `/content/${content.id}/`)}>
+            {content.title}
+          </Link>
+        </h2>
+        <p className="feature__summary">{content.summary}</p>
+        <p className="card__meta">
+          {date ? (
+            <span className="card__date">{date}</span>
+          ) : (
+            t.card.published(formatDate(content.published_at, locale))
+          )}
+          {place && <> · {place.name}</>}
+        </p>
+      </div>
+    </article>
+  )
+}
+
 export const Section: FC<{
   title: string
   // 英字の小見出し(装飾)
@@ -203,8 +368,10 @@ export const Section: FC<{
   // ページの主見出しとして使う場合はh1
   level?: 1 | 2
   id?: string
+  // 見出し右の「すべて見る」リンク(言語プレフィックス付きで渡す)
+  more?: { href: string; label: string }
   children: ReactNode
-}> = ({ title, eyebrow, description, level = 2, id, children }) => {
+}> = ({ title, eyebrow, description, level = 2, id, more, children }) => {
   const Heading = level === 1 ? "h1" : "h2"
   return (
     <section className="section" id={id}>
@@ -216,6 +383,11 @@ export const Section: FC<{
         )}
         <Heading className="section__title">{title}</Heading>
         {description && <p className="section__lead">{description}</p>}
+        {more && (
+          <Link className="more" href={more.href}>
+            {more.label}
+          </Link>
+        )}
       </header>
       {children}
     </section>
