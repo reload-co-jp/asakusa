@@ -66,6 +66,19 @@ export const EVENT_CATEGORIES: Category[] = [
   "popup",
 ]
 
+// 記事のエリアタグ。雷門・仲見世・六区・花川戸・西浅草・千束などは「浅草」に含める
+export const AREAS = {
+  asakusa: "浅草",
+  kuramae: "蔵前",
+  tawaramachi: "田原町",
+  inaricho: "稲荷町",
+  asakusabashi: "浅草橋",
+  honjoazumabashi: "本所吾妻橋",
+  oshiage: "押上",
+} as const
+
+export type Area = keyof typeof AREAS
+
 export const PLACE_TYPES = {
   store: "店舗",
   facility: "施設",
@@ -106,6 +119,7 @@ export type Content = {
   summary: string
   body: string
   category: Category
+  area: Area
   published_at: string
   start_at: string | null
   end_at: string | null

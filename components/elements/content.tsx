@@ -43,6 +43,13 @@ export const CategoryLabel: FC<{
   <span className="label">{DICTIONARIES[locale].categories[category]}</span>
 )
 
+export const AreaLabel: FC<{ area: Content["area"]; locale: Locale }> = ({
+  area,
+  locale,
+}) => (
+  <span className="label label--area">{DICTIONARIES[locale].areas[area]}</span>
+)
+
 // 静的exportのためステータスはビルド時(JST)に確定し、毎日のスケジュールビルドで更新する
 export const eventStatus = (
   content: Content,
@@ -158,6 +165,7 @@ export const ContentCard: FC<{
       </Media>
       <div className="card__body">
         <CategoryLabel category={content.category} locale={locale} />
+        <AreaLabel area={content.area} locale={locale} />
         <h3 className="card__title">
           <Link href={href}>{content.title}</Link>
         </h3>
@@ -251,6 +259,7 @@ export const EventList: FC<{ contents: Content[] }> = async ({ contents }) => {
                 <p className="event-row__meta">
                   <StatusBadge content={original} locale={locale} />
                   <CategoryLabel category={content.category} locale={locale} />
+                  <AreaLabel area={content.area} locale={locale} />
                 </p>
                 <h3 className="event-row__title">
                   <Link href={localePath(locale, `/content/${content.id}/`)}>
@@ -304,6 +313,7 @@ export const NewsList: FC<{ contents: Content[]; compact?: boolean }> = async ({
               <div className="news-row__body">
                 <p className="news-row__meta">
                   <CategoryLabel category={content.category} locale={locale} />
+                  <AreaLabel area={content.area} locale={locale} />
                   <time dateTime={content.published_at}>
                     {formatDate(content.published_at, locale)}
                   </time>
@@ -356,6 +366,7 @@ export const FeatureStory: FC<{ content: Content }> = async ({
         <p className="feature__kicker">
           <span className="eyebrow">{t.home.featured}</span>
           <CategoryLabel category={content.category} locale={locale} />
+          <AreaLabel area={content.area} locale={locale} />
         </p>
         <h2 className="feature__title">
           <Link href={localePath(locale, `/content/${content.id}/`)}>

@@ -12,7 +12,7 @@ import {
   weekendPeriod,
 } from "./date"
 import type { Locale } from "./i18n-config"
-import type { Category, Content, Place, Source } from "./types"
+import type { Area, Category, Content, Place, Source } from "./types"
 
 export const places = placesJson as Place[]
 export const contents = contentsJson as Content[]
@@ -64,6 +64,9 @@ export const getLatestContents = (limit?: number): Content[] => {
 
 export const getContentsByCategory = (category: Category): Content[] =>
   sortByLatest(contents.filter((content) => content.category === category))
+
+export const getContentsByArea = (area: Area): Content[] =>
+  sortByLatest(contents.filter((content) => content.area === area))
 
 export const getContentsByPlace = (placeId: string): Content[] =>
   sortByLatest(contents.filter((content) => content.place_id === placeId))

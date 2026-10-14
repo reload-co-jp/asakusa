@@ -8,6 +8,7 @@ import { FC } from "react"
 import { InArticleAd } from "@/components/elements/ad"
 import { Breadcrumbs, Crumb, JsonLd } from "@/components/elements/breadcrumbs"
 import {
+  AreaLabel,
   CategoryLabel,
   contentImageAlt,
   ContentList,
@@ -148,7 +149,8 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
             width={800}
           />
         )}
-        <CategoryLabel category={content.category} locale={locale} />
+        <CategoryLabel category={content.category} locale={locale} />{" "}
+        <AreaLabel area={content.area} locale={locale} />
         {ended && (
           <span
             style={{
@@ -227,6 +229,14 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
             style={{ color: "var(--accent)" }}
           >
             {t.content.categoryLink(categoryCrumb.name)}
+          </Link>
+        </p>
+        <p style={{ fontSize: ".85rem", margin: ".6rem 0 0" }}>
+          <Link
+            href={localePath(locale, `/area/${content.area}/`)}
+            style={{ color: "var(--accent)" }}
+          >
+            {t.area.link(t.areas[content.area])}
           </Link>
         </p>
         {content.source_url && (

@@ -3,12 +3,13 @@ import {
   contents,
   getArchiveMonths,
   getCategoryCount,
+  getContentsByArea,
   isTranslated,
   places,
 } from "@/lib/data"
 import { HTML_LANG, Locale, LOCALES, localePath } from "@/lib/i18n-config"
 import { SITE_URL } from "@/lib/json-ld"
-import { CATEGORIES, Category } from "@/lib/types"
+import { AREAS, Area, CATEGORIES, Category } from "@/lib/types"
 
 export const dynamic = "force-static"
 
@@ -51,6 +52,14 @@ const pages = (): Page[] => [
       url: `/category/${category}/`,
       changeFrequency: "daily" as const,
       priority: 0.7,
+    })),
+  // 記事0件のエリアはnoindexのため除外
+  ...(Object.keys(AREAS) as Area[])
+    .filter((area) => getContentsByArea(area).length > 0)
+    .map((area) => ({
+      url: `/area/${area}/`,
+      changeFrequency: "daily" as const,
+      priority: 0.6,
     })),
   { url: "/place/", changeFrequency: "weekly", priority: 0.7 },
   ...places.map((place) => ({

@@ -1,5 +1,7 @@
 import { locale as localeParam } from "next/root-params"
 import {
+  Area,
+  AREAS,
   CATEGORIES,
   CATEGORY_DESCRIPTIONS,
   CATEGORY_TITLES,
@@ -161,6 +163,13 @@ const ja = {
   categoryTitles: CATEGORY_TITLES,
   categoryDescriptions: CATEGORY_DESCRIPTIONS,
   placeTypes: PLACE_TYPES as Record<PlaceType, string>,
+  areas: AREAS as Record<Area, string>,
+  area: {
+    title: (area: string) => `${area}のイベント・新店舗・地域ニュース`,
+    description: (area: string, count: number) =>
+      `${area}エリアのイベント・新店舗・地域ニュースなど${count}件を公開日順に掲載。`,
+    link: (area: string) => `${area}エリアの情報一覧 →`,
+  },
 }
 
 type Dictionary = typeof ja
@@ -358,6 +367,21 @@ const en: Dictionary = {
     exhibition: "Exhibitions around Asakusa",
     facility_news: "News from venues around Asakusa",
     local_news: "Local news from around Asakusa",
+  },
+  areas: {
+    asakusa: "Asakusa",
+    kuramae: "Kuramae",
+    tawaramachi: "Tawaramachi",
+    inaricho: "Inaricho",
+    asakusabashi: "Asakusabashi",
+    honjoazumabashi: "Honjo-azumabashi",
+    oshiage: "Oshiage",
+  },
+  area: {
+    title: (area) => `${area} Events, New Shops & Local News`,
+    description: (area, count) =>
+      `${count} listings of events, new shops and local news in the ${area} area, sorted by publication date.`,
+    link: (area) => `All listings in ${area} →`,
   },
   placeTypes: {
     store: "Shop",
@@ -559,6 +583,21 @@ const zh: Dictionary = {
     exhibition: "汇总浅草地区的展览信息",
     facility_news: "汇总浅草地区的设施新闻",
     local_news: "汇总浅草地区的地区新闻",
+  },
+  areas: {
+    asakusa: "浅草",
+    kuramae: "藏前",
+    tawaramachi: "田原町",
+    inaricho: "稻荷町",
+    asakusabashi: "浅草桥",
+    honjoazumabashi: "本所吾妻桥",
+    oshiage: "押上",
+  },
+  area: {
+    title: (area) => `${area}的活动・新店・地区新闻`,
+    description: (area, count) =>
+      `按发布日期介绍${area}地区的活动、新店及地区新闻等共${count}条信息。`,
+    link: (area) => `${area}地区信息一览 →`,
   },
   placeTypes: {
     store: "店铺",

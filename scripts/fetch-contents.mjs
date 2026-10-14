@@ -31,6 +31,18 @@ const CATEGORIES = [
   "local_news",
 ]
 
+// lib/types.ts の AREAS と対応
+const AREAS = {
+  asakusa:
+    "浅草(雷門・浅草寺周辺・仲見世・浅草六区・花川戸・西浅草・千束・浅草駅周辺を含む)",
+  kuramae: "蔵前",
+  tawaramachi: "田原町",
+  inaricho: "稲荷町",
+  asakusabashi: "浅草橋",
+  honjoazumabashi: "本所吾妻橋",
+  oshiage: "押上",
+}
+
 const MAX_TEXT_LENGTH = 15000
 const FETCH_TIMEOUT_MS = 15000
 const CLAUDE_TIMEOUT_MS = 240000
@@ -278,6 +290,7 @@ Webページのテキストから、浅草エリアのイベント・新規オ�
   "summary": "1〜2文の要約",
   "body": "詳細本文(Markdown形式。背景・詳細・見どころなどを含め6〜10文程度でしっかり記述。段落は空行で区切り、必要に応じて見出し・強調・箇条書きなどのMarkdown記法を使ってよい)",
   "category": "${CATEGORIES.join(" | ")} のいずれか",
+  "area": "${Object.keys(AREAS).join(" | ")} のいずれか",
   "published_at": "YYYY-MM-DD",
   "start_at": "YYYY-MM-DD または null",
   "end_at": "YYYY-MM-DD または null",
@@ -287,7 +300,10 @@ Webページのテキストから、浅草エリアのイベント・新規オ�
 }
 
 ルール:
-- 浅草エリアに関係ない情報は除外する
+- 浅草エリア(浅草・雷門・浅草寺周辺・仲見世・浅草六区・花川戸・西浅草・千束・浅草駅周辺・蔵前・田原町・稲荷町・浅草橋・本所吾妻橋・押上)に関係ない情報は除外する
+- areaは記事の場所が属するエリア(${Object.entries(AREAS)
+  .map(([key, name]) => `${key}=${name}`)
+  .join("、")})。判断できない場合はasakusa
 - 日付が不明な場合は推測せずnullにする
 - 今日より前にend_atが過ぎているイベントは除外する
 - トップページの案内文など一般的すぎる情報は抽出しない
@@ -549,6 +565,9 @@ const main = async () => {
       summary: candidate.summary ?? "",
       body: candidate.body ?? candidate.summary ?? "",
       category: candidate.category,
+      area: Object.hasOwn(AREAS, candidate.area ?? "")
+        ? candidate.area
+        : "asakusa",
       published_at: candidate.published_at ?? today,
       start_at: candidate.start_at ?? null,
       end_at: candidate.end_at ?? null,

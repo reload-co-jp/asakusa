@@ -131,5 +131,89 @@
     "url": "https://news.google.com/rss/search?q=%E6%B5%85%E8%8D%89&hl=ja&gl=JP&ceid=JP:ja",
     "source_type": "web_media",
     "priority": 4
+  },
+  {
+    "id": "prtimes-kuramae",
+    "name": "PR TIMES「蔵前」",
+    "url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E8%94%B5%E5%89%8D",
+    "source_type": "press_release",
+    "priority": 3
+  },
+  {
+    "id": "prtimes-tawaramachi",
+    "name": "PR TIMES「田原町」",
+    "url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E7%94%B0%E5%8E%9F%E7%94%BA",
+    "source_type": "press_release",
+    "priority": 3
+  },
+  {
+    "id": "prtimes-inaricho",
+    "name": "PR TIMES「稲荷町」",
+    "url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E7%A8%B2%E8%8D%B7%E7%94%BA",
+    "source_type": "press_release",
+    "priority": 3
+  },
+  {
+    "id": "prtimes-honjoazumabashi",
+    "name": "PR TIMES「本所吾妻橋」",
+    "url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%9C%AC%E6%89%80%E5%90%BE%E5%A6%BB%E6%A9%8B",
+    "source_type": "press_release",
+    "priority": 3
+  },
+  {
+    "id": "prtimes-oshiage",
+    "name": "PR TIMES「押上」",
+    "url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%8A%BC%E4%B8%8A",
+    "source_type": "press_release",
+    "priority": 3
+  },
+  {
+    "id": "google-news-kuramae",
+    "name": "Google ニュース「蔵前」",
+    "url": "https://news.google.com/rss/search?q=%E8%94%B5%E5%89%8D&hl=ja&gl=JP&ceid=JP:ja",
+    "source_type": "web_media",
+    "priority": 4
+  },
+  {
+    "id": "google-news-tawaramachi",
+    "name": "Google ニュース「田原町 台東区」",
+    "url": "https://news.google.com/rss/search?q=%E7%94%B0%E5%8E%9F%E7%94%BA%20%E5%8F%B0%E6%9D%B1%E5%8C%BA&hl=ja&gl=JP&ceid=JP:ja",
+    "source_type": "web_media",
+    "priority": 4
+  },
+  {
+    "id": "google-news-inaricho",
+    "name": "Google ニュース「稲荷町 台東区」",
+    "url": "https://news.google.com/rss/search?q=%E7%A8%B2%E8%8D%B7%E7%94%BA%20%E5%8F%B0%E6%9D%B1%E5%8C%BA&hl=ja&gl=JP&ceid=JP:ja",
+    "source_type": "web_media",
+    "priority": 4
+  },
+  {
+    "id": "google-news-honjoazumabashi",
+    "name": "Google ニュース「本所吾妻橋」",
+    "url": "https://news.google.com/rss/search?q=%E6%9C%AC%E6%89%80%E5%90%BE%E5%A6%BB%E6%A9%8B&hl=ja&gl=JP&ceid=JP:ja",
+    "source_type": "web_media",
+    "priority": 4
+  },
+  {
+    "id": "google-news-oshiage",
+    "name": "Google ニュース「押上」",
+    "url": "https://news.google.com/rss/search?q=%E6%8A%BC%E4%B8%8A&hl=ja&gl=JP&ceid=JP:ja",
+    "source_type": "web_media",
+    "priority": 4
+  },
+  {
+    "id": "tabelog-kuramae",
+    "name": "食べログ 浅草橋・蔵前",
+    "url": "https://tabelog.com/tokyo/A1311/A131103/",
+    "source_type": "gourmet_site",
+    "priority": 5
+  },
+  {
+    "id": "tabelog-oshiage",
+    "name": "食べログ 曳舟・向島・押上周辺",
+    "url": "https://tabelog.com/tokyo/A1312/A131203/",
+    "source_type": "gourmet_site",
+    "priority": 5
   }
 ]

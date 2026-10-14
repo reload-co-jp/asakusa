@@ -19,6 +19,12 @@ URL: https://asakusa.reload.co.jp
 - 西浅草
 - 千束
 - 浅草駅周辺
+- 蔵前
+- 田原町
+- 稲荷町
+- 浅草橋
+- 本所吾妻橋
+- 押上
 
 ## 3. 情報源
 
@@ -52,11 +58,19 @@ URL: https://asakusa.reload.co.jp
 ### プレスリリース
 
 - PR TIMES「浅草」検索: https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89
+- PR TIMES 周辺エリア検索: 蔵前・田原町・稲荷町・本所吾妻橋・押上(浅草橋は「浅草」検索に含まれる)
+
+### ニュース
+
+- Google ニュース「浅草」: https://news.google.com/rss/search?q=%E6%B5%85%E8%8D%89&hl=ja&gl=JP&ceid=JP:ja
+- Google ニュース 周辺エリア: 蔵前・田原町 台東区・稲荷町 台東区・本所吾妻橋・押上(同名地名との混同を避けるため一部「台東区」を付与)
 
 ### 店舗情報
 
 - 食べログ 浅草: https://tabelog.com/tokyo/A1311/A131102/
 - 食べログ 浅草・新規オープン: https://tabelog.com/tokyo/A1311/A131102/rstLst/cond16-00-00/
+- 食べログ 浅草橋・蔵前: https://tabelog.com/tokyo/A1311/A131103/
+- 食べログ 曳舟・向島・押上周辺: https://tabelog.com/tokyo/A1312/A131203/
 
 ### 情報源の扱い
 
