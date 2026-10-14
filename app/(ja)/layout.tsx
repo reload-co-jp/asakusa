@@ -15,6 +15,8 @@ export const generateMetadata = async (): Promise<Metadata> => {
     metadataBase: new URL(SITE_URL),
     title: t.siteName,
     description: t.siteDescription,
+    // Google Discoverで大きい画像プレビューを許可
+    robots: { "max-image-preview": "large" },
     // 動的セグメント[locale]下ではファイル規約のopengraph-imageが静的exportで正しく出力されないためpublic/に置く
     openGraph: { images: "/opengraph-image.png" },
   }
