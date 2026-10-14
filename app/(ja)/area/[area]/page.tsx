@@ -46,7 +46,12 @@ const Page: FC<{ params: Promise<{ area: Area }> }> = async ({ params }) => {
   const contents = getContentsByArea(area)
   return (
     <>
-      <Breadcrumbs items={[{ name, href: `/area/${area}/` }]} />
+      <Breadcrumbs
+        items={[
+          { name: t.nav.areas, href: "/area/" },
+          { name, href: `/area/${area}/` },
+        ]}
+      />
       <Section
         description={t.area.description(name, contents.length)}
         level={1}

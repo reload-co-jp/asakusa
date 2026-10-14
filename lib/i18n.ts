@@ -38,6 +38,7 @@ const ja = {
     exhibition: "展示・アート",
     places: "施設",
     spots: "スポット",
+    areas: "エリア",
     news: "ニュース",
   },
   breadcrumbLabel: "パンくずリスト",
@@ -169,6 +170,9 @@ const ja = {
     description: (area: string, count: number) =>
       `${area}エリアのイベント・新店舗・地域ニュースなど${count}件を公開日順に掲載。`,
     link: (area: string) => `${area}エリアの情報一覧 →`,
+    listTitle: "エリアから探す｜浅草周辺のイベント・新店舗・ニュース",
+    listHeading: "エリアから探す",
+    listDescription: "浅草・蔵前・浅草橋・押上など浅草周辺のエリア別に、イベント・新店舗・地域ニュースをまとめています。",
   },
 }
 
@@ -195,6 +199,7 @@ const en: Dictionary = {
     exhibition: "Exhibitions",
     places: "Places",
     spots: "Spots",
+    areas: "Areas",
     news: "News",
   },
   breadcrumbLabel: "Breadcrumb",
@@ -382,6 +387,9 @@ const en: Dictionary = {
     description: (area, count) =>
       `${count} listings of events, new shops and local news in the ${area} area, sorted by publication date.`,
     link: (area) => `All listings in ${area} →`,
+    listTitle: "Browse by Area | Events, New Shops & News around Asakusa",
+    listHeading: "Browse by Area",
+    listDescription: "Events, new shops and local news around Asakusa, organized by area: Asakusa, Kuramae, Asakusabashi, Oshiage and more.",
   },
   placeTypes: {
     store: "Shop",
@@ -417,6 +425,7 @@ const zh: Dictionary = {
     exhibition: "展览・艺术",
     places: "设施",
     spots: "景点",
+    areas: "地区",
     news: "新闻",
   },
   breadcrumbLabel: "面包屑导航",
@@ -598,6 +607,9 @@ const zh: Dictionary = {
     description: (area, count) =>
       `按发布日期介绍${area}地区的活动、新店及地区新闻等共${count}条信息。`,
     link: (area) => `${area}地区信息一览 →`,
+    listTitle: "按地区查找｜浅草周边的活动・新店・新闻",
+    listHeading: "按地区查找",
+    listDescription: "按浅草、藏前、浅草桥、押上等浅草周边地区，汇总活动、新店及地区新闻。",
   },
   placeTypes: {
     store: "店铺",

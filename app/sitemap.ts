@@ -53,6 +53,7 @@ const pages = (): Page[] => [
       changeFrequency: "daily" as const,
       priority: 0.7,
     })),
+  { url: "/area/", changeFrequency: "daily", priority: 0.6 },
   // 記事0件のエリアはnoindexのため除外
   ...(Object.keys(AREAS) as Area[])
     .filter((area) => getContentsByArea(area).length > 0)
