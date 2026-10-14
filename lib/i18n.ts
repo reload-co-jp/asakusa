@@ -41,6 +41,9 @@ const ja = {
   breadcrumbLabel: "パンくずリスト",
   languageLabel: "言語",
   home: {
+    title: "浅草のイベント・祭り情報【毎日更新】今日・今週末の予定｜浅草ライブ",
+    description:
+      "浅草で今日・今週末・今月に開催されるイベントを毎日更新。浅草寺・浅草神社の祭りや伝統行事、浅草公会堂・浅草演芸ホールの公演・演芸、展示・POP UP、新店舗・地域ニュースまで浅草の今がわかる地域メディア。",
     heading: "浅草のイベント・祭り・公演・新店舗・地域ニュース",
     today: "今日の浅草",
     thisWeek: "今週の浅草",
@@ -188,6 +191,9 @@ const en: Dictionary = {
   breadcrumbLabel: "Breadcrumb",
   languageLabel: "Language",
   home: {
+    title: "Asakusa Events & Festivals Today, This Weekend | Asakusa Live",
+    description:
+      "Daily-updated guide to events in Asakusa, Tokyo: festivals at Senso-ji and Asakusa Shrine, performances and rakugo, exhibitions, pop-ups, new shops and local news.",
     heading:
       "Events, festivals, performances, new shops and local news in Asakusa, Tokyo",
     today: "Today in Asakusa",
@@ -392,6 +398,9 @@ const zh: Dictionary = {
   breadcrumbLabel: "面包屑导航",
   languageLabel: "语言",
   home: {
+    title: "浅草活动・祭典信息【每日更新】今天・本周末的活动｜浅草Live",
+    description:
+      "每日更新东京浅草今天・本周末・本月举办的活动。浅草寺・浅草神社的祭典和传统节庆、浅草公会堂・浅草演艺厅的演出、展览・快闪店、新店及地区新闻。",
     heading: "东京浅草的活动・祭典・演出・新店・地区新闻",
     today: "今天的浅草",
     thisWeek: "本周的浅草",

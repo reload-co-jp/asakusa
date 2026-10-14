@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 import Image from "next/image"
 import { FC } from "react"
-import { LinkList } from "@/components/elements/breadcrumbs"
+import { JsonLd, LinkList } from "@/components/elements/breadcrumbs"
 import Link from "next/link"
 import {
   ContentList,
@@ -22,13 +22,26 @@ import {
   places,
 } from "@/lib/data"
 import { formatShortDate, jstDateString } from "@/lib/date"
-import { alternates, getDictionary, localePath } from "@/lib/i18n"
+import { alternates, getDictionary, HTML_LANG, localePath } from "@/lib/i18n"
 import { isLargeImage } from "@/lib/image-size"
+import { SITE_URL } from "@/lib/json-ld"
 import { Category } from "@/lib/types"
 
 export const generateMetadata = async (): Promise<Metadata> => {
-  const { locale } = await getDictionary()
-  return { alternates: alternates(locale, "/") }
+  const { locale, t } = await getDictionary()
+  const { title, description } = t.home
+  // 親layoutのtitleはサイト名のみのため、トップは検索キーワードを含むtitleで上書きする
+  return {
+    title,
+    description,
+    alternates: alternates(locale, "/"),
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      url: localePath(locale, "/"),
+    },
+  }
 }
 
 // カテゴリー欄に並べるジャンル(セールは開催中を優先)
@@ -53,6 +66,16 @@ const Page: FC = async () => {
     .slice(0, 12)
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: t.siteName,
+          alternateName: "ASAKUSA JOURNAL",
+          url: `${SITE_URL}${href("/")}`,
+          inLanguage: HTML_LANG[locale],
+        }}
+      />
       <div className="lead">
         <section className="hero">
           <Image
