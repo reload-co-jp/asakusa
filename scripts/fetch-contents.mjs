@@ -66,6 +66,9 @@ const normalizeTitle = (title) =>
 // タイトルのbigram類似度(0〜1)。表記揺れ(全角/半角の括弧・句読点、語順の入れ替え程度)を
 // 同一記事として吸収するための緩い指標。完全一致(=1)以外は閾値で判定する
 const DUP_TITLE_SIM_THRESHOLD = 0.5
+// ソース横断は「〇〇がオープン」等の短い定型タイトル同士が0.5を超えるため厳しめにする
+// ponytail: 経験値。誤統合/取りこぼしが出たらplace_id・日付一致等の条件を追加
+const DUP_TITLE_SIM_THRESHOLD_CROSS_SOURCE = 0.6
 
 const bigrams = (s) => {
   const set = new Set()
@@ -102,11 +105,12 @@ const monthsConflict = (a, b) => {
 // 完全一致では検出できない重複記事が発生する。同一source_id・同一開催日(あれば)を前提に、
 // タイトルの類似度で同一記事とみなせるものを既存contentsから探す。
 // 「〇〇 浅草ROX・3Gに新規オープン」のように定型部分が共通する別記事もあるため、最も類似度の高いものを選ぶ
+// google-news等の集約ソースは他ソースと同じ記事を拾うため、同一カテゴリならソース横断で照合する
 const findDuplicate = (existing, candidate, sourceId) => {
   let best = null
   let bestScore = 0
   for (const c of existing) {
-    if (c.source_id !== sourceId) continue
+    if (c.source_id !== sourceId && c.category !== candidate.category) continue
     if (candidate.start_at && c.start_at && candidate.start_at !== c.start_at) {
       continue
     }
@@ -114,7 +118,11 @@ const findDuplicate = (existing, candidate, sourceId) => {
     const score = titleContains(c.title, candidate.title)
       ? 1
       : titleSimilarity(c.title, candidate.title)
-    if (score >= DUP_TITLE_SIM_THRESHOLD && score > bestScore) {
+    const threshold =
+      c.source_id === sourceId
+        ? DUP_TITLE_SIM_THRESHOLD
+        : DUP_TITLE_SIM_THRESHOLD_CROSS_SOURCE
+    if (score >= threshold && score > bestScore) {
       best = c
       bestScore = score
     }

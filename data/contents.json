@@ -1061,7 +1061,8 @@
     "source_url": "https://www.rox.co.jp/shop/detail.html?shop_id=1342",
     "image_url": "/images/contents/115.webp",
     "source_urls": [
-      "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89"
+      "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89",
+      "https://news.yahoo.co.jp/articles/953f39d8486f40eca3d663fca831132713258ea7"
     ]
   },
   {
@@ -1088,11 +1089,14 @@
     "category": "event",
     "published_at": "2026-09-02",
     "start_at": "2026-10-30",
-    "end_at": null,
+    "end_at": "2026-11-03",
     "place_id": "sensoji",
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000514.000046440.html",
-    "image_url": "/images/contents/120.jpg"
+    "image_url": "/images/contents/120.jpg",
+    "source_urls": [
+      "https://prtimes.jp/main/html/rd/p/000000490.000046440.html"
+    ]
   },
   {
     "id": 121,
@@ -1380,7 +1384,10 @@
     "place_id": null,
     "source_id": "asakusa-kyugeki",
     "source_url": "https://asakusa-kokono.com/kyugeki/2026/08/id-15251",
-    "image_url": null
+    "image_url": null,
+    "source_urls": [
+      "https://news.yahoo.co.jp/articles/2ef702493b5627bfb1fb7f061890217f23eca1f5"
+    ]
   },
   {
     "id": 159,
@@ -1592,7 +1599,9 @@
     "source_url": "https://e-asakusa.jp/photos/111301",
     "image_url": "/images/contents/176.jpg",
     "source_urls": [
-      "https://e-asakusa.jp/photos/111600"
+      "https://e-asakusa.jp/photos/111600",
+      "https://asakusa.keizai.biz/headline/1097/",
+      "https://asakusa.keizai.biz/headline/1097"
     ]
   },
   {
@@ -2431,7 +2440,10 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/235.jpg"
+    "image_url": "/images/contents/235.jpg",
+    "source_urls": [
+      "https://www.tokyo-sports.co.jp/articles/-/406361"
+    ]
   },
   {
     "id": 236,
@@ -2491,7 +2503,11 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/239.jpg"
+    "image_url": "/images/contents/239.jpg",
+    "source_urls": [
+      "https://www.sanspo.com/article/20261006-XN3SR4UJAJLHTGRZQV3OEMEYNE/",
+      "https://www.tokyo-np.co.jp/article/521461"
+    ]
   },
   {
     "id": 240,
@@ -2778,12 +2794,15 @@
     "body": "株式会社スピンは、ホログラフィックステージシステム「Eyeliner®」を常設したライブハウス「**Stage-X Asakusa(ステージクロスアサクサ)**」を、2027年2月に浅草・蔵前エリアでオープンすると発表しました。\n\nリアルなステージ空間とホログラフィック映像を融合させ、まるでキャラクターや映像コンテンツがステージ上に存在しているかのような新しいライブ体験を提供します。\n\n## 施設の特徴\n\n- 最大200人収容のスタンディング形式\n- 3DCGや撮影映像を用い、実際には存在しないキャラクターや世界観を立体的に表現\n- Eyeliner®を使わない通常のライブステージとしても利用可能\n\n## 想定される用途\n\n音楽ライブやキャラクターライブ、Vtuberイベント、配信イベント、プレス発表会、企業セミナー、コラボカフェ、撮影・収録など多目的に対応します。\n\nEyeliner®は、2020年まで常設されていたDMM VR THEATERにも採用されたシステムで、クリエイティブプロダクション「TxD」が手掛けています。住所などの詳細は決定次第、公式サイトおよび公式SNSで発表される予定です。",
     "category": "new_opening",
     "published_at": "2026-10-02",
-    "start_at": null,
+    "start_at": "2027-02-01",
     "end_at": null,
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000012.000076156.html",
-    "image_url": "/images/contents/269.png"
+    "image_url": "/images/contents/269.png",
+    "source_urls": [
+      "https://news.yahoo.co.jp/articles/83fb7d47f50df8741d8f655f94f7d93f71077649"
+    ]
   },
   {
     "id": 270,
@@ -3058,7 +3077,9 @@
     "source_url": "https://prtimes.jp/main/html/rd/p/000000066.000056249.html",
     "image_url": "/images/contents/290.jpg",
     "source_urls": [
-      "https://prtimes.jp/main/html/rd/p/000001714.000018760.html"
+      "https://prtimes.jp/main/html/rd/p/000001714.000018760.html",
+      "https://prtimes.jp/main/html/rd/p/000000007.000177085.html",
+      "https://www.ccc.co.jp/news/press/20261005_009746.html"
     ]
   },
   {
@@ -3182,7 +3203,10 @@
     "place_id": null,
     "source_id": "taito-city",
     "source_url": "https://www.city.taito.lg.jp/kusei/sanka/release/press0810/07.html",
-    "image_url": "/images/contents/299.jpg"
+    "image_url": "/images/contents/299.jpg",
+    "source_urls": [
+      "https://prtimes.jp/main/html/rd/p/000000033.000047662.html"
+    ]
   },
   {
     "id": 300,
@@ -3246,21 +3270,6 @@
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000191.000046377.html",
     "image_url": "/images/contents/303.png"
-  },
-  {
-    "id": 304,
-    "type": "event",
-    "title": "期間限定「江戸粋耕書堂」開館 蔦屋重三郎や江戸文化を体感",
-    "summary": "台東区が吉原会館で、蔦屋重三郎ゆかりの作品展示やスタンプラリー、まち歩きツアーなどを楽しめる「江戸粋耕書堂」を10月16日から12月6日まで期間限定で開館する。入館無料。",
-    "body": "大河ドラマ「べらぼう～蔦重栄華乃夢噺～」の放送終了後も蔦屋重三郎や江戸文化の魅力を発信するため、台東区が期間限定で「江戸粋耕書堂」を開館します。ドラマ放送中に多くの人でにぎわった「江戸新吉原耕書堂」の心を受け継ぎ、蔦重が生まれ育った吉原地域(現在の台東区千束)に足を運ぶきっかけをつくる施設です。\n\n## 施設概要\n\n- **期間**:10月16日(金)～12月6日(日)\n- **開館時間**:11時～16時\n- **休館日**:毎週月曜日(祝日の場合は翌日)\n- **場所**:吉原会館(台東区千束4-24-12)\n- **入館料**:無料(物販は実施しません)\n\n## 見どころ\n\n「吉原細見」など蔦重に関連する作品が集結し、当時摺られた浮世絵や黄表紙も多数展示されます。期間中に展示替えも予定されており、訪れる時期によって異なる作品を楽しめます。ドラマの撮影で実際に使用された小道具も展示されます。\n\n吉原・浅草エリアでは、5色のスタンプを重ね押しして1枚の浮世絵を完成させる「浮世絵スタンプラリー」も開催。多色摺りの技術を体験でき、完成した浮世絵はポストカードとしても使えます。スタンプポイントは江戸粋耕書堂、浅草文化観光センター、正法寺、吉原神社、台東区民会館の計5か所です。\n\n## 関連イベント\n\nまち歩きガイドツアー、和綴じメモ帳づくり体験、嶋原太夫のお座敷踊り、落語イベント、寺子屋ワークショップ、浮世絵摺り体験など多数開催。開館後最初の土日である10月17日・18日は両日イベントがあります。一部は事前申込制(応募多数の場合は抽選)です。",
-    "category": "exhibition",
-    "published_at": "2026-10-07",
-    "start_at": "2026-10-16",
-    "end_at": "2026-12-06",
-    "place_id": null,
-    "source_id": "prtimes",
-    "source_url": "https://prtimes.jp/main/html/rd/p/000000033.000047662.html",
-    "image_url": "/images/contents/304.jpg"
   },
   {
     "id": 305,
@@ -3512,24 +3521,6 @@
     "image_url": "/images/contents/327.png"
   },
   {
-    "id": 328,
-    "type": "event",
-    "title": "第41回かっぱ橋道具まつり",
-    "summary": "かっぱ橋道具街で秋恒例の「第41回かっぱ橋道具まつり」が10月6日に始まった。最終日の12日は歩行者天国となり、パレードや和太鼓ステージも行われる。",
-    "body": "「第41回かっぱ橋道具まつり」が10月6日、かっぱ橋道具街(台東区西浅草・松が谷)で始まった。調理道具や食器、食品サンプルなど「食」に関わる道具を扱う店が集まる同道具街の秋のイベントで、1983(昭和58)年に始まった。1985(昭和60)年の第3回から10月9日を「道具の日」と定め、同日を挟む期間に開催している。\n\n## 見どころ\n\n- 加盟店がそれぞれ掘り出し物やセール品を用意し、一押し商品を「かっぱ市」として紹介\n- 加盟店で2,000円の買い物ごとに抽選券1枚を配る抽選会を実施。特等は現金3万円\n- 「かっぱ橋の思い出フォトコンテスト」「大喜利コンテスト」の作品を8日まで募集\n\n## 11日・12日のイベント\n\n11日・12日は台東区生涯学習センター(松が谷2)で地方の特産品を販売するほか、キャラ弁・キャラスイーツのコンテストや川柳コンテストを開く。\n\n最終日の12日は10時～17時に道具街通りを歩行者天国にする。11時からは菊屋橋交差点を出発点に、地元の金竜小学校と松葉小学校のブラスバンドがパレードを行う。都立白鴎高校・附属中学校和太鼓部のステージ(13時～、15時30分～)やキッチンカーの出店も予定している。\n\n実行委員長の三木茂さんは「例年、道具まつりの期間は各店で掘り出し物やセール品を多数用意している。ぜひ遊びに来てほしい」と呼びかける。開催時間は10時～17時。",
-    "category": "festival",
-    "published_at": "2026-10-07",
-    "start_at": "2026-10-06",
-    "end_at": "2026-10-12",
-    "place_id": null,
-    "source_id": "google-news",
-    "source_url": "https://asakusa.keizai.biz/headline/1097/",
-    "image_url": "/images/contents/328.jpg",
-    "source_urls": [
-      "https://asakusa.keizai.biz/headline/1097"
-    ]
-  },
-  {
     "id": 329,
     "type": "event",
     "title": "東京水辺ライン、10月17日に運航再開 浅草〜お台場クルーズなど",
@@ -3561,72 +3552,6 @@
     "source_urls": [
       "https://www.traicy.com/posts/20261010379576/"
     ]
-  },
-  {
-    "id": 331,
-    "type": "event",
-    "title": "Sumu Asakusa South グランドオープン",
-    "summary": "実験型アパートメントホテル「Sumu」の1号店「Sumu Asakusa South」が、2026年10月10日に南浅草(台東区寿3丁目)にオープンした。新築10階建て・全17室で、10月5日から予約受付が始まっている。",
-    "body": "実験型アパートメントホテル「Sumu powered by Airbnb Partners」の1号店となる「Sumu Asakusa South」が、2026年10月10日(土)に台東区寿3丁目でグランドオープンしました。2026年2月に開業した0号店「Sumu Ueno East」での実証と知見を取り入れた、初の新築物件です。\n\n## 施設の概要\n\n地上10階建て・全17室で、1階には地域にひらかれたラウンジ「Sumu Lounge」があります。客室は「Pet Friendly(1室)」「Sumu Culture(7室)」「Sumu Standard(9室)」の3カテゴリーです。\n\n## 見どころ\n\n- 蔦屋書店のコンシェルジュによる選書と、蔦屋家電によるセレクト家電を全室に用意\n- Play・Books・Meditation・Musicの文化テーマ別客室。可変式家具「Sumu Wall」を備える\n- 蔵前の生活道具店と連携した食器・カトラリー\n- 京都の伝統工芸プロダクトや、旭川の老舗木工所のデッドストック家具を導入\n\n## 基本情報\n\n宿泊料金は1室1泊35,000円〜(税込)で、季節・曜日により変動します。チェックインは16:00、チェックアウトは11:00です。アクセスは都営浅草線・大江戸線「蔵前」駅から徒歩3分、「浅草」駅から徒歩6分、東京メトロ銀座線「田原町」駅から徒歩6分です。",
-    "category": "new_opening",
-    "published_at": "2026-10-05",
-    "start_at": "2026-10-10",
-    "end_at": null,
-    "place_id": null,
-    "source_id": "google-news",
-    "source_url": "https://prtimes.jp/main/html/rd/p/000000007.000177085.html",
-    "image_url": "/images/contents/331.jpg",
-    "source_urls": [
-      "https://www.ccc.co.jp/news/press/20261005_009746.html"
-    ]
-  },
-  {
-    "id": 332,
-    "type": "event",
-    "title": "ASAKUSA CULTURE & LIGHTS 2026",
-    "summary": "浅草寺の本堂と宝蔵門に1400年の歴史文化をテーマにしたプロジェクションマッピングを投影。10月30日〜11月3日開催で観覧無料。",
-    "body": "株式会社一旗が企画制作する「ASAKUSA CULTURE & LIGHTS 2026」が、2026年10月30日(金)から11月3日(火・祝)までの5日間、浅草寺で開催されます。浅草寺の大絵馬や縁起絵巻「寛文縁起」、ゆかりの浮世絵など、1,400年の歴史・文化をモチーフにした映像を投影します。\n\n## 見どころ\n\n- **浅草寺本堂での史上初のプロジェクションマッピング**:本堂(南側)と宝蔵門(南側)で、それぞれ異なる約6分間の映像を交互に投影します。\n- **昨年15万人超が来場した宝蔵門の投影**:好評を受けて今年も実施されます。\n- **観覧無料・事前申込不要**:投影時間は18:00〜21:30です。\n\n## 特別拝観も同時開催\n\n通常非公開の名勝・伝法院庭園と、歌川国芳、長谷川雪旦、逸見(狩野)一信らの大絵馬約50作品を収蔵する絵馬堂を鑑賞できる特別拝観も行われます。庭園では雲海演出があり、夜間限定の「金龍夜会」では、ライトアップと寺舞「金龍の舞」をイメージしたオリジナル舞踊が上演されます。\n\n特別拝観の前売料金は大人2,300円、小・中学生800円です。図録「浅草寺の絵馬」付きのチケットもあります。前売券は10月29日(木)まで販売され、当日券は残数のみの販売です。このほか、特別祈祷法要付きのプレミアム特別拝観や、伝法院の保存修理工事特別見学プログラムも用意されています。\n\nアクセスは、各線「浅草駅」から徒歩約5分です。混雑が予想されるため、遅めの時間帯の来場がおすすめです。",
-    "category": "event",
-    "published_at": "2026-09-02",
-    "start_at": "2026-10-30",
-    "end_at": "2026-11-03",
-    "place_id": "sensoji",
-    "source_id": "google-news",
-    "source_url": "https://prtimes.jp/main/html/rd/p/000000490.000046440.html",
-    "image_url": "/images/contents/332.jpg"
-  },
-  {
-    "id": 333,
-    "type": "event",
-    "title": "日本歌手協会「第53回歌謡祭」令和8年熊本地震支援チャリティー",
-    "summary": "日本歌手協会主催の「第53回歌謡祭」が10月28日・29日に浅草公会堂で開催される。五木ひろし、美川憲一、由紀さおりら約130組が出演し、熊本地震支援チャリティーとして実施される。",
-    "body": "日本歌手協会主催の「第53回歌謡祭」が、**10月28日・29日**の両日、東京・浅草公会堂で開催されます。今回は「令和8年熊本地震支援チャリティー」として開催され、芸能の聖地・浅草から歌声で被災地にエールを送ります。\n\n五木ひろし、美川憲一、由紀さおりら約130組が出演予定です。ほかにも倍賞千恵子、新沼謙治、松崎しげる、渥美二郎、小柳ルミ子、山本リンダ、三山ひろし、アグネス・チャン、錦野旦らが登場します。\n\n## 開催概要\n\n- 両日とも昼夜2公演の計4公演\n- 10月28日:午前11時、午後5時開演\n- 10月29日:午前11時、午後4時開演\n- 出演者・構成・演出は各公演で異なります\n\n## 司会陣\n\n司会は28日昼を武内陶子、夜を伍代夏子、29日昼を森口博子、夜を小林幸子が担当します。総合司会は合田道人が務めます。\n\n問い合わせは日本歌手協会事務局(03-6280-4230)まで。",
-    "category": "performance",
-    "published_at": "2026-10-06",
-    "start_at": "2026-10-28",
-    "end_at": "2026-10-29",
-    "place_id": "koukaidou",
-    "source_id": "google-news",
-    "source_url": "https://www.sanspo.com/article/20261006-XN3SR4UJAJLHTGRZQV3OEMEYNE/",
-    "image_url": "/images/contents/333.jpg",
-    "source_urls": [
-      "https://www.tokyo-np.co.jp/article/521461"
-    ]
-  },
-  {
-    "id": 334,
-    "type": "event",
-    "title": "Stage-X Asakusa オープン(ホログラフィック・ライブハウス)",
-    "summary": "株式会社スピンが手がけるホログラフィックステージ常設のライブハウス「Stage-X Asakusa」が、2027年2月に浅草・蔵前エリアにオープン予定。最大200人収容のスタンディング形式。",
-    "body": "## 概要\n\n株式会社スピンが手がける新たなライブハウス「**Stage-X Asakusa**」が、2027年2月に東京・浅草・蔵前エリアにオープンする予定です。リアルなステージ空間とホログラフィック映像を融合させた、新しいライブスペースとなります。\n\n## 見どころ\n\n- 最大200人収容のスタンディング形式\n- スピンとクリエイティブプロダクション・TxDが手がけるホログラフィックステージシステム「Eyeliner」を常設\n- 3DCGや撮影映像を用い、実際のステージ上に存在しないキャラクターや世界観を、まるでその場にいるかのように立体的に表現可能\n\n## 多彩な用途\n\n「Eyeliner」を使わない通常のライブステージとしても利用できます。音楽ライブやキャラクターライブのほか、VTuberイベント、配信イベント、プレス発表会、企業セミナー、コラボカフェ、撮影収録など幅広い用途に対応します。\n\nオープン日や所在地などの詳細は、決定次第、オフィシャルサイトおよびSNSアカウントで発表される予定です。",
-    "category": "new_opening",
-    "published_at": "2026-10-10",
-    "start_at": "2027-02-01",
-    "end_at": null,
-    "place_id": null,
-    "source_id": "google-news",
-    "source_url": "https://news.yahoo.co.jp/articles/83fb7d47f50df8741d8f655f94f7d93f71077649",
-    "image_url": null
   },
   {
     "id": 335,
@@ -3749,21 +3674,6 @@
     "image_url": "/images/contents/342.png"
   },
   {
-    "id": 343,
-    "type": "event",
-    "title": "Gap浅草ROX店がオープン",
-    "summary": "米カジュアル衣料ブランド「Gap」の新店舗「Gap浅草ROX店」が9月18日、浅草ROX・3G3階にオープンした。浅草エリアへの出店は初めて。",
-    "body": "米カジュアル衣料ブランド「Gap(ギャップ)」の新店舗「Gap浅草ROX店」が、9月18日に浅草ROX・3G(台東区浅草1)の3階にオープンしました。経営はギャップジャパン(渋谷区)です。\n\nGapは1969年に米サンフランシスコで創業し、日本には1995年に銀座へ1号店を出店して上陸しました。浅草エリアへの出店は今回が初めてです。\n\n## 店内の特徴\n\n- ウィメンズ、メンズ、キッズ・ベビーの衣料を中心に、バッグや帽子などの小物もそろえる\n- 入り口にはデニム生地を背景に「hello Asakusa」の文字を配した大型ポスターを掲出\n- 同じメッセージを公式サイトやスタッフのTシャツにも使用\n\n## カスタマイズステーション\n\n刺しゅうやワッペンでオリジナルアイテムを作れる「カスタマイズステーション」を併設しています。刺しゅうは、浅草の街並みや和の雰囲気を表現した同店限定デザインで、ちょうちんを下げた門と人力車、盆栽、「GAP」の文字入りちょうちん、「浅草」の文字など5種類を用意。価格は各700円です。\n\n## 商品ラインアップ\n\nデニムやスウェット、Tシャツといった定番アイテムのほか、混紡素材で肌触りを柔らかく仕上げた「CashSoft(キャッシュソフト)」シリーズ、コーデュロイ素材のジャケットやパンツなど秋物を展開しています。\n\nジェネラルマネジャーの山下和美さんは「観光で訪れるお客さまはもちろん、地域とのつながりも大切にしながら、この街に親しまれる店舗をつくっていきたい」と話し、今後は浅草の街の魅力もSNSなどで発信していくとのことです。営業時間は10時30分〜21時です。",
-    "category": "new_opening",
-    "published_at": "2026-10-01",
-    "start_at": "2026-09-18",
-    "end_at": null,
-    "place_id": "rox",
-    "source_id": "google-news",
-    "source_url": "https://news.yahoo.co.jp/articles/953f39d8486f40eca3d663fca831132713258ea7",
-    "image_url": null
-  },
-  {
     "id": 344,
     "type": "event",
     "title": "第9回 浅草・クラフトマンフェア",
@@ -3791,7 +3701,11 @@
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000002.000191592.html",
-    "image_url": "/images/contents/345.png"
+    "image_url": "/images/contents/345.png",
+    "source_urls": [
+      "https://news.nicovideo.jp/watch/nw19873648?news_ref=20_20",
+      "https://crea.bunshun.jp/ud/pressrelease/6acdbe877079c86cee000011"
+    ]
   },
   {
     "id": 346,
@@ -3806,7 +3720,11 @@
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000190.000046377.html",
-    "image_url": "/images/contents/346.jpg"
+    "image_url": "/images/contents/346.jpg",
+    "source_urls": [
+      "https://mainichi.jp/articles/20261013/pr2/00m/020/042000c",
+      "https://mainichikirei.jp/prtimes/article/20261013prt00m100000042a.html"
+    ]
   },
   {
     "id": 347,
@@ -3869,54 +3787,6 @@
     "image_url": "/images/contents/350.jpg"
   },
   {
-    "id": 351,
-    "type": "event",
-    "title": "今川焼き専門店「月のうさぎ 浅草店」が新仲見世にグランドオープン",
-    "summary": "昭和25年創業の製餡所の餡子を使った今川焼き専門店「月のうさぎ 浅草店」が、2026年10月22日に浅草新仲見世通りにグランドオープンする。",
-    "body": "浅草の中でも特に人通りの多い「新仲見世通り」に、今川焼き専門店「浅草今川焼き 月のうさぎ 浅草店」が2026年10月22日(木)にグランドオープンします。運営は株式会社MARUです。\n\n## こだわりの餡子\n\n粒あんには、昭和25年創業の老舗製餡所が炊き上げた餡子を使用しています。厳選した100%北海道産小豆を使い、先代から受け継いだ製法で甘さ控えめに仕上げています。生地と一緒に頬張ったときのバランスを重視し、生地の香ばしさと小豆の風味・粒感の両方が楽しめます。\n\n## ブランドに込めた思い\n\nブランド名の「月のうさぎ」は、丸い今川焼きを月に、跳ねるうさぎを飛躍や運気上昇の象徴に見立てたものです。粒あんには三日月と跳ねるうさぎの焼印が入ります。コンセプトは「ひと口で、ほっとする和の甘み。」で、日常のおやつや家族への手土産に選びやすい専門店を目指します。\n\n## 販売商品\n\n- 粒あん:230円(税抜)\n- カスタード:230円(税抜)\n- 5個セット:1,000円(税抜)\n- 季節限定商品も販売予定\n\n## 店舗情報\n\n- 所在地:東京都台東区浅草1丁目20-10 稲葉ビル\n- 営業時間:10:30〜20:30\n\n※販売商品、価格、販売方法は変更となる場合があります。",
-    "category": "new_opening",
-    "published_at": "2026-10-13",
-    "start_at": "2026-10-22",
-    "end_at": null,
-    "place_id": null,
-    "source_id": "google-news",
-    "source_url": "https://mainichi.jp/articles/20261013/pr2/00m/020/042000c",
-    "image_url": "/images/contents/351.png",
-    "source_urls": [
-      "https://mainichikirei.jp/prtimes/article/20261013prt00m100000042a.html"
-    ]
-  },
-  {
-    "id": 352,
-    "type": "event",
-    "title": "木村徹二 LIVE Ⅳ～アイアン浅草大作戦～ 浅草公会堂で開催",
-    "summary": "演歌歌手・木村徹二が10月12日、浅草公会堂で5度目のワンマンコンサート「木村徹二 LIVE Ⅳ～アイアン浅草大作戦～」を開催した。",
-    "body": "演歌歌手の木村徹二さんが10月12日、東京・浅草公会堂でワンマンコンサート「木村徹二 LIVE Ⅳ～アイアン浅草大作戦～」を開催しました。\n\n2022年にソロ歌手としてデビューして以来、5度目のワンマンコンサートとなります。浅草公会堂は、デビュー前に父・鳥羽一郎さんの40周年コンサートに出演して以来の〝思い出の地〟で、デビュー曲「二代目」を初めて披露した場所でもあるといいます。\n\n木村さんは「まさか1人でステージに出してもらえるとは思ってませんでした」と感慨深げに語りました。\n\n## ステージの内容\n\n- ロングヒット中のシングル「風神雷神」などオリジナル曲を披露\n- ギタリスト・斉藤功さんの演奏で「みだれ髪」などのカバー曲も披露\n\n今年11月16日にはデビュー5周年に突入します。木村さんは「体調管理を心がけ、1年間声が出ないということがないようにしたい」と今後への意気込みを語りました。",
-    "category": "performance",
-    "published_at": "2026-10-12",
-    "start_at": "2026-10-12",
-    "end_at": "2026-10-12",
-    "place_id": "koukaidou",
-    "source_id": "google-news",
-    "source_url": "https://www.tokyo-sports.co.jp/articles/-/406361",
-    "image_url": "/images/contents/352.jpg"
-  },
-  {
-    "id": 353,
-    "type": "event",
-    "title": "うわの空・藤志郎一座「ルナ・レインボウ」浅草九劇で上演",
-    "summary": "うわの空・藤志郎一座の「ルナ・レインボウ」が、2026年10月14日から18日まで浅草九劇で上演される。満月の夜のキャンプ場を舞台にしたロマンティックコメディ。",
-    "body": "うわの空・藤志郎一座「ルナ・レインボウ」が、**2026年10月14日(水)から18日(日)まで**、東京・浅草九劇で上演される。\n\n本作は、同一座の過去作品で人気の高い「幻の虹」を題材に、2010年に初演された“ロマンティックコメディ”。満月の夜のキャンプ場を舞台に、年に一度だけ集まる家族の物語が展開する。\n\n作・演出は村木藤志郎が手がける。出演は關根史明、染木彩花、シバジュンらで、坂上正絵、高橋奈緒美、照井るゐ、五十嵐芹架、奥山瑠那、牛久保早姫、芦田あすか、都月聖菜、瀬谷祭里、宮坂公子、徳久里音、宮崎沙希、村木藤志郎、小野裕大、林フクシモ俊行ら多数のキャストが集う。\n\nまた、小羽大亮は10月14〜16日公演のみ、三橋俊一は10月17・18日公演のみの出演となる。\n\n## 公演概要\n\n- 日程:2026年10月14日(水)〜18日(日)\n- 会場:浅草九劇\n- 作・演出:村木藤志郎\n\n浅草で秋の一夜、家族の温かな物語に触れてみてはいかがだろうか。",
-    "category": "performance",
-    "published_at": "2026-10-13",
-    "start_at": "2026-10-14",
-    "end_at": "2026-10-18",
-    "place_id": null,
-    "source_id": "google-news",
-    "source_url": "https://news.yahoo.co.jp/articles/2ef702493b5627bfb1fb7f061890217f23eca1f5",
-    "image_url": null
-  },
-  {
     "id": 354,
     "type": "event",
     "title": "香港スケッチ舞台『黄金キョンシー』浅草九劇で上演",
@@ -3930,24 +3800,6 @@
     "source_id": "google-news",
     "source_url": "https://theatertainment.jp/japanese-play/156417/",
     "image_url": "/images/contents/354.jpg"
-  },
-  {
-    "id": 355,
-    "type": "event",
-    "title": "女性専用・完全個室のプライベートフィットネス「M FOR:REST w PET」オープン",
-    "summary": "株式会社アルプス興業が、2026年11月1日に浅草4丁目へ女性専用・完全個室でペット同伴可能なプライベートフィットネス「M FOR:REST w PET」をオープンする。",
-    "body": "株式会社アルプス興業は、2026年11月1日(日)、東京都台東区浅草4丁目に女性専用・完全個室のプライベートフィットネス施設「M FOR:REST w PET(エム フォレスト ウィズ ペット)」をオープンします。周囲の視線を気にせず、自分のペースで運動を楽しめるプライベート空間です。\n\n## AI姿勢分析搭載の「MIRROR FIT.」を導入\n\n鏡型のスマートフィットネス機器「MIRROR FIT.」を設置しています。ヨガやピラティス、筋力トレーニングなど15種類以上のカテゴリーにわたる500本以上のオンデマンドコンテンツに加え、プロのインストラクターによるLIVEレッスンも利用できます。AI姿勢分析機能「BODY SCAN」により、姿勢や身体のバランスを客観的に確認でき、運動強度の調整にも対応しているため、初心者から日常的に運動する方まで利用可能です。\n\n## 完全個室でペットと一緒に\n\n他の利用者と運動スペースを共有しない完全個室型で、運動に慣れていない方や周囲の視線が気になる方も安心です。ペット同伴にも対応しており、「ペットを自宅に残して出かけるのは気が引ける」という飼い主も、大切な家族と過ごしながら健康づくりに取り組めます。施設内には数種類の飲み物も用意されています。\n\n## 施設概要\n\n- 所在地:東京都台東区浅草4丁目42-9 203号室\n- 利用方法:事前予約制\n- ペット同伴:可能(利用条件は施設の案内に準じます)",
-    "category": "new_opening",
-    "published_at": "2026-10-13",
-    "start_at": "2026-11-01",
-    "end_at": null,
-    "place_id": null,
-    "source_id": "google-news",
-    "source_url": "https://news.nicovideo.jp/watch/nw19873648?news_ref=20_20",
-    "image_url": "/images/contents/355.webp",
-    "source_urls": [
-      "https://crea.bunshun.jp/ud/pressrelease/6acdbe877079c86cee000011"
-    ]
   },
   {
     "id": 356,
