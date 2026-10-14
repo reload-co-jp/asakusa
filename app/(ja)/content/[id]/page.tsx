@@ -128,6 +128,9 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
           isBasedOn: source.url,
         }),
         mainEntityOfPage: url,
+        // Google News/トップニュース向け。運営組織を著者・発行者とする
+        author: { "@type": "Organization", name: t.siteName, url: SITE_URL },
+        publisher: { "@type": "Organization", name: t.siteName, url: SITE_URL },
       }
   return (
     <>
