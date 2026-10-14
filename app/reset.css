@@ -956,3 +956,7 @@ a {
 .readable p + p {
   margin-top: 1em;
 }
+.event-list > .ad-slot,
+.news-list > .ad-slot {
+  grid-column: 1 / -1;
+}

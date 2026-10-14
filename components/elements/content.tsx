@@ -235,39 +235,46 @@ export const EventList: FC<{ contents: Content[] }> = async ({ contents }) => {
   const today = jstDateString()
   return (
     <ol className="event-list">
-      {contents.map((original) => {
+      {contents.map((original, i) => {
         const { content, place } = localized(original, locale)
         const day = content.start_at ?? today
         return (
-          <li className="event-row" key={content.id}>
-            <p aria-hidden="true" className="event-row__date">
-              <span className="event-row__day">{formatShortDate(day)}</span>
-              <span className="event-row__weekday">
-                {formatShortDate(day, true).slice(6)}
-              </span>
-            </p>
-            <div className="event-row__body">
-              <p className="event-row__meta">
-                <StatusBadge content={original} locale={locale} />
-                <CategoryLabel category={content.category} locale={locale} />
+          <Fragment key={content.id}>
+            <li className="event-row">
+              <p aria-hidden="true" className="event-row__date">
+                <span className="event-row__day">{formatShortDate(day)}</span>
+                <span className="event-row__weekday">
+                  {formatShortDate(day, true).slice(6)}
+                </span>
               </p>
-              <h3 className="event-row__title">
-                <Link href={localePath(locale, `/content/${content.id}/`)}>
-                  {content.title}
-                </Link>
-              </h3>
-              <p className="event-row__info">
-                <span className="card__date">{cardDate(content)}</span>
-                {place && <span>{place.name}</span>}
-              </p>
-            </div>
-            <Media
-              className="event-row__media"
-              content={original}
-              locale={locale}
-              sizes="(min-width: 720px) 10rem, 6rem"
-            />
-          </li>
+              <div className="event-row__body">
+                <p className="event-row__meta">
+                  <StatusBadge content={original} locale={locale} />
+                  <CategoryLabel category={content.category} locale={locale} />
+                </p>
+                <h3 className="event-row__title">
+                  <Link href={localePath(locale, `/content/${content.id}/`)}>
+                    {content.title}
+                  </Link>
+                </h3>
+                <p className="event-row__info">
+                  <span className="card__date">{cardDate(content)}</span>
+                  {place && <span>{place.name}</span>}
+                </p>
+              </div>
+              <Media
+                className="event-row__media"
+                content={original}
+                locale={locale}
+                sizes="(min-width: 720px) 10rem, 6rem"
+              />
+            </li>
+            {(i + 1) % AD_INTERVAL === 0 && i < contents.length - 1 && (
+              <li className="ad-slot" style={{ display: "flow-root" }}>
+                <InArticleAd />
+              </li>
+            )}
+          </Fragment>
         )
       })}
     </ol>
@@ -283,33 +290,42 @@ export const NewsList: FC<{ contents: Content[]; compact?: boolean }> = async ({
   if (contents.length === 0) return <Empty text={t.card.empty} />
   return (
     <ol className={`news-list${compact ? " news-list--compact" : ""}`}>
-      {contents.map((original) => {
+      {contents.map((original, i) => {
         const { content } = localized(original, locale)
         return (
-          <li className="news-row" key={content.id}>
-            <Media
-              className="news-row__media"
-              content={original}
-              locale={locale}
-              sizes="(min-width: 720px) 12rem, 6rem"
-            />
-            <div className="news-row__body">
-              <p className="news-row__meta">
-                <CategoryLabel category={content.category} locale={locale} />
-                <time dateTime={content.published_at}>
-                  {formatDate(content.published_at, locale)}
-                </time>
-              </p>
-              <h3 className="news-row__title">
-                <Link href={localePath(locale, `/content/${content.id}/`)}>
-                  {content.title}
-                </Link>
-              </h3>
-              {!compact && (
-                <p className="news-row__summary">{content.summary}</p>
+          <Fragment key={content.id}>
+            <li className="news-row">
+              <Media
+                className="news-row__media"
+                content={original}
+                locale={locale}
+                sizes="(min-width: 720px) 12rem, 6rem"
+              />
+              <div className="news-row__body">
+                <p className="news-row__meta">
+                  <CategoryLabel category={content.category} locale={locale} />
+                  <time dateTime={content.published_at}>
+                    {formatDate(content.published_at, locale)}
+                  </time>
+                </p>
+                <h3 className="news-row__title">
+                  <Link href={localePath(locale, `/content/${content.id}/`)}>
+                    {content.title}
+                  </Link>
+                </h3>
+                {!compact && (
+                  <p className="news-row__summary">{content.summary}</p>
+                )}
+              </div>
+            </li>
+            {!compact &&
+              (i + 1) % AD_INTERVAL === 0 &&
+              i < contents.length - 1 && (
+                <li className="ad-slot" style={{ display: "flow-root" }}>
+                  <InArticleAd />
+                </li>
               )}
-            </div>
-          </li>
+          </Fragment>
         )
       })}
     </ol>
