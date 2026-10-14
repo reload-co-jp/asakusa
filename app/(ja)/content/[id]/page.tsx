@@ -97,6 +97,11 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
   ]
   const related = getRelatedContents(content)
   const ended = content.start_at !== null && isEnded(content)
+  const operator = {
+    "@type": "Organization",
+    name: t.footer.operatorName,
+    url: "https://reload.co.jp/",
+  }
   // ページ上に表示している情報のみ構造化データに含める
   const jsonLd = content.start_at
     ? {
@@ -128,9 +133,9 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
           isBasedOn: source.url,
         }),
         mainEntityOfPage: url,
-        // Google News/トップニュース向け。運営組織を著者・発行者とする
-        author: { "@type": "Organization", name: t.siteName, url: SITE_URL },
-        publisher: { "@type": "Organization", name: t.siteName, url: SITE_URL },
+        // Google News/トップニュース向け。運営会社を著者・発行者とする
+        author: operator,
+        publisher: operator,
       }
   return (
     <>
