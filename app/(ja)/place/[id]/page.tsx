@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import Image from "next/image"
 import { notFound } from "next/navigation"
 import { FC } from "react"
+import { InArticleAd } from "@/components/elements/ad"
 import {
   Breadcrumbs,
   JsonLd,
@@ -239,6 +240,7 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
           </>
         )}
       </article>
+      <InArticleAd />
       {ongoing.length > 0 && (
         <Section title={t.place.ongoing(place.name)}>
           <ContentList contents={ongoing} />

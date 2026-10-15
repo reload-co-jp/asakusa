@@ -192,7 +192,7 @@ export const ContentCard: FC<{
 }
 
 // 一覧の途中に広告を挟む間隔（件数）
-const AD_INTERVAL = 4
+export const AD_INTERVAL = 4
 // 大きく見せるカードの間隔（件数）
 const FEATURE_INTERVAL = 7
 
