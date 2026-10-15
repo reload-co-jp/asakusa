@@ -171,9 +171,10 @@
     "phone": "03-3841-1114",
     "url": "https://www.asakusaimahan.co.jp/kokusai/",
     "image_url": null,
-    "area": "国際通り",
     "source_id": null,
-    "source_url": "https://www.asakusaimahan.co.jp/kokusai/"
+    "source_url": "https://www.asakusaimahan.co.jp/kokusai/",
+    "genre": "sukiyaki",
+    "area": "国際通り"
   },
   {
     "id": "komagata-dozeu",
@@ -187,9 +188,10 @@
     "phone": "050-5448-6266",
     "url": "https://dozeu.com/",
     "image_url": null,
-    "area": "駒形",
     "source_id": null,
-    "source_url": "https://dozeu.com/"
+    "source_url": "https://dozeu.com/",
+    "genre": "washoku",
+    "area": "駒形"
   },
   {
     "id": "kamiya-bar",
@@ -203,9 +205,10 @@
     "phone": "03-3841-5400",
     "url": "http://www.kamiya-bar.com/",
     "image_url": null,
-    "area": "浅草駅周辺",
     "source_id": null,
-    "source_url": "http://www.kamiya-bar.com/"
+    "source_url": "http://www.kamiya-bar.com/",
+    "genre": "bar",
+    "area": "浅草駅周辺"
   },
   {
     "id": "daikokuya-tempura",
@@ -219,9 +222,10 @@
     "phone": null,
     "url": "http://www.tempura.co.jp/",
     "image_url": null,
-    "area": "浅草寺周辺",
     "source_id": null,
-    "source_url": "http://www.tempura.co.jp/"
+    "source_url": "http://www.tempura.co.jp/",
+    "genre": "tempura",
+    "area": "浅草寺周辺"
   },
   {
     "id": "umezono",
@@ -235,9 +239,10 @@
     "phone": "03-3841-7580",
     "url": "https://www.asakusa-umezono.co.jp/",
     "image_url": null,
-    "area": "浅草寺周辺",
     "source_id": null,
-    "source_url": "https://www.asakusa-umezono.co.jp/"
+    "source_url": "https://www.asakusa-umezono.co.jp/",
+    "genre": "sweets",
+    "area": "浅草寺周辺"
   },
   {
     "id": "funawa-honten",
@@ -251,9 +256,10 @@
     "phone": null,
     "url": "https://www.funawa.jp/",
     "image_url": null,
-    "area": "新仲見世",
     "source_id": null,
-    "source_url": "https://www.funawa.jp/"
+    "source_url": "https://www.funawa.jp/",
+    "genre": "sweets",
+    "area": "新仲見世"
   },
   {
     "id": "yoshikami",
@@ -267,9 +273,10 @@
     "phone": "03-3841-1802",
     "url": "http://www.yoshikami.co.jp/",
     "image_url": null,
-    "area": "浅草六区",
     "source_id": null,
-    "source_url": "http://www.yoshikami.co.jp/"
+    "source_url": "http://www.yoshikami.co.jp/",
+    "genre": "yoshoku",
+    "area": "浅草六区"
   },
   {
     "id": "sansada",
@@ -283,9 +290,10 @@
     "phone": "03-3841-3400",
     "url": "https://www.tempura-sansada.co.jp/",
     "image_url": null,
-    "area": "雷門",
     "source_id": null,
-    "source_url": "https://www.tempura-sansada.co.jp/"
+    "source_url": "https://www.tempura-sansada.co.jp/",
+    "genre": "tempura",
+    "area": "雷門"
   },
   {
     "id": "nakasei",
@@ -299,9 +307,10 @@
     "phone": "03-3841-4015",
     "url": "https://www.nakasei.biz/",
     "image_url": null,
-    "area": "浅草六区",
     "source_id": null,
-    "source_url": "https://www.nakasei.biz/"
+    "source_url": "https://www.nakasei.biz/",
+    "genre": "tempura",
+    "area": "浅草六区"
   },
   {
     "id": "asakusa-mugitoro",
@@ -315,9 +324,10 @@
     "phone": null,
     "url": "https://www.mugitoro.co.jp/",
     "image_url": null,
-    "area": "雷門",
     "source_id": null,
-    "source_url": "https://www.mugitoro.co.jp/"
+    "source_url": "https://www.mugitoro.co.jp/",
+    "genre": "washoku",
+    "area": "雷門"
   },
   {
     "id": "namiki-yabusoba",
@@ -331,9 +341,10 @@
     "phone": "03-3841-1340",
     "url": null,
     "image_url": null,
-    "area": "雷門",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "soba",
+    "area": "雷門"
   },
   {
     "id": "pelican",
@@ -347,9 +358,10 @@
     "phone": "03-3841-4686",
     "url": "https://www.bakerpelican.com/",
     "image_url": null,
-    "area": "田原町",
     "source_id": null,
-    "source_url": "https://www.bakerpelican.com/"
+    "source_url": "https://www.bakerpelican.com/",
+    "genre": "cafe",
+    "area": "田原町"
   },
   {
     "id": "kameju",
@@ -363,9 +375,10 @@
     "phone": null,
     "url": null,
     "image_url": null,
-    "area": "雷門",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "sweets",
+    "area": "雷門"
   },
   {
     "id": "bentenyama-miyakozushi",
@@ -379,9 +392,10 @@
     "phone": "03-3844-0034",
     "url": null,
     "image_url": null,
-    "area": "浅草寺周辺",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "washoku",
+    "area": "浅草寺周辺"
   },
   {
     "id": "komagata-maekawa",
@@ -395,9 +409,10 @@
     "phone": null,
     "url": null,
     "image_url": null,
-    "area": "駒形",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "washoku",
+    "area": "駒形"
   },
   {
     "id": "owariya",
@@ -411,9 +426,10 @@
     "phone": "03-3845-4500",
     "url": null,
     "image_url": null,
-    "area": "雷門",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "soba",
+    "area": "雷門"
   },
   {
     "id": "shochan",
@@ -427,9 +443,10 @@
     "phone": "03-3841-3673",
     "url": null,
     "image_url": null,
-    "area": "ホッピー通り",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "bar",
+    "area": "ホッピー通り"
   },
   {
     "id": "kokonoe",
@@ -443,9 +460,10 @@
     "phone": null,
     "url": null,
     "image_url": null,
-    "area": "仲見世",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "sweets",
+    "area": "仲見世"
   },
   {
     "id": "kimuraya-honten",
@@ -459,9 +477,10 @@
     "phone": null,
     "url": null,
     "image_url": null,
-    "area": "仲見世",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "sweets",
+    "area": "仲見世"
   },
   {
     "id": "umemura",
@@ -475,9 +494,10 @@
     "phone": null,
     "url": null,
     "image_url": null,
-    "area": "観音裏",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "sweets",
+    "area": "観音裏"
   },
   {
     "id": "fruit-parlor-goto",
@@ -491,9 +511,10 @@
     "phone": null,
     "url": null,
     "image_url": null,
-    "area": "ひさご通り",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "cafe",
+    "area": "ひさご通り"
   },
   {
     "id": "grill-grand",
@@ -507,9 +528,10 @@
     "phone": "03-3874-2351",
     "url": null,
     "image_url": null,
-    "area": "観音裏",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "yoshoku",
+    "area": "観音裏"
   },
   {
     "id": "chinya",
@@ -523,9 +545,10 @@
     "phone": null,
     "url": null,
     "image_url": null,
-    "area": "花川戸",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "sukiyaki",
+    "area": "花川戸"
   },
   {
     "id": "tokiwado",
@@ -539,9 +562,10 @@
     "phone": "03-3841-5656",
     "url": null,
     "image_url": null,
-    "area": "雷門",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "sweets",
+    "area": "雷門"
   },
   {
     "id": "yonekyu",
@@ -555,9 +579,10 @@
     "phone": "03-3841-6416",
     "url": null,
     "image_url": null,
-    "area": "ひさご通り",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "sukiyaki",
+    "area": "ひさご通り"
   },
   {
     "id": "suzukien",
@@ -571,9 +596,10 @@
     "phone": "03-3873-0311",
     "url": null,
     "image_url": null,
-    "area": "言問通り",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "sweets",
+    "area": "言問通り"
   },
   {
     "id": "asakusa-naniwaya",
@@ -587,9 +613,10 @@
     "phone": null,
     "url": null,
     "image_url": null,
-    "area": "浅草六区",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "sweets",
+    "area": "浅草六区"
   },
   {
     "id": "imahan-bekkan",
@@ -603,9 +630,10 @@
     "phone": null,
     "url": null,
     "image_url": null,
-    "area": "浅草寺周辺",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "sukiyaki",
+    "area": "浅草寺周辺"
   },
   {
     "id": "raishuken",
@@ -619,9 +647,10 @@
     "phone": null,
     "url": null,
     "image_url": null,
-    "area": "西浅草",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "ramen",
+    "area": "西浅草"
   },
   {
     "id": "yukikage",
@@ -635,9 +664,10 @@
     "phone": "03-6875-2595",
     "url": null,
     "image_url": null,
-    "area": "雷門",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "ramen",
+    "area": "雷門"
   },
   {
     "id": "menya-maruichi",
@@ -651,9 +681,10 @@
     "phone": "03-3847-7555",
     "url": null,
     "image_url": null,
-    "area": "浅草六区",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "ramen",
+    "area": "浅草六区"
   },
   {
     "id": "asakusa-kaikaro",
@@ -667,9 +698,10 @@
     "phone": "03-3844-0637",
     "url": null,
     "image_url": null,
-    "area": "元浅草",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "ramen",
+    "area": "元浅草"
   },
   {
     "id": "sometaro",
@@ -683,9 +715,10 @@
     "phone": "03-3844-9502",
     "url": null,
     "image_url": null,
-    "area": "田原町",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "okonomiyaki",
+    "area": "田原町"
   },
   {
     "id": "coffee-tengoku",
@@ -699,9 +732,10 @@
     "phone": "03-5828-0591",
     "url": null,
     "image_url": null,
-    "area": "浅草六区",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "cafe",
+    "area": "浅草六区"
   },
   {
     "id": "lodge-akaishi",
@@ -715,9 +749,10 @@
     "phone": "03-3875-1688",
     "url": null,
     "image_url": null,
-    "area": "観音裏",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "cafe",
+    "area": "観音裏"
   },
   {
     "id": "coffee-aroma",
@@ -731,9 +766,10 @@
     "phone": "03-3841-9002",
     "url": null,
     "image_url": null,
-    "area": "新仲見世",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "cafe",
+    "area": "新仲見世"
   },
   {
     "id": "fukuchan",
@@ -747,8 +783,9 @@
     "phone": "03-3844-5224",
     "url": null,
     "image_url": null,
-    "area": "浅草駅周辺",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "genre": "okonomiyaki",
+    "area": "浅草駅周辺"
   }
 ]

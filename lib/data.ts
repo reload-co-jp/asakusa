@@ -12,11 +12,21 @@ import {
   weekendPeriod,
 } from "./date"
 import type { Locale } from "./i18n-config"
-import type { Area, Category, Content, Place, Source } from "./types"
+import type {
+  Area,
+  Category,
+  Content,
+  GourmetGenre,
+  Place,
+  Source,
+} from "./types"
 
 export const places = placesJson as Place[]
 export const contents = contentsJson as Content[]
 export const sources = sourcesJson as Source[]
+
+export const getGourmetPlaces = (genre: GourmetGenre): Place[] =>
+  places.filter((place) => place.genre === genre)
 
 type Translation = {
   contents: Record<string, Pick<Content, "title" | "summary" | "body">>

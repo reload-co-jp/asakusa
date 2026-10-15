@@ -6,6 +6,8 @@ import {
   CATEGORY_DESCRIPTIONS,
   CATEGORY_TITLES,
   Category,
+  GOURMET_GENRES,
+  GourmetGenre,
   PLACE_TYPES,
   PlaceType,
 } from "./types"
@@ -37,6 +39,7 @@ const ja = {
     popup: "POP UP",
     exhibition: "展示・アート",
     places: "施設",
+    gourmet: "グルメ",
     spots: "スポット",
     areas: "エリア",
     news: "ニュース",
@@ -164,6 +167,17 @@ const ja = {
   categoryTitles: CATEGORY_TITLES,
   categoryDescriptions: CATEGORY_DESCRIPTIONS,
   placeTypes: PLACE_TYPES as Record<PlaceType, string>,
+  gourmetGenres: GOURMET_GENRES as Record<GourmetGenre, string>,
+  gourmet: {
+    listTitle: "浅草グルメ・名店一覧｜すき焼・天ぷら・ラーメン・甘味｜浅草ライブ",
+    listHeading: "浅草グルメ・名店",
+    listDescription: (count: number) =>
+      `すき焼・天ぷら・蕎麦・ラーメン・洋食・甘味・喫茶など、浅草の老舗・有名店${count}件をジャンル別にまとめています。`,
+    genreTitle: (genre: string) => `浅草の${genre}の名店`,
+    genreDescription: (genre: string, count: number) =>
+      `浅草エリアの${genre}の老舗・有名店${count}件の住所・電話番号などの基本情報をまとめています。`,
+    more: (genre: string) => `${genre}をすべて見る`,
+  },
   areas: AREAS as Record<Area, string>,
   area: {
     title: (area: string) => `${area}のイベント・新店舗・地域ニュース`,
@@ -198,6 +212,7 @@ const en: Dictionary = {
     popup: "Pop-ups",
     exhibition: "Exhibitions",
     places: "Places",
+    gourmet: "Food",
     spots: "Spots",
     areas: "Areas",
     news: "News",
@@ -373,6 +388,28 @@ const en: Dictionary = {
     facility_news: "News from venues around Asakusa",
     local_news: "Local news from around Asakusa",
   },
+  gourmetGenres: {
+    sukiyaki: "Sukiyaki & Gyunabe",
+    tempura: "Tempura & Tendon",
+    soba: "Soba",
+    washoku: "Japanese, Sushi & Eel",
+    ramen: "Ramen",
+    yoshoku: "Yoshoku (Western-style)",
+    okonomiyaki: "Okonomiyaki & Yakisoba",
+    sweets: "Japanese Sweets",
+    cafe: "Cafés, Coffee & Bakeries",
+    bar: "Izakaya & Bars",
+  },
+  gourmet: {
+    listTitle: "Asakusa Food Guide: Famous Restaurants by Genre | Asakusa Live",
+    listHeading: "Asakusa Food & Famous Restaurants",
+    listDescription: (count) =>
+      `${count} long-established and famous restaurants and food shops in Asakusa, by genre: sukiyaki, tempura, soba, ramen, yoshoku, sweets, cafés and more.`,
+    genreTitle: (genre) => `Famous ${genre} in Asakusa`,
+    genreDescription: (genre, count) =>
+      `Addresses, phone numbers and basic information for ${count} long-established and famous ${genre} spots in Asakusa.`,
+    more: (genre) => `See all ${genre}`,
+  },
   areas: {
     asakusa: "Asakusa",
     kuramae: "Kuramae",
@@ -425,6 +462,7 @@ const zh: Dictionary = {
     popup: "快闪店",
     exhibition: "展览・艺术",
     places: "设施",
+    gourmet: "美食",
     spots: "景点",
     areas: "地区",
     news: "新闻",
@@ -593,6 +631,28 @@ const zh: Dictionary = {
     exhibition: "汇总浅草地区的展览信息",
     facility_news: "汇总浅草地区的设施新闻",
     local_news: "汇总浅草地区的地区新闻",
+  },
+  gourmetGenres: {
+    sukiyaki: "寿喜烧・牛锅",
+    tempura: "天妇罗・天丼",
+    soba: "荞麦面",
+    washoku: "日料・寿司・鳗鱼",
+    ramen: "拉面",
+    yoshoku: "日式西餐",
+    okonomiyaki: "御好烧・炒面",
+    sweets: "甜品・和果子",
+    cafe: "咖啡馆・面包",
+    bar: "居酒屋・酒吧",
+  },
+  gourmet: {
+    listTitle: "浅草美食・名店一览｜寿喜烧・天妇罗・拉面・甜品｜浅草Live",
+    listHeading: "浅草美食・名店",
+    listDescription: (count) =>
+      `按类别汇总寿喜烧、天妇罗、荞麦面、拉面、日式西餐、甜品、咖啡馆等浅草老字号・名店共${count}家。`,
+    genreTitle: (genre) => `浅草的${genre}名店`,
+    genreDescription: (genre, count) =>
+      `汇总浅草地区${genre}老字号・名店共${count}家的地址、电话等基本信息。`,
+    more: (genre) => `查看全部${genre}`,
   },
   areas: {
     asakusa: "浅草",

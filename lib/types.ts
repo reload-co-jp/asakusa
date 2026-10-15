@@ -94,6 +94,22 @@ export const PLACE_TYPES = {
 
 export type PlaceType = keyof typeof PLACE_TYPES
 
+// グルメスポット(飲食店・食品店)のジャンル
+export const GOURMET_GENRES = {
+  sukiyaki: "すき焼・牛鍋",
+  tempura: "天ぷら・天丼",
+  soba: "蕎麦",
+  washoku: "和食・寿司・うなぎ",
+  ramen: "ラーメン",
+  yoshoku: "洋食",
+  okonomiyaki: "お好み焼・焼きそば",
+  sweets: "甘味・和菓子",
+  cafe: "喫茶・カフェ・パン",
+  bar: "居酒屋・バー",
+} as const
+
+export type GourmetGenre = keyof typeof GOURMET_GENRES
+
 export type Place = {
   id: string
   name: string
@@ -106,6 +122,7 @@ export type Place = {
   phone: string | null
   url: string | null
   image_url: string | null
+  genre?: GourmetGenre
   area: string
   source_id: string | null
   source_url: string | null

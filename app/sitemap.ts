@@ -11,7 +11,14 @@ import {
 } from "@/lib/data"
 import { HTML_LANG, Locale, LOCALES, localePath } from "@/lib/i18n-config"
 import { SITE_URL } from "@/lib/json-ld"
-import { AREAS, Area, CATEGORIES, Category } from "@/lib/types"
+import {
+  AREAS,
+  Area,
+  CATEGORIES,
+  Category,
+  GOURMET_GENRES,
+  GourmetGenre,
+} from "@/lib/types"
 
 export const dynamic = "force-static"
 
@@ -48,6 +55,10 @@ const pages = (): Page[] => [
     listPage(`/area/${area}/`, getContentsByArea(area))
   ),
   { url: "/place/" },
+  { url: "/gourmet/" },
+  ...(Object.keys(GOURMET_GENRES) as GourmetGenre[]).map((genre) => ({
+    url: `/gourmet/${genre}/`,
+  })),
   ...places.map((place) => ({
     url: `/place/${place.id}/`,
     lastModified: getContentsByPlace(place.id)[0]?.published_at,

@@ -106,7 +106,15 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
     <>
       <Breadcrumbs
         items={[
-          { name: t.nav.places, href: "/place/" },
+          ...(place.genre
+            ? [
+                { name: t.nav.gourmet, href: "/gourmet/" },
+                {
+                  name: t.gourmetGenres[place.genre],
+                  href: `/gourmet/${place.genre}/`,
+                },
+              ]
+            : [{ name: t.nav.places, href: "/place/" }]),
           { name: place.name, href: `/place/${place.id}/` },
         ]}
       />
