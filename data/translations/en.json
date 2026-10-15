@@ -1755,6 +1755,146 @@
       "address": "Asakusa Underground Shopping Street, 1-1-12 Asakusa, Taito-ku, Tokyo",
       "opening_hours": null,
       "area": "Around Asakusa Station"
+    },
+    "kyotei-daikokuya": {
+      "name": "Kyotei Daikokuya",
+      "description": "A renowned soba restaurant known for 100% buckwheat noodles from flour it stone-mills in house.",
+      "address": "4-39-2 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kannon-ura"
+    },
+    "paichi": {
+      "name": "Paichi",
+      "description": "A yoshoku restaurant founded in 1936, famous for its beef stew.",
+      "address": "1-15-1 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Asakusa"
+    },
+    "tsurujiro": {
+      "name": "Asakusa Tsurujiro Main Store",
+      "description": "A monjayaki and okonomiyaki restaurant.",
+      "address": "1-20-8 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Asakusa"
+    },
+    "irokawa": {
+      "name": "Kaminarimon Unagi Irokawa",
+      "description": "A long-established eel restaurant founded in 1861.",
+      "address": "2-6-11 Kaminarimon, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kaminarimon"
+    },
+    "kamameshi-mutsumi": {
+      "name": "Kamameshi Mutsumi",
+      "description": "Founded in 1968. A renowned kamameshi (pot rice) restaurant tucked down a back lane.",
+      "address": "3-32-4 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kannon-ura"
+    },
+    "sushi-kanesho": {
+      "name": "Sushi Kanesho",
+      "description": "A sushi restaurant awarded one Michelin star.",
+      "address": "Miyashita Bldg. 101, 3-33-9 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kannon-ura"
+    },
+    "aoi-marushin": {
+      "name": "Asakusa Tempura Aoi Marushin",
+      "description": "A long-established tempura restaurant founded in 1946, a 3-minute walk from Kaminarimon.",
+      "address": "1-4-4 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kaminarimon"
+    },
+    "dote-no-iseya": {
+      "name": "Dote no Iseya",
+      "description": "Founded in 1889. A long-established Edo-style tendon restaurant on Dote-dori.",
+      "address": "1-9-2 Nihonzutsumi, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Nihonzutsumi"
+    },
+    "chukasoba-billiken": {
+      "name": "Chuka Soba Billiken",
+      "description": "A chuka soba (ramen) shop a few minutes walk from Asakusa Station.",
+      "address": "Okayasu Bldg. 1F, 2-4-1 Kaminarimon, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kaminarimon"
+    },
+    "dandelion-chocolate-kuramae": {
+      "name": "Dandelion Chocolate Factory & Cafe Kuramae",
+      "description": "A café with a chocolate workshop in a converted warehouse, where you can watch the chocolate being made.",
+      "address": "4-14-6 Kuramae, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kuramae"
+    },
+    "coffee-wrights-kuramae": {
+      "name": "Coffee Wrights Kuramae",
+      "description": "A coffee stand and roaster near Kuramae Station.",
+      "address": "1F, 4-20-2 Kuramae, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kuramae"
+    },
+    "pelican-cafe": {
+      "name": "Pelican Cafe",
+      "description": "A café run by Pelican Bakery.",
+      "address": "3-9-11 Kotobuki, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kuramae"
+    },
+    "okamoto-honten": {
+      "name": "Taishu Sakaba Okamoto Asakusa Main Store",
+      "description": "A casual izakaya said to be the oldest on Hoppy-dori.",
+      "address": "2-5-14 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hoppy-dori"
+    },
+    "tanuki": {
+      "name": "Taishu Sakaba Tanuki",
+      "description": "A casual izakaya on Hoppy-dori whose signature dish is beef tendon stew.",
+      "address": "2-5-12 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hoppy-dori"
+    },
+    "izakaya-don": {
+      "name": "Izakaya Don",
+      "description": "An izakaya on Hoppy-dori.",
+      "address": "2-3-17 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hoppy-dori"
+    },
+    "sanchan-yokocho": {
+      "name": "Asakusa Sanchan Yokocho Hoppy-dori",
+      "description": "An izakaya on Hoppy-dori.",
+      "address": "2-4-12 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hoppy-dori"
+    },
+    "ricchan": {
+      "name": "Taishu Sakaba Ricchan Hoppy-dori",
+      "description": "A casual izakaya on Hoppy-dori, open from early afternoon.",
+      "address": "1-41-3 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hoppy-dori"
+    },
+    "taishu-omasu": {
+      "name": "Taishu Sakaba Omasu",
+      "description": "A casual izakaya a 6-minute walk from Tawaramachi Station.",
+      "address": "1-15-6 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Asakusa"
+    },
+    "sake-omasu-kaminarimon": {
+      "name": "Sake no Omasu Kaminarimon",
+      "description": "Offers over 100 kinds of sake from across Japan, available by the glass.",
+      "address": "1-2-8 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kaminarimon"
+    },
+    "miyazaki-jidoriya": {
+      "name": "Miyazaki Jidoriya",
+      "description": "Known for flame-grilled Miyazaki jitokko chicken.",
+      "address": "1-7-8 Kaminarimon, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kaminarimon"
     }
   }
 }

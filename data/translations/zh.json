@@ -1755,6 +1755,146 @@
       "address": "东京都台东区浅草1-1-12 浅草地下街",
       "opening_hours": null,
       "area": "浅草站周边"
+    },
+    "kyotei-daikokuya": {
+      "name": "荞亭 大黑屋",
+      "description": "以自家石磨磨粉的十割荞麦面闻名的荞麦面名店。",
+      "address": "东京都台东区浅草4-39-2",
+      "opening_hours": null,
+      "area": "观音里"
+    },
+    "paichi": {
+      "name": "Paichi",
+      "description": "创业于1936年的日式西餐厅，招牌是炖牛肉。",
+      "address": "东京都台东区浅草1-15-1",
+      "opening_hours": null,
+      "area": "浅草"
+    },
+    "tsurujiro": {
+      "name": "浅草 鹤次郎 本店",
+      "description": "文字烧・御好烧店。",
+      "address": "东京都台东区浅草1-20-8",
+      "opening_hours": null,
+      "area": "浅草"
+    },
+    "irokawa": {
+      "name": "雷门 鳗鱼 色川",
+      "description": "创业于1861年的鳗鱼老店。",
+      "address": "东京都台东区雷门2-6-11",
+      "opening_hours": null,
+      "area": "雷门"
+    },
+    "kamameshi-mutsumi": {
+      "name": "釜饭 Mutsumi",
+      "description": "创业于1968年。位于小巷里的釜饭名店。",
+      "address": "东京都台东区浅草3-32-4",
+      "opening_hours": null,
+      "area": "观音里"
+    },
+    "sushi-kanesho": {
+      "name": "鲊 Kanesho",
+      "description": "获得米其林一星的寿司店。",
+      "address": "东京都台东区浅草3-33-9 宫下大厦101",
+      "opening_hours": null,
+      "area": "观音里"
+    },
+    "aoi-marushin": {
+      "name": "浅草天妇罗 葵丸进",
+      "description": "创业于1946年的天妇罗老店，距雷门步行3分钟。",
+      "address": "东京都台东区浅草1-4-4",
+      "opening_hours": null,
+      "area": "雷门"
+    },
+    "dote-no-iseya": {
+      "name": "土手之伊势屋",
+      "description": "创业于1889年。位于土手通沿线的江户前天丼老店。",
+      "address": "东京都台东区日本堤1-9-2",
+      "opening_hours": null,
+      "area": "日本堤"
+    },
+    "chukasoba-billiken": {
+      "name": "中华荞麦 Billiken",
+      "description": "距浅草站步行2〜3分钟的中华荞麦面店。",
+      "address": "东京都台东区雷门2-4-1 冈安大厦1F",
+      "opening_hours": null,
+      "area": "雷门"
+    },
+    "dandelion-chocolate-kuramae": {
+      "name": "Dandelion Chocolate 工厂&咖啡馆 藏前",
+      "description": "由仓库改建、附设巧克力工坊的咖啡馆，可参观制作过程。",
+      "address": "东京都台东区藏前4-14-6",
+      "opening_hours": null,
+      "area": "藏前"
+    },
+    "coffee-wrights-kuramae": {
+      "name": "Coffee Wrights 藏前",
+      "description": "藏前站附近的咖啡站兼烘焙店。",
+      "address": "东京都台东区藏前4-20-2 1楼",
+      "opening_hours": null,
+      "area": "藏前"
+    },
+    "pelican-cafe": {
+      "name": "鹈鹕咖啡",
+      "description": "鹈鹕面包直营的咖啡馆。",
+      "address": "东京都台东区寿3-9-11",
+      "opening_hours": null,
+      "area": "藏前"
+    },
+    "okamoto-honten": {
+      "name": "大众酒场 冈本 浅草本店",
+      "description": "被誉为Hoppy通最老字号的大众酒馆。",
+      "address": "东京都台东区浅草2-5-14",
+      "opening_hours": null,
+      "area": "Hoppy通"
+    },
+    "tanuki": {
+      "name": "大众酒场 狸",
+      "description": "Hoppy通的大众酒馆，招牌菜是炖牛筋。",
+      "address": "东京都台东区浅草2-5-12",
+      "opening_hours": null,
+      "area": "Hoppy通"
+    },
+    "izakaya-don": {
+      "name": "居酒屋 Don",
+      "description": "Hoppy通的居酒屋。",
+      "address": "东京都台东区浅草2-3-17",
+      "opening_hours": null,
+      "area": "Hoppy通"
+    },
+    "sanchan-yokocho": {
+      "name": "浅草三酱横丁 Hoppy通店",
+      "description": "Hoppy通的居酒屋。",
+      "address": "东京都台东区浅草2-4-12",
+      "opening_hours": null,
+      "area": "Hoppy通"
+    },
+    "ricchan": {
+      "name": "大众酒场 Ricchan Hoppy通店",
+      "description": "白天就开始营业的Hoppy通大众酒馆。",
+      "address": "东京都台东区浅草1-41-3",
+      "opening_hours": null,
+      "area": "Hoppy通"
+    },
+    "taishu-omasu": {
+      "name": "大众酒场 大桝",
+      "description": "距田原町站步行6分钟的大众酒馆。",
+      "address": "东京都台东区浅草1-15-6",
+      "opening_hours": null,
+      "area": "浅草"
+    },
+    "sake-omasu-kaminarimon": {
+      "name": "酒之大桝 雷门店",
+      "description": "备有日本各地100多种日本酒，可按杯点单。",
+      "address": "东京都台东区浅草1-2-8",
+      "opening_hours": null,
+      "area": "雷门"
+    },
+    "miyazaki-jidoriya": {
+      "name": "宫崎地鸡家",
+      "description": "以使用宫崎地头鸡的火柱烧闻名。",
+      "address": "东京都台东区雷门1-7-8",
+      "opening_hours": null,
+      "area": "雷门"
     }
   }
 }
