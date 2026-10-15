@@ -13,7 +13,8 @@
     "image_url": "/images/sources/sensoji.png",
     "area": "浅草寺周辺",
     "source_id": "sensoji",
-    "source_url": "https://www.senso-ji.jp/"
+    "source_url": "https://www.senso-ji.jp/",
+    "updated_at": "2026-09-05"
   },
   {
     "id": "asakusajinja",
@@ -29,7 +30,8 @@
     "image_url": "/images/sources/asakusajinja.jpg",
     "area": "浅草寺周辺",
     "source_id": "asakusajinja",
-    "source_url": "https://asakusajinja.jp/"
+    "source_url": "https://asakusajinja.jp/",
+    "updated_at": "2026-09-05"
   },
   {
     "id": "rox",
@@ -45,7 +47,8 @@
     "image_url": "/images/sources/rox.webp",
     "area": "浅草六区",
     "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/"
+    "source_url": "https://www.rox.co.jp/news/",
+    "updated_at": "2026-09-05"
   },
   {
     "id": "hanayashiki",
@@ -61,7 +64,8 @@
     "image_url": "/images/sources/hanayashiki.png",
     "area": "浅草寺周辺",
     "source_id": "hanayashiki",
-    "source_url": "https://www.hanayashiki.net/event_this/"
+    "source_url": "https://www.hanayashiki.net/event_this/",
+    "updated_at": "2026-09-05"
   },
   {
     "id": "engei-hall",
@@ -77,7 +81,8 @@
     "image_url": "/images/sources/engei-hall.jpg",
     "area": "浅草六区",
     "source_id": "engei-hall",
-    "source_url": "https://www.asakusaengei.com/schedule/"
+    "source_url": "https://www.asakusaengei.com/schedule/",
+    "updated_at": "2026-09-05"
   },
   {
     "id": "koukaidou",
@@ -93,7 +98,8 @@
     "image_url": "/images/sources/koukaidou.jpg",
     "area": "浅草六区",
     "source_id": "koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html"
+    "source_url": "https://asakusa-koukaidou.net/home/event.html",
+    "updated_at": "2026-09-05"
   },
   {
     "id": "ekimise",
@@ -109,7 +115,8 @@
     "image_url": "/images/sources/ekimise.jpg",
     "area": "浅草駅周辺",
     "source_id": "ekimise",
-    "source_url": "https://www.ekimise.jp/"
+    "source_url": "https://www.ekimise.jp/",
+    "updated_at": "2026-09-05"
   },
   {
     "id": "matsuya-asakusa",
@@ -125,7 +132,8 @@
     "image_url": "/images/sources/matsuya.png",
     "area": "浅草駅周辺",
     "source_id": "matsuya",
-    "source_url": "https://www.matsuya.com/asakusa/"
+    "source_url": "https://www.matsuya.com/asakusa/",
+    "updated_at": "2026-09-05"
   },
   {
     "id": "nakamise",
@@ -141,7 +149,8 @@
     "image_url": "/images/places/tourist_spot.png",
     "area": "仲見世",
     "source_id": null,
-    "source_url": null
+    "source_url": null,
+    "updated_at": "2026-09-05"
   },
   {
     "id": "chikagai",
@@ -157,7 +166,8 @@
     "image_url": "/images/places/facility.png",
     "area": "浅草駅周辺",
     "source_id": "chikagai",
-    "source_url": "https://asakusachikagai.com/"
+    "source_url": "https://asakusachikagai.com/",
+    "updated_at": "2026-09-05"
   },
   {
     "id": "asakusa-imahan",
@@ -165,8 +175,8 @@
     "type": "restaurant",
     "description": "明治28年創業。黒毛和牛のすき焼・しゃぶしゃぶの老舗。",
     "address": "東京都台東区西浅草3-1-12",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.713932,
+    "longitude": 139.792252,
     "opening_hours": "11:30〜21:30（L.O.20:30）",
     "phone": "03-3841-1114",
     "url": "https://www.asakusaimahan.co.jp/kokusai/",
@@ -174,7 +184,8 @@
     "source_id": null,
     "source_url": "https://www.asakusaimahan.co.jp/kokusai/",
     "genre": "sukiyaki",
-    "area": "国際通り"
+    "area": "国際通り",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "komagata-dozeu",
@@ -182,8 +193,8 @@
     "type": "restaurant",
     "description": "1801年創業。江戸から続くどじょう料理の老舗。",
     "address": "東京都台東区駒形1-7-12",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.707573,
+    "longitude": 139.795135,
     "opening_hours": "11:00〜20:30（L.O.20:00）",
     "phone": "050-5448-6266",
     "url": "https://dozeu.com/",
@@ -191,7 +202,8 @@
     "source_id": null,
     "source_url": "https://dozeu.com/",
     "genre": "washoku",
-    "area": "駒形"
+    "area": "駒形",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "kamiya-bar",
@@ -199,8 +211,8 @@
     "type": "restaurant",
     "description": "明治13年創業の日本初のバー。名物は電気ブラン。",
     "address": "東京都台東区浅草1-1-1",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.710876,
+    "longitude": 139.79747,
     "opening_hours": "11:00〜20:00（L.O.19:30）、火曜・月2回月曜定休",
     "phone": "03-3841-5400",
     "url": "http://www.kamiya-bar.com/",
@@ -208,7 +220,8 @@
     "source_id": null,
     "source_url": "http://www.kamiya-bar.com/",
     "genre": "bar",
-    "area": "浅草駅周辺"
+    "area": "浅草駅周辺",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "daikokuya-tempura",
@@ -216,8 +229,8 @@
     "type": "restaurant",
     "description": "明治20年創業。ごま油で揚げる濃いタレの天丼で知られる。",
     "address": "東京都台東区浅草1-38-10",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.712776,
+    "longitude": 139.795532,
     "opening_hours": null,
     "phone": null,
     "url": "http://www.tempura.co.jp/",
@@ -225,7 +238,8 @@
     "source_id": null,
     "source_url": "http://www.tempura.co.jp/",
     "genre": "tempura",
-    "area": "浅草寺周辺"
+    "area": "浅草寺周辺",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "umezono",
@@ -233,8 +247,8 @@
     "type": "restaurant",
     "description": "安政元年創業の甘味処。名物はあわぜんざい。",
     "address": "東京都台東区浅草1-31-12",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.712414,
+    "longitude": 139.796265,
     "opening_hours": null,
     "phone": "03-3841-7580",
     "url": "https://www.asakusa-umezono.co.jp/",
@@ -242,7 +256,8 @@
     "source_id": null,
     "source_url": "https://www.asakusa-umezono.co.jp/",
     "genre": "sweets",
-    "area": "浅草寺周辺"
+    "area": "浅草寺周辺",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "funawa-honten",
@@ -250,8 +265,8 @@
     "type": "restaurant",
     "description": "明治35年創業の和菓子店。芋ようかん発祥の店で、2・3階は喫茶室。",
     "address": "東京都台東区浅草1-22-10",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.712044,
+    "longitude": 139.794632,
     "opening_hours": null,
     "phone": null,
     "url": "https://www.funawa.jp/",
@@ -259,7 +274,8 @@
     "source_id": null,
     "source_url": "https://www.funawa.jp/",
     "genre": "sweets",
-    "area": "新仲見世"
+    "area": "新仲見世",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "yoshikami",
@@ -267,8 +283,8 @@
     "type": "restaurant",
     "description": "昭和26年創業の洋食店。ハヤシライスやビーフシチューが名物。",
     "address": "東京都台東区浅草1-41-4",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.712952,
+    "longitude": 139.793732,
     "opening_hours": "11:30〜21:30（L.O.21:00）、木曜定休",
     "phone": "03-3841-1802",
     "url": "http://www.yoshikami.co.jp/",
@@ -276,7 +292,8 @@
     "source_id": null,
     "source_url": "http://www.yoshikami.co.jp/",
     "genre": "yoshoku",
-    "area": "浅草六区"
+    "area": "浅草六区",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "sansada",
@@ -284,8 +301,8 @@
     "type": "restaurant",
     "description": "天保8年（1837年）創業。現存する日本最古の天ぷら屋として知られる。",
     "address": "東京都台東区浅草1-2-2",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.710972,
+    "longitude": 139.796707,
     "opening_hours": null,
     "phone": "03-3841-3400",
     "url": "https://www.tempura-sansada.co.jp/",
@@ -293,7 +310,8 @@
     "source_id": null,
     "source_url": "https://www.tempura-sansada.co.jp/",
     "genre": "tempura",
-    "area": "雷門"
+    "area": "雷門",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "nakasei",
@@ -301,8 +319,8 @@
     "type": "restaurant",
     "description": "明治3年創業の江戸前天ぷら店。芝エビと青柳の貝柱をごま油で揚げた雷神揚が名物。",
     "address": "東京都台東区浅草1-39-13",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.712605,
+    "longitude": 139.794861,
     "opening_hours": "火曜・第2・第4水曜定休",
     "phone": "03-3841-4015",
     "url": "https://www.nakasei.biz/",
@@ -310,7 +328,8 @@
     "source_id": null,
     "source_url": "https://www.nakasei.biz/",
     "genre": "tempura",
-    "area": "浅草六区"
+    "area": "浅草六区",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "asakusa-mugitoro",
@@ -318,8 +337,8 @@
     "type": "restaurant",
     "description": "昭和4年創業のとろろ料理店。麦飯ととろろの懐石・定食を提供。",
     "address": "東京都台東区雷門2-2-4",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.709126,
+    "longitude": 139.796646,
     "opening_hours": null,
     "phone": null,
     "url": "https://www.mugitoro.co.jp/",
@@ -327,7 +346,8 @@
     "source_id": null,
     "source_url": "https://www.mugitoro.co.jp/",
     "genre": "washoku",
-    "area": "雷門"
+    "area": "雷門",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "namiki-yabusoba",
@@ -335,8 +355,8 @@
     "type": "restaurant",
     "description": "雷門前の並木通りにある老舗蕎麦店。辛口のつゆで知られる。",
     "address": "東京都台東区雷門2-11-9",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.709667,
+    "longitude": 139.79599,
     "opening_hours": null,
     "phone": "03-3841-1340",
     "url": null,
@@ -344,7 +364,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "soba",
-    "area": "雷門"
+    "area": "雷門",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "pelican",
@@ -352,8 +373,8 @@
     "type": "store",
     "description": "昭和17年創業のパン店。食パンとロールパンのみを焼き続ける老舗。",
     "address": "東京都台東区寿4-7-4",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.708553,
+    "longitude": 139.791336,
     "opening_hours": null,
     "phone": "03-3841-4686",
     "url": "https://www.bakerpelican.com/",
@@ -361,7 +382,8 @@
     "source_id": null,
     "source_url": "https://www.bakerpelican.com/",
     "genre": "cafe",
-    "area": "田原町"
+    "area": "田原町",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "kameju",
@@ -369,8 +391,8 @@
     "type": "store",
     "description": "雷門前の和菓子店。ふんわりした皮のどら焼きが名物。",
     "address": "東京都台東区雷門2-18-11",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.710712,
+    "longitude": 139.796738,
     "opening_hours": null,
     "phone": null,
     "url": null,
@@ -378,7 +400,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "sweets",
-    "area": "雷門"
+    "area": "雷門",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "bentenyama-miyakozushi",
@@ -386,8 +409,8 @@
     "type": "restaurant",
     "description": "慶応2年創業。江戸時代からの仕事を受け継ぐ江戸前寿司の老舗。",
     "address": "東京都台東区浅草2-1-16",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.712975,
+    "longitude": 139.79776,
     "opening_hours": null,
     "phone": "03-3844-0034",
     "url": null,
@@ -395,7 +418,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "washoku",
-    "area": "浅草寺周辺"
+    "area": "浅草寺周辺",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "komagata-maekawa",
@@ -403,8 +427,8 @@
     "type": "restaurant",
     "description": "隅田川沿いに店を構えるうなぎ料理の老舗。",
     "address": "東京都台東区駒形2-1-29",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.708221,
+    "longitude": 139.796249,
     "opening_hours": null,
     "phone": null,
     "url": null,
@@ -412,7 +436,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "washoku",
-    "area": "駒形"
+    "area": "駒形",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "owariya",
@@ -420,8 +445,8 @@
     "type": "restaurant",
     "description": "大きな海老天がのる天ぷらそばで知られる蕎麦の老舗。",
     "address": "東京都台東区浅草1-7-1",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.711369,
+    "longitude": 139.79361,
     "opening_hours": null,
     "phone": "03-3845-4500",
     "url": null,
@@ -429,7 +454,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "soba",
-    "area": "雷門"
+    "area": "雷門",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "shochan",
@@ -437,8 +463,8 @@
     "type": "restaurant",
     "description": "ホッピー通りの大衆酒場。継ぎ足しで仕込む牛煮込みが名物。",
     "address": "東京都台東区浅草2-7-13",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.714573,
+    "longitude": 139.794113,
     "opening_hours": null,
     "phone": "03-3841-3673",
     "url": null,
@@ -446,7 +472,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "bar",
-    "area": "ホッピー通り"
+    "area": "ホッピー通り",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "kokonoe",
@@ -454,8 +481,8 @@
     "type": "store",
     "description": "仲見世の揚げまんじゅう専門店。店頭で揚げたてを味わえる。",
     "address": "東京都台東区浅草2-3-1",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.712856,
+    "longitude": 139.796585,
     "opening_hours": null,
     "phone": null,
     "url": null,
@@ -463,7 +490,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "sweets",
-    "area": "仲見世"
+    "area": "仲見世",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "kimuraya-honten",
@@ -471,8 +499,8 @@
     "type": "store",
     "description": "明治元年創業。仲見世にある人形焼の元祖。",
     "address": "東京都台東区浅草2-3-1",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.712856,
+    "longitude": 139.796585,
     "opening_hours": null,
     "phone": null,
     "url": null,
@@ -480,7 +508,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "sweets",
-    "area": "仲見世"
+    "area": "仲見世",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "umemura",
@@ -488,8 +517,8 @@
     "type": "restaurant",
     "description": "豆がたっぷり入った豆かんで知られる甘味処。",
     "address": "東京都台東区浅草3-22-12",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.716778,
+    "longitude": 139.796814,
     "opening_hours": null,
     "phone": null,
     "url": null,
@@ -497,7 +526,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "sweets",
-    "area": "観音裏"
+    "area": "観音裏",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "fruit-parlor-goto",
@@ -505,8 +535,8 @@
     "type": "restaurant",
     "description": "昭和21年創業のフルーツパーラー。季節の果物を使ったパフェが人気。",
     "address": "東京都台東区浅草2-15-4",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.715717,
+    "longitude": 139.793762,
     "opening_hours": null,
     "phone": null,
     "url": null,
@@ -514,7 +544,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "cafe",
-    "area": "ひさご通り"
+    "area": "ひさご通り",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "grill-grand",
@@ -522,8 +553,8 @@
     "type": "restaurant",
     "description": "観音裏の老舗洋食店。オムライスやビーフシチューが人気。",
     "address": "東京都台東区浅草3-24-6",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.717003,
+    "longitude": 139.797531,
     "opening_hours": null,
     "phone": "03-3874-2351",
     "url": null,
@@ -531,7 +562,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "yoshoku",
-    "area": "観音裏"
+    "area": "観音裏",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "chinya",
@@ -539,8 +571,8 @@
     "type": "restaurant",
     "description": "明治13年創業のすき焼の老舗。2022年に江戸通り沿いへ移転。",
     "address": "東京都台東区花川戸2-16-1",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.714859,
+    "longitude": 139.801285,
     "opening_hours": null,
     "phone": null,
     "url": null,
@@ -548,7 +580,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "sukiyaki",
-    "area": "花川戸"
+    "area": "花川戸",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "tokiwado",
@@ -556,8 +589,8 @@
     "type": "store",
     "description": "雷門のすぐ横にある雷おこしの老舗。店頭で実演販売も行う。",
     "address": "東京都台東区浅草1-3-2",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.711071,
+    "longitude": 139.796005,
     "opening_hours": null,
     "phone": "03-3841-5656",
     "url": null,
@@ -565,7 +598,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "sweets",
-    "area": "雷門"
+    "area": "雷門",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "yonekyu",
@@ -573,8 +607,8 @@
     "type": "restaurant",
     "description": "明治19年創業の牛鍋の老舗。",
     "address": "東京都台東区浅草2-17-10",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.715919,
+    "longitude": 139.793747,
     "opening_hours": null,
     "phone": "03-3841-6416",
     "url": null,
@@ -582,7 +616,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "sukiyaki",
-    "area": "ひさご通り"
+    "area": "ひさご通り",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "suzukien",
@@ -590,8 +625,8 @@
     "type": "store",
     "description": "濃さを7段階から選べる抹茶ジェラートで知られる日本茶専門店。",
     "address": "東京都台東区浅草3-4-3",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.71632,
+    "longitude": 139.796982,
     "opening_hours": null,
     "phone": "03-3873-0311",
     "url": null,
@@ -599,7 +634,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "sweets",
-    "area": "言問通り"
+    "area": "言問通り",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "asakusa-naniwaya",
@@ -607,8 +643,8 @@
     "type": "restaurant",
     "description": "麻布十番・浪花家総本店の暖簾分け。たい焼きとかき氷で知られる。",
     "address": "東京都台東区浅草2-12-4",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.71492,
+    "longitude": 139.79274,
     "opening_hours": null,
     "phone": null,
     "url": null,
@@ -616,7 +652,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "sweets",
-    "area": "浅草六区"
+    "area": "浅草六区",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "imahan-bekkan",
@@ -624,8 +661,8 @@
     "type": "restaurant",
     "description": "仲見世裏の路地にあるすき焼・日本料理店。",
     "address": "東京都台東区浅草2-2-5",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.713062,
+    "longitude": 139.796707,
     "opening_hours": null,
     "phone": null,
     "url": null,
@@ -633,7 +670,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "sukiyaki",
-    "area": "浅草寺周辺"
+    "area": "浅草寺周辺",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "raishuken",
@@ -641,8 +679,8 @@
     "type": "restaurant",
     "description": "浅草を代表する老舗ラーメン店。豚骨と鶏ガラの醤油スープでワンタンメンが人気。",
     "address": "東京都台東区西浅草2-26-3",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.713413,
+    "longitude": 139.791763,
     "opening_hours": null,
     "phone": null,
     "url": null,
@@ -650,7 +688,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "ramen",
-    "area": "西浅草"
+    "area": "西浅草",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "yukikage",
@@ -658,8 +697,8 @@
     "type": "restaurant",
     "description": "浅草駅すぐの鶏白湯ラーメン専門店。",
     "address": "東京都台東区浅草1-2-12",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.711235,
+    "longitude": 139.796967,
     "opening_hours": null,
     "phone": "03-6875-2595",
     "url": null,
@@ -667,7 +706,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "ramen",
-    "area": "雷門"
+    "area": "雷門",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "menya-maruichi",
@@ -675,8 +715,8 @@
     "type": "restaurant",
     "description": "汁なし麺とつけ麺の専門店。",
     "address": "東京都台東区浅草2-22-10",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.716774,
+    "longitude": 139.794006,
     "opening_hours": null,
     "phone": "03-3847-7555",
     "url": null,
@@ -684,7 +724,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "ramen",
-    "area": "浅草六区"
+    "area": "浅草六区",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "asakusa-kaikaro",
@@ -692,8 +733,8 @@
     "type": "store",
     "description": "1950年創業の製麺所。ラーメン・つけ麺の名店に麺を卸し、朝に直売も行う。",
     "address": "東京都台東区元浅草4-5-14",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.709789,
+    "longitude": 139.786209,
     "opening_hours": null,
     "phone": "03-3844-0637",
     "url": null,
@@ -701,7 +742,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "ramen",
-    "area": "元浅草"
+    "area": "元浅草",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "sometaro",
@@ -709,8 +751,8 @@
     "type": "restaurant",
     "description": "座敷で自分で焼くセルフスタイルのお好み焼の老舗。",
     "address": "東京都台東区西浅草2-2-2",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.71191,
+    "longitude": 139.790833,
     "opening_hours": null,
     "phone": "03-3844-9502",
     "url": null,
@@ -718,7 +760,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "okonomiyaki",
-    "area": "田原町"
+    "area": "田原町",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "coffee-tengoku",
@@ -726,8 +769,8 @@
     "type": "restaurant",
     "description": "伝法院通り近くの喫茶店。ホットケーキが評判。",
     "address": "東京都台東区浅草1-41-9",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.713078,
+    "longitude": 139.794052,
     "opening_hours": null,
     "phone": "03-5828-0591",
     "url": null,
@@ -735,7 +778,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "cafe",
-    "area": "浅草六区"
+    "area": "浅草六区",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "lodge-akaishi",
@@ -743,8 +787,8 @@
     "type": "restaurant",
     "description": "観音裏のレトロ喫茶。",
     "address": "東京都台東区浅草3-8-4",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.717003,
+    "longitude": 139.795044,
     "opening_hours": null,
     "phone": "03-3875-1688",
     "url": null,
@@ -752,7 +796,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "cafe",
-    "area": "観音裏"
+    "area": "観音裏",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "coffee-aroma",
@@ -760,8 +805,8 @@
     "type": "restaurant",
     "description": "新仲見世近くのレトロ喫茶。",
     "address": "東京都台東区浅草1-24-5",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.712383,
+    "longitude": 139.792419,
     "opening_hours": null,
     "phone": "03-3841-9002",
     "url": null,
@@ -769,7 +814,8 @@
     "source_id": null,
     "source_url": null,
     "genre": "cafe",
-    "area": "新仲見世"
+    "area": "新仲見世",
+    "updated_at": "2026-10-16"
   },
   {
     "id": "fukuchan",
@@ -777,8 +823,8 @@
     "type": "restaurant",
     "description": "浅草地下街の立ち食い焼きそば店。カレーソース焼きそばが名物。",
     "address": "東京都台東区浅草1-1-12 浅草地下街",
-    "latitude": null,
-    "longitude": null,
+    "latitude": 35.711655,
+    "longitude": 139.797546,
     "opening_hours": null,
     "phone": "03-3844-5224",
     "url": null,
@@ -786,6 +832,7 @@
     "source_id": null,
     "source_url": null,
     "genre": "okonomiyaki",
-    "area": "浅草駅周辺"
+    "area": "浅草駅周辺",
+    "updated_at": "2026-10-16"
   }
 ]

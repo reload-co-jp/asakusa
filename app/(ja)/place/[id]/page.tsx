@@ -81,6 +81,11 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
   const { locale, t } = await getDictionary()
   const place = localizePlace(original, locale)
   const { ongoing, upcoming, others } = getPlaceContents(place.id)
+  const { latitude, longitude } = place
+  const mapUrl =
+    latitude != null && longitude != null
+      ? `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`
+      : null
   const jsonLd = {
     "@context": "https://schema.org",
     // 飲食店以外のグルメスポット(和菓子・パン等)は FoodEstablishment
@@ -97,14 +102,11 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
       addressCountry: "JP",
       streetAddress: place.address,
     },
-    ...(place.latitude != null &&
-      place.longitude != null && {
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: place.latitude,
-          longitude: place.longitude,
-        },
+    ...(latitude != null &&
+      longitude != null && {
+        geo: { "@type": "GeoCoordinates", latitude, longitude },
       }),
+    ...(mapUrl && { hasMap: mapUrl }),
     ...(place.phone && { telephone: place.phone }),
     ...(place.url && { url: place.url }),
     ...(place.image_url && { image: `${SITE_URL}${place.image_url}` }),
@@ -190,6 +192,7 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
             <InfoRow label={t.place.hours} value={place.opening_hours} />
           )}
           {place.phone && <InfoRow label={t.place.phone} value={place.phone} />}
+          <InfoRow label={t.place.updated} value={place.updated_at} />
         </ul>
         {place.url && (
           <p style={{ fontSize: ".85rem", margin: "1.5rem 0 0" }}>
@@ -202,6 +205,38 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
               {t.place.official}
             </a>
           </p>
+        )}
+        {mapUrl && latitude != null && longitude != null && (
+          <>
+            <iframe
+              loading="lazy"
+              src={`https://www.openstreetmap.org/export/embed.html?bbox=${(
+                longitude - 0.003
+              ).toFixed(
+                6
+              )},${(latitude - 0.002).toFixed(6)},${(longitude + 0.003).toFixed(6)},${(
+                latitude + 0.002
+              ).toFixed(6)}&layer=mapnik&marker=${latitude},${longitude}`}
+              style={{
+                aspectRatio: "4 / 3",
+                border: 0,
+                display: "block",
+                margin: "1.5rem 0 0",
+                width: "100%",
+              }}
+              title={t.place.map(place.name)}
+            />
+            <p style={{ fontSize: ".85rem", margin: ".5rem 0 0" }}>
+              <a
+                href={mapUrl}
+                rel="noreferrer"
+                style={{ color: "var(--accent)" }}
+                target="_blank"
+              >
+                {t.place.googleMaps}
+              </a>
+            </p>
+          </>
         )}
       </article>
       {ongoing.length > 0 && (

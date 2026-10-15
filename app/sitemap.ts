@@ -5,6 +5,7 @@ import {
   getContentsByArea,
   getContentsByCategory,
   getContentsByPlace,
+  getGourmetPlaces,
   getLatestContents,
   isTranslated,
   places,
@@ -18,6 +19,7 @@ import {
   Category,
   GOURMET_GENRES,
   GourmetGenre,
+  Place,
 } from "@/lib/types"
 
 export const dynamic = "force-static"
@@ -33,6 +35,13 @@ const listPage = (url: string, items: { published_at: string }[]) =>
 // url は日本語版のパスで書き、各言語版(hreflang付き)に展開する
 // locales 省略時は全言語。未翻訳記事の翻訳版はnoindexのため除外する
 type Page = { url: string; lastModified?: string; locales?: readonly Locale[] }
+
+// 場所一覧は掲載場所の情報更新日の最新をlastModifiedにする
+const latestUpdate = (items: Place[]) =>
+  items
+    .map((place) => place.updated_at)
+    .sort()
+    .at(-1)
 
 const pages = (): Page[] => [
   ...[
@@ -54,14 +63,25 @@ const pages = (): Page[] => [
   ...(Object.keys(AREAS) as Area[]).flatMap((area) =>
     listPage(`/area/${area}/`, getContentsByArea(area))
   ),
-  { url: "/place/" },
-  { url: "/gourmet/" },
+  { url: "/place/", lastModified: latestUpdate(places) },
+  {
+    url: "/gourmet/",
+    lastModified: latestUpdate(places.filter((place) => place.genre)),
+  },
   ...(Object.keys(GOURMET_GENRES) as GourmetGenre[]).map((genre) => ({
     url: `/gourmet/${genre}/`,
+    lastModified: latestUpdate(getGourmetPlaces(genre)),
   })),
   ...places.map((place) => ({
     url: `/place/${place.id}/`,
-    lastModified: getContentsByPlace(place.id)[0]?.published_at,
+    // 記事公開日(YYYY-MM-DDTHH:mm…)と情報更新日(YYYY-MM-DD)の新しい方
+    lastModified: [
+      getContentsByPlace(place.id)[0]?.published_at,
+      place.updated_at,
+    ]
+      .filter((date) => date != null)
+      .sort()
+      .at(-1),
   })),
   ...contents.map((content) => ({
     url: `/content/${content.id}/`,

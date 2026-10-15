@@ -126,6 +126,8 @@ export type Place = {
   area: string
   source_id: string | null
   source_url: string | null
+  // 掲載情報(住所・営業時間等)を最後に確認した日(YYYY-MM-DD)
+  updated_at: string
 }
 
 export type ContentType = "event" | "news"
