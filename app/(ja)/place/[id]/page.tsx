@@ -42,7 +42,9 @@ export const generateMetadata = async ({
   if (!original) return {}
   const { locale, t } = await getDictionary()
   const place = localizePlace(original, locale)
-  const title = t.place.title(place.name, t.placeTypes[place.type], place.area)
+  const title = place.genre
+    ? t.gourmet.placeTitle(place.name, t.gourmetGenres[place.genre], place.area)
+    : t.place.title(place.name, t.placeTypes[place.type], place.area)
   const { ongoing, upcoming } = getPlaceContents(place.id)
   const count = ongoing.length + upcoming.length
   const description = `${place.description}${
@@ -81,13 +83,18 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
   const { ongoing, upcoming, others } = getPlaceContents(place.id)
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": SCHEMA_TYPES[place.type],
+    // 飲食店以外のグルメスポット(和菓子・パン等)は FoodEstablishment
+    "@type":
+      place.genre && place.type !== "restaurant"
+        ? "FoodEstablishment"
+        : SCHEMA_TYPES[place.type],
+    ...(place.genre && { servesCuisine: t.gourmetGenres[place.genre] }),
     "@id": `${SITE_URL}${localePath(locale, `/place/${place.id}/`)}`,
     name: place.name,
     description: place.description,
     address: {
       "@type": "PostalAddress",
-      addressLocality: place.area,
+      addressCountry: "JP",
       streetAddress: place.address,
     },
     ...(place.latitude != null &&
@@ -142,7 +149,10 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
             letterSpacing: ".04em",
           }}
         >
-          {t.placeTypes[place.type]} / {place.area}
+          {place.genre
+            ? t.gourmetGenres[place.genre]
+            : t.placeTypes[place.type]}{" "}
+          / {place.area}
         </span>
         <h1
           style={{
@@ -209,10 +219,24 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
           <ContentList contents={others} />
         </Section>
       )}
-      <Section title={t.place.otherPlaces}>
+      <Section
+        more={
+          place.genre && {
+            href: localePath(locale, "/gourmet/"),
+            label: t.gourmet.viewAll,
+          }
+        }
+        title={
+          place.genre
+            ? t.gourmet.sameGenre(t.gourmetGenres[place.genre])
+            : t.place.otherPlaces
+        }
+      >
         <LinkList
           links={places
-            .filter((other) => other.id !== place.id)
+            .filter(
+              (other) => other.id !== place.id && other.genre === place.genre
+            )
             .map((other) => ({
               name: localizePlace(other, locale).name,
               href: `/place/${other.id}/`,

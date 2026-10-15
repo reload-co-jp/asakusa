@@ -49,7 +49,7 @@ const Page: FC = async () => {
             }}
             title={t.gourmetGenres[genre]}
           >
-            <PlaceList places={getGourmetPlaces(genre)} />
+            <PlaceList headingLevel={3} places={getGourmetPlaces(genre)} />
           </Section>
         ))}
       </Section>

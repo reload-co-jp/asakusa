@@ -58,6 +58,7 @@ const ja = {
     sale: "現在開催中のセール",
     latest: "浅草の最新情報",
     places: "施設から探す",
+    gourmet: "浅草グルメ・名店",
     hero: "浅草の今を、見つける。",
     heroAlt: "仲見世から望む浅草寺の宝蔵門",
     todayLead: "浅草で、今日なにする？",
@@ -177,6 +178,10 @@ const ja = {
     genreDescription: (genre: string, count: number) =>
       `浅草エリアの${genre}の老舗・有名店${count}件の住所・電話番号などの基本情報をまとめています。`,
     more: (genre: string) => `${genre}をすべて見る`,
+    viewAll: "グルメ一覧",
+    placeTitle: (name: string, genre: string, area: string) =>
+      `${name}｜浅草の${genre}の名店（${area}）｜浅草ライブ`,
+    sameGenre: (genre: string) => `浅草のほかの${genre}の名店`,
   },
   areas: AREAS as Record<Area, string>,
   area: {
@@ -232,6 +237,7 @@ const en: Dictionary = {
     sale: "Sales Now On",
     latest: "Latest from Asakusa",
     places: "Browse by Place",
+    gourmet: "Asakusa Food",
     hero: "Discover Asakusa, right now.",
     heroAlt: "Senso-ji's Hozomon Gate seen from Nakamise street",
     todayLead: "What to do in Asakusa today?",
@@ -409,6 +415,10 @@ const en: Dictionary = {
     genreDescription: (genre, count) =>
       `Addresses, phone numbers and basic information for ${count} long-established and famous ${genre} spots in Asakusa.`,
     more: (genre) => `See all ${genre}`,
+    viewAll: "All food spots",
+    placeTitle: (name, genre, area) =>
+      `${name} | Famous ${genre} in Asakusa (${area}) | Asakusa Live`,
+    sameGenre: (genre) => `More ${genre} in Asakusa`,
   },
   areas: {
     asakusa: "Asakusa",
@@ -481,6 +491,7 @@ const zh: Dictionary = {
     sale: "正在进行的促销",
     latest: "浅草最新资讯",
     places: "按设施查找",
+    gourmet: "浅草美食・名店",
     hero: "发现此刻的浅草。",
     heroAlt: "从仲见世眺望浅草寺宝藏门",
     todayLead: "今天在浅草做什么？",
@@ -653,6 +664,10 @@ const zh: Dictionary = {
     genreDescription: (genre, count) =>
       `汇总浅草地区${genre}老字号・名店共${count}家的地址、电话等基本信息。`,
     more: (genre) => `查看全部${genre}`,
+    viewAll: "美食一览",
+    placeTitle: (name, genre, area) =>
+      `${name}｜浅草${genre}名店（${area}）｜浅草Live`,
+    sameGenre: (genre) => `浅草的其他${genre}名店`,
   },
   areas: {
     asakusa: "浅草",

@@ -25,7 +25,7 @@ import { formatShortDate, jstDateString } from "@/lib/date"
 import { alternates, getDictionary, HTML_LANG, localePath } from "@/lib/i18n"
 import { isLargeImage } from "@/lib/image-size"
 import { SITE_URL } from "@/lib/json-ld"
-import { Category } from "@/lib/types"
+import { Category, GOURMET_GENRES, GourmetGenre } from "@/lib/types"
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const { locale, t } = await getDictionary()
@@ -183,12 +183,28 @@ const Page: FC = async () => {
       </Section>
 
       <EventNavigation />
+      <Section
+        eyebrow="GOURMET"
+        more={{ href: href("/gourmet/"), label: t.gourmet.viewAll }}
+        title={t.home.gourmet}
+      >
+        <LinkList
+          links={(Object.keys(GOURMET_GENRES) as GourmetGenre[]).map(
+            (genre) => ({
+              name: t.gourmetGenres[genre],
+              href: `/gourmet/${genre}/`,
+            })
+          )}
+        />
+      </Section>
       <Section eyebrow="SPOTS" title={t.home.places}>
         <LinkList
-          links={places.map((place) => ({
-            name: localizePlace(place, locale).name,
-            href: `/place/${place.id}/`,
-          }))}
+          links={places
+            .filter((place) => !place.genre)
+            .map((place) => ({
+              name: localizePlace(place, locale).name,
+              href: `/place/${place.id}/`,
+            }))}
         />
       </Section>
     </>
