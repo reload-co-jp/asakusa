@@ -1496,6 +1496,265 @@
       "address": "1-1-12 Asakusa, Taito-ku, Tokyo",
       "opening_hours": "Varies by shop",
       "area": "Around Asakusa Station"
+    },
+    "asakusa-imahan": {
+      "name": "Asakusa Imahan Kokusai-dori Main Store",
+      "description": "Founded in 1895. A long-established restaurant for Kuroge Wagyu sukiyaki and shabu-shabu.",
+      "address": "3-1-12 Nishi-Asakusa, Taito-ku, Tokyo",
+      "opening_hours": "11:30–21:30 (last order 20:30)",
+      "area": "Kokusai-dori"
+    },
+    "komagata-dozeu": {
+      "name": "Komagata Dozeu Main Store",
+      "description": "Founded in 1801. A loach (dojo) restaurant carrying on Edo-era cuisine.",
+      "address": "1-7-12 Komagata, Taito-ku, Tokyo",
+      "opening_hours": "11:00–20:30 (last order 20:00)",
+      "area": "Komagata"
+    },
+    "kamiya-bar": {
+      "name": "Kamiya Bar",
+      "description": "Japan’s first bar, founded in 1880. Famous for Denki Bran.",
+      "address": "1-1-1 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": "11:00–20:00 (last order 19:30); closed Tuesdays and two Mondays a month",
+      "area": "Around Asakusa Station"
+    },
+    "daikokuya-tempura": {
+      "name": "Daikokuya Tempura Main Store",
+      "description": "Founded in 1887. Known for tendon fried in sesame oil with a rich sauce.",
+      "address": "1-38-10 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Around Senso-ji"
+    },
+    "umezono": {
+      "name": "Umezono Asakusa Main Store",
+      "description": "A Japanese sweets café founded in 1854. Famous for awa zenzai.",
+      "address": "1-31-12 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Around Senso-ji"
+    },
+    "funawa-honten": {
+      "name": "Funawa Main Store",
+      "description": "A Japanese confectioner founded in 1902 and the birthplace of imo yokan, with a café on the 2nd and 3rd floors.",
+      "address": "1-22-10 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Shin-Nakamise"
+    },
+    "yoshikami": {
+      "name": "Yoshikami",
+      "description": "A Western-style (yoshoku) restaurant founded in 1951. Famous for hayashi rice and beef stew.",
+      "address": "1-41-4 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": "11:30–21:30 (last order 21:00); closed Thursdays",
+      "area": "Asakusa Rokku"
+    },
+    "sansada": {
+      "name": "Kaminarimon Sansada",
+      "description": "Founded in 1837. Known as the oldest existing tempura restaurant in Japan.",
+      "address": "1-2-2 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kaminarimon"
+    },
+    "nakasei": {
+      "name": "Tempura Nakasei",
+      "description": "An Edo-style tempura restaurant founded in 1870. Famous for raijin-age, shrimp and scallop fritters fried in sesame oil.",
+      "address": "1-39-13 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": "Closed Tuesdays and 2nd & 4th Wednesdays",
+      "area": "Asakusa Rokku"
+    },
+    "asakusa-mugitoro": {
+      "name": "Asakusa Mugitoro Main Store",
+      "description": "A grated yam (tororo) restaurant founded in 1929, serving kaiseki and set meals with barley rice and tororo.",
+      "address": "2-2-4 Kaminarimon, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kaminarimon"
+    },
+    "namiki-yabusoba": {
+      "name": "Namiki Yabusoba",
+      "description": "A long-established soba restaurant on Namiki-dori in front of Kaminarimon, known for its strong dipping sauce.",
+      "address": "2-11-9 Kaminarimon, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kaminarimon"
+    },
+    "pelican": {
+      "name": "Pelican Bakery",
+      "description": "A bakery founded in 1942 that bakes only bread loaves and rolls.",
+      "address": "4-7-4 Kotobuki, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Tawaramachi"
+    },
+    "kameju": {
+      "name": "Kameju",
+      "description": "A Japanese confectioner in front of Kaminarimon, famous for its fluffy dorayaki.",
+      "address": "2-18-11 Kaminarimon, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kaminarimon"
+    },
+    "bentenyama-miyakozushi": {
+      "name": "Bentenyama Miyako Sushi",
+      "description": "Founded in 1866. A long-established Edo-mae sushi restaurant preserving Edo-era techniques.",
+      "address": "2-1-16 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Around Senso-ji"
+    },
+    "komagata-maekawa": {
+      "name": "Komagata Maekawa Asakusa Main Store",
+      "description": "A long-established eel restaurant on the Sumida River.",
+      "address": "2-1-29 Komagata, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Komagata"
+    },
+    "owariya": {
+      "name": "Owariya Main Store",
+      "description": "A long-established soba restaurant known for tempura soba topped with large prawns.",
+      "address": "1-7-1 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kaminarimon"
+    },
+    "shochan": {
+      "name": "Shochan",
+      "description": "A casual izakaya on Hoppy-dori, famous for its long-simmered beef stew.",
+      "address": "2-7-13 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hoppy-dori"
+    },
+    "kokonoe": {
+      "name": "Asakusa Kokonoe",
+      "description": "An age-manju (fried bun) shop on Nakamise, serving them freshly fried.",
+      "address": "2-3-1 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Nakamise"
+    },
+    "kimuraya-honten": {
+      "name": "Kimuraya Honten",
+      "description": "Founded in 1868. The originator of ningyo-yaki, located on Nakamise.",
+      "address": "2-3-1 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Nakamise"
+    },
+    "umemura": {
+      "name": "Umemura",
+      "description": "A Japanese sweets café known for mamekan, agar jelly with plenty of beans.",
+      "address": "3-22-12 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kannon-ura"
+    },
+    "fruit-parlor-goto": {
+      "name": "Fruit Parlor Goto",
+      "description": "A fruit parlor opened in 1946, popular for parfaits made with seasonal fruit.",
+      "address": "2-15-4 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hisago-dori"
+    },
+    "grill-grand": {
+      "name": "Grill Grand",
+      "description": "A long-established yoshoku restaurant behind Senso-ji, popular for omurice and beef stew.",
+      "address": "3-24-6 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kannon-ura"
+    },
+    "chinya": {
+      "name": "Sukiyaki Chinya Asakusa Main Store",
+      "description": "A sukiyaki restaurant founded in 1880, relocated to Edo-dori in 2022.",
+      "address": "2-16-1 Hanakawado, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hanakawado"
+    },
+    "tokiwado": {
+      "name": "Tokiwado Kaminari Okoshi Kaminarimon Main Store",
+      "description": "A long-established kaminari okoshi (puffed rice cracker) shop next to Kaminarimon, with live demonstrations.",
+      "address": "1-3-2 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kaminarimon"
+    },
+    "yonekyu": {
+      "name": "Yonekyu Honten",
+      "description": "A gyunabe (beef hotpot) restaurant founded in 1886.",
+      "address": "2-17-10 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hisago-dori"
+    },
+    "suzukien": {
+      "name": "Suzukien Asakusa Main Store",
+      "description": "A Japanese tea shop known for matcha gelato in seven levels of intensity.",
+      "address": "3-4-3 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kototoi-dori"
+    },
+    "asakusa-naniwaya": {
+      "name": "Asakusa Naniwaya",
+      "description": "An offshoot of Naniwaya Sohonten in Azabu-Juban, known for taiyaki and shaved ice.",
+      "address": "2-12-4 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Asakusa Rokku"
+    },
+    "imahan-bekkan": {
+      "name": "Imahan Bekkan",
+      "description": "A sukiyaki and Japanese restaurant on a lane behind Nakamise.",
+      "address": "2-2-5 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Around Senso-ji"
+    },
+    "raishuken": {
+      "name": "Raishuken",
+      "description": "A long-established ramen shop representing Asakusa, with a pork and chicken shoyu broth. Wonton noodles are popular.",
+      "address": "2-26-3 Nishi-Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Nishi-Asakusa"
+    },
+    "yukikage": {
+      "name": "Tokyo Tori Paitan Ramen Yukikage Asakusa Main Store",
+      "description": "A chicken paitan ramen shop right by Asakusa Station.",
+      "address": "1-2-12 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kaminarimon"
+    },
+    "menya-maruichi": {
+      "name": "Menya Maruichi",
+      "description": "A shop specializing in soupless noodles and tsukemen.",
+      "address": "2-22-10 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Asakusa Rokku"
+    },
+    "asakusa-kaikaro": {
+      "name": "Asakusa Kaikaro",
+      "description": "A noodle factory founded in 1950 that supplies famous ramen and tsukemen shops, with direct sales in the morning.",
+      "address": "4-5-14 Moto-Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Moto-Asakusa"
+    },
+    "sometaro": {
+      "name": "Sometaro",
+      "description": "A long-established okonomiyaki restaurant where guests grill their own at tatami tables.",
+      "address": "2-2-2 Nishi-Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Tawaramachi"
+    },
+    "coffee-tengoku": {
+      "name": "Coffee Tengoku",
+      "description": "A coffee shop near Denboin-dori, famous for its hotcakes.",
+      "address": "1-41-9 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Asakusa Rokku"
+    },
+    "lodge-akaishi": {
+      "name": "Coffee Lodge Akaishi",
+      "description": "A retro coffee shop behind Senso-ji.",
+      "address": "3-8-4 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Kannon-ura"
+    },
+    "coffee-aroma": {
+      "name": "Coffee Aroma",
+      "description": "A retro coffee shop near Shin-Nakamise.",
+      "address": "1-24-5 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Shin-Nakamise"
+    },
+    "fukuchan": {
+      "name": "Fukuchan",
+      "description": "A standing yakisoba counter in the Asakusa Underground Shopping Street, famous for curry-sauce yakisoba.",
+      "address": "Asakusa Underground Shopping Street, 1-1-12 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Around Asakusa Station"
     }
   }
 }

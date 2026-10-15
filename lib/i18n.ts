@@ -400,6 +400,7 @@ const en: Dictionary = {
     theater: "Theater",
     park: "Park",
     tourist_spot: "Sightseeing Spot",
+    restaurant: "Restaurant",
     other: "Other",
   },
 }
@@ -620,6 +621,7 @@ const zh: Dictionary = {
     theater: "剧场",
     park: "公园",
     tourist_spot: "观光景点",
+    restaurant: "餐饮店",
     other: "其他",
   },
 }

@@ -1496,6 +1496,265 @@
       "address": "东京都台东区浅草1-1-12",
       "opening_hours": "因店铺而异",
       "area": "浅草站周边"
+    },
+    "asakusa-imahan": {
+      "name": "浅草今半 国际通本店",
+      "description": "创业于1895年。黑毛和牛寿喜烧、涮涮锅老店。",
+      "address": "东京都台东区西浅草3-1-12",
+      "opening_hours": "11:30〜21:30（最后点餐20:30）",
+      "area": "国际通"
+    },
+    "komagata-dozeu": {
+      "name": "驹形泥鳅 本店",
+      "description": "创业于1801年。传承江户风味的泥鳅料理老店。",
+      "address": "东京都台东区驹形1-7-12",
+      "opening_hours": "11:00〜20:30（最后点餐20:00）",
+      "area": "驹形"
+    },
+    "kamiya-bar": {
+      "name": "神谷酒吧",
+      "description": "创业于1880年的日本第一家酒吧。招牌是电气白兰。",
+      "address": "东京都台东区浅草1-1-1",
+      "opening_hours": "11:00〜20:00（最后点餐19:30），周二及每月两次周一休息",
+      "area": "浅草站周边"
+    },
+    "daikokuya-tempura": {
+      "name": "大黑家天妇罗 本店",
+      "description": "创业于1887年。以芝麻油炸制、酱汁浓郁的天丼闻名。",
+      "address": "东京都台东区浅草1-38-10",
+      "opening_hours": null,
+      "area": "浅草寺周边"
+    },
+    "umezono": {
+      "name": "梅园 浅草本店",
+      "description": "创业于1854年的甜品店。招牌是粟米善哉。",
+      "address": "东京都台东区浅草1-31-12",
+      "opening_hours": null,
+      "area": "浅草寺周边"
+    },
+    "funawa-honten": {
+      "name": "舟和 本店",
+      "description": "创业于1902年的和果子店，红薯羊羹发源店，2、3楼为茶室。",
+      "address": "东京都台东区浅草1-22-10",
+      "opening_hours": null,
+      "area": "新仲见世"
+    },
+    "yoshikami": {
+      "name": "Yoshikami",
+      "description": "创业于1951年的日式西餐厅。招牌是牛肉烩饭和炖牛肉。",
+      "address": "东京都台东区浅草1-41-4",
+      "opening_hours": "11:30〜21:30（最后点餐21:00），周四休息",
+      "area": "浅草六区"
+    },
+    "sansada": {
+      "name": "雷门 三定",
+      "description": "创业于1837年。被誉为现存日本最古老的天妇罗店。",
+      "address": "东京都台东区浅草1-2-2",
+      "opening_hours": null,
+      "area": "雷门"
+    },
+    "nakasei": {
+      "name": "天妇罗 中清",
+      "description": "创业于1870年的江户前天妇罗店。招牌是用芝麻油炸制芝虾与青柳贝柱的雷神扬。",
+      "address": "东京都台东区浅草1-39-13",
+      "opening_hours": "周二及第2、第4个周三休息",
+      "area": "浅草六区"
+    },
+    "asakusa-mugitoro": {
+      "name": "浅草麦薯 本店",
+      "description": "创业于1929年的山药泥料理店，提供麦饭配山药泥的怀石与套餐。",
+      "address": "东京都台东区雷门2-2-4",
+      "opening_hours": null,
+      "area": "雷门"
+    },
+    "namiki-yabusoba": {
+      "name": "并木薮荞麦",
+      "description": "位于雷门前并木通的老字号荞麦面店，以浓郁蘸汁闻名。",
+      "address": "东京都台东区雷门2-11-9",
+      "opening_hours": null,
+      "area": "雷门"
+    },
+    "pelican": {
+      "name": "鹈鹕面包",
+      "description": "创业于1942年的面包店，只烤制吐司和餐包。",
+      "address": "东京都台东区寿4-7-4",
+      "opening_hours": null,
+      "area": "田原町"
+    },
+    "kameju": {
+      "name": "龟十",
+      "description": "雷门前的和果子店，招牌是松软的铜锣烧。",
+      "address": "东京都台东区雷门2-18-11",
+      "opening_hours": null,
+      "area": "雷门"
+    },
+    "bentenyama-miyakozushi": {
+      "name": "弁天山美家古寿司",
+      "description": "创业于1866年。传承江户时代技法的江户前寿司老店。",
+      "address": "东京都台东区浅草2-1-16",
+      "opening_hours": null,
+      "area": "浅草寺周边"
+    },
+    "komagata-maekawa": {
+      "name": "驹形 前川 浅草本店",
+      "description": "位于隅田川畔的鳗鱼料理老店。",
+      "address": "东京都台东区驹形2-1-29",
+      "opening_hours": null,
+      "area": "驹形"
+    },
+    "owariya": {
+      "name": "尾张屋 本店",
+      "description": "以大虾天妇罗荞麦面闻名的荞麦面老店。",
+      "address": "东京都台东区浅草1-7-1",
+      "opening_hours": null,
+      "area": "雷门"
+    },
+    "shochan": {
+      "name": "正酱",
+      "description": "Hoppy通的大众酒馆，招牌是不断续汤炖煮的牛杂。",
+      "address": "东京都台东区浅草2-7-13",
+      "opening_hours": null,
+      "area": "Hoppy通"
+    },
+    "kokonoe": {
+      "name": "浅草九重",
+      "description": "仲见世的炸馒头专卖店，可在店头品尝现炸馒头。",
+      "address": "东京都台东区浅草2-3-1",
+      "opening_hours": null,
+      "area": "仲见世"
+    },
+    "kimuraya-honten": {
+      "name": "木村家本店",
+      "description": "创业于1868年。位于仲见世的人形烧始祖。",
+      "address": "东京都台东区浅草2-3-1",
+      "opening_hours": null,
+      "area": "仲见世"
+    },
+    "umemura": {
+      "name": "梅村",
+      "description": "以加满豆子的豆寒天闻名的甜品店。",
+      "address": "东京都台东区浅草3-22-12",
+      "opening_hours": null,
+      "area": "观音里"
+    },
+    "fruit-parlor-goto": {
+      "name": "Goto水果甜品店",
+      "description": "创业于1946年的水果甜品店，使用时令水果的芭菲很受欢迎。",
+      "address": "东京都台东区浅草2-15-4",
+      "opening_hours": null,
+      "area": "瓢通"
+    },
+    "grill-grand": {
+      "name": "Grill Grand",
+      "description": "位于观音里的日式西餐老店，蛋包饭和炖牛肉很受欢迎。",
+      "address": "东京都台东区浅草3-24-6",
+      "opening_hours": null,
+      "area": "观音里"
+    },
+    "chinya": {
+      "name": "寿喜烧 Chinya 浅草本店",
+      "description": "创业于1880年的寿喜烧老店，2022年迁至江户通沿线。",
+      "address": "东京都台东区花川户2-16-1",
+      "opening_hours": null,
+      "area": "花川户"
+    },
+    "tokiwado": {
+      "name": "常盘堂雷米花本铺 雷门本店",
+      "description": "紧邻雷门的雷米花老店，店头有现场制作表演。",
+      "address": "东京都台东区浅草1-3-2",
+      "opening_hours": null,
+      "area": "雷门"
+    },
+    "yonekyu": {
+      "name": "米久本店",
+      "description": "创业于1886年的牛锅老店。",
+      "address": "东京都台东区浅草2-17-10",
+      "opening_hours": null,
+      "area": "瓢通"
+    },
+    "suzukien": {
+      "name": "寿寿喜园 浅草本店",
+      "description": "以7种浓度可选的抹茶意式冰淇淋闻名的日本茶专卖店。",
+      "address": "东京都台东区浅草3-4-3",
+      "opening_hours": null,
+      "area": "言问通"
+    },
+    "asakusa-naniwaya": {
+      "name": "浅草浪花家",
+      "description": "麻布十番浪花家总本店的分店，以鲷鱼烧和刨冰闻名。",
+      "address": "东京都台东区浅草2-12-4",
+      "opening_hours": null,
+      "area": "浅草六区"
+    },
+    "imahan-bekkan": {
+      "name": "今半别馆",
+      "description": "位于仲见世后方小巷的寿喜烧及日本料理店。",
+      "address": "东京都台东区浅草2-2-5",
+      "opening_hours": null,
+      "area": "浅草寺周边"
+    },
+    "raishuken": {
+      "name": "来集轩",
+      "description": "浅草代表性的老字号拉面店，猪骨鸡骨酱油汤底，云吞面很受欢迎。",
+      "address": "东京都台东区西浅草2-26-3",
+      "opening_hours": null,
+      "area": "西浅草"
+    },
+    "yukikage": {
+      "name": "东京鸡白汤拉面 Yukikage 浅草本店",
+      "description": "紧邻浅草站的鸡白汤拉面专卖店。",
+      "address": "东京都台东区浅草1-2-12",
+      "opening_hours": null,
+      "area": "雷门"
+    },
+    "menya-maruichi": {
+      "name": "面屋丸一",
+      "description": "无汤拌面与蘸面专卖店。",
+      "address": "东京都台东区浅草2-22-10",
+      "opening_hours": null,
+      "area": "浅草六区"
+    },
+    "asakusa-kaikaro": {
+      "name": "浅草开化楼",
+      "description": "创业于1950年的制面所，为知名拉面、蘸面店供面，早上也直销。",
+      "address": "东京都台东区元浅草4-5-14",
+      "opening_hours": null,
+      "area": "元浅草"
+    },
+    "sometaro": {
+      "name": "风流御好烧 染太郎",
+      "description": "在榻榻米座席上自己煎制的御好烧老店。",
+      "address": "东京都台东区西浅草2-2-2",
+      "opening_hours": null,
+      "area": "田原町"
+    },
+    "coffee-tengoku": {
+      "name": "珈琲 天国",
+      "description": "传法院通附近的咖啡馆，松饼广受好评。",
+      "address": "东京都台东区浅草1-41-9",
+      "opening_hours": null,
+      "area": "浅草六区"
+    },
+    "lodge-akaishi": {
+      "name": "珈琲 Lodge 赤石",
+      "description": "观音里的复古咖啡馆。",
+      "address": "东京都台东区浅草3-8-4",
+      "opening_hours": null,
+      "area": "观音里"
+    },
+    "coffee-aroma": {
+      "name": "珈琲 Aroma",
+      "description": "新仲见世附近的复古咖啡馆。",
+      "address": "东京都台东区浅草1-24-5",
+      "opening_hours": null,
+      "area": "新仲见世"
+    },
+    "fukuchan": {
+      "name": "福酱",
+      "description": "浅草地下街的站食炒面店，招牌是咖喱酱炒面。",
+      "address": "东京都台东区浅草1-1-12 浅草地下街",
+      "opening_hours": null,
+      "area": "浅草站周边"
     }
   }
 }

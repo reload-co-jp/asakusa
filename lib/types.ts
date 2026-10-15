@@ -88,6 +88,7 @@ export const PLACE_TYPES = {
   theater: "劇場",
   park: "公園",
   tourist_spot: "観光スポット",
+  restaurant: "飲食店",
   other: "その他",
 } as const
 

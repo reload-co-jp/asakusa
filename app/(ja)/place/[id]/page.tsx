@@ -23,6 +23,7 @@ const SCHEMA_TYPES: Record<PlaceType, string> = {
   theater: "PerformingArtsTheater",
   park: "Park",
   tourist_spot: "TouristAttraction",
+  restaurant: "Restaurant",
   other: "Place",
 }
 
