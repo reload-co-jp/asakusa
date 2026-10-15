@@ -105,13 +105,6 @@
     "priority": 2
   },
   {
-    "id": "asakusa-engei-hall",
-    "name": "浅草演芸ホール",
-    "url": "https://www.asakusaengei.com/schedule/",
-    "source_type": "official",
-    "priority": 2
-  },
-  {
     "id": "asakusa-toyokan",
     "name": "浅草東洋館",
     "url": "https://www.asakusatoyokan.com/timetable/",
@@ -215,5 +208,26 @@
     "url": "https://tabelog.com/tokyo/A1312/A131203/",
     "source_type": "gourmet_site",
     "priority": 5
+  },
+  {
+    "id": "skytree",
+    "name": "東京スカイツリー",
+    "url": "https://www.tokyo-skytree.jp/event/",
+    "source_type": "official",
+    "priority": 2
+  },
+  {
+    "id": "visit-sumida",
+    "name": "墨田区観光協会",
+    "url": "https://visit-sumida.jp/event/",
+    "source_type": "official",
+    "priority": 2
+  },
+  {
+    "id": "walkerplus-taito",
+    "name": "ウォーカープラス 台東区",
+    "url": "https://www.walkerplus.com/event_list/ar0313106/taito/",
+    "source_type": "event_platform",
+    "priority": 4
   }
 ]
