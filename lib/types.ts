@@ -79,6 +79,16 @@ export const AREAS = {
 
 export type Area = keyof typeof AREAS
 
+// 検索ニーズ別のテーマページ(例: 浅草 無料 イベント)。判定は lib/data.ts の THEME_PATTERNS
+export const THEMES = {
+  free: "無料イベント",
+  kids: "子連れ・親子",
+  workshop: "体験・ワークショップ",
+  night: "夜・ライトアップ",
+} as const
+
+export type Theme = keyof typeof THEMES
+
 export const PLACE_TYPES = {
   store: "店舗",
   facility: "施設",

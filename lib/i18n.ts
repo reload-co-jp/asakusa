@@ -99,9 +99,36 @@ const ja = {
     empty: "現在情報はありません。",
   },
   imageAlt: (place: string, title: string) => `${place}の${title}`,
+  themes: {
+    free: {
+      label: "無料イベント",
+      title: "浅草の無料イベント・入場無料の催し",
+      description:
+        "浅草で開催中・開催予定の入場無料・参加無料のイベントをまとめています。祭り・展示・コンサート・体験企画など、お金をかけずに浅草を楽しめる催しを開催日順に掲載。",
+    },
+    kids: {
+      label: "子連れ・親子",
+      title: "浅草の子連れ・親子で楽しめるイベント",
+      description:
+        "浅草で開催中・開催予定の子ども向け・親子向けイベントをまとめています。七五三などの行事やキッズ向け体験・ワークショップなど、家族で楽しめる催しを開催日順に掲載。",
+    },
+    workshop: {
+      label: "体験・ワークショップ",
+      title: "浅草の体験・ワークショップイベント",
+      description:
+        "浅草で開催中・開催予定の体験イベント・ワークショップをまとめています。伝統文化体験やものづくり、収穫体験など、見るだけでなく参加して楽しめる催しを開催日順に掲載。",
+    },
+    night: {
+      label: "夜・ライトアップ",
+      title: "夜の浅草イベント・ライトアップ情報",
+      description:
+        "浅草で開催中・開催予定の夜のイベント・ライトアップ・夜公演をまとめています。灯籠祭や夜景を楽しめる催し、夜の部のある公演など、夜の浅草の楽しみ方を開催日順に掲載。",
+    },
+  },
   hub: {
     byPeriod: "期間から探す",
     byGenre: "ジャンルから探す",
+    byTheme: "テーマから探す",
     periodTitle: (label: string, period: string) =>
       `${label}の浅草イベント｜${period}`,
     periodMetaTitle: (label: string) =>
@@ -173,7 +200,8 @@ const ja = {
   placeTypes: PLACE_TYPES as Record<PlaceType, string>,
   gourmetGenres: GOURMET_GENRES as Record<GourmetGenre, string>,
   gourmet: {
-    listTitle: "浅草グルメ・名店一覧｜すき焼・天ぷら・ラーメン・甘味｜浅草ライブ",
+    listTitle:
+      "浅草グルメ・名店一覧｜すき焼・天ぷら・ラーメン・甘味｜浅草ライブ",
     listHeading: "浅草グルメ・名店",
     listDescription: (count: number) =>
       `すき焼・天ぷら・蕎麦・ラーメン・洋食・甘味・喫茶など、浅草の老舗・有名店${count}件をジャンル別にまとめています。`,
@@ -194,7 +222,8 @@ const ja = {
     link: (area: string) => `${area}エリアの情報一覧 →`,
     listTitle: "エリアから探す｜浅草周辺のイベント・新店舗・ニュース",
     listHeading: "エリアから探す",
-    listDescription: "浅草・蔵前・浅草橋・押上など浅草周辺のエリア別に、イベント・新店舗・地域ニュースをまとめています。",
+    listDescription:
+      "浅草・蔵前・浅草橋・押上など浅草周辺のエリア別に、イベント・新店舗・地域ニュースをまとめています。",
   },
 }
 
@@ -281,9 +310,36 @@ const en: Dictionary = {
     empty: "No information at the moment.",
   },
   imageAlt: (place, title) => `${title} at ${place}`,
+  themes: {
+    free: {
+      label: "Free Events",
+      title: "Free Events in Asakusa",
+      description:
+        "Free-admission and free-to-join events ongoing or coming up in Asakusa, including festivals, exhibitions, concerts and hands-on activities, listed by date.",
+    },
+    kids: {
+      label: "Kids & Families",
+      title: "Family-Friendly Events in Asakusa",
+      description:
+        "Events for kids and families ongoing or coming up in Asakusa, from traditional rites such as Shichi-Go-San to children's workshops, listed by date.",
+    },
+    workshop: {
+      label: "Experiences & Workshops",
+      title: "Hands-on Experiences & Workshops in Asakusa",
+      description:
+        "Hands-on cultural experiences, crafts and workshops ongoing or coming up in Asakusa, listed by date.",
+    },
+    night: {
+      label: "Night & Illuminations",
+      title: "Asakusa at Night: Evening Events & Illuminations",
+      description:
+        "Evening events, illuminations and night performances ongoing or coming up in Asakusa, listed by date.",
+    },
+  },
   hub: {
     byPeriod: "Browse by Date",
     byGenre: "Browse by Genre",
+    byTheme: "Browse by Theme",
     periodTitle: (label, period) => `Asakusa Events ${label} | ${period}`,
     periodMetaTitle: (label) =>
       `Asakusa Events ${label} | Festivals & Shows, Updated Daily`,
@@ -442,7 +498,8 @@ const en: Dictionary = {
     link: (area) => `All listings in ${area} →`,
     listTitle: "Browse by Area | Events, New Shops & News around Asakusa",
     listHeading: "Browse by Area",
-    listDescription: "Events, new shops and local news around Asakusa, organized by area: Asakusa, Kuramae, Asakusabashi, Oshiage and more.",
+    listDescription:
+      "Events, new shops and local news around Asakusa, organized by area: Asakusa, Kuramae, Asakusabashi, Oshiage and more.",
   },
   placeTypes: {
     store: "Shop",
@@ -538,9 +595,36 @@ const zh: Dictionary = {
     empty: "目前暂无信息。",
   },
   imageAlt: (place, title) => `${place}的${title}`,
+  themes: {
+    free: {
+      label: "免费活动",
+      title: "浅草免费活动・免费入场活动",
+      description:
+        "汇总浅草正在举办和即将举办的免费入场・免费参加活动，包括祭典、展览、音乐会和体验活动，按日期排列。",
+    },
+    kids: {
+      label: "亲子・带孩子",
+      title: "浅草亲子活动・适合带孩子的活动",
+      description:
+        "汇总浅草正在举办和即将举办的儿童・亲子活动，从七五三等传统仪式到儿童工作坊，按日期排列。",
+    },
+    workshop: {
+      label: "体验・工作坊",
+      title: "浅草体验活动・工作坊",
+      description:
+        "汇总浅草正在举办和即将举办的传统文化体验、手工制作和工作坊活动，按日期排列。",
+    },
+    night: {
+      label: "夜晚・灯光秀",
+      title: "浅草夜间活动・灯光秀信息",
+      description:
+        "汇总浅草正在举办和即将举办的夜间活动、灯光秀和夜场演出，按日期排列。",
+    },
+  },
   hub: {
     byPeriod: "按日期查找",
     byGenre: "按类别查找",
+    byTheme: "按主题查找",
     periodTitle: (label, period) => `${label}浅草活动｜${period}`,
     periodMetaTitle: (label) => `${label}浅草活动・祭典信息【每日更新】`,
     thisMonthTitle: (month) => `${month}浅草活动・祭典・演出`,
@@ -694,7 +778,8 @@ const zh: Dictionary = {
     link: (area) => `${area}地区信息一览 →`,
     listTitle: "按地区查找｜浅草周边的活动・新店・新闻",
     listHeading: "按地区查找",
-    listDescription: "按浅草、藏前、浅草桥、押上等浅草周边地区，汇总活动、新店及地区新闻。",
+    listDescription:
+      "按浅草、藏前、浅草桥、押上等浅草周边地区，汇总活动、新店及地区新闻。",
   },
   placeTypes: {
     store: "店铺",

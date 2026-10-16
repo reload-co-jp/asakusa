@@ -7,6 +7,7 @@ import {
   getContentsByPlace,
   getGourmetPlaces,
   getLatestContents,
+  getThemeEvents,
   isTranslated,
   places,
 } from "@/lib/data"
@@ -20,6 +21,8 @@ import {
   GOURMET_GENRES,
   GourmetGenre,
   Place,
+  Theme,
+  THEMES,
 } from "@/lib/types"
 
 export const dynamic = "force-static"
@@ -53,6 +56,9 @@ const pages = (): Page[] => [
     "/next-week/",
     "/this-month/",
   ].map((url) => ({ url, lastModified: buildTime })),
+  ...(Object.keys(THEMES) as Theme[])
+    .filter((theme) => getThemeEvents(theme).length > 0)
+    .map((theme) => ({ url: `/theme/${theme}/`, lastModified: buildTime })),
   ...getArchiveMonths().map(({ year, month }) => ({
     url: `/events/${year}/${month}/`,
   })),

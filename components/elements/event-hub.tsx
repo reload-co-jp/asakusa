@@ -6,7 +6,7 @@ import {
   LinkList,
 } from "@/components/elements/breadcrumbs"
 import { ContentList, Section } from "@/components/elements/content"
-import { getCategoryCount, getEventsInPeriod } from "@/lib/data"
+import { getCategoryCount, getEventsInPeriod, getThemeEvents } from "@/lib/data"
 import { formatPeriod, jstDateString, Period } from "@/lib/date"
 import {
   alternates,
@@ -16,7 +16,7 @@ import {
   localePath,
 } from "@/lib/i18n"
 import { SITE_URL } from "@/lib/json-ld"
-import { Category } from "@/lib/types"
+import { Category, Theme, THEMES } from "@/lib/types"
 
 type PeriodKey = "today" | "thisWeek" | "weekend" | "nextWeek" | "thisMonth"
 
@@ -165,6 +165,20 @@ export const EventNavigation: FC<{ current?: string }> = async ({
       </Section>
       <Section eyebrow="BY GENRE" title={t.hub.byGenre}>
         <LinkList links={genreLinks(locale)} />
+      </Section>
+      <Section eyebrow="BY THEME" title={t.hub.byTheme}>
+        <LinkList
+          links={(Object.keys(THEMES) as Theme[])
+            .filter(
+              (theme) =>
+                `/theme/${theme}/` !== current &&
+                getThemeEvents(theme).length > 0
+            )
+            .map((theme) => ({
+              name: t.themes[theme].label,
+              href: `/theme/${theme}/`,
+            }))}
+        />
       </Section>
     </>
   )

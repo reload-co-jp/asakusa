@@ -12,13 +12,33 @@ import {
   getLatestContents,
   getOngoingContentsByCategory,
   getPlace,
+  getThemeEvents,
   places,
+  THEME_PATTERNS,
 } from "./data"
 
 describe("data", () => {
   it("places / contents が読み込まれる", () => {
     expect(places.length).toBeGreaterThan(0)
     expect(contents.length).toBeGreaterThan(0)
+  })
+
+  it("THEME_PATTERNS は料金表記の子供料金や無料登録を拾わない", () => {
+    expect(THEME_PATTERNS.free.test("入場無料")).toBe(true)
+    expect(THEME_PATTERNS.free.test("参加費は無料")).toBe(true)
+    expect(THEME_PATTERNS.free.test("アプリへの無料登録が必要")).toBe(false)
+    expect(THEME_PATTERNS.kids.test("親子向けイベント")).toBe(true)
+    expect(THEME_PATTERNS.kids.test("一般3000円、子供1500円")).toBe(false)
+  })
+
+  it("getThemeEvents は終了済みイベントを含まない", () => {
+    const now = new Date("2026-10-17T12:00:00+09:00")
+    const events = getThemeEvents("free", now)
+    expect(
+      events.every(
+        (content) => (content.end_at ?? content.start_at)! >= "2026-10-17"
+      )
+    ).toBe(true)
   })
 
   it("getPlace はIDで取得できる", () => {
