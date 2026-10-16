@@ -79,7 +79,7 @@ export const AREAS = {
 
 export type Area = keyof typeof AREAS
 
-// 検索ニーズ別のテーマページ(例: 浅草 無料 イベント)。判定は lib/data.ts の THEME_PATTERNS
+// 検索ニーズ別のテーマページ(例: 浅草 無料 イベント)。記事の tags で判定(scripts/lib/themes.mjs に判定基準)
 export const THEMES = {
   free: "無料イベント",
   kids: "子連れ・親子",
@@ -150,6 +150,8 @@ export type Content = {
   body: string
   category: Category
   area: Area
+  // テーマページ(/theme/〇〇/)用のタグ。scripts/tag-contents.mjs・fetch-contents.mjs が付与
+  tags?: Theme[]
   published_at: string
   start_at: string | null
   end_at: string | null

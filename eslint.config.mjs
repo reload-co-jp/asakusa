@@ -12,6 +12,26 @@ export default [
   ...tseslint.configs.recommended,
   ...fixupConfigRules(pluginReact.configs.flat.recommended),
   ...fixupConfigRules(jsxA11y.flatConfigs.recommended),
+  // scripts/ はNodeで直接実行する
+  {
+    files: ["scripts/**/*.mjs"],
+    languageOptions: {
+      globals: Object.fromEntries(
+        [
+          "AbortController",
+          "AbortSignal",
+          "Buffer",
+          "clearTimeout",
+          "console",
+          "fetch",
+          "process",
+          "setTimeout",
+          "URL",
+          "URLSearchParams",
+        ].map((name) => [name, "readonly"])
+      ),
+    },
+  },
   {
     plugins: {
       "react-hooks": pluginReactHooks,

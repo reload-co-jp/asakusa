@@ -7,6 +7,7 @@ import path from "path"
 import * as cheerio from "cheerio"
 import { fetch as undiciFetch, Agent } from "undici"
 import { extractImgCandidates, downloadImage, guessExt } from "./lib/images.mjs"
+import { parseTags, THEME_RULE, THEMES } from "./lib/themes.mjs"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, "..")
@@ -168,6 +169,11 @@ const mergeIntoExisting = (existing, candidate, source, listingUrl) => {
     changed = true
   }
 
+  const tags = parseTags([...(existing.tags ?? []), ...candidate.tags ?? []])
+  if (tags.length !== (existing.tags ?? []).length) {
+    existing.tags = tags
+    changed = true
+  }
   if (candidate.start_at && !existing.start_at) {
     existing.start_at = candidate.start_at
     changed = true
@@ -291,6 +297,7 @@ Webページのテキストから、浅草エリアのイベント・新規オ�
   "body": "詳細本文(Markdown形式。背景・詳細・見どころなどを含め6〜10文程度でしっかり記述。段落は空行で区切り、必要に応じて見出し・強調・箇条書きなどのMarkdown記法を使ってよい)",
   "category": "${CATEGORIES.join(" | ")} のいずれか",
   "area": "${Object.keys(AREAS).join(" | ")} のいずれか",
+  "tags": "${Object.keys(THEMES).join(" | ")} から該当するものの配列",
   "published_at": "YYYY-MM-DD",
   "start_at": "YYYY-MM-DD または null",
   "end_at": "YYYY-MM-DD または null",
@@ -304,6 +311,7 @@ Webページのテキストから、浅草エリアのイベント・新規オ�
 - areaは記事の場所が属するエリア(${Object.entries(AREAS)
   .map(([key, name]) => `${key}=${name}`)
   .join("、")})。判断できない場合はasakusa
+${THEME_RULE}
 - 日付が不明な場合は推測せずnullにする
 - 今日より前にend_atが過ぎているイベントは除外する
 - トップページの案内文など一般的すぎる情報は抽出しない
@@ -568,6 +576,7 @@ const main = async () => {
       area: Object.hasOwn(AREAS, candidate.area ?? "")
         ? candidate.area
         : "asakusa",
+      tags: parseTags(candidate.tags),
       published_at: candidate.published_at ?? today,
       start_at: candidate.start_at ?? null,
       end_at: candidate.end_at ?? null,

@@ -13,7 +13,10 @@
     "place_id": "engei-hall",
     "source_id": "engei-hall",
     "source_url": "https://www.asakusaengei.com/schedule/",
-    "image_url": "/images/sources/engei-hall.jpg"
+    "image_url": "/images/sources/engei-hall.jpg",
+    "tags": [
+      "night"
+    ]
   },
   {
     "id": 2,
@@ -29,7 +32,8 @@
     "place_id": "hanayashiki",
     "source_id": "hanayashiki",
     "source_url": "https://www.hanayashiki.net/stage/",
-    "image_url": "/images/sources/hanayashiki.png"
+    "image_url": "/images/sources/hanayashiki.png",
+    "tags": []
   },
   {
     "id": 3,
@@ -45,7 +49,8 @@
     "place_id": "rox",
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/sources/rox.webp"
+    "image_url": "/images/sources/rox.webp",
+    "tags": []
   },
   {
     "id": 4,
@@ -65,7 +70,8 @@
     "source_urls": [
       "https://www.senso-ji.jp/annual_event/23.html",
       "https://www.senso-ji.jp/annual_event/"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 5,
@@ -97,7 +103,8 @@
     "place_id": "ekimise",
     "source_id": "ekimise",
     "source_url": "https://www.ekimise.jp/",
-    "image_url": "/images/sources/ekimise.jpg"
+    "image_url": "/images/sources/ekimise.jpg",
+    "tags": []
   },
   {
     "id": 7,
@@ -113,7 +120,10 @@
     "place_id": "matsuya-asakusa",
     "source_id": "matsuya",
     "source_url": "https://www.matsuya.com/asakusa/",
-    "image_url": "/images/sources/matsuya.png"
+    "image_url": "/images/sources/matsuya.png",
+    "tags": [
+      "free"
+    ]
   },
   {
     "id": 8,
@@ -161,7 +171,10 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/sources/koukaidou.jpg"
+    "image_url": "/images/sources/koukaidou.jpg",
+    "tags": [
+      "night"
+    ]
   },
   {
     "id": 11,
@@ -209,7 +222,8 @@
     "place_id": "nakamise",
     "source_id": "e-asakusa",
     "source_url": "https://e-asakusa.jp/",
-    "image_url": "/images/sources/e-asakusa.jpg"
+    "image_url": "/images/sources/e-asakusa.jpg",
+    "tags": []
   },
   {
     "id": 14,
@@ -273,7 +287,8 @@
     "place_id": "sensoji",
     "source_id": "sensoji",
     "source_url": "https://www.senso-ji.jp/annual_event/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 18,
@@ -289,7 +304,8 @@
     "place_id": "sensoji",
     "source_id": "sensoji",
     "source_url": "https://www.senso-ji.jp/annual_event/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 19,
@@ -305,7 +321,8 @@
     "place_id": "sensoji",
     "source_id": "sensoji",
     "source_url": "https://www.senso-ji.jp/annual_event/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 21,
@@ -321,7 +338,8 @@
     "place_id": "sensoji",
     "source_id": "sensoji",
     "source_url": "https://www.senso-ji.jp/annual_event/17.html",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 22,
@@ -337,7 +355,8 @@
     "place_id": "sensoji",
     "source_id": "sensoji",
     "source_url": "https://www.senso-ji.jp/annual_event/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 23,
@@ -353,7 +372,10 @@
     "place_id": "sensoji",
     "source_id": "sensoji",
     "source_url": "https://www.senso-ji.jp/annual_event/18.html",
-    "image_url": null
+    "image_url": null,
+    "tags": [
+      "kids"
+    ]
   },
   {
     "id": 24,
@@ -369,7 +391,8 @@
     "place_id": "sensoji",
     "source_id": "sensoji",
     "source_url": "https://www.senso-ji.jp/annual_event/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 25,
@@ -388,6 +411,9 @@
     "image_url": null,
     "source_urls": [
       "https://www.senso-ji.jp/annual_event/"
+    ],
+    "tags": [
+      "night"
     ]
   },
   {
@@ -404,7 +430,10 @@
     "place_id": "sensoji",
     "source_id": "sensoji",
     "source_url": "https://www.senso-ji.jp/annual_event/24.html",
-    "image_url": null
+    "image_url": null,
+    "tags": [
+      "night"
+    ]
   },
   {
     "id": 27,
@@ -420,7 +449,10 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
+    "image_url": null,
+    "tags": [
+      "kids"
+    ]
   },
   {
     "id": 28,
@@ -436,7 +468,10 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/175.jpg"
+    "image_url": "/images/contents/175.jpg",
+    "tags": [
+      "night"
+    ]
   },
   {
     "id": 29,
@@ -452,7 +487,8 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/141.jpg"
+    "image_url": "/images/contents/141.jpg",
+    "tags": []
   },
   {
     "id": 31,
@@ -468,7 +504,8 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/143.jpg"
+    "image_url": "/images/contents/143.jpg",
+    "tags": []
   },
   {
     "id": 32,
@@ -484,7 +521,10 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
+    "image_url": null,
+    "tags": [
+      "free"
+    ]
   },
   {
     "id": 33,
@@ -500,7 +540,10 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/145.jpg"
+    "image_url": "/images/contents/145.jpg",
+    "tags": [
+      "free"
+    ]
   },
   {
     "id": 34,
@@ -516,7 +559,10 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/146.jpg"
+    "image_url": "/images/contents/146.jpg",
+    "tags": [
+      "free"
+    ]
   },
   {
     "id": 35,
@@ -532,7 +578,8 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/147.jpg"
+    "image_url": "/images/contents/147.jpg",
+    "tags": []
   },
   {
     "id": 36,
@@ -548,7 +595,8 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/148.jpg"
+    "image_url": "/images/contents/148.jpg",
+    "tags": []
   },
   {
     "id": 37,
@@ -564,7 +612,8 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/150.jpg"
+    "image_url": "/images/contents/150.jpg",
+    "tags": []
   },
   {
     "id": 38,
@@ -583,7 +632,8 @@
     "image_url": "/images/contents/151.jpg",
     "source_urls": [
       "https://asakusa-koukaidou.net/home/event.html"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 39,
@@ -599,7 +649,8 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/152.jpg"
+    "image_url": "/images/contents/152.jpg",
+    "tags": []
   },
   {
     "id": 45,
@@ -618,7 +669,8 @@
     "image_url": "/images/contents/45.webp",
     "source_urls": [
       "https://www.rox.co.jp/shop/detail.html?shop_id=1328"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 51,
@@ -670,7 +722,8 @@
     "source_urls": [
       "https://prtimes.jp/main/html/rd/p/000009634.000016064.html",
       "https://collabo-cafe.com/events/collabo/sakamoto-days-popup-street-asakusa-2026/"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 54,
@@ -718,7 +771,8 @@
     "place_id": "sensoji",
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 58,
@@ -750,7 +804,8 @@
     "place_id": "rox",
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/62.webp"
+    "image_url": "/images/contents/62.webp",
+    "tags": []
   },
   {
     "id": 66,
@@ -785,7 +840,8 @@
     "image_url": "/images/contents/67.png",
     "source_urls": [
       "https://www.rox.co.jp/shop/detail.html?shop_id=1336"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 70,
@@ -881,7 +937,8 @@
     "place_id": "sensoji",
     "source_id": "sensoji",
     "source_url": "https://www.senso-ji.jp/annual_event/20.html",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 98,
@@ -900,7 +957,8 @@
     "image_url": null,
     "source_urls": [
       "https://www.senso-ji.jp/annual_event/"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 100,
@@ -1028,7 +1086,10 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/107.jpg"
+    "image_url": "/images/contents/107.jpg",
+    "tags": [
+      "night"
+    ]
   },
   {
     "id": 108,
@@ -1049,7 +1110,8 @@
       "https://www.rox.co.jp/shop/detail.html?shop_id=1170",
       "https://www.rox.co.jp/shop/detail.html?shop_id=1192",
       "https://www.rox.co.jp/news/"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 109,
@@ -1065,7 +1127,8 @@
     "place_id": "rox",
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/109.webp"
+    "image_url": "/images/contents/109.webp",
+    "tags": []
   },
   {
     "id": 110,
@@ -1081,7 +1144,8 @@
     "place_id": "rox",
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/110.webp"
+    "image_url": "/images/contents/110.webp",
+    "tags": []
   },
   {
     "id": 111,
@@ -1097,7 +1161,8 @@
     "place_id": "rox",
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/111.webp"
+    "image_url": "/images/contents/111.webp",
+    "tags": []
   },
   {
     "id": 114,
@@ -1113,7 +1178,8 @@
     "place_id": "rox",
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/114.webp"
+    "image_url": "/images/contents/114.webp",
+    "tags": []
   },
   {
     "id": 115,
@@ -1152,6 +1218,9 @@
     "image_url": "/images/contents/117.webp",
     "source_urls": [
       "https://www.walkerplus.com/event/ar0313e554416/"
+    ],
+    "tags": [
+      "night"
     ]
   },
   {
@@ -1171,6 +1240,9 @@
     "image_url": "/images/contents/120.jpg",
     "source_urls": [
       "https://prtimes.jp/main/html/rd/p/000000490.000046440.html"
+    ],
+    "tags": [
+      "night"
     ]
   },
   {
@@ -1219,7 +1291,8 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/126.jpg"
+    "image_url": "/images/contents/126.jpg",
+    "tags": []
   },
   {
     "id": 128,
@@ -1235,7 +1308,8 @@
     "place_id": null,
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/128.webp"
+    "image_url": "/images/contents/128.webp",
+    "tags": []
   },
   {
     "id": 129,
@@ -1251,7 +1325,8 @@
     "place_id": null,
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/129.webp"
+    "image_url": "/images/contents/129.webp",
+    "tags": []
   },
   {
     "id": 130,
@@ -1267,7 +1342,8 @@
     "place_id": "matsuya-asakusa",
     "source_id": "matsuya",
     "source_url": "https://www.matsuya.com/asakusa/",
-    "image_url": "/images/contents/130.jpg"
+    "image_url": "/images/contents/130.jpg",
+    "tags": []
   },
   {
     "id": 131,
@@ -1283,7 +1359,8 @@
     "place_id": "matsuya-asakusa",
     "source_id": "matsuya",
     "source_url": "https://www.matsuya.com/asakusa/",
-    "image_url": "/images/contents/131.jpg"
+    "image_url": "/images/contents/131.jpg",
+    "tags": []
   },
   {
     "id": 132,
@@ -1299,7 +1376,8 @@
     "place_id": "matsuya-asakusa",
     "source_id": "matsuya",
     "source_url": "https://www.matsuya.com/asakusa/news/2026/0901/toraya-16/",
-    "image_url": "/images/contents/132.jpg"
+    "image_url": "/images/contents/132.jpg",
+    "tags": []
   },
   {
     "id": 133,
@@ -1315,7 +1393,8 @@
     "place_id": "matsuya-asakusa",
     "source_id": "matsuya",
     "source_url": "https://www.matsuya.com/asakusa/",
-    "image_url": "/images/contents/133.jpg"
+    "image_url": "/images/contents/133.jpg",
+    "tags": []
   },
   {
     "id": 134,
@@ -1363,7 +1442,10 @@
     "place_id": "hanayashiki",
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89",
-    "image_url": "/images/contents/139.jpg"
+    "image_url": "/images/contents/139.jpg",
+    "tags": [
+      "kids"
+    ]
   },
   {
     "id": 140,
@@ -1395,7 +1477,8 @@
     "place_id": null,
     "source_id": "asakusa-kyugeki",
     "source_url": "https://asakusa-kokono.com/kyugeki/calendar/",
-    "image_url": "/images/contents/153.png"
+    "image_url": "/images/contents/153.png",
+    "tags": []
   },
   {
     "id": 154,
@@ -1411,7 +1494,8 @@
     "place_id": null,
     "source_id": "asakusa-kyugeki",
     "source_url": "https://asakusa-kokono.com/kyugeki/calendar/",
-    "image_url": "/images/contents/154.png"
+    "image_url": "/images/contents/154.png",
+    "tags": []
   },
   {
     "id": 155,
@@ -1430,7 +1514,8 @@
     "image_url": "/images/contents/155.png",
     "source_urls": [
       "https://asakusa-kokono.com/kyugeki/calendar/"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 156,
@@ -1446,7 +1531,10 @@
     "place_id": null,
     "source_id": "asakusa-kyugeki",
     "source_url": "https://asakusa-kokono.com/kyugeki/2026/08/id-15246",
-    "image_url": "/images/contents/156.png"
+    "image_url": "/images/contents/156.png",
+    "tags": [
+      "workshop"
+    ]
   },
   {
     "id": 157,
@@ -1462,7 +1550,8 @@
     "place_id": null,
     "source_id": "asakusa-kyugeki",
     "source_url": "https://asakusa-kokono.com/kyugeki/2026/04/id-15112",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 158,
@@ -1481,7 +1570,8 @@
     "image_url": null,
     "source_urls": [
       "https://news.yahoo.co.jp/articles/2ef702493b5627bfb1fb7f061890217f23eca1f5"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 159,
@@ -1497,7 +1587,8 @@
     "place_id": null,
     "source_id": "asakusa-kyugeki",
     "source_url": "https://asakusa-kokono.com/kyugeki/2026/07/id-15225",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 160,
@@ -1513,7 +1604,8 @@
     "place_id": null,
     "source_id": "asakusa-kyugeki",
     "source_url": "https://asakusa-kokono.com/kyugeki/2026/07/id-15210",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 161,
@@ -1529,7 +1621,10 @@
     "place_id": "asakusajinja",
     "source_id": "e-asakusa",
     "source_url": "https://e-asakusa.jp/",
-    "image_url": "/images/contents/161.jpg"
+    "image_url": "/images/contents/161.jpg",
+    "tags": [
+      "night"
+    ]
   },
   {
     "id": 162,
@@ -1548,6 +1643,9 @@
     "image_url": "/images/contents/162.jpg",
     "source_urls": [
       "https://www.enjoytokyo.jp/event/2084286/"
+    ],
+    "tags": [
+      "workshop"
     ]
   },
   {
@@ -1564,7 +1662,8 @@
     "place_id": "rox",
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/163.webp"
+    "image_url": "/images/contents/163.webp",
+    "tags": []
   },
   {
     "id": 164,
@@ -1580,7 +1679,8 @@
     "place_id": "matsuya-asakusa",
     "source_id": "matsuya",
     "source_url": "https://www.matsuya.com/asakusa/",
-    "image_url": "/images/contents/164.jpg"
+    "image_url": "/images/contents/164.jpg",
+    "tags": []
   },
   {
     "id": 165,
@@ -1612,7 +1712,8 @@
     "place_id": null,
     "source_id": "asakusa-toyokan",
     "source_url": "https://www.asakusatoyokan.com/timetable/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 167,
@@ -1628,7 +1729,8 @@
     "place_id": null,
     "source_id": "asakusa-toyokan",
     "source_url": "https://www.asakusatoyokan.com/timetable/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 168,
@@ -1644,7 +1746,8 @@
     "place_id": null,
     "source_id": "asakusa-toyokan",
     "source_url": "https://www.asakusatoyokan.com/timetable/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 169,
@@ -1660,7 +1763,8 @@
     "place_id": null,
     "source_id": "asakusa-toyokan",
     "source_url": "https://www.asakusatoyokan.com/timetable/period/46/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 172,
@@ -1676,7 +1780,8 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/172.jpg"
+    "image_url": "/images/contents/172.jpg",
+    "tags": []
   },
   {
     "id": 174,
@@ -1713,7 +1818,8 @@
       "https://e-asakusa.jp/photos/111600",
       "https://asakusa.keizai.biz/headline/1097/",
       "https://asakusa.keizai.biz/headline/1097"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 177,
@@ -1732,6 +1838,9 @@
     "image_url": "/images/contents/177.jpg",
     "source_urls": [
       "https://e-asakusa.jp/photos/111318"
+    ],
+    "tags": [
+      "night"
     ]
   },
   {
@@ -1748,7 +1857,8 @@
     "place_id": "matsuya-asakusa",
     "source_id": "matsuya",
     "source_url": "https://www.matsuya.com/asakusa/news/2026/0915/leonartjewelry-oksana-pop-up/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 179,
@@ -1764,7 +1874,8 @@
     "place_id": "matsuya-asakusa",
     "source_id": "matsuya",
     "source_url": "https://www.matsuya.com/asakusa/",
-    "image_url": "/images/contents/179.jpg"
+    "image_url": "/images/contents/179.jpg",
+    "tags": []
   },
   {
     "id": 180,
@@ -1780,7 +1891,8 @@
     "place_id": "hanayashiki",
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 181,
@@ -1796,7 +1908,10 @@
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89",
-    "image_url": null
+    "image_url": null,
+    "tags": [
+      "kids"
+    ]
   },
   {
     "id": 182,
@@ -1863,7 +1978,8 @@
     "image_url": "/images/contents/196.png",
     "source_urls": [
       "https://asakusa-kokono.com/kyugeki/calendar/"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 186,
@@ -1975,7 +2091,8 @@
     "place_id": null,
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/193.webp"
+    "image_url": "/images/contents/193.webp",
+    "tags": []
   },
   {
     "id": 194,
@@ -1991,7 +2108,8 @@
     "place_id": null,
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/194.webp"
+    "image_url": "/images/contents/194.webp",
+    "tags": []
   },
   {
     "id": 195,
@@ -2081,7 +2199,8 @@
     "source_urls": [
       "https://www.matsuya.com/asakusa/news/2026/0922/watches-special-sales/",
       "https://www.matsuya.com/asakusa/news/2026/0922/tokyo-megane-special-sales/"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 201,
@@ -2097,7 +2216,10 @@
     "place_id": "hanayashiki",
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000161.000082301.html",
-    "image_url": "/images/contents/201.jpg"
+    "image_url": "/images/contents/201.jpg",
+    "tags": [
+      "kids"
+    ]
   },
   {
     "id": 202,
@@ -2113,7 +2235,8 @@
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89",
-    "image_url": "/images/contents/202.jpg"
+    "image_url": "/images/contents/202.jpg",
+    "tags": []
   },
   {
     "id": 203,
@@ -2145,7 +2268,8 @@
     "place_id": null,
     "source_id": "rox",
     "source_url": "https://www.asakusa-begin.com/news/998/",
-    "image_url": "/images/contents/205.png"
+    "image_url": "/images/contents/205.png",
+    "tags": []
   },
   {
     "id": 207,
@@ -2177,7 +2301,8 @@
     "place_id": null,
     "source_id": "asakusa-kyugeki",
     "source_url": "https://asakusa-kokono.com/kyugeki/calendar/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 209,
@@ -2196,6 +2321,10 @@
     "image_url": "/images/contents/209.jpg",
     "source_urls": [
       "https://e-asakusa.jp/photos/111334"
+    ],
+    "tags": [
+      "free",
+      "workshop"
     ]
   },
   {
@@ -2212,7 +2341,8 @@
     "place_id": "asakusajinja",
     "source_id": "asakusajinja",
     "source_url": "https://asakusajinja.jp/2026/09/21/%e7%a7%8b%e5%88%86%e5%88%87%e3%82%8a%e7%b5%b5%e7%89%b9%e5%88%a5%e5%be%a1%e6%9c%b1%e5%8d%b0/",
-    "image_url": "/images/contents/210.jpeg"
+    "image_url": "/images/contents/210.jpeg",
+    "tags": []
   },
   {
     "id": 211,
@@ -2228,7 +2358,8 @@
     "place_id": null,
     "source_id": "asakusa-kyugeki",
     "source_url": "https://asakusa-kokono.com/kyugeki/2026/09/id-15271",
-    "image_url": "/images/contents/211.png"
+    "image_url": "/images/contents/211.png",
+    "tags": []
   },
   {
     "id": 213,
@@ -2244,7 +2375,10 @@
     "place_id": "asakusajinja",
     "source_id": "asakusajinja",
     "source_url": "https://asakusajinja.jp/2026/09/25/%e7%a4%be%e5%ad%90%e5%b1%8b/",
-    "image_url": "/images/contents/213.jpg"
+    "image_url": "/images/contents/213.jpg",
+    "tags": [
+      "workshop"
+    ]
   },
   {
     "id": 214,
@@ -2276,7 +2410,8 @@
     "place_id": "ekimise",
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000311.000043435.html",
-    "image_url": "/images/contents/215.jpg"
+    "image_url": "/images/contents/215.jpg",
+    "tags": []
   },
   {
     "id": 216,
@@ -2308,7 +2443,10 @@
     "place_id": null,
     "source_id": "asakusa-kyugeki",
     "source_url": "https://asakusa-kokono.com/kyugeki/2026/09/id-15273",
-    "image_url": "/images/contents/217.png"
+    "image_url": "/images/contents/217.png",
+    "tags": [
+      "night"
+    ]
   },
   {
     "id": 218,
@@ -2327,7 +2465,8 @@
     "image_url": "/images/contents/218.jpg",
     "source_urls": [
       "https://e-asakusa.jp/photos/111401"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 219,
@@ -2359,7 +2498,8 @@
     "place_id": "matsuya-asakusa",
     "source_id": "matsuya",
     "source_url": "https://www.matsuya.com/asakusa/news/2026/0929/entrance_event_october-2026/",
-    "image_url": "/images/contents/220.jpg"
+    "image_url": "/images/contents/220.jpg",
+    "tags": []
   },
   {
     "id": 221,
@@ -2375,7 +2515,8 @@
     "place_id": "matsuya-asakusa",
     "source_id": "matsuya",
     "source_url": "https://www.matsuya.com/asakusa/news/2026/0929/christmas_cake-6/",
-    "image_url": "/images/contents/221.jpg"
+    "image_url": "/images/contents/221.jpg",
+    "tags": []
   },
   {
     "id": 222,
@@ -2391,7 +2532,8 @@
     "place_id": "matsuya-asakusa",
     "source_id": "matsuya",
     "source_url": "https://www.matsuya.com/asakusa/news/2026/0929/minenokoya-limited-time-shop/",
-    "image_url": "/images/contents/222.jpg"
+    "image_url": "/images/contents/222.jpg",
+    "tags": []
   },
   {
     "id": 223,
@@ -2410,7 +2552,8 @@
     "image_url": "/images/contents/223.jpg",
     "source_urls": [
       "https://prtimes.jp/main/html/rd/p/000001544.000040971.html"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 224,
@@ -2426,7 +2569,8 @@
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000264.000017308.html",
-    "image_url": "/images/contents/224.jpg"
+    "image_url": "/images/contents/224.jpg",
+    "tags": []
   },
   {
     "id": 225,
@@ -2442,7 +2586,8 @@
     "place_id": null,
     "source_id": "asakusa-toyokan",
     "source_url": "https://www.asakusatoyokan.com/timetable/period/47/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 226,
@@ -2458,7 +2603,8 @@
     "place_id": null,
     "source_id": "asakusa-toyokan",
     "source_url": "https://www.asakusatoyokan.com/timetable/period/48/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 227,
@@ -2474,7 +2620,8 @@
     "place_id": null,
     "source_id": "asakusa-toyokan",
     "source_url": "https://www.asakusatoyokan.com/timetable/period/49/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 228,
@@ -2490,7 +2637,8 @@
     "place_id": null,
     "source_id": "asakusa-toyokan",
     "source_url": "https://www.asakusatoyokan.com/timetable/period/28/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 229,
@@ -2506,7 +2654,8 @@
     "place_id": null,
     "source_id": "asakusa-toyokan",
     "source_url": "https://www.asakusatoyokan.com/timetable/period/51/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 230,
@@ -2522,7 +2671,8 @@
     "place_id": null,
     "source_id": "asakusa-toyokan",
     "source_url": "https://www.asakusatoyokan.com/timetable/period/50/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 231,
@@ -2541,7 +2691,8 @@
     "image_url": null,
     "source_urls": [
       "https://www.asakusatoyokan.com/timetable/period/38/"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 232,
@@ -2557,7 +2708,10 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/232.jpg"
+    "image_url": "/images/contents/232.jpg",
+    "tags": [
+      "night"
+    ]
   },
   {
     "id": 233,
@@ -2573,7 +2727,8 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/233.jpg"
+    "image_url": "/images/contents/233.jpg",
+    "tags": []
   },
   {
     "id": 234,
@@ -2589,7 +2744,10 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/234.jpg"
+    "image_url": "/images/contents/234.jpg",
+    "tags": [
+      "kids"
+    ]
   },
   {
     "id": 235,
@@ -2608,7 +2766,8 @@
     "image_url": "/images/contents/235.jpg",
     "source_urls": [
       "https://www.tokyo-sports.co.jp/articles/-/406361"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 236,
@@ -2624,7 +2783,8 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/236.jpg"
+    "image_url": "/images/contents/236.jpg",
+    "tags": []
   },
   {
     "id": 237,
@@ -2640,7 +2800,10 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/237.jpg"
+    "image_url": "/images/contents/237.jpg",
+    "tags": [
+      "night"
+    ]
   },
   {
     "id": 238,
@@ -2656,7 +2819,8 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/238.jpg"
+    "image_url": "/images/contents/238.jpg",
+    "tags": []
   },
   {
     "id": 239,
@@ -2676,6 +2840,9 @@
     "source_urls": [
       "https://www.sanspo.com/article/20261006-XN3SR4UJAJLHTGRZQV3OEMEYNE/",
       "https://www.tokyo-np.co.jp/article/521461"
+    ],
+    "tags": [
+      "night"
     ]
   },
   {
@@ -2692,7 +2859,8 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/240.jpg"
+    "image_url": "/images/contents/240.jpg",
+    "tags": []
   },
   {
     "id": 241,
@@ -2708,7 +2876,10 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
+    "image_url": null,
+    "tags": [
+      "free"
+    ]
   },
   {
     "id": 242,
@@ -2724,7 +2895,8 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://teket.jp/3472/67585",
-    "image_url": "/images/contents/242.jpg"
+    "image_url": "/images/contents/242.jpg",
+    "tags": []
   },
   {
     "id": 243,
@@ -2744,7 +2916,8 @@
     "source_urls": [
       "https://www.rox.co.jp/shop/detail.html?shop_id=1238",
       "https://www.rox.co.jp/news/"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 244,
@@ -2824,7 +2997,10 @@
     "place_id": null,
     "source_id": "taito-city",
     "source_url": "https://www.city.taito.lg.jp/bunka_kanko/sekaiisan/10kinen/commemorativelecture.html",
-    "image_url": null
+    "image_url": null,
+    "tags": [
+      "free"
+    ]
   },
   {
     "id": 259,
@@ -2872,7 +3048,10 @@
     "place_id": null,
     "source_id": "taito-city",
     "source_url": "https://www.city.taito.lg.jp/kusei/shokai/shimaitoshi/news/nagahama_kannon1.html",
-    "image_url": "/images/contents/261.png"
+    "image_url": "/images/contents/261.png",
+    "tags": [
+      "free"
+    ]
   },
   {
     "id": 262,
@@ -2907,7 +3086,8 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 264,
@@ -2923,7 +3103,10 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
+    "image_url": null,
+    "tags": [
+      "night"
+    ]
   },
   {
     "id": 265,
@@ -2939,7 +3122,8 @@
     "place_id": "rox",
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/265.webp"
+    "image_url": "/images/contents/265.webp",
+    "tags": []
   },
   {
     "id": 267,
@@ -2971,7 +3155,8 @@
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000018.000059315.html",
-    "image_url": "/images/contents/268.png"
+    "image_url": "/images/contents/268.png",
+    "tags": []
   },
   {
     "id": 269,
@@ -3023,7 +3208,8 @@
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000266.000017308.html",
-    "image_url": "/images/contents/271.png"
+    "image_url": "/images/contents/271.png",
+    "tags": []
   },
   {
     "id": 272,
@@ -3039,7 +3225,8 @@
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000365.000027681.html",
-    "image_url": "/images/contents/272.jpg"
+    "image_url": "/images/contents/272.jpg",
+    "tags": []
   },
   {
     "id": 273,
@@ -3071,7 +3258,8 @@
     "place_id": null,
     "source_id": "asakusa-kyugeki",
     "source_url": "https://asakusa-kokono.com/kyugeki/2026/10/id-15277",
-    "image_url": "/images/contents/277.png"
+    "image_url": "/images/contents/277.png",
+    "tags": []
   },
   {
     "id": 278,
@@ -3090,7 +3278,8 @@
     "image_url": "/images/contents/278.png",
     "source_urls": [
       "https://www.city.taito.lg.jp/kenchiku/kotsu/megurin/ukai/2026dougumaturiukai.html"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 279,
@@ -3106,7 +3295,11 @@
     "place_id": "asakusajinja",
     "source_id": "asakusajinja",
     "source_url": "https://asakusajinja.jp/2026/10/03/%e7%a8%b2%e5%88%88%e3%82%8a%e5%8f%82%e5%8a%a0%e8%80%85%e5%8b%9f%e9%9b%86/",
-    "image_url": "/images/contents/279.jpg"
+    "image_url": "/images/contents/279.jpg",
+    "tags": [
+      "workshop",
+      "kids"
+    ]
   },
   {
     "id": 280,
@@ -3122,7 +3315,11 @@
     "place_id": "asakusajinja",
     "source_id": "asakusajinja",
     "source_url": "https://asakusajinja.jp/2026/10/03/%e4%b8%89%e7%a4%be%e6%9d%91-%e7%a7%8b%e3%81%ae%e5%8f%8e%e7%a9%ab%e4%bd%93%e9%a8%93%e5%8f%82%e5%8a%a0%e8%80%85%e5%8b%9f%e9%9b%86/",
-    "image_url": "/images/contents/280.jpg"
+    "image_url": "/images/contents/280.jpg",
+    "tags": [
+      "workshop",
+      "kids"
+    ]
   },
   {
     "id": 281,
@@ -3138,7 +3335,8 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 282,
@@ -3154,7 +3352,8 @@
     "place_id": "rox",
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000001549.000040971.html",
-    "image_url": "/images/contents/282.jpg"
+    "image_url": "/images/contents/282.jpg",
+    "tags": []
   },
   {
     "id": 283,
@@ -3170,7 +3369,8 @@
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000312.000041146.html",
-    "image_url": "/images/contents/283.jpg"
+    "image_url": "/images/contents/283.jpg",
+    "tags": []
   },
   {
     "id": 284,
@@ -3186,7 +3386,10 @@
     "place_id": null,
     "source_id": "taito-city",
     "source_url": "https://www.city.taito.lg.jp/bunka_kanko/bunkasien/torikumi/edtaito/edoikikousyodou.html",
-    "image_url": "/images/contents/284.jpg"
+    "image_url": "/images/contents/284.jpg",
+    "tags": [
+      "free"
+    ]
   },
   {
     "id": 285,
@@ -3202,7 +3405,8 @@
     "place_id": "rox",
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000001546.000040971.html",
-    "image_url": "/images/contents/285.jpg"
+    "image_url": "/images/contents/285.jpg",
+    "tags": []
   },
   {
     "id": 286,
@@ -3218,7 +3422,8 @@
     "place_id": "matsuya-asakusa",
     "source_id": "matsuya",
     "source_url": "https://www.matsuya.com/asakusa/news/2026/1006/chez-lui/",
-    "image_url": "/images/contents/286.jpg"
+    "image_url": "/images/contents/286.jpg",
+    "tags": []
   },
   {
     "id": 287,
@@ -3234,7 +3439,8 @@
     "place_id": "matsuya-asakusa",
     "source_id": "matsuya",
     "source_url": "https://www.matsuya.com/asakusa/news/2026/1006/chiba-no-sachi/",
-    "image_url": "/images/contents/287.jpg"
+    "image_url": "/images/contents/287.jpg",
+    "tags": []
   },
   {
     "id": 288,
@@ -3250,7 +3456,11 @@
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000006.000130103.html",
-    "image_url": "/images/contents/288.png"
+    "image_url": "/images/contents/288.png",
+    "tags": [
+      "free",
+      "kids"
+    ]
   },
   {
     "id": 289,
@@ -3266,7 +3476,11 @@
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000031.000040705.html",
-    "image_url": "/images/contents/289.jpg"
+    "image_url": "/images/contents/289.jpg",
+    "tags": [
+      "free",
+      "workshop"
+    ]
   },
   {
     "id": 290,
@@ -3287,7 +3501,8 @@
       "https://prtimes.jp/main/html/rd/p/000001714.000018760.html",
       "https://prtimes.jp/main/html/rd/p/000000007.000177085.html",
       "https://www.ccc.co.jp/news/press/20261005_009746.html"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 291,
@@ -3322,7 +3537,8 @@
     "place_id": null,
     "source_id": "asakusa-kyugeki",
     "source_url": "https://asakusa-kokono.com/kyugeki/2026/10/id-15288",
-    "image_url": "/images/contents/292.png"
+    "image_url": "/images/contents/292.png",
+    "tags": []
   },
   {
     "id": 293,
@@ -3338,7 +3554,8 @@
     "place_id": "sensoji",
     "source_id": "e-asakusa",
     "source_url": "https://e-asakusa.jp/photos/111515",
-    "image_url": "/images/contents/293.jpg"
+    "image_url": "/images/contents/293.jpg",
+    "tags": []
   },
   {
     "id": 295,
@@ -3357,7 +3574,8 @@
     "image_url": "/images/contents/295.png",
     "source_urls": [
       "https://prtimes.jp/main/html/rd/p/000001284.000009198.html"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 296,
@@ -3408,7 +3626,8 @@
     "place_id": null,
     "source_id": "taito-city",
     "source_url": "https://www.city.taito.lg.jp/kenchiku/machidukuri/chikumachizukuri/asakusa/program3.html",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 299,
@@ -3427,6 +3646,10 @@
     "image_url": "/images/contents/299.jpg",
     "source_urls": [
       "https://prtimes.jp/main/html/rd/p/000000033.000047662.html"
+    ],
+    "tags": [
+      "free",
+      "workshop"
     ]
   },
   {
@@ -3443,7 +3666,8 @@
     "place_id": null,
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/shop/detail.html?shop_id=1323",
-    "image_url": "/images/contents/300.webp"
+    "image_url": "/images/contents/300.webp",
+    "tags": []
   },
   {
     "id": 301,
@@ -3459,7 +3683,8 @@
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000031.000124762.html",
-    "image_url": "/images/contents/301.jpg"
+    "image_url": "/images/contents/301.jpg",
+    "tags": []
   },
   {
     "id": 302,
@@ -3478,7 +3703,8 @@
     "image_url": "/images/contents/302.jpg",
     "source_urls": [
       "https://prtimes.jp/main/html/rd/p/000001554.000040971.html"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 303,
@@ -3494,7 +3720,8 @@
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000191.000046377.html",
-    "image_url": "/images/contents/303.png"
+    "image_url": "/images/contents/303.png",
+    "tags": []
   },
   {
     "id": 305,
@@ -3510,7 +3737,11 @@
     "place_id": null,
     "source_id": "taito-city",
     "source_url": "https://www.city.taito.lg.jp/kenchiku/hanamidori/hananokokoro/oshirase/hanapuro_matuzakaya.html",
-    "image_url": "/images/contents/305.png"
+    "image_url": "/images/contents/305.png",
+    "tags": [
+      "kids",
+      "workshop"
+    ]
   },
   {
     "id": 306,
@@ -3542,7 +3773,10 @@
     "place_id": "rox",
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/307.webp"
+    "image_url": "/images/contents/307.webp",
+    "tags": [
+      "kids"
+    ]
   },
   {
     "id": 308,
@@ -3609,6 +3843,9 @@
     "image_url": null,
     "source_urls": [
       "https://tocpress.tokyo/?p=23433"
+    ],
+    "tags": [
+      "night"
     ]
   },
   {
@@ -3679,7 +3916,8 @@
     "place_id": null,
     "source_id": "google-news",
     "source_url": "https://yashion.jp/news/45016/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 323,
@@ -3695,7 +3933,8 @@
     "place_id": "koukaidou",
     "source_id": "google-news",
     "source_url": "https://lp.p.pia.jp/article/news/500325/index.html?detail=true",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 324,
@@ -3711,7 +3950,11 @@
     "place_id": null,
     "source_id": "taito-city",
     "source_url": "https://www.city.taito.lg.jp/kusei/sanka/release/press0810/09.html",
-    "image_url": "/images/contents/324.jpg"
+    "image_url": "/images/contents/324.jpg",
+    "tags": [
+      "kids",
+      "workshop"
+    ]
   },
   {
     "id": 325,
@@ -3743,7 +3986,8 @@
     "place_id": null,
     "source_id": "asakusa-kyugeki",
     "source_url": "https://asakusa-kokono.com/kyugeki/2026/10/id-15294",
-    "image_url": "/images/contents/326.png"
+    "image_url": "/images/contents/326.png",
+    "tags": []
   },
   {
     "id": 327,
@@ -3759,7 +4003,8 @@
     "place_id": null,
     "source_id": "asakusa-kyugeki",
     "source_url": "https://asakusa-kokono.com/kyugeki/2026/10/id-15291",
-    "image_url": "/images/contents/327.png"
+    "image_url": "/images/contents/327.png",
+    "tags": []
   },
   {
     "id": 329,
@@ -3775,7 +4020,8 @@
     "place_id": null,
     "source_id": "google-news",
     "source_url": "https://funeco.jp/news/news-34405/",
-    "image_url": "/images/contents/329.jpg"
+    "image_url": "/images/contents/329.jpg",
+    "tags": []
   },
   {
     "id": 330,
@@ -3794,7 +4040,8 @@
     "image_url": "/images/contents/330.jpg",
     "source_urls": [
       "https://www.traicy.com/posts/20261010379576/"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 335,
@@ -3826,7 +4073,8 @@
     "place_id": "rox",
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/336.webp"
+    "image_url": "/images/contents/336.webp",
+    "tags": []
   },
   {
     "id": 337,
@@ -3922,7 +4170,8 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": "/images/contents/342.png"
+    "image_url": "/images/contents/342.png",
+    "tags": []
   },
   {
     "id": 344,
@@ -3938,7 +4187,8 @@
     "place_id": "matsuya-asakusa",
     "source_id": "matsuya",
     "source_url": "https://www.matsuya.com/asakusa/news/2026/1013/craftsman-fair-9/",
-    "image_url": "/images/contents/344.jpg"
+    "image_url": "/images/contents/344.jpg",
+    "tags": []
   },
   {
     "id": 345,
@@ -3958,7 +4208,8 @@
     "source_urls": [
       "https://news.nicovideo.jp/watch/nw19873648?news_ref=20_20",
       "https://crea.bunshun.jp/ud/pressrelease/6acdbe877079c86cee000011"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 346,
@@ -3979,7 +4230,8 @@
       "https://mainichi.jp/articles/20261013/pr2/00m/020/042000c",
       "https://mainichikirei.jp/prtimes/article/20261013prt00m100000042a.html",
       "https://report.iko-yo.net/articles/34556"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 347,
@@ -3995,7 +4247,8 @@
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000009676.000016064.html",
-    "image_url": "/images/contents/347.jpg"
+    "image_url": "/images/contents/347.jpg",
+    "tags": []
   },
   {
     "id": 348,
@@ -4011,7 +4264,8 @@
     "place_id": "koukaidou",
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000286.000046264.html",
-    "image_url": "/images/contents/348.jpg"
+    "image_url": "/images/contents/348.jpg",
+    "tags": []
   },
   {
     "id": 349,
@@ -4027,7 +4281,8 @@
     "place_id": null,
     "source_id": "tabelog",
     "source_url": "https://tabelog.com/tokyo/A1311/A131102/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 350,
@@ -4043,7 +4298,8 @@
     "place_id": "koukaidou",
     "source_id": "google-news",
     "source_url": "https://www.tokyo-np.co.jp/article/521180",
-    "image_url": "/images/contents/350.jpg"
+    "image_url": "/images/contents/350.jpg",
+    "tags": []
   },
   {
     "id": 354,
@@ -4062,7 +4318,8 @@
     "image_url": "/images/contents/354.jpg",
     "source_urls": [
       "https://asakusa-kokono.com/kyugeki/2026/10/id-15313"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 356,
@@ -4110,7 +4367,8 @@
     "place_id": "sensoji",
     "source_id": "google-news",
     "source_url": "https://news.yahoo.co.jp/articles/f51e7abee34a0a1be99a34e074bf48134810f7eb",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 359,
@@ -4126,7 +4384,10 @@
     "place_id": null,
     "source_id": "e-asakusa",
     "source_url": "https://e-asakusa.jp/photos/111653",
-    "image_url": "/images/contents/359.jpg"
+    "image_url": "/images/contents/359.jpg",
+    "tags": [
+      "workshop"
+    ]
   },
   {
     "id": 360,
@@ -4142,7 +4403,10 @@
     "place_id": "koukaidou",
     "source_id": "koukaidou",
     "source_url": "https://asakusa-koukaidou.net/home/event.html",
-    "image_url": null
+    "image_url": null,
+    "tags": [
+      "night"
+    ]
   },
   {
     "id": 361,
@@ -4180,7 +4444,8 @@
     "image_url": null,
     "source_urls": [
       "https://www.atpress.ne.jp/news/639236"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 363,
@@ -4196,7 +4461,8 @@
     "place_id": null,
     "source_id": "prtimes-kuramae",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000221.000073463.html",
-    "image_url": "/images/contents/363.jpg"
+    "image_url": "/images/contents/363.jpg",
+    "tags": []
   },
   {
     "id": 364,
@@ -4212,7 +4478,8 @@
     "place_id": null,
     "source_id": "prtimes-tawaramachi",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000003.000166684.html",
-    "image_url": "/images/contents/364.jpg"
+    "image_url": "/images/contents/364.jpg",
+    "tags": []
   },
   {
     "id": 365,
@@ -4260,7 +4527,8 @@
     "place_id": null,
     "source_id": "prtimes-honjoazumabashi",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000397.000031067.html",
-    "image_url": "/images/contents/367.jpg"
+    "image_url": "/images/contents/367.jpg",
+    "tags": []
   },
   {
     "id": 368,
@@ -4292,7 +4560,10 @@
     "place_id": null,
     "source_id": "prtimes-oshiage",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000100.000143851.html",
-    "image_url": "/images/contents/369.jpg"
+    "image_url": "/images/contents/369.jpg",
+    "tags": [
+      "kids"
+    ]
   },
   {
     "id": 370,
@@ -4308,7 +4579,8 @@
     "place_id": null,
     "source_id": "google-news-kuramae",
     "source_url": "https://dime.jp/genre/2162720/",
-    "image_url": "/images/contents/370.jpg"
+    "image_url": "/images/contents/370.jpg",
+    "tags": []
   },
   {
     "id": 371,
@@ -4327,7 +4599,8 @@
     "image_url": "/images/contents/371.webp",
     "source_urls": [
       "https://prtimes.jp/main/html/rd/p/000000016.000168906.html"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 372,
@@ -4343,7 +4616,8 @@
     "place_id": null,
     "source_id": "google-news-kuramae",
     "source_url": "https://liniere.jp/column/lifestyle/116167/",
-    "image_url": "/images/contents/372.jpg"
+    "image_url": "/images/contents/372.jpg",
+    "tags": []
   },
   {
     "id": 373,
@@ -4375,7 +4649,8 @@
     "place_id": null,
     "source_id": "google-news-kuramae",
     "source_url": "https://japan.storm.mg/articles/1169576",
-    "image_url": "/images/contents/374.webp"
+    "image_url": "/images/contents/374.webp",
+    "tags": []
   },
   {
     "id": 375,
@@ -4391,7 +4666,11 @@
     "place_id": null,
     "source_id": "google-news-kuramae",
     "source_url": "https://asakusa.keizai.biz/headline/1085/",
-    "image_url": "/images/contents/375.jpg"
+    "image_url": "/images/contents/375.jpg",
+    "tags": [
+      "kids",
+      "night"
+    ]
   },
   {
     "id": 376,
@@ -4455,7 +4734,8 @@
     "place_id": null,
     "source_id": "google-news-honjoazumabashi",
     "source_url": "https://www.enjoytokyo.jp/event/2082022/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 380,
@@ -4490,7 +4770,8 @@
     "place_id": null,
     "source_id": "google-news-oshiage",
     "source_url": "https://sumida.keizai.biz/photoflash/6082/",
-    "image_url": "/images/contents/381.jpg"
+    "image_url": "/images/contents/381.jpg",
+    "tags": []
   },
   {
     "id": 382,
@@ -4509,6 +4790,9 @@
     "image_url": "/images/contents/382.jpg",
     "source_urls": [
       "https://sumida.keizai.biz/headline/1963/"
+    ],
+    "tags": [
+      "workshop"
     ]
   },
   {
@@ -4541,7 +4825,8 @@
     "place_id": null,
     "source_id": "taito-city",
     "source_url": "https://www.city.taito.lg.jp/bunka_kanko/bunkasien/torikumi/edtaito/shitashimu.html",
-    "image_url": "/images/contents/384.jpg"
+    "image_url": "/images/contents/384.jpg",
+    "tags": []
   },
   {
     "id": 385,
@@ -4589,7 +4874,8 @@
     "place_id": "asakusajinja",
     "source_id": "asakusajinja",
     "source_url": "https://asakusajinja.jp/2026/10/15/%e6%81%b5%e6%af%94%e9%a0%88%e6%a7%98%e5%be%a1%e7%b8%81%e6%97%a5%e7%89%b9%e5%88%a5%e5%be%a1%e6%9c%b1%e5%8d%b0/",
-    "image_url": "/images/contents/387.jpg"
+    "image_url": "/images/contents/387.jpg",
+    "tags": []
   },
   {
     "id": 388,
@@ -4605,7 +4891,8 @@
     "place_id": "rox",
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/388.webp"
+    "image_url": "/images/contents/388.webp",
+    "tags": []
   },
   {
     "id": 389,
@@ -4621,7 +4908,10 @@
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000038.000065266.html",
-    "image_url": "/images/contents/389.jpg"
+    "image_url": "/images/contents/389.jpg",
+    "tags": [
+      "night"
+    ]
   },
   {
     "id": 390,
@@ -4688,7 +4978,8 @@
     "image_url": "/images/contents/393.jpg",
     "source_urls": [
       "https://asakusa.keizai.biz/headline/1101/"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": 394,
@@ -4723,7 +5014,8 @@
     "place_id": null,
     "source_id": "google-news",
     "source_url": "https://www.utabito.jp/news/26395/",
-    "image_url": "/images/contents/395.jpg"
+    "image_url": "/images/contents/395.jpg",
+    "tags": []
   },
   {
     "id": 396,
@@ -4755,7 +5047,8 @@
     "place_id": null,
     "source_id": "prtimes-honjoazumabashi",
     "source_url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%9C%AC%E6%89%80%E5%90%BE%E5%A6%BB%E6%A9%8B",
-    "image_url": "/images/contents/397.jpg"
+    "image_url": "/images/contents/397.jpg",
+    "tags": []
   },
   {
     "id": 398,
@@ -4787,7 +5080,8 @@
     "place_id": null,
     "source_id": "prtimes-oshiage",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000048.000152772.html",
-    "image_url": "/images/contents/399.png"
+    "image_url": "/images/contents/399.png",
+    "tags": []
   },
   {
     "id": 400,
@@ -4819,7 +5113,8 @@
     "place_id": null,
     "source_id": "google-news-oshiage",
     "source_url": "https://sumida.keizai.biz/headline/1837/",
-    "image_url": "/images/contents/401.png"
+    "image_url": "/images/contents/401.png",
+    "tags": []
   },
   {
     "id": 402,
@@ -4867,7 +5162,10 @@
     "place_id": null,
     "source_id": "google-news-oshiage",
     "source_url": "https://sumida.keizai.biz/headline/1958/",
-    "image_url": "/images/contents/404.jpg"
+    "image_url": "/images/contents/404.jpg",
+    "tags": [
+      "kids"
+    ]
   },
   {
     "id": 405,
@@ -4947,7 +5245,11 @@
     "place_id": null,
     "source_id": "taito-city",
     "source_url": "https://www.city.taito.lg.jp/kurashi/gomi/namagominogenryo/HELLO-zyunnkan.html",
-    "image_url": "/images/contents/409.jpg"
+    "image_url": "/images/contents/409.jpg",
+    "tags": [
+      "kids",
+      "workshop"
+    ]
   },
   {
     "id": 410,
@@ -4979,7 +5281,10 @@
     "place_id": null,
     "source_id": "google-news",
     "source_url": "https://asakusa.keizai.biz/headline/1104",
-    "image_url": "/images/contents/411.jpg"
+    "image_url": "/images/contents/411.jpg",
+    "tags": [
+      "workshop"
+    ]
   },
   {
     "id": 412,
@@ -4995,7 +5300,8 @@
     "place_id": "rox",
     "source_id": "google-news",
     "source_url": "https://collabo-cafe.com/events/collabo/milky-subway-event-matsuriyu-asakusa-2026/",
-    "image_url": "/images/contents/412.jpg"
+    "image_url": "/images/contents/412.jpg",
+    "tags": []
   },
   {
     "id": 413,
@@ -5027,7 +5333,10 @@
     "place_id": null,
     "source_id": "prtimes-honjoazumabashi",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000442.000038948.html",
-    "image_url": "/images/contents/414.jpg"
+    "image_url": "/images/contents/414.jpg",
+    "tags": [
+      "free"
+    ]
   },
   {
     "id": 415,
@@ -5059,7 +5368,10 @@
     "place_id": null,
     "source_id": "google-news-oshiage",
     "source_url": "https://www.topics.or.jp/articles/-/1455915",
-    "image_url": "/images/contents/416.jpg"
+    "image_url": "/images/contents/416.jpg",
+    "tags": [
+      "workshop"
+    ]
   },
   {
     "id": 417,
@@ -5075,7 +5387,8 @@
     "place_id": null,
     "source_id": "skytree",
     "source_url": "https://www.tokyo-skytree.jp/event/special/chiikawa/",
-    "image_url": "/images/contents/417.webp"
+    "image_url": "/images/contents/417.webp",
+    "tags": []
   },
   {
     "id": 418,
@@ -5091,7 +5404,10 @@
     "place_id": null,
     "source_id": "skytree",
     "source_url": "https://www.tokyo-skytree.jp/event/autumn2026/",
-    "image_url": "/images/contents/418.webp"
+    "image_url": "/images/contents/418.webp",
+    "tags": [
+      "night"
+    ]
   },
   {
     "id": 419,
@@ -5107,7 +5423,10 @@
     "place_id": null,
     "source_id": "skytree",
     "source_url": "https://www.tokyo-skytree.jp/event/christmas2026/",
-    "image_url": "/images/contents/419.webp"
+    "image_url": "/images/contents/419.webp",
+    "tags": [
+      "night"
+    ]
   },
   {
     "id": 420,
@@ -5123,7 +5442,8 @@
     "place_id": null,
     "source_id": "skytree",
     "source_url": "https://www.tokyo-skytree.jp/event/yoga2021/",
-    "image_url": "/images/contents/420.jpg"
+    "image_url": "/images/contents/420.jpg",
+    "tags": []
   },
   {
     "id": 421,
@@ -5139,7 +5459,8 @@
     "place_id": null,
     "source_id": "visit-sumida",
     "source_url": "https://visit-sumida.jp/event/hokusaimatsuri2026/",
-    "image_url": "/images/contents/421.jpg"
+    "image_url": "/images/contents/421.jpg",
+    "tags": []
   },
   {
     "id": 422,
@@ -5155,7 +5476,8 @@
     "place_id": null,
     "source_id": "visit-sumida",
     "source_url": "https://visit-sumida.jp/event/tsunashiki_taikai2026/",
-    "image_url": "/images/contents/422.png"
+    "image_url": "/images/contents/422.png",
+    "tags": []
   },
   {
     "id": 423,
@@ -5171,7 +5493,8 @@
     "place_id": null,
     "source_id": "visit-sumida",
     "source_url": "https://visit-sumida.jp/event/",
-    "image_url": null
+    "image_url": null,
+    "tags": []
   },
   {
     "id": 424,
@@ -5187,7 +5510,10 @@
     "place_id": null,
     "source_id": "walkerplus-taito",
     "source_url": "https://www.walkerplus.com/event/ar0313e613592/",
-    "image_url": "/images/contents/424.jpg"
+    "image_url": "/images/contents/424.jpg",
+    "tags": [
+      "night"
+    ]
   },
   {
     "id": 425,
@@ -5203,7 +5529,10 @@
     "place_id": "koukaidou",
     "source_id": "walkerplus-taito",
     "source_url": "https://www.walkerplus.com/event/ar0313e607418/",
-    "image_url": "/images/contents/425.jpg"
+    "image_url": "/images/contents/425.jpg",
+    "tags": [
+      "workshop"
+    ]
   },
   {
     "id": 426,
@@ -5219,7 +5548,10 @@
     "place_id": null,
     "source_id": "taito-city",
     "source_url": "https://www.city.taito.lg.jp/gakushu/sports/sportsevent/sportsevent/tairyoku_test.html",
-    "image_url": "/images/contents/426.jpg"
+    "image_url": "/images/contents/426.jpg",
+    "tags": [
+      "free"
+    ]
   },
   {
     "id": 427,
@@ -5251,7 +5583,8 @@
     "place_id": "koukaidou",
     "source_id": "google-news",
     "source_url": "https://www.tokyo-np.co.jp/article/521884",
-    "image_url": "/images/contents/428.jpg"
+    "image_url": "/images/contents/428.jpg",
+    "tags": []
   },
   {
     "id": 429,
@@ -5299,7 +5632,8 @@
     "place_id": null,
     "source_id": "google-news-oshiage",
     "source_url": "https://ln-news.com/articles/126943",
-    "image_url": "/images/contents/431.jpg"
+    "image_url": "/images/contents/431.jpg",
+    "tags": []
   },
   {
     "id": 432,
@@ -5315,6 +5649,7 @@
     "place_id": null,
     "source_id": "walkerplus-taito",
     "source_url": "https://www.walkerplus.com/event/ar0313e578869/",
-    "image_url": "/images/contents/432.jpg"
+    "image_url": "/images/contents/432.jpg",
+    "tags": []
   }
 ]

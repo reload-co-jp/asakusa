@@ -131,22 +131,9 @@ export const getWeekendEvents = (now = new Date()): Content[] =>
 export const getUpcomingEvents = (now = new Date()): Content[] =>
   eventsIn({ from: jstDateString(now), to: "9999-12-31" })
 
-// ponytail: 本文の正規表現判定。誤検出が増えたら記事データにタグを持たせる
-export const THEME_PATTERNS: Record<Theme, RegExp> = {
-  free: /(入場|入館|参加|観覧|参加費|観覧料|費用)(は|が|も|:|：)?\s*無料|無料(公開|開放|イベント)/,
-  kids: /親子|キッズ|子ども向け|子供向け|小学生|七五三/,
-  workshop:
-    /ワークショップ|体験(コーナー|ブース|教室|イベント)|(摺り|収穫|寺子屋|研磨|手作り|着付け|お座敷遊び)体験/,
-  night: /夜の部|ライトアップ|夜景|ナイト|夜の浅草|除夜/,
-}
-
 // 開催中・開催予定のイベントのうちテーマに該当するもの
 export const getThemeEvents = (theme: Theme, now = new Date()): Content[] =>
-  getUpcomingEvents(now).filter((content) =>
-    THEME_PATTERNS[theme].test(
-      `${content.title}${content.summary}${content.body}`
-    )
-  )
+  getUpcomingEvents(now).filter((content) => content.tags?.includes(theme))
 
 export const getOngoingContentsByCategory = (
   category: Category,
