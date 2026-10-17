@@ -1,0 +1,434 @@
+[
+  {
+    "month": 1,
+    "keyword": "新年大祈禱会",
+    "name": {
+      "ja": "修正会・新年大祈禱会",
+      "en": "New Year Prayer Services",
+      "zh": "修正会・新年大祈祷会"
+    },
+    "date": { "ja": "1月1日〜7日", "en": "Jan 1–7", "zh": "1月1日〜7日" },
+    "venue": {
+      "ja": "浅草寺 本堂",
+      "en": "Senso-ji Main Hall",
+      "zh": "浅草寺 本堂"
+    },
+    "description": {
+      "ja": "大晦日から続く修正会と、新年の家内安全・商売繁盛を祈る大祈禱会。初詣の参拝者で境内が最もにぎわう時期。",
+      "en": "New Year services praying for safety and prosperity. The busiest time of year at Senso-ji, crowded with hatsumode visitors.",
+      "zh": "从除夕延续的修正会与祈求新年平安、生意兴隆的大祈祷会。新年初次参拜的游客使寺内最为热闹。"
+    }
+  },
+  {
+    "month": 2,
+    "keyword": "節分",
+    "name": {
+      "ja": "節分会",
+      "en": "Setsubun-e (Bean Throwing)",
+      "zh": "节分会（撒豆）"
+    },
+    "date": {
+      "ja": "2月3日（節分）",
+      "en": "Feb 3 (Setsubun)",
+      "zh": "2月3日（节分）"
+    },
+    "venue": { "ja": "浅草寺", "en": "Senso-ji", "zh": "浅草寺" },
+    "description": {
+      "ja": "本堂東側の特設舞台で年男・文化人による豆まきが行われ、奉演舞「福聚の舞」も披露される。",
+      "en": "Celebrities and people born in the zodiac year throw beans from a stage beside the Main Hall, with the Fukuju-no-Mai dance.",
+      "zh": "在本堂东侧的特设舞台上由本命年人士及文化名人撒豆，并表演奉纳舞「福聚之舞」。"
+    }
+  },
+  {
+    "month": 2,
+    "keyword": "針供養",
+    "name": {
+      "ja": "針供養会",
+      "en": "Hari-kuyo (Needle Memorial)",
+      "zh": "针供养会"
+    },
+    "date": { "ja": "2月8日", "en": "Feb 8", "zh": "2月8日" },
+    "venue": {
+      "ja": "浅草寺 淡島堂",
+      "en": "Awashima-do, Senso-ji",
+      "zh": "浅草寺 淡岛堂"
+    },
+    "description": {
+      "ja": "折れた針や古い針を豆腐に刺して供養し、裁縫の上達を祈る行事。",
+      "en": "Broken and worn-out needles are laid to rest in tofu, with prayers for skill in sewing.",
+      "zh": "将折断或用旧的针插入豆腐中供养，祈求缝纫技艺精进。"
+    }
+  },
+  {
+    "month": 3,
+    "keyword": "示現会",
+    "name": {
+      "ja": "本尊示現会・金龍の舞",
+      "en": "Honzon Jigen-e & Golden Dragon Dance",
+      "zh": "本尊示现会・金龙之舞"
+    },
+    "date": { "ja": "3月18日", "en": "Mar 18", "zh": "3月18日" },
+    "venue": { "ja": "浅草寺", "en": "Senso-ji", "zh": "浅草寺" },
+    "description": {
+      "ja": "ご本尊が隅田川から示現した日を祝う法会。境内では金色の龍が舞う「金龍の舞」が奉演される。",
+      "en": "Marks the day Senso-ji's principal image appeared from the Sumida River, celebrated with the Golden Dragon Dance.",
+      "zh": "庆祝本尊从隅田川显现之日的法会，寺内表演金色巨龙起舞的「金龙之舞」。"
+    }
+  },
+  {
+    "month": 4,
+    "keyword": "花まつり",
+    "name": {
+      "ja": "仏生会（花まつり）",
+      "en": "Hana Matsuri (Buddha's Birthday)",
+      "zh": "佛生会（花祭）"
+    },
+    "date": { "ja": "4月8日", "en": "Apr 8", "zh": "4月8日" },
+    "venue": { "ja": "浅草寺", "en": "Senso-ji", "zh": "浅草寺" },
+    "description": {
+      "ja": "お釈迦さまの誕生を祝い、花御堂の誕生仏に甘茶をかけてお参りする。",
+      "en": "Celebrates the birth of the Buddha; visitors pour sweet hydrangea tea over a statue of the infant Buddha.",
+      "zh": "庆祝释迦牟尼诞辰，参拜者向花御堂中的诞生佛浇淋甜茶。"
+    }
+  },
+  {
+    "month": 4,
+    "keyword": "白鷺の舞",
+    "name": {
+      "ja": "白鷺の舞",
+      "en": "Shirasagi-no-Mai (White Heron Dance)",
+      "zh": "白鹭之舞"
+    },
+    "date": {
+      "ja": "4月第2日曜日・11月3日",
+      "en": "2nd Sunday of April & Nov 3",
+      "zh": "4月第2个星期日・11月3日"
+    },
+    "venue": {
+      "ja": "浅草寺 境内",
+      "en": "Senso-ji grounds",
+      "zh": "浅草寺 寺内"
+    },
+    "description": {
+      "ja": "白鷺に扮した舞手が境内を練り歩き、優雅な舞を奉演する。慶安年間の絵巻をもとに復興された寺舞。",
+      "en": "Dancers dressed as white herons parade through the grounds in a dance revived from a 17th-century scroll.",
+      "zh": "扮成白鹭的舞者在寺内巡游，献上优雅的舞蹈。根据庆安年间画卷复原的寺舞。"
+    }
+  },
+  {
+    "month": 4,
+    "keyword": "流鏑馬",
+    "name": {
+      "ja": "浅草流鏑馬",
+      "en": "Asakusa Yabusame (Horseback Archery)",
+      "zh": "浅草流镝马（骑射）"
+    },
+    "date": {
+      "ja": "4月中旬の土曜日",
+      "en": "A Saturday in mid-April",
+      "zh": "4月中旬的星期六"
+    },
+    "venue": { "ja": "隅田公園", "en": "Sumida Park", "zh": "隅田公园" },
+    "description": {
+      "ja": "鎌倉時代の装束をまとった射手が、疾走する馬上から的を射る。同日に草鹿も行われる。",
+      "en": "Archers in Kamakura-period costume shoot targets from galloping horses, alongside the Kusajishi archery ritual.",
+      "zh": "身着镰仓时代服饰的射手在疾驰的马上射靶，同日还举行草鹿射箭仪式。"
+    }
+  },
+  {
+    "month": 5,
+    "keyword": "宝の舞",
+    "name": {
+      "ja": "宝の舞",
+      "en": "Takara-no-Mai (Treasure Dance)",
+      "zh": "宝之舞"
+    },
+    "date": { "ja": "5月5日", "en": "May 5", "zh": "5月5日" },
+    "venue": {
+      "ja": "浅草寺 境内",
+      "en": "Senso-ji grounds",
+      "zh": "浅草寺 寺内"
+    },
+    "description": {
+      "ja": "こどもの日に奉演される寺舞。宝船を中心に七福神や稚児が境内を練り歩く。",
+      "en": "A temple dance on Children's Day, with a treasure ship, the Seven Lucky Gods and children parading the grounds.",
+      "zh": "儿童节奉演的寺舞，宝船、七福神及童子在寺内巡游。"
+    }
+  },
+  {
+    "month": 5,
+    "keyword": "三社祭",
+    "name": { "ja": "三社祭", "en": "Sanja Matsuri", "zh": "三社祭" },
+    "date": {
+      "ja": "5月第3土曜日を挟む金・土・日",
+      "en": "Fri–Sun around the 3rd Saturday of May",
+      "zh": "5月第3个星期六前后的周五至周日"
+    },
+    "venue": {
+      "ja": "浅草神社・浅草一帯",
+      "en": "Asakusa Shrine & around Asakusa",
+      "zh": "浅草神社及浅草一带"
+    },
+    "description": {
+      "ja": "浅草神社の例大祭。大行列やびんざさら舞に続き、町内神輿約100基の連合渡御、最終日には本社神輿3基の宮出し・宮入りが行われる。",
+      "en": "The grand festival of Asakusa Shrine: a procession, about 100 neighborhood mikoshi, and the three main shrine mikoshi on the final day.",
+      "zh": "浅草神社的例大祭。继大游行与板簓舞之后，约100座町内神轿联合巡游，最后一天举行本社3座神轿的出宫与入宫。"
+    }
+  },
+  {
+    "month": 7,
+    "keyword": "ほおずき",
+    "name": {
+      "ja": "四万六千日・ほおずき市",
+      "en": "Shiman Rokusen-nichi & Hozuki Market",
+      "zh": "四万六千日・酸浆市"
+    },
+    "date": { "ja": "7月9日・10日", "en": "Jul 9–10", "zh": "7月9日・10日" },
+    "venue": {
+      "ja": "浅草寺 境内",
+      "en": "Senso-ji grounds",
+      "zh": "浅草寺 寺内"
+    },
+    "description": {
+      "ja": "この日に参拝すると46,000日分の功徳があるとされる縁日。境内にほおずきの屋台がずらりと並ぶ。",
+      "en": "A visit on these days is said to equal 46,000 days of worship. The grounds fill with stalls selling potted ground cherries.",
+      "zh": "据说在这两天参拜可获得46,000天的功德。寺内摆满出售酸浆的摊位。"
+    }
+  },
+  {
+    "month": 7,
+    "keyword": "隅田川花火",
+    "name": {
+      "ja": "隅田川花火大会",
+      "en": "Sumida River Fireworks Festival",
+      "zh": "隅田川烟花大会"
+    },
+    "date": {
+      "ja": "7月最終土曜日",
+      "en": "Last Saturday of July",
+      "zh": "7月最后一个星期六"
+    },
+    "venue": {
+      "ja": "隅田川（桜橋〜言問橋、駒形橋〜厩橋）",
+      "en": "Sumida River (two launch sites near Asakusa)",
+      "zh": "隅田川（樱桥〜言问桥、驹形桥〜厩桥）"
+    },
+    "description": {
+      "ja": "江戸時代の「両国の川開き」を起源とする花火大会。2会場から約2万発が打ち上げられる。",
+      "en": "Dating back to Edo-period river festivals, about 20,000 fireworks are launched from two sites.",
+      "zh": "起源于江户时代「两国川开」的烟花大会，从两个会场燃放约2万发烟花。"
+    }
+  },
+  {
+    "month": 8,
+    "keyword": "燈籠供養",
+    "name": {
+      "ja": "万霊燈籠供養会",
+      "en": "Manrei Toro Kuyo-e (Lantern Memorial)",
+      "zh": "万灵灯笼供养会"
+    },
+    "date": { "ja": "8月15日", "en": "Aug 15", "zh": "8月15日" },
+    "venue": {
+      "ja": "浅草寺 本堂",
+      "en": "Senso-ji Main Hall",
+      "zh": "浅草寺 本堂"
+    },
+    "description": {
+      "ja": "お盆に燈籠を灯し、先祖や有縁無縁の諸霊を供養する法会。",
+      "en": "An Obon service lighting lanterns in memory of ancestors and all spirits.",
+      "zh": "盂兰盆节点亮灯笼，供养祖先及有缘无缘诸灵的法会。"
+    }
+  },
+  {
+    "month": 8,
+    "keyword": "サンバ",
+    "name": {
+      "ja": "浅草サンバカーニバル",
+      "en": "Asakusa Samba Carnival",
+      "zh": "浅草桑巴嘉年华"
+    },
+    "date": {
+      "ja": "8月最終土曜日",
+      "en": "Last Saturday of August",
+      "zh": "8月最后一个星期六"
+    },
+    "venue": {
+      "ja": "馬道通り〜雷門通り",
+      "en": "Umamichi-dori to Kaminarimon-dori",
+      "zh": "马道通〜雷门通"
+    },
+    "description": {
+      "ja": "1981年に始まった浅草の夏の風物詩。サンバチームがパレードコンテストで華やかな衣装とダンスを競う。",
+      "en": "A summer tradition since 1981: samba teams compete in a parade contest with dazzling costumes and dance.",
+      "zh": "始于1981年的浅草夏日风物诗。桑巴队伍以华丽服装与舞蹈参加游行比赛。"
+    }
+  },
+  {
+    "month": 10,
+    "keyword": "道具まつり",
+    "name": {
+      "ja": "かっぱ橋道具まつり",
+      "en": "Kappabashi Tool Festival",
+      "zh": "合羽桥道具节"
+    },
+    "date": {
+      "ja": "10月9日（道具の日）を含む1週間",
+      "en": "The week including Oct 9 (Tool Day)",
+      "zh": "包含10月9日（道具之日）的一周"
+    },
+    "venue": {
+      "ja": "かっぱ橋道具街",
+      "en": "Kappabashi Kitchen Town",
+      "zh": "合羽桥道具街"
+    },
+    "description": {
+      "ja": "調理器具・食器の専門店街が一斉にセールを行う。プロ向けの道具を手頃に買えるチャンス。",
+      "en": "Kitchenware and tableware shops along the street hold sales — a chance to buy professional tools at good prices.",
+      "zh": "厨具、餐具专卖店街同时举行促销，是以实惠价格购买专业工具的好机会。"
+    }
+  },
+  {
+    "month": 10,
+    "keyword": "菊供養",
+    "name": {
+      "ja": "菊供養会・金龍の舞",
+      "en": "Kiku Kuyo-e (Chrysanthemum Offering)",
+      "zh": "菊供养会・金龙之舞"
+    },
+    "date": { "ja": "10月18日", "en": "Oct 18", "zh": "10月18日" },
+    "venue": { "ja": "浅草寺", "en": "Senso-ji", "zh": "浅草寺" },
+    "description": {
+      "ja": "参拝者が菊の花を供え、代わりに供えられた菊を「菊のお守り」として持ち帰る。金龍の舞も奉演される。",
+      "en": "Visitors offer chrysanthemums and take home blessed ones as charms. The Golden Dragon Dance is also performed.",
+      "zh": "参拜者供奉菊花，并换取已供奉的菊花作为「菊花护身符」带回。当天亦表演金龙之舞。"
+    }
+  },
+  {
+    "month": 11,
+    "keyword": "時代まつり",
+    "name": {
+      "ja": "東京時代まつり",
+      "en": "Tokyo Jidai Matsuri",
+      "zh": "东京时代祭"
+    },
+    "date": {
+      "ja": "11月3日（文化の日）",
+      "en": "Nov 3 (Culture Day)",
+      "zh": "11月3日（文化日）"
+    },
+    "venue": {
+      "ja": "浅草寺周辺",
+      "en": "Around Senso-ji",
+      "zh": "浅草寺周边"
+    },
+    "description": {
+      "ja": "浅草寺の草創から江戸・明治まで、東京の歴史を彩った人物や風俗に扮した大行列が浅草を練り歩く。",
+      "en": "A grand costume procession through Asakusa depicting figures and customs from Tokyo's history.",
+      "zh": "身着东京历史人物与风俗服装的大游行队伍巡游浅草。"
+    }
+  },
+  {
+    "month": 11,
+    "keyword": "酉の市",
+    "name": { "ja": "酉の市", "en": "Tori-no-Ichi Fair", "zh": "酉之市" },
+    "date": {
+      "ja": "11月の酉の日",
+      "en": "Rooster days in November",
+      "zh": "11月的酉日"
+    },
+    "venue": {
+      "ja": "鷲神社（千束）",
+      "en": "Otori Shrine (Senzoku)",
+      "zh": "鹫神社（千束）"
+    },
+    "description": {
+      "ja": "開運・商売繁盛を願い、縁起熊手を求める参拝者でにぎわう。年により二の酉・三の酉まである。",
+      "en": "Crowds buy lucky bamboo rakes (kumade) for fortune and business success. Held on two or three days depending on the year.",
+      "zh": "祈求开运与生意兴隆，购买吉祥熊手的参拜者络绎不绝。依年份有二酉或三酉。"
+    }
+  },
+  {
+    "month": 11,
+    "keyword": "七五三",
+    "name": {
+      "ja": "七五三加持会",
+      "en": "Shichi-Go-San Blessings",
+      "zh": "七五三加持会"
+    },
+    "date": {
+      "ja": "11月15日を中心とした毎日",
+      "en": "Daily around Nov 15",
+      "zh": "以11月15日为中心的每天"
+    },
+    "venue": {
+      "ja": "浅草寺 本堂",
+      "en": "Senso-ji Main Hall",
+      "zh": "浅草寺 本堂"
+    },
+    "description": {
+      "ja": "3歳・5歳・7歳の子どもの成長を祝い、健やかな成長を祈願する。",
+      "en": "Prayers for the healthy growth of children aged three, five and seven.",
+      "zh": "庆祝3岁、5岁、7岁儿童成长，祈愿健康长大。"
+    }
+  },
+  {
+    "month": 12,
+    "keyword": "羽子板市",
+    "name": {
+      "ja": "羽子板市（歳の市）",
+      "en": "Hagoita-Ichi (Battledore Fair)",
+      "zh": "羽子板市（岁末市）"
+    },
+    "date": {
+      "ja": "12月17日〜19日",
+      "en": "Dec 17–19",
+      "zh": "12月17日〜19日"
+    },
+    "venue": {
+      "ja": "浅草寺 境内",
+      "en": "Senso-ji grounds",
+      "zh": "浅草寺 寺内"
+    },
+    "description": {
+      "ja": "納めの観音ご縁日にあわせた歳の市。華やかな押絵羽子板を売る露店が境内に並ぶ。",
+      "en": "The year-end fair for Kannon's last fete day, with stalls selling ornate decorated battledores.",
+      "zh": "配合观音年末缘日的岁末市集，寺内摆满出售华丽押绘羽子板的摊位。"
+    }
+  },
+  {
+    "month": 12,
+    "keyword": "星供養",
+    "name": {
+      "ja": "星供養会（星まつり）",
+      "en": "Hoshi Kuyo-e (Star Festival)",
+      "zh": "星供养会（星祭）"
+    },
+    "date": { "ja": "冬至", "en": "Winter solstice", "zh": "冬至" },
+    "venue": {
+      "ja": "浅草寺 本堂",
+      "en": "Senso-ji Main Hall",
+      "zh": "浅草寺 本堂"
+    },
+    "description": {
+      "ja": "一年の災いを除き、新しい年の幸運を祈る法会。",
+      "en": "A service to ward off misfortune and pray for good luck in the new year.",
+      "zh": "祛除一年灾厄、祈求新年好运的法会。"
+    }
+  },
+  {
+    "month": 12,
+    "keyword": "除夜の鐘",
+    "name": { "ja": "除夜の鐘", "en": "New Year's Eve Bell", "zh": "除夜钟声" },
+    "date": { "ja": "12月31日", "en": "Dec 31", "zh": "12月31日" },
+    "venue": {
+      "ja": "浅草寺 弁天山",
+      "en": "Bentenyama, Senso-ji",
+      "zh": "浅草寺 弁天山"
+    },
+    "description": {
+      "ja": "江戸の「時の鐘」として知られる弁天山の鐘で、百八の煩悩を払う除夜の鐘が撞かれる。",
+      "en": "The historic Edo time bell on Bentenyama is struck 108 times to dispel worldly desires.",
+      "zh": "以江户「报时钟」闻名的弁天山大钟敲响108下，驱除烦恼。"
+    }
+  }
+]

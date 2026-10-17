@@ -1,5 +1,6 @@
 import placesJson from "@/data/places.json"
 import contentsJson from "@/data/contents.json"
+import festivalsJson from "@/data/festivals.json"
 import sourcesJson from "@/data/sources.json"
 import enJson from "@/data/translations/en.json"
 import zhJson from "@/data/translations/zh.json"
@@ -16,6 +17,7 @@ import type {
   Area,
   Category,
   Content,
+  Festival,
   GourmetGenre,
   Place,
   Source,
@@ -25,6 +27,7 @@ import type {
 export const places = placesJson as Place[]
 export const contents = contentsJson as Content[]
 export const sources = sourcesJson as Source[]
+export const festivals = festivalsJson as Festival[]
 
 export const getGourmetPlaces = (genre: GourmetGenre): Place[] =>
   places.filter((place) => place.genre === genre)
@@ -130,6 +133,15 @@ export const getWeekendEvents = (now = new Date()): Content[] =>
 // 今日以降に終了していない(開催中・開催予定の)イベント
 export const getUpcomingEvents = (now = new Date()): Content[] =>
   eventsIn({ from: jstDateString(now), to: "9999-12-31" })
+
+// 祭りカレンダーの「次回」。keywordをタイトルに含む直近の開催予定記事
+export const getNextFestivalEvent = (
+  festival: Festival,
+  now = new Date()
+): Content | undefined =>
+  getUpcomingEvents(now).find((content) =>
+    content.title.includes(festival.keyword)
+  )
 
 // 開催中・開催予定のイベントのうちテーマに該当するもの
 export const getThemeEvents = (theme: Theme, now = new Date()): Content[] =>

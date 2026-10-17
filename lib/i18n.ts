@@ -154,6 +154,17 @@ const ja = {
     monthLead: (month: string, count: number) =>
       `${month}に浅草で開催のイベント ${count}件`,
   },
+  festivals: {
+    label: "祭り年間カレンダー",
+    title:
+      "浅草の祭り・年中行事カレンダー｜三社祭・ほおずき市・羽子板市・酉の市｜浅草ライブ",
+    description:
+      "浅草の祭り・年中行事を月別にまとめた年間カレンダー。浅草寺の節分会・ほおずき市・羽子板市、浅草神社の三社祭、隅田川花火大会、浅草サンバカーニバル、酉の市まで、例年の開催時期と会場を掲載。",
+    heading: "浅草の祭り・年中行事カレンダー",
+    lead: "日程は例年の目安です。開催予定が発表済みの行事は「次回」から詳細を確認できます。",
+    month: (month: number) => `${month}月`,
+    next: "次回",
+  },
   category: {
     description: (base: string, count: number) =>
       `${base}。掲載${count}件を開催日・公開日順に紹介。`,
@@ -364,6 +375,21 @@ const en: Dictionary = {
       `A list of ${count} events held in Asakusa in ${month}, including festivals, traditional rituals, performances, exhibitions and pop-ups, with dates and venues.`,
     monthHeading: (month) => `Asakusa Events in ${month}`,
     monthLead: (month, count) => `${count} events in Asakusa in ${month}`,
+  },
+  festivals: {
+    label: "Festival Calendar",
+    title:
+      "Asakusa Festival Calendar: Sanja Matsuri, Hozuki Market, Hagoita-Ichi and More | Asakusa Live",
+    description:
+      "A month-by-month calendar of festivals and annual events in Asakusa, Tokyo: Setsubun, the Hozuki Market and Hagoita-Ichi at Senso-ji, Sanja Matsuri, the Sumida River Fireworks, the Samba Carnival and Tori-no-Ichi, with usual dates and venues.",
+    heading: "Asakusa Festival & Annual Events Calendar",
+    lead: 'Dates are typical for each year. Where this year\'s dates are announced, follow "Next" for details.',
+    month: (month) =>
+      new Date(Date.UTC(2000, month - 1)).toLocaleString("en", {
+        month: "long",
+        timeZone: "UTC",
+      }),
+    next: "Next",
   },
   category: {
     description: (base, count) =>
@@ -645,6 +671,16 @@ const zh: Dictionary = {
       `${month}在浅草举办的${count}项活动一览，汇总祭典、传统仪式、演出、曲艺、展览、快闪店等的日期与会场。`,
     monthHeading: (month) => `${month}浅草活动`,
     monthLead: (month, count) => `${month}在浅草举办的活动 ${count}项`,
+  },
+  festivals: {
+    label: "祭典年历",
+    title: "浅草祭典・年度活动日历｜三社祭・酸浆市・羽子板市・酉之市｜浅草Live",
+    description:
+      "按月份整理的浅草祭典与年度活动日历。浅草寺的节分会、酸浆市、羽子板市，浅草神社的三社祭，隅田川烟花大会，浅草桑巴嘉年华及酉之市等，介绍往年的举办时间与会场。",
+    heading: "浅草祭典・年度活动日历",
+    lead: "日期为往年的大致时间。已公布举办日期的活动可通过「下次」查看详情。",
+    month: (month) => `${month}月`,
+    next: "下次",
   },
   category: {
     description: (base, count) =>

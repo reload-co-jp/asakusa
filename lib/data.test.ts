@@ -12,6 +12,7 @@ import {
   getLatestContents,
   getOngoingContentsByCategory,
   getPlace,
+  getNextFestivalEvent,
   getThemeEvents,
   places,
 } from "./data"
@@ -30,6 +31,17 @@ describe("data", () => {
         (content) => (content.end_at ?? content.start_at)! >= "2026-10-17"
       )
     ).toBe(true)
+  })
+
+  it("getNextFestivalEvent はキーワードを含む開催予定記事を返す", () => {
+    const now = new Date("2026-10-17T12:00:00+09:00")
+    const festival = { keyword: "羽子板市" } as Parameters<
+      typeof getNextFestivalEvent
+    >[0]
+    expect(getNextFestivalEvent(festival, now)?.title).toContain("羽子板市")
+    expect(
+      getNextFestivalEvent({ ...festival, keyword: "存在しない" }, now)
+    ).toBeUndefined()
   })
 
   it("getPlace はIDで取得できる", () => {

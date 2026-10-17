@@ -50,6 +50,7 @@ const pages = (): Page[] => [
   ...[
     "/",
     "/events/",
+    "/festivals/",
     "/today/",
     "/this-week/",
     "/weekend/",

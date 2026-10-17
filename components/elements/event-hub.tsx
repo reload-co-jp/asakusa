@@ -177,7 +177,12 @@ export const EventNavigation: FC<{ current?: string }> = async ({
             .map((theme) => ({
               name: t.themes[theme].label,
               href: `/theme/${theme}/`,
-            }))}
+            }))
+            .concat(
+              current === "/festivals/"
+                ? []
+                : [{ name: t.festivals.label, href: "/festivals/" }]
+            )}
         />
       </Section>
     </>

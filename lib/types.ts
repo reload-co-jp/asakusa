@@ -179,3 +179,15 @@ export type Source = {
   source_type: SourceType
   priority: number
 }
+
+type Localized = Record<"ja" | "en" | "zh", string>
+
+// 祭り年間カレンダー(/festivals/)の例年の行事。keyword を含むタイトルの開催予定記事を「次回」としてリンク
+export type Festival = {
+  month: number
+  keyword: string
+  name: Localized
+  date: Localized
+  venue: Localized
+  description: Localized
+}
