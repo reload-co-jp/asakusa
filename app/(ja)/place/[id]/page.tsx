@@ -28,6 +28,13 @@ const SCHEMA_TYPES: Record<PlaceType, string> = {
   other: "Place",
 }
 
+// 楽天アフィリエイトID。空なら周辺ホテルリンクを出さない
+const RAKUTEN_AFFILIATE_ID = "589a7e53.27e6c7b2.589a7e54.37a5adb6"
+const HOTELS_TARGET =
+  "https://kw.travel.rakuten.co.jp/keyword/Search.do?f_query=" +
+  encodeURIComponent("浅草")
+const HOTELS_URL = `https://hb.afl.rakuten.co.jp/hgc/${RAKUTEN_AFFILIATE_ID}/?pc=${encodeURIComponent(HOTELS_TARGET)}&m=${encodeURIComponent(HOTELS_TARGET)}`
+
 export const generateStaticParams = () =>
   places.map((place) => ({ id: place.id }))
 
@@ -238,6 +245,18 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
               </a>
             </p>
           </>
+        )}
+        {RAKUTEN_AFFILIATE_ID && (
+          <p style={{ fontSize: ".85rem", margin: ".5rem 0 0" }}>
+            <a
+              href={HOTELS_URL}
+              rel="sponsored noreferrer"
+              style={{ color: "var(--accent)" }}
+              target="_blank"
+            >
+              {t.place.hotels}
+            </a>
+          </p>
         )}
       </article>
       <InArticleAd />
