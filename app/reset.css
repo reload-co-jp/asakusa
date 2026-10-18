@@ -966,3 +966,53 @@ a {
 .news-list > .ad-slot {
   grid-column: 1 / -1;
 }
+
+.interstitial {
+  background: var(--paper);
+  border: 1px solid var(--sand);
+  color: var(--ink-soft);
+  margin: auto;
+  max-height: calc(100dvh - 2rem);
+  max-width: min(40rem, calc(100vw - 2rem));
+  overflow-y: auto;
+  padding: 1rem;
+  width: 100%;
+}
+.interstitial::backdrop {
+  backdrop-filter: blur(8px);
+  background: rgb(0 0 0 / 0.3);
+}
+.interstitial__head {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+.interstitial__label {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+.interstitial__close {
+  background: none;
+  border: 1px solid var(--sand);
+  cursor: pointer;
+  padding: 0.25rem 0.75rem;
+}
+.interstitial__nav {
+  border-top: 1px solid var(--sand);
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+.interstitial__top {
+  color: var(--accent);
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.interstitial__nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  list-style: none;
+  padding: 0;
+}

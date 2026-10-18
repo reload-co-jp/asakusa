@@ -74,6 +74,7 @@ const ja = {
     placeholder: "記事を検索",
     submit: "検索",
   },
+  interstitial: { label: "広告", close: "閉じる", top: "トップへ" },
   footer: {
     about: "サイトについて",
     aboutText:
@@ -301,6 +302,7 @@ const en: Dictionary = {
     placeholder: "Search articles",
     submit: "Search",
   },
+  interstitial: { label: "Advertisement", close: "Close", top: "Home" },
   footer: {
     about: "About",
     aboutText:
@@ -606,6 +608,7 @@ const zh: Dictionary = {
     placeholder: "搜索文章",
     submit: "搜索",
   },
+  interstitial: { label: "广告", close: "关闭", top: "首页" },
   footer: {
     about: "关于本站",
     aboutText:

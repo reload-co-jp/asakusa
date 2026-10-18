@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import Script from "next/script"
+import { TransitionOverlay } from "@/components/elements/ad"
 import { LanguageSwitcher } from "@/components/elements/language-switcher"
 import { Footer, Header, Main, Nav, Title } from "@/components/elements/layout"
 import { Logo } from "@/components/elements/logo"
@@ -166,6 +167,11 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
             &copy; Asakusa Live — ASAKUSA JOURNAL
           </p>
         </Footer>
+        <TransitionOverlay
+          labels={t.interstitial}
+          links={mainLinks}
+          topHref={href("/")}
+        />
       </body>
     </html>
   )
