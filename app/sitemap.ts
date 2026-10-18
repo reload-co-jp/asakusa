@@ -7,9 +7,11 @@ import {
   getContentsByPlace,
   getGourmetPlaces,
   getLatestContents,
+  getPlacesByType,
   getThemeEvents,
   isTranslated,
   places,
+  placeTypes,
 } from "@/lib/data"
 import { HTML_LANG, Locale, LOCALES, localePath } from "@/lib/i18n-config"
 import { SITE_URL } from "@/lib/json-ld"
@@ -71,6 +73,10 @@ const pages = (): Page[] => [
     listPage(`/area/${area}/`, getContentsByArea(area))
   ),
   { url: "/place/", lastModified: latestUpdate(places) },
+  ...placeTypes.map((type) => ({
+    url: `/place/type/${type}/`,
+    lastModified: latestUpdate(getPlacesByType(type)),
+  })),
   {
     url: "/gourmet/",
     lastModified: latestUpdate(places.filter((place) => place.genre)),

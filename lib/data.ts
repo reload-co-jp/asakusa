@@ -13,6 +13,7 @@ import {
   weekendPeriod,
 } from "./date"
 import type { Locale } from "./i18n-config"
+import { GOURMET_GENRES, PLACE_TYPES } from "./types"
 import type {
   Area,
   Category,
@@ -20,6 +21,7 @@ import type {
   Festival,
   GourmetGenre,
   Place,
+  PlaceType,
   Source,
   Theme,
 } from "./types"
@@ -31,6 +33,23 @@ export const festivals = festivalsJson as Festival[]
 
 export const getGourmetPlaces = (genre: GourmetGenre): Place[] =>
   places.filter((place) => place.genre === genre)
+
+export const getPlacesByType = (type: PlaceType): Place[] =>
+  places.filter((place) => place.type === type)
+
+// 飲食店をグルメジャンル別に分けたもの(掲載のあるジャンルのみ)
+export const getRestaurantsByGenre = (): [GourmetGenre, Place[]][] =>
+  (Object.keys(GOURMET_GENRES) as GourmetGenre[])
+    .map((genre): [GourmetGenre, Place[]] => [
+      genre,
+      getGourmetPlaces(genre).filter((place) => place.type === "restaurant"),
+    ])
+    .filter(([, items]) => items.length > 0)
+
+// 掲載のある施設種別のみ(空ページを作らない)
+export const placeTypes = (Object.keys(PLACE_TYPES) as PlaceType[]).filter(
+  (type) => getPlacesByType(type).length > 0
+)
 
 type Translation = {
   contents: Record<string, Pick<Content, "title" | "summary" | "body">>

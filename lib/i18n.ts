@@ -187,6 +187,10 @@ const ja = {
       `浅草寺・浅草神社などの寺社、浅草公会堂・浅草演芸ホールなどの劇場、浅草ROX・松屋浅草などの商業施設まで、浅草の施設${count}件の基本情報と開催中・今後のイベントをまとめています。`,
     listHeading: "浅草の観光スポット・施設",
     listLead: "施設ごとに開催中・今後のイベントや関連ニュースを掲載",
+    typeTitle: (type: string) => `浅草の${type}一覧`,
+    typeDescription: (type: string, count: number) =>
+      `浅草エリアの${type}${count}件の基本情報と開催中・今後のイベントをまとめています。`,
+    more: (type: string) => `${type}をすべて見る`,
     eventCount: (count: number) => `開催中・今後のイベント ${count}件`,
     title: (name: string, type: string, area: string) =>
       `${name}のイベント・最新情報｜${type}・${area}｜浅草ライブ`,
@@ -415,6 +419,10 @@ const en: Dictionary = {
       `Basic information and ongoing/upcoming events for ${count} venues in Asakusa, from temples and shrines such as Senso-ji and Asakusa Shrine to theaters and shopping complexes.`,
     listHeading: "Asakusa Sightseeing Spots & Venues",
     listLead: "Ongoing and upcoming events and news for each venue",
+    typeTitle: (type) => `${type} List in Asakusa`,
+    typeDescription: (type, count) =>
+      `Basic information and ongoing/upcoming events for ${count} places (${type}) in the Asakusa area.`,
+    more: (type) => `See all: ${type}`,
     eventCount: (count) => `${count} ongoing/upcoming events`,
     title: (name, type, area) =>
       `${name} Events & News | ${type}, ${area} | Asakusa Live`,
@@ -706,6 +714,10 @@ const zh: Dictionary = {
       `汇总浅草寺、浅草神社等寺社，浅草公会堂、浅草演艺厅等剧场，以及浅草ROX、松屋浅草等商业设施共${count}处的基本信息与正在举办・即将举办的活动。`,
     listHeading: "浅草观光景点・设施",
     listLead: "按设施介绍正在举办・即将举办的活动及相关新闻",
+    typeTitle: (type) => `浅草${type}一览`,
+    typeDescription: (type, count) =>
+      `汇总浅草地区${type}共${count}处的基本信息与正在举办・即将举办的活动。`,
+    more: (type) => `查看全部${type}`,
     eventCount: (count) => `举办中・即将举办的活动 ${count}项`,
     title: (name, type, area) =>
       `${name}的活动・最新资讯｜${type}・${area}｜浅草Live`,
