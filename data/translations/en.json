@@ -1619,6 +1619,11 @@
       "title": "Hanayashiki \"Kimono Discount 2026\"",
       "summary": "Asakusa Hanayashiki is holding a campaign through October 31, 2026, offering free admission to guests who visit in a kimono. Guests also receive a half-price admission coupon for their next visit.",
       "body": "Asakusa Hanayashiki, known as Japan's oldest amusement park, is currently holding \"Hanayashiki Kimono Discount 2026,\" offering free admission to guests who visit in a kimono.\n\n## Free Admission in a Kimono + Half-Price Coupon\n\nGuests who visit in a kimono get free admission. They will also receive a half-price admission coupon that can be used on their next visit.\n\n## Weekday-Only \"Photoraction\"\n\nOn weekdays during the campaign period, \"Photoraction\" will be held, allowing guests to take special photos on the attractions.\n\n- Available on two rides: the retro-style merry-go-round and the swan ride\n- Operation is stopped for 10 minutes exclusively for photo-taking\n- Capture a memorable shot in the world of kimono and Japan's oldest amusement park\n\n## Event Details\n\n- Period: Wednesday, September 2, 2026 – Saturday, October 31, 2026\n- Hours: 10:00–18:00\n- Closed: Tuesday, September 29\n- Last admission: 17:30\n\nThis is an event that lets you stroll around Asakusa in autumn wearing a kimono and then enjoy the amusement park as you are."
+    },
+    "449": {
+      "title": "A Guide to Asakusa's Hatsune Koji: 12 Spots in a Back Alley Where You Can Drink from Midday",
+      "summary": "Hatsune Koji, tucked behind WINS Asakusa west of Senso-ji, is a short alley that grew out of postwar food stalls. It is packed with unique shops, from long-established izakaya to Okinawan food and grilled eel rice balls.",
+      "body": "West of Senso-ji Temple, behind the WINS Asakusa off-track betting center, lies Hatsune Koji, a short alley crammed with tiny eateries. It sits between the Nishisando shopping street and Hanayashiki-dori, just a short walk from Hoppy Street.\n\n## An alley born from postwar food stalls\n\nThis area was once home to Hyotan-ike, a gourd-shaped pond. After the war, the pond was filled in to raise funds for rebuilding Senso-ji's main hall, which had burned in the air raids, and food stalls that lined up on the new land are said to be the origin of Hatsune Koji. The wisteria trellis over the alley is a remnant of the pond, once famous for its wisteria, and in spring the flowers bloom above the red lanterns.\n\nThe retro arch sign that once stood at the entrance was removed around 2020, but the Showa-era atmosphere lives on. Many shops set out tables in front from midday, and regulars can be seen enjoying a drink while watching horse racing broadcasts. It is less crowded than Hoppy Street, and with the shops right next to each other, it is ideal for bar hopping.\n\n## Main spots in Hatsune Koji\n\n### Izakaya and pubs\n\n- **[Asakusa Hanamoto](/en/place/asakusa-hanamoto)**: A long-established izakaya founded in 1964, serving motsunabe and seafood.\n- **[Matsuyoshi](/en/place/matsuyoshi)**: A casual pub with outdoor tables open from midday. Beef tendon stew and yakitori are the staples.\n- **[Oike](/en/place/hatsune-oike)**: An izakaya that opens in the early afternoon for daytime drinking.\n- **[Chanbaraya](/en/place/chanbaraya)**: An izakaya that opens before noon.\n- **[Mimasu Yaneko](/en/place/mimasu-yaneko)**: An izakaya serving Japanese dishes to go with drinks.\n- **[Asakusa Kushiage Ageman](/en/place/asakusa-ageman)**: An izakaya for kushiage (deep-fried skewers) and drinks.\n- **[Kimagure Eriko](/en/place/kimagure-eriko)**: An izakaya run by a female owner, offering creative dishes.\n\n### Bars and international food\n\n- **[Midoriya](/en/place/hatsune-midoriya)**: A bar marked by its green exterior. Popular with music lovers, with terrace seating out front.\n- **[Gajumaru](/en/place/hatsune-gajumaru)**: An Okinawan izakaya with a wide selection of awamori, open until late.\n- **[Tensai Brasil](/en/place/tensai-brasil)**: A Brazilian bar and restaurant that opened in 2023.\n\n### Street food and light meals\n\n- **[Asakusa Unana](/en/place/asakusa-unana)**: A takeout shop specializing in Japanese eel. Famous for grilled rice balls topped with charcoal-grilled eel.\n- **[Asakusa Tencha](/en/place/asakusa-tencha)**: A shop serving tencha—tea-over-rice topped with freshly fried tempura. Open from the morning.\n\n## Access\n\nHatsune Koji is in Asakusa 2-chome, Taito-ku, about a 3-minute walk from Asakusa Station on the Tsukuba Express and 7–8 minutes from Asakusa Station on the Tokyo Metro Ginza Line, Toei Asakusa Line and Tobu Line. Opening hours and closing days vary by shop, and many are closed on Tuesdays, so check each shop's information before visiting."
     }
   },
   "places": {
@@ -2090,6 +2095,90 @@
       "address": "1-7-8 Kaminarimon, Taito-ku, Tokyo",
       "opening_hours": null,
       "area": "Kaminarimon"
+    },
+    "asakusa-hanamoto": {
+      "name": "Asakusa Hanamoto",
+      "description": "A long-established izakaya in Hatsune Koji since 1964, serving motsunabe and seafood.",
+      "address": "2-7-14 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hatsune Koji"
+    },
+    "matsuyoshi": {
+      "name": "Matsuyoshi",
+      "description": "A casual izakaya in Hatsune Koji with outdoor tables open from midday. Known for beef tendon stew and yakitori.",
+      "address": "2-7-21 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hatsune Koji"
+    },
+    "hatsune-midoriya": {
+      "name": "Midoriya",
+      "description": "A bar in Hatsune Koji marked by its green exterior. Popular with music lovers, with terrace seating out front.",
+      "address": "2-7-21 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hatsune Koji"
+    },
+    "kimagure-eriko": {
+      "name": "Kimagure Eriko",
+      "description": "An izakaya in Hatsune Koji run by a female owner, offering creative dishes and drinks in a relaxed setting.",
+      "address": "2-7-21 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hatsune Koji"
+    },
+    "tensai-brasil": {
+      "name": "Tensai Brasil",
+      "description": "A Brazilian bar and restaurant in Hatsune Koji, opened in 2023.",
+      "address": "2-7-21 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hatsune Koji"
+    },
+    "hatsune-oike": {
+      "name": "Oike",
+      "description": "An izakaya in Hatsune Koji that opens in the early afternoon for daytime drinking.",
+      "address": "2-7-21 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hatsune Koji"
+    },
+    "asakusa-ageman": {
+      "name": "Asakusa Kushiage Ageman",
+      "description": "A kushiage (deep-fried skewers) izakaya in Hatsune Koji.",
+      "address": "2-7-21 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hatsune Koji"
+    },
+    "asakusa-unana": {
+      "name": "Asakusa Unana",
+      "description": "A takeout shop in Hatsune Koji specializing in Japanese eel. Famous for grilled rice balls topped with charcoal-grilled eel.",
+      "address": "2-7-21 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hatsune Koji"
+    },
+    "hatsune-gajumaru": {
+      "name": "Gajumaru",
+      "description": "An Okinawan izakaya in Hatsune Koji with a wide selection of awamori and other Okinawan drinks, open until late.",
+      "address": "2-7-21 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hatsune Koji"
+    },
+    "asakusa-tencha": {
+      "name": "Asakusa Tencha",
+      "description": "A shop serving tencha—tea-over-rice topped with freshly fried tempura. Open from the morning.",
+      "address": "2-7-21 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hatsune Koji"
+    },
+    "chanbaraya": {
+      "name": "Chanbaraya",
+      "description": "An izakaya in Hatsune Koji that opens before noon.",
+      "address": "2-7-21 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hatsune Koji"
+    },
+    "mimasu-yaneko": {
+      "name": "Mimasu Yaneko",
+      "description": "An izakaya in Hatsune Koji serving Japanese dishes to go with drinks.",
+      "address": "2-7-21 Asakusa, Taito-ku, Tokyo",
+      "opening_hours": null,
+      "area": "Hatsune Koji"
     }
   }
 }
