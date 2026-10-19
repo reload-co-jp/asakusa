@@ -40,6 +40,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
     { href: "/category/sale/", label: t.nav.sale },
     { href: "/category/popup/", label: t.nav.popup },
     { href: "/category/exhibition/", label: t.nav.exhibition },
+    { href: "/category/guide/", label: t.nav.guide },
     { href: "/place/", label: t.nav.places },
     { href: "/gourmet/", label: t.nav.gourmet },
     { href: "/area/", label: t.nav.areas },
@@ -55,6 +56,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
     { href: "/category/sale/", label: t.nav.sale },
     { href: "/category/new_opening/", label: t.nav.newOpening },
     { href: "/category/local_news/", label: t.nav.news },
+    { href: "/category/guide/", label: t.nav.guide },
     { href: "/place/", label: t.nav.spots },
     { href: "/area/", label: t.nav.areas },
   ].map((link) => ({ ...link, href: href(link.href) }))

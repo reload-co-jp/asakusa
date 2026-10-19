@@ -52,6 +52,7 @@ const CATEGORY_BLOCKS: Category[] = [
   "popup",
   "sale",
   "event",
+  "guide",
 ]
 
 const Page: FC = async () => {

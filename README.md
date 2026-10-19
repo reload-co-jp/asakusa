@@ -120,6 +120,7 @@ Entityと紐付け
 - `exhibition` - 展示会
 - `facility_news` - 施設ニュース
 - `local_news` - 地域ニュース
+- `guide` - 紹介記事（エリア・通り・名店などの紹介）
 
 ## 6. 管理する情報
 

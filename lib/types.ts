@@ -14,6 +14,7 @@ export const CATEGORIES = {
   exhibition: "展示会",
   facility_news: "施設ニュース",
   local_news: "地域ニュース",
+  guide: "紹介記事",
 } as const
 
 export type Category = keyof typeof CATEGORIES
@@ -34,6 +35,7 @@ export const CATEGORY_DESCRIPTIONS: Record<Category, string> = {
   exhibition: "浅草エリアの展示会情報をまとめてお届け",
   facility_news: "浅草エリアの施設ニュースをまとめてお届け",
   local_news: "浅草エリアの地域ニュースをまとめてお届け",
+  guide: "浅草のエリア・通り・名店などの紹介記事をまとめてお届け",
 }
 
 // カテゴリページのtitle/H1。検索意図(例: 浅草 新店舗)に合わせる
@@ -53,6 +55,7 @@ export const CATEGORY_TITLES: Record<Category, string> = {
   exhibition: "浅草の展示・展覧会情報",
   facility_news: "浅草の施設ニュース",
   local_news: "浅草の地域ニュース",
+  guide: "浅草の紹介記事・エリア・通り・名店ガイド",
 }
 
 // パンくずで「イベント」配下に置くカテゴリ

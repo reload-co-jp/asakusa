@@ -30,6 +30,7 @@ const CATEGORIES = [
   "exhibition",
   "facility_news",
   "local_news",
+  "guide",
 ]
 
 // lib/types.ts の AREAS と対応

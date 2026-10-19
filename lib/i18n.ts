@@ -43,6 +43,7 @@ const ja = {
     spots: "スポット",
     areas: "エリア",
     news: "ニュース",
+    guide: "紹介記事",
   },
   breadcrumbLabel: "パンくずリスト",
   languageLabel: "言語",
@@ -270,6 +271,7 @@ const en: Dictionary = {
     spots: "Spots",
     areas: "Areas",
     news: "News",
+    guide: "Guides",
   },
   breadcrumbLabel: "Breadcrumb",
   languageLabel: "Language",
@@ -459,6 +461,7 @@ const en: Dictionary = {
     exhibition: "Exhibitions",
     facility_news: "Venue News",
     local_news: "Local News",
+    guide: "Spot Guides",
   },
   categoryTitles: {
     event: "Asakusa Events & Experiences",
@@ -476,6 +479,7 @@ const en: Dictionary = {
     exhibition: "Exhibitions in Asakusa",
     facility_news: "Asakusa Venue News",
     local_news: "Asakusa Local News",
+    guide: "Asakusa Guides: Streets, Shopping Arcades & Famous Spots",
   },
   categoryDescriptions: {
     event: "Events happening around Asakusa",
@@ -493,6 +497,8 @@ const en: Dictionary = {
     exhibition: "Exhibitions around Asakusa",
     facility_news: "News from venues around Asakusa",
     local_news: "Local news from around Asakusa",
+    guide:
+      "Guides to Asakusa streets, shopping arcades, izakaya alleys and famous spots",
   },
   gourmetGenres: {
     sukiyaki: "Sukiyaki & Gyunabe",
@@ -577,6 +583,7 @@ const zh: Dictionary = {
     spots: "景点",
     areas: "地区",
     news: "新闻",
+    guide: "特色介绍",
   },
   breadcrumbLabel: "面包屑导航",
   languageLabel: "语言",
@@ -755,6 +762,7 @@ const zh: Dictionary = {
     exhibition: "展览",
     facility_news: "设施新闻",
     local_news: "地区新闻",
+    guide: "特色介绍",
   },
   categoryTitles: {
     event: "浅草活动・体验信息",
@@ -772,6 +780,7 @@ const zh: Dictionary = {
     exhibition: "浅草展览・展会信息",
     facility_news: "浅草设施新闻",
     local_news: "浅草地区新闻",
+    guide: "浅草特色介绍・街区与名店指南",
   },
   categoryDescriptions: {
     event: "汇总浅草地区举办的活动信息",
@@ -789,6 +798,7 @@ const zh: Dictionary = {
     exhibition: "汇总浅草地区的展览信息",
     facility_news: "汇总浅草地区的设施新闻",
     local_news: "汇总浅草地区的地区新闻",
+    guide: "汇总浅草街区、商店街与名店的特色介绍文章",
   },
   gourmetGenres: {
     sukiyaki: "寿喜烧・牛锅",
