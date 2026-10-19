@@ -59,12 +59,12 @@ const DisplayAd: FC = () => {
 
 const COUNT_KEY = "transition-count"
 
-// 2回目以降の遷移で偶数回目にだけ表示する。検索等からの着地(外部リファラ)は数えない
+// 内部遷移3回に1回だけ表示する。検索等からの着地(外部リファラ)は数えない
 export const shouldShowInterstitial = (
   count: number,
   isInternal: boolean
 ): [show: boolean, next: number] =>
-  isInternal ? [(count + 1) % 2 === 0, count + 1] : [false, count]
+  isInternal ? [(count + 1) % 3 === 0, count + 1] : [false, count]
 
 export const TransitionOverlay: FC<{
   links: { href: string; label: string }[]
