@@ -9,7 +9,13 @@ import {
   LinkList,
 } from "@/components/elements/breadcrumbs"
 import { ContentList, Section } from "@/components/elements/content"
-import { getPlace, getPlaceContents, localizePlace, places } from "@/lib/data"
+import {
+  getNearbyHotels,
+  getPlace,
+  getPlaceContents,
+  localizePlace,
+  places,
+} from "@/lib/data"
 import { alternates, getDictionary, localePath } from "@/lib/i18n"
 import { SITE_URL } from "@/lib/json-ld"
 import { PlaceType } from "@/lib/types"
@@ -89,6 +95,11 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
   const { locale, t } = await getDictionary()
   const place = localizePlace(original, locale)
   const { ongoing, upcoming, others } = getPlaceContents(place.id)
+  // 緯度経度未設定の施設は雷門基準
+  const hotels = getNearbyHotels(
+    place.latitude ?? 35.7111,
+    place.longitude ?? 139.7963
+  )
   const { latitude, longitude } = place
   const mapUrl =
     latitude != null && longitude != null
@@ -247,16 +258,78 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
           </>
         )}
         {RAKUTEN_AFFILIATE_ID && (
-          <p style={{ fontSize: ".85rem", margin: ".5rem 0 0" }}>
-            <a
-              href={HOTELS_URL}
-              rel="sponsored noreferrer"
-              style={{ color: "var(--accent)" }}
-              target="_blank"
-            >
-              {t.place.hotels}
-            </a>
-          </p>
+          <>
+            {hotels.length > 0 && (
+              <>
+                <h2 style={{ fontSize: "1rem", margin: "1.5rem 0 .5rem" }}>
+                  {t.place.nearbyHotels(place.name)}
+                </h2>
+                <ul
+                  style={{
+                    display: "grid",
+                    gap: ".75rem",
+                    listStyle: "none",
+                    margin: 0,
+                    padding: 0,
+                  }}
+                >
+                  {hotels.map((hotel) => (
+                    <li key={hotel.id}>
+                      <a
+                        href={hotel.url}
+                        rel="sponsored noreferrer"
+                        style={{
+                          color: "var(--ink)",
+                          display: "flex",
+                          gap: ".75rem",
+                          textDecoration: "none",
+                        }}
+                        target="_blank"
+                      >
+                        {hotel.image_url && (
+                          // 楽天の画像をそのまま表示する(静的exportのため最適化なし)
+                          <img
+                            alt=""
+                            height={60}
+                            loading="lazy"
+                            src={hotel.image_url}
+                            style={{ flexShrink: 0, objectFit: "cover" }}
+                            width={80}
+                          />
+                        )}
+                        <span style={{ fontSize: ".85rem" }}>
+                          <strong style={{ display: "block" }}>
+                            {hotel.name}
+                          </strong>
+                          <span style={{ color: "var(--muted)" }}>
+                            {[
+                              hotel.nearest_station,
+                              hotel.review_average &&
+                                `★${hotel.review_average}`,
+                              hotel.min_charge &&
+                                t.place.minCharge(hotel.min_charge),
+                            ]
+                              .filter(Boolean)
+                              .join(" / ")}
+                          </span>
+                        </span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+            <p style={{ fontSize: ".85rem", margin: ".5rem 0 0" }}>
+              <a
+                href={HOTELS_URL}
+                rel="sponsored noreferrer"
+                style={{ color: "var(--accent)" }}
+                target="_blank"
+              >
+                {t.place.hotels}
+              </a>
+            </p>
+          </>
         )}
       </article>
       <InArticleAd />

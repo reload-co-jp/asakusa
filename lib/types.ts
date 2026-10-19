@@ -143,6 +143,19 @@ export type Place = {
   updated_at: string
 }
 
+// 楽天トラベルの施設。url はアフィリエイトURL
+export type Hotel = {
+  id: number
+  name: string
+  url: string
+  image_url: string | null
+  min_charge: number | null
+  review_average: number | null
+  nearest_station: string | null
+  latitude: number
+  longitude: number
+}
+
 export type ContentType = "event" | "news"
 
 export type Content = {

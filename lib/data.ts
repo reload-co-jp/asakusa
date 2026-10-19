@@ -1,6 +1,7 @@
 import placesJson from "@/data/places.json"
 import contentsJson from "@/data/contents.json"
 import festivalsJson from "@/data/festivals.json"
+import hotelsJson from "@/data/hotels.json"
 import sourcesJson from "@/data/sources.json"
 import enJson from "@/data/translations/en.json"
 import zhJson from "@/data/translations/zh.json"
@@ -20,6 +21,7 @@ import type {
   Content,
   Festival,
   GourmetGenre,
+  Hotel,
   Place,
   PlaceType,
   Source,
@@ -30,6 +32,26 @@ export const places = placesJson as Place[]
 export const contents = contentsJson as Content[]
 export const sources = sourcesJson as Source[]
 export const festivals = festivalsJson as Festival[]
+export const hotels = hotelsJson as Hotel[]
+
+// 浅草周辺の狭い範囲なので緯度経度の差の二乗和で近似して並べる
+export const getNearbyHotels = (
+  latitude: number,
+  longitude: number,
+  limit = 3
+): Hotel[] =>
+  hotels
+    .map((hotel) => ({
+      hotel,
+      distance:
+        (hotel.latitude - latitude) ** 2 +
+        ((hotel.longitude - longitude) *
+          Math.cos((latitude * Math.PI) / 180)) **
+          2,
+    }))
+    .sort((a, b) => a.distance - b.distance)
+    .slice(0, limit)
+    .map(({ hotel }) => hotel)
 
 export const getGourmetPlaces = (genre: GourmetGenre): Place[] =>
   places.filter((place) => place.genre === genre)

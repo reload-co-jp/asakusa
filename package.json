@@ -15,6 +15,7 @@
     "test:watch": "vitest",
     "fetch-contents": "node scripts/fetch-contents.mjs",
     "fetch-spot-images": "node scripts/fetch-spot-images.mjs",
+    "fetch-hotels": "node --env-file=.env scripts/fetch-hotels.mjs",
     "tag-contents": "node scripts/tag-contents.mjs"
   },
   "keywords": [],
