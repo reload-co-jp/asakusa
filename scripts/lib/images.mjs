@@ -114,6 +114,35 @@ export const pickFallback = (candidates) => {
   return sorted[0] ?? null
 }
 
+// 画像の横幅をヘッダから読む(PNG/GIF/WebP/JPEG)。読めなければ0
+export const imageWidth = (buf) => {
+  if (buf.toString("ascii", 1, 4) === "PNG") return buf.readUInt32BE(16)
+  if (buf.toString("ascii", 0, 3) === "GIF") return buf.readUInt16LE(6)
+  if (buf.toString("ascii", 8, 12) === "WEBP") {
+    const chunk = buf.toString("ascii", 12, 16)
+    if (chunk === "VP8 ") return buf.readUInt16LE(26) & 0x3fff
+    if (chunk === "VP8L") return (buf.readUInt16LE(21) & 0x3fff) + 1
+    if (chunk === "VP8X") return buf.readUIntLE(24, 3) + 1
+    return 0
+  }
+  if (buf[0] === 0xff && buf[1] === 0xd8) {
+    let i = 2
+    while (i + 9 < buf.length) {
+      if (buf[i] !== 0xff) return 0
+      const marker = buf[i + 1]
+      // SOF0〜SOF15(DHT/JPG/DACを除く)に寸法が入る
+      if (
+        marker >= 0xc0 &&
+        marker <= 0xcf &&
+        ![0xc4, 0xc8, 0xcc].includes(marker)
+      )
+        return buf.readUInt16BE(i + 7)
+      i += 2 + buf.readUInt16BE(i + 2)
+    }
+  }
+  return 0
+}
+
 export const guessExt = (url, contentType) => {
   if (contentType?.includes("png")) return "png"
   if (contentType?.includes("webp")) return "webp"

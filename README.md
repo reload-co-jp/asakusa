@@ -81,6 +81,21 @@ URL: https://asakusa.reload.co.jp
 - イベントプラットフォームは補完情報として利用する
 - 取得URL・取得日時・source_typeを保存する
 
+### スポットの画像
+
+スポット(店舗・施設)の写真は `public/images/spots/{place_id}.{jpg|png|webp}` にローカル保存し、`data/places.json` の `image_url` から参照する。
+
+```bash
+npm run fetch-spot-images              # 画像未設定のスポットをまとめて取得
+npm run fetch-spot-images -- --ids=shochan,okamoto-honten   # 対象を指定
+npm run fetch-spot-images -- --area=ホッピー通り              # エリアを指定
+npm run fetch-spot-images -- --prefer=tabelog --all          # 食べログの画像を優先して再取得
+```
+
+- 取得元は「公式サイト → 食べログ」の順。公式サイトが無い店舗は食べログの店舗ページから取得する
+- 食べログの店舗は「店名の一致度 + 住所の一致 + 位置(緯度経度)の近さ」で判定し、別の店舗の写真を取得しない
+- 画像の取得元URLは `source_url` に保存する
+
 ## 4. 情報収集フロー
 
 ```text
