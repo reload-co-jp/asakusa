@@ -6,6 +6,9 @@ const FILE = new URL("../data/hotels.json", import.meta.url)
 const API =
   "https://openapi.rakuten.co.jp/engine/api/Travel/SimpleHotelSearch/20260731"
 const AFFILIATE_ID = "589a7e53.27e6c7b2.589a7e54.37a5adb6"
+// 楽天アフィリエイトの計測ID。リンクの /hgc/{ID}/ 直後に _RTLink{計測ID} を差し込む
+const TRACKING_ID = "asakusa"
+const RTLINK = TRACKING_ID ? `_RTLink${TRACKING_ID}` : ""
 // 雷門
 const CENTER = { latitude: 35.7111, longitude: 139.7963 }
 
@@ -45,7 +48,10 @@ for (let page = 1; page <= 3; page++) {
     hotels.push({
       id: info.hotelNo,
       name: info.hotelName,
-      url: info.hotelInformationUrl,
+      url: info.hotelInformationUrl.replace(
+        `/hgc/${AFFILIATE_ID}/`,
+        `/hgc/${AFFILIATE_ID}/${RTLINK}`,
+      ),
       image_url: info.hotelThumbnailUrl,
       min_charge: info.hotelMinCharge,
       review_average: info.reviewAverage,

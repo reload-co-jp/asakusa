@@ -36,10 +36,13 @@ const SCHEMA_TYPES: Record<PlaceType, string> = {
 
 // 楽天アフィリエイトID。空なら周辺ホテルリンクを出さない
 const RAKUTEN_AFFILIATE_ID = "589a7e53.27e6c7b2.589a7e54.37a5adb6"
+// 楽天アフィリエイトの計測ID。空なら付けない
+const RAKUTEN_TRACKING_ID = "asakusa"
+const RAKUTEN_RTLINK = RAKUTEN_TRACKING_ID ? `_RTLink${RAKUTEN_TRACKING_ID}` : ""
 const HOTELS_TARGET =
   "https://kw.travel.rakuten.co.jp/keyword/Search.do?charset=utf-8&f_query=" +
   encodeURIComponent("浅草")
-const HOTELS_URL = `https://hb.afl.rakuten.co.jp/hgc/${RAKUTEN_AFFILIATE_ID}/?pc=${encodeURIComponent(HOTELS_TARGET)}&m=${encodeURIComponent(HOTELS_TARGET)}`
+const HOTELS_URL = `https://hb.afl.rakuten.co.jp/hgc/${RAKUTEN_AFFILIATE_ID}/${RAKUTEN_RTLINK}?pc=${encodeURIComponent(HOTELS_TARGET)}&m=${encodeURIComponent(HOTELS_TARGET)}`
 
 export const generateStaticParams = () =>
   places.map((place) => ({ id: place.id }))
