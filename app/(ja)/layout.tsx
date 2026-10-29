@@ -104,16 +104,11 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
               links={mainLinks}
             />
             <form
-              action="https://www.google.com/search"
+              action={href("/search/")}
               className="search"
               method="get"
               role="search"
             >
-              <input
-                name="as_sitesearch"
-                type="hidden"
-                value={new URL(SITE_URL).host}
-              />
               <input
                 aria-label={t.search.label}
                 className="search__input"

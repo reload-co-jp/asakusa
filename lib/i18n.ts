@@ -74,6 +74,9 @@ const ja = {
     label: "サイト内検索",
     placeholder: "記事を検索",
     submit: "検索",
+    title: "検索結果",
+    count: "{n}件",
+    empty: "該当する記事はありません。",
   },
   interstitial: { label: "広告", close: "閉じる", top: "トップへ" },
   footer: {
@@ -307,6 +310,9 @@ const en: Dictionary = {
     label: "Search this site",
     placeholder: "Search articles",
     submit: "Search",
+    title: "Search results",
+    count: "{n} results",
+    empty: "No matching articles.",
   },
   interstitial: { label: "Advertisement", close: "Close", top: "Home" },
   footer: {
@@ -622,6 +628,9 @@ const zh: Dictionary = {
     label: "站内搜索",
     placeholder: "搜索文章",
     submit: "搜索",
+    title: "搜索结果",
+    count: "{n}条结果",
+    empty: "没有找到相关文章。",
   },
   interstitial: { label: "广告", close: "关闭", top: "首页" },
   footer: {
