@@ -970,6 +970,46 @@ a {
 .readable p + p {
   margin-top: 1em;
 }
+.prose h2 {
+  border-bottom: 1px solid var(--sand);
+  border-left: 4px solid var(--accent);
+  font-size: 1.3rem;
+  margin: 2.75rem 0 1rem;
+  padding: 0.2rem 0 0.45rem 0.8rem;
+}
+.prose h3 {
+  font-size: 1.1rem;
+  margin: 2rem 0 0.75rem;
+}
+.prose h3::before {
+  color: var(--accent);
+  content: "■ ";
+  font-size: 0.8em;
+}
+.prose strong {
+  background: linear-gradient(transparent 62%, var(--accent-soft) 62%);
+  color: var(--ink);
+  font-weight: 700;
+}
+.prose ul,
+.prose ol {
+  background: var(--surface);
+  border: 1px solid var(--sand);
+  margin: 1.25rem 0;
+  padding: 1rem 1.25rem 1rem 2.4rem;
+}
+.prose li + li {
+  margin-top: 0.35rem;
+}
+.prose li::marker {
+  color: var(--accent);
+}
+.prose blockquote {
+  border-left: 3px solid var(--sand);
+  color: var(--muted);
+  margin: 1.25rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+}
 .event-list > .ad-slot,
 .news-list > .ad-slot {
   grid-column: 1 / -1;

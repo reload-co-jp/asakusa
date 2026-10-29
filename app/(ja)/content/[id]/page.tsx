@@ -81,7 +81,13 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
   const { content, place } = localized(original, locale)
   const source = content.source_id ? getSource(content.source_id) : undefined
   const bodyHtml = DOMPurify.sanitize(
-    marked.parse(content.body, { breaks: true }) as string
+    // 本文先頭の見出しがタイトルと同じならh1と重複するため除く
+    marked.parse(
+      content.body.trimStart().replace(`## ${content.title}\n`, ""),
+      {
+        breaks: true,
+      }
+    ) as string
   )
   const url = `${SITE_URL}${localePath(locale, `/content/${content.id}/`)}`
   const categoryCrumb: Crumb = {
@@ -192,6 +198,7 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
           {t.content.published(formatDate(content.published_at, locale))}
         </p>
         <div
+          className="prose"
           dangerouslySetInnerHTML={{ __html: bodyHtml }}
           style={{
             color: "var(--ink-soft)",
