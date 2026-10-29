@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest"
 import {
+  daysBetween,
   formatPeriod,
   jstDateString,
   nextWeekPeriod,
@@ -97,5 +98,12 @@ describe("date", () => {
     expect(formatPeriod({ from: "2026-09-28", to: "2026-10-04" }, "en")).toBe(
       "Sep 28, 2026 – Oct 4, 2026"
     )
+  })
+})
+
+describe("daysBetween", () => {
+  it("月をまたいでも日数を返す", () => {
+    expect(daysBetween("2026-09-25", "2026-10-02")).toBe(7)
+    expect(daysBetween("2026-09-25", "2026-09-25")).toBe(0)
   })
 })

@@ -148,6 +148,7 @@ const ja = {
     heading: "浅草のイベント情報",
     lead: (count: number) => `浅草で開催中・開催予定のイベント ${count}件`,
     archive: "月別アーカイブ",
+    schedule: "開催スケジュール",
     monthTitle: (month: string) =>
       `${month}の浅草イベント・祭り・公演一覧｜浅草ライブ`,
     monthDescription: (month: string, count: number) =>
@@ -380,6 +381,7 @@ const en: Dictionary = {
     heading: "Asakusa Events",
     lead: (count) => `${count} ongoing and upcoming events in Asakusa`,
     archive: "Monthly Archive",
+    schedule: "Schedule",
     monthTitle: (month) =>
       `Asakusa Events, Festivals & Performances in ${month} | Asakusa Live`,
     monthDescription: (month, count) =>
@@ -690,6 +692,7 @@ const zh: Dictionary = {
     heading: "浅草活动信息",
     lead: (count) => `浅草正在举办・即将举办的活动 ${count}项`,
     archive: "按月归档",
+    schedule: "举办日程",
     monthTitle: (month) => `${month}浅草活动・祭典・演出一览｜浅草Live`,
     monthDescription: (month, count) =>
       `${month}在浅草举办的${count}项活动一览，汇总祭典、传统仪式、演出、曲艺、展览、快闪店等的日期与会场。`,

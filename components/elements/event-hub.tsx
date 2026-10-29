@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Metadata } from "next"
 import { FC } from "react"
 import {
@@ -6,8 +7,20 @@ import {
   LinkList,
 } from "@/components/elements/breadcrumbs"
 import { ContentList, Section } from "@/components/elements/content"
-import { getCategoryCount, getEventsInPeriod, getThemeEvents } from "@/lib/data"
-import { formatPeriod, jstDateString, Period } from "@/lib/date"
+import {
+  getCategoryCount,
+  getEventsInPeriod,
+  getThemeEvents,
+  localizeContent,
+} from "@/lib/data"
+import {
+  addDays,
+  daysBetween,
+  formatPeriod,
+  formatShortDate,
+  jstDateString,
+  Period,
+} from "@/lib/date"
 import {
   alternates,
   DICTIONARIES,
@@ -16,7 +29,7 @@ import {
   localePath,
 } from "@/lib/i18n"
 import { SITE_URL } from "@/lib/json-ld"
-import { Category, Theme, THEMES } from "@/lib/types"
+import { Category, Content, Theme, THEMES } from "@/lib/types"
 
 type PeriodKey = "today" | "thisWeek" | "weekend" | "nextWeek" | "thisMonth"
 
@@ -186,5 +199,58 @@ export const EventNavigation: FC<{ current?: string }> = async ({
         />
       </Section>
     </>
+  )
+}
+
+const GANTT_DAYS = 56
+
+// 今日から8週間の開催期間をバー表示。期間外にはみ出す部分は切り詰める
+export const EventGantt: FC<{ events: Content[] }> = async ({ events }) => {
+  const { locale } = await getDictionary()
+  const today = jstDateString()
+  const last = addDays(today, GANTT_DAYS - 1)
+  const percent = (days: number) => `${(days / GANTT_DAYS) * 100}%`
+  const rows = events.filter((content) => content.start_at! <= last)
+  return (
+    <div className="gantt">
+      <div className="gantt__row gantt__row--head">
+        <span />
+        <div className="gantt__track">
+          {Array.from({ length: GANTT_DAYS / 7 }, (_, week) => (
+            <span
+              className="gantt__tick"
+              key={week}
+              style={{ left: percent(week * 7) }}
+            >
+              {formatShortDate(addDays(today, week * 7))}
+            </span>
+          ))}
+        </div>
+      </div>
+      {rows.map((content) => {
+        const start = content.start_at! < today ? today : content.start_at!
+        const end = content.end_at ?? content.start_at!
+        const clippedEnd = end > last ? last : end
+        return (
+          <div className="gantt__row" key={content.id}>
+            <Link
+              className="gantt__title"
+              href={localePath(locale, `/content/${content.id}/`)}
+            >
+              {localizeContent(content, locale).title}
+            </Link>
+            <div className="gantt__track">
+              <span
+                className="gantt__bar"
+                style={{
+                  left: percent(daysBetween(today, start)),
+                  width: percent(daysBetween(start, clippedEnd) + 1),
+                }}
+              />
+            </div>
+          </div>
+        )
+      })}
+    </div>
   )
 }

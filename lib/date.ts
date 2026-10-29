@@ -16,6 +16,9 @@ export const jstDateString = (now = new Date()): string =>
 export const addDays = (date: string, days: number): string =>
   format(new Date(parse(date).getTime() + days * DAY_MS))
 
+export const daysBetween = (from: string, to: string): number =>
+  (parse(to).getTime() - parse(from).getTime()) / DAY_MS
+
 export const weekday = (date: string): number => parse(date).getUTCDay()
 
 const WEEKDAYS_EN = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]

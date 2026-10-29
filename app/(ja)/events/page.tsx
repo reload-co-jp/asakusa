@@ -7,6 +7,7 @@ import {
 } from "@/components/elements/breadcrumbs"
 import { ContentList, Section } from "@/components/elements/content"
 import {
+  EventGantt,
   EventNavigation,
   itemListJsonLd,
 } from "@/components/elements/event-hub"
@@ -49,6 +50,9 @@ const Page: FC = async () => {
         title={t.events.heading}
       >
         <ContentList contents={events} />
+      </Section>
+      <Section eyebrow="SCHEDULE" title={t.events.schedule}>
+        <EventGantt events={events} />
       </Section>
       <EventNavigation />
       {months.length > 0 && (

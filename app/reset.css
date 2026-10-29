@@ -1016,3 +1016,44 @@ a {
   list-style: none;
   padding: 0;
 }
+
+.gantt {
+  font-size: 0.8rem;
+  overflow-x: auto;
+}
+.gantt__row {
+  align-items: center;
+  border-bottom: 1px solid var(--gray);
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: minmax(8rem, 14rem) 1fr;
+  min-width: 40rem;
+  padding: 0.3rem 0;
+}
+.gantt__row--head {
+  border-bottom-color: var(--sand);
+  color: var(--muted);
+}
+.gantt__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.gantt__track {
+  height: 1rem;
+  position: relative;
+}
+.gantt__tick {
+  border-left: 1px solid var(--sand);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  padding-left: 0.25rem;
+  position: absolute;
+}
+.gantt__bar {
+  background: var(--accent);
+  border-radius: 2px;
+  height: 100%;
+  min-width: 4px;
+  position: absolute;
+}
