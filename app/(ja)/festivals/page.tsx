@@ -38,7 +38,13 @@ const Page: FC = async () => {
         ]}
       />
       <Section
-        description={t.festivals.lead}
+        description={
+          <>
+            {t.festivals.description}
+            <br />
+            {t.festivals.lead}
+          </>
+        }
         eyebrow="FESTIVALS"
         level={1}
         title={t.festivals.heading}

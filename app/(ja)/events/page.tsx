@@ -60,7 +60,13 @@ const Page: FC = async () => {
         )}
       />
       <Section
-        description={t.events.lead(events.length)}
+        description={
+          <>
+            {t.events.description}
+            <br />
+            {t.events.lead(events.length)}
+          </>
+        }
         eyebrow="EVENTS"
         level={1}
         title={t.events.heading}

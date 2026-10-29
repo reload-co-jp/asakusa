@@ -147,11 +147,17 @@ export const PeriodPage: FC<{ config: PeriodPageConfig }> = async ({
         }}
       />
       <Section
-        description={t.hub.periodLead(
-          formatPeriod({ from, to }, locale),
-          events.length,
-          jstDateString()
-        )}
+        description={
+          <>
+            {t.hub.periodDescription(formatPeriod({ from, to }, locale))}
+            <br />
+            {t.hub.periodLead(
+              formatPeriod({ from, to }, locale),
+              events.length,
+              jstDateString()
+            )}
+          </>
+        }
         eyebrow="EVENTS"
         level={1}
         title={pageTitle(config, locale)}
