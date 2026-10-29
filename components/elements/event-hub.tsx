@@ -203,16 +203,31 @@ export const EventNavigation: FC<{ current?: string }> = async ({
 }
 
 const GANTT_DAYS = 56
+// バーの色分け。これ以外のカテゴリは既定色
+const GANTT_CATEGORIES: Category[] = [
+  "festival",
+  "performance",
+  "exhibition",
+  "popup",
+  "new_opening",
+]
 
 // 今日から8週間の開催期間をバー表示。期間外にはみ出す部分は切り詰める
 export const EventGantt: FC<{ events: Content[] }> = async ({ events }) => {
-  const { locale } = await getDictionary()
+  const { locale, t } = await getDictionary()
   const today = jstDateString()
   const last = addDays(today, GANTT_DAYS - 1)
   const percent = (days: number) => `${(days / GANTT_DAYS) * 100}%`
   const rows = events.filter((content) => content.start_at! <= last)
   return (
     <div className="gantt">
+      <ul className="gantt__legend">
+        {GANTT_CATEGORIES.map((category) => (
+          <li data-category={category} key={category}>
+            {t.categories[category]}
+          </li>
+        ))}
+      </ul>
       <div className="gantt__row gantt__row--head">
         <span />
         <div className="gantt__track">
@@ -242,6 +257,7 @@ export const EventGantt: FC<{ events: Content[] }> = async ({ events }) => {
             <div className="gantt__track">
               <span
                 className="gantt__bar"
+                data-category={content.category}
                 style={{
                   left: percent(daysBetween(today, start)),
                   width: percent(daysBetween(start, clippedEnd) + 1),

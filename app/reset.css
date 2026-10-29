@@ -466,6 +466,14 @@ a {
   font-size: 0.92rem;
   line-height: 1.85;
 }
+@media (min-width: 720px) {
+  .section > .feature {
+    align-items: center;
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
 .feature:hover .feature__title {
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -1035,7 +1043,9 @@ a {
   color: var(--muted);
 }
 .gantt__title {
+  color: var(--ink);
   overflow: hidden;
+  text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -1050,10 +1060,50 @@ a {
   padding-left: 0.25rem;
   position: absolute;
 }
+.gantt__title:hover {
+  text-decoration: underline;
+}
 .gantt__bar {
-  background: var(--accent);
+  background: var(--muted);
   border-radius: 2px;
   height: 100%;
   min-width: 4px;
   position: absolute;
+}
+.gantt__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  list-style: none;
+  margin: 0 0 0.75rem;
+  padding: 0;
+}
+.gantt__legend li::before {
+  border-radius: 2px;
+  content: "";
+  display: inline-block;
+  height: 0.7rem;
+  margin-right: 0.35rem;
+  vertical-align: -0.05rem;
+  width: 0.7rem;
+}
+[data-category="festival"].gantt__bar,
+.gantt__legend [data-category="festival"]::before {
+  background: var(--accent);
+}
+[data-category="performance"].gantt__bar,
+.gantt__legend [data-category="performance"]::before {
+  background: #3f5f8a;
+}
+[data-category="exhibition"].gantt__bar,
+.gantt__legend [data-category="exhibition"]::before {
+  background: #5f7f4f;
+}
+[data-category="popup"].gantt__bar,
+.gantt__legend [data-category="popup"]::before {
+  background: #c08a2e;
+}
+[data-category="new_opening"].gantt__bar,
+.gantt__legend [data-category="new_opening"]::before {
+  background: #7a4f86;
 }
