@@ -109,7 +109,8 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
     url: "https://reload.co.jp/",
   }
   // ページ上に表示している情報のみ構造化データに含める
-  const jsonLd = content.start_at
+  // Event は location 必須のため、場所不明なら NewsArticle として出す
+  const jsonLd = content.start_at && place
     ? {
         "@context": "https://schema.org",
         "@type": "Event",
@@ -119,13 +120,11 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
         ...(content.end_at && { endDate: content.end_at }),
         ...(content.image_url && { image: `${SITE_URL}${content.image_url}` }),
         url,
-        ...(place && {
-          location: {
-            "@type": "Place",
-            name: place.name,
-            address: place.address,
-          },
-        }),
+        location: {
+          "@type": "Place",
+          name: place.name,
+          address: place.address,
+        },
       }
     : {
         "@context": "https://schema.org",
