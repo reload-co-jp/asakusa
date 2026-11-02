@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 import Script from "next/script"
-import { TransitionOverlay } from "@/components/elements/ad"
+import { PageAd, TransitionOverlay } from "@/components/elements/ad"
 import { LanguageSwitcher } from "@/components/elements/language-switcher"
 import { Footer, Header, Main, Nav, Title } from "@/components/elements/layout"
 import { Logo } from "@/components/elements/logo"
@@ -124,17 +124,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
         </Header>
         <Main>
           {children}
-          <ins
-            className="adsbygoogle"
-            style={{ display: "block" }}
-            data-ad-client="ca-pub-6542845006087970"
-            data-ad-slot="4829146611"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          />
-          <Script id="adsbygoogle-push" strategy="afterInteractive">
-            {`(adsbygoogle = window.adsbygoogle || []).push({});`}
-          </Script>
+          <PageAd />
         </Main>
         <Footer>
           <div className="site-footer__grid">

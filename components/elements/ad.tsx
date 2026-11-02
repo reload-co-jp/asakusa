@@ -57,6 +57,9 @@ const DisplayAd: FC = () => {
   )
 }
 
+// レイアウトは遷移で再マウントされないため、パス毎に key で ins を作り直し再リクエストする
+export const PageAd: FC = () => <DisplayAd key={usePathname()} />
+
 const COUNT_KEY = "transition-count"
 
 // 内部遷移3回に1回だけ表示する。検索等からの着地(外部リファラ)は数えない
