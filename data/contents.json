@@ -9156,22 +9156,5 @@
     "source_id": "google-news-kuramae",
     "source_url": "https://soen.tokyo/gallery/suzukieimi261109",
     "image_url": "/images/contents/612.jpeg"
-  },
-  {
-    "id": 613,
-    "type": "news",
-    "title": "アパホテル〈上野 稲荷町駅北〉が開業",
-    "summary": "台東区内9棟目となるアパホテル〈上野 稲荷町駅北〉が開業した。",
-    "body": "台東区内で9棟目となるアパホテル〈上野 稲荷町駅北〉が開業しました。\n\n稲荷町駅の北側に位置し、上野エリアへのアクセスにも便利な立地です。\n\nなお、掲載ソースの日付は2019年のため、現在の営業状況は公式情報での確認をおすすめします。",
-    "category": "new_opening",
-    "area": "inaricho",
-    "tags": [],
-    "published_at": "2019-04-19",
-    "start_at": null,
-    "end_at": null,
-    "place_id": null,
-    "source_id": "google-news-inaricho",
-    "source_url": "https://news.google.com/rss/search?q=%E7%A8%B2%E8%8D%B7%E7%94%BA%20%E5%8F%B0%E6%9D%B1%E5%8C%BA&hl=ja&gl=JP&ceid=JP:ja",
-    "image_url": null
   }
 ]
