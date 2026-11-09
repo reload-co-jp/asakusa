@@ -7,6 +7,7 @@ import { Logo } from "@/components/elements/logo"
 import { display, serif } from "@/lib/fonts"
 import { getDictionary, HTML_LANG, localePath } from "@/lib/i18n"
 import { SITE_URL } from "@/lib/json-ld"
+import { getSisterSites, SISTER_SITES_HEADING } from "@/lib/sister-sites"
 import "../reset.css"
 
 // /en/ /zh/ の[locale]ルートレイアウトと共用
@@ -26,6 +27,8 @@ export const generateMetadata = async (): Promise<Metadata> => {
 const RootLayout = async ({ children }: { children: React.ReactNode }) => {
   const { locale, t } = await getDictionary()
   const href = (path: string) => localePath(locale, path)
+  const sisterLang = locale === "ja" ? "ja" : "en"
+  const sisterHeading = SISTER_SITES_HEADING[sisterLang]
   const navLinks = [
     { href: "/", label: t.nav.latest },
     { href: "/events/", label: t.nav.events },
@@ -150,6 +153,18 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
             </section>
           </div>
           <Nav className="site-footer__nav" links={navLinks} />
+          <nav aria-label={sisterHeading} className="site-footer__sister">
+            <h2 className="site-footer__heading">{sisterHeading}</h2>
+            <ul>
+              {getSisterSites("asakusa").map((site) => (
+                <li key={site.id}>
+                  <a href={site.url} title={site.name}>
+                    {site.label[sisterLang]}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
           <p className="site-footer__copy">
             &copy; Asakusa Live — ASAKUSA JOURNAL
           </p>
