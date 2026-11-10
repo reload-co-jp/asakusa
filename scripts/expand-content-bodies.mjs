@@ -22,6 +22,12 @@ const MAX_SOURCE_TEXT = 6000
 
 const args = process.argv.slice(2)
 const dryRun = args.includes("--dry-run")
+// --ids=1,2,3 で対象記事を限定する
+const onlyIds = args
+  .find((arg) => arg.startsWith("--ids="))
+  ?.slice("--ids=".length)
+  .split(",")
+  .map(Number)
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 const readJson = (p) => JSON.parse(readFileSync(p, "utf-8"))
@@ -108,7 +114,14 @@ const fetchSourceText = async (url) => {
 }
 
 const expandBody = async (content, place) => {
-  const sourceText = await fetchSourceText(content.source_url)
+  // 統合された別出典(source_urls)も材料にする
+  const sourceText = (
+    await Promise.all(
+      [content.source_url, ...(content.source_urls ?? [])].map(fetchSourceText)
+    )
+  )
+    .filter(Boolean)
+    .join("\n---\n")
   const placeInfo = place
     ? [place.name, place.description, place.address, place.opening_hours]
         .filter(Boolean)
@@ -144,6 +157,7 @@ const main = async () => {
     const content = ordered[i]
     if (
       updated + failed >= LIMIT ||
+      (onlyIds && !onlyIds.includes(content.id)) ||
       (content.body || "").length >= MIN_BODY_LEN
     ) {
       skipped++
