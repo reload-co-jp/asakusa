@@ -1,5 +1,3 @@
-import DOMPurify from "isomorphic-dompurify"
-import { marked } from "marked"
 import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
@@ -29,6 +27,7 @@ import {
 import { formatDate } from "@/lib/date"
 import { alternates, getDictionary, localePath } from "@/lib/i18n"
 import { postalAddress, SITE_URL } from "@/lib/json-ld"
+import { renderMarkdown } from "@/lib/markdown"
 import { EVENT_CATEGORIES } from "@/lib/types"
 
 export const generateStaticParams = () =>
@@ -88,14 +87,9 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
     jaPlace?.latitude != null && jaPlace.longitude != null
       ? { latitude: jaPlace.latitude, longitude: jaPlace.longitude }
       : undefined
-  const bodyHtml = DOMPurify.sanitize(
-    // 本文先頭の見出しがタイトルと同じならh1と重複するため除く
-    marked.parse(
-      content.body.trimStart().replace(`## ${content.title}\n`, ""),
-      {
-        breaks: true,
-      }
-    ) as string
+  // 本文先頭の見出しがタイトルと同じならh1と重複するため除く
+  const bodyHtml = renderMarkdown(
+    content.body.trimStart().replace(`## ${content.title}\n`, "")
   )
   const url = `${SITE_URL}${localePath(locale, `/content/${content.id}/`)}`
   const categoryCrumb: Crumb = {
@@ -103,7 +97,9 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
     href: `/category/${content.category}/`,
   }
   const crumbs: Crumb[] = [
-    ...(content.start_at || EVENT_CATEGORIES.includes(content.category)
+    // カテゴリ名が「イベント」と同じ場合は「イベント › イベント」と重複するため省く
+    ...((content.start_at || EVENT_CATEGORIES.includes(content.category)) &&
+    categoryCrumb.name !== t.nav.events
       ? [{ name: t.nav.events, href: "/events/" }]
       : []),
     categoryCrumb,
