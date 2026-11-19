@@ -148,8 +148,11 @@ export const guessExt = (url, contentType) => {
   if (contentType?.includes("webp")) return "webp"
   if (contentType?.includes("gif")) return "gif"
   if (contentType?.includes("jpeg") || contentType?.includes("jpg")) return "jpg"
+  // URL末尾が画像拡張子でない(.php等の動的配信)場合はjpg扱い
   const e = extOf(url)
-  return e || "jpg"
+  return ["png", "webp", "gif", "jpg", "jpeg", "avif", "svg"].includes(e)
+    ? e
+    : "jpg"
 }
 
 export const fetchWithRetry = async (url, opts, retries = 1) => {

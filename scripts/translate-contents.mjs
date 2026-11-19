@@ -28,6 +28,11 @@ const isRecent = (content) =>
 
 const args = process.argv.slice(2)
 const force = args.includes("--force")
+// --ids=1,2,3 で指定記事のみ再翻訳する(本文を書き換えた記事向け。期間・翻訳済みを問わない)
+const onlyIds = args
+  .find((arg) => arg.startsWith("--ids="))
+  ?.slice("--ids=".length)
+  .split(",")
 const limit =
   Number(args.find((arg) => arg.startsWith("--limit="))?.slice(8)) || Infinity
 
@@ -113,20 +118,24 @@ const main = async () => {
   const pick = (item, keys) =>
     Object.fromEntries(keys.map((key) => [key, item[key] ?? null]))
   const jobs = [
-    ...readJson(path.join(root, "data/places.json")).map((place) => ({
-      kind: "places",
-      id: place.id,
-      label: place.name,
-      fields: pick(place, [
-        "name",
-        "description",
-        "address",
-        "opening_hours",
-        "area",
-      ]),
-    })),
+    ...readJson(path.join(root, "data/places.json"))
+      .filter(() => !onlyIds)
+      .map((place) => ({
+        kind: "places",
+        id: place.id,
+        label: place.name,
+        fields: pick(place, [
+          "name",
+          "description",
+          "address",
+          "opening_hours",
+          "area",
+        ]),
+      })),
     ...readJson(path.join(root, "data/contents.json"))
-      .filter(isRecent)
+      .filter((content) =>
+        onlyIds ? onlyIds.includes(String(content.id)) : isRecent(content)
+      )
       .map((content) => ({
         kind: "contents",
         id: String(content.id),
@@ -136,7 +145,9 @@ const main = async () => {
   ]
     .filter(
       ({ kind, id }) =>
-        force || LOCALES.some((locale) => !translations[locale][kind][id])
+        force ||
+        onlyIds ||
+        LOCALES.some((locale) => !translations[locale][kind][id])
     )
     .slice(0, limit)
 
