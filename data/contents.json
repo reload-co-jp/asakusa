@@ -10179,5 +10179,22 @@
     "source_id": "tabelog-oshiage",
     "source_url": "https://tabelog.com/tokyo/A1312/A131203/",
     "image_url": null
+  },
+  {
+    "id": 669,
+    "type": "news",
+    "title": "洋服店「CASDAY」が元浅草から寿4丁目へ移転、11月28日に新店舗オープン",
+    "summary": "orSlowなどを扱う洋服店「CASDAY」が11月15日で元浅草店の営業を終え、11月28日(土)から台東区寿4丁目の大和田ビル1階で「浅草/蔵前店」として営業を始める。",
+    "body": "洋服店「CASDAY(キャスデイ)」が、元浅草の店舗を移転する。元浅草店は**11月15日**で営業を終了しており、**11月28日(土)**から台東区寿4丁目の新店舗「浅草/蔵前店」で営業を開始する。\n\nCASDAYは、orSlowをはじめ、Gramicci、NANGA、DAIWA、Championなどのブランドを扱うセレクトショップ。オリジナルブランド「BAMME」「M-SIC」も展開している。\n\n移転期間中も、オンラインストアでの注文は通常どおり休みなく発送している。\n\nなお、神田にある「wa-CASDAY」は別の店舗で、今回の移転の対象ではない。\n\n## 店舗情報\n\n- 店名:CASDAY 浅草/蔵前店\n- 所在地:東京都台東区寿4-7-11 大和田ビル1F\n- 営業開始:2026年11月28日(土)\n- 営業時間:12:00〜19:00\n- 定休日:月・火・水曜日\n- 電話:03-5830-6289",
+    "category": "new_opening",
+    "area": "kuramae",
+    "tags": [],
+    "published_at": "2026-11-21",
+    "start_at": "2026-11-28",
+    "end_at": null,
+    "place_id": null,
+    "source_id": null,
+    "source_url": "https://casday.jp/blogs/topics/11%E6%9C%8815%E6%97%A5%E5%85%83%E6%B5%85%E8%8D%89%E5%BA%97%E5%96%B6%E6%A5%AD%E7%B5%82%E4%BA%86-11%E6%9C%8828%E6%97%A5%E3%81%8B%E3%82%89%E6%96%B0%E5%BA%97%E8%88%97%E5%96%B6%E6%A5%AD",
+    "image_url": null
   }
 ]
