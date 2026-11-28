@@ -1,6 +1,6 @@
 // Webソースを巡回しClaude Code CLI(headless)でイベント・ニュースを抽出、data/contents.jsonへ新規追加
 // 認証はCLAUDE_CODE_OAUTH_TOKEN または ANTHROPIC_API_KEY をclaude CLIが自動解決する
-import { readFileSync, writeFileSync, mkdirSync } from "fs"
+import { readFileSync, writeFileSync, mkdirSync, renameSync, unlinkSync } from "fs"
 import { fileURLToPath } from "url"
 import { execFile, execFileSync } from "child_process"
 import path from "path"
@@ -8,6 +8,7 @@ import * as cheerio from "cheerio"
 import { fetch as undiciFetch, Agent } from "undici"
 import { extractImgCandidates, downloadImage, guessExt } from "./lib/images.mjs"
 import { parseTags, THEME_RULE, THEMES } from "./lib/themes.mjs"
+import { findDuplicate } from "./lib/dedupe.mjs"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, "..")
@@ -71,77 +72,6 @@ const toDateString = (date) => {
   const m = `${date.getMonth() + 1}`.padStart(2, "0")
   const d = `${date.getDate()}`.padStart(2, "0")
   return `${y}-${m}-${d}`
-}
-
-// 空白・括弧・記号は表記揺れとして無視する
-const normalizeTitle = (title) =>
-  title.replace(/[\s\p{P}\p{S}]/gu, "").toLowerCase()
-
-// タイトルのbigram類似度(0〜1)。表記揺れ(全角/半角の括弧・句読点、語順の入れ替え程度)を
-// 同一記事として吸収するための緩い指標。完全一致(=1)以外は閾値で判定する
-const DUP_TITLE_SIM_THRESHOLD = 0.5
-// ソース横断は「〇〇がオープン」等の短い定型タイトル同士が0.5を超えるため厳しめにする
-// ponytail: 経験値。誤統合/取りこぼしが出たらplace_id・日付一致等の条件を追加
-const DUP_TITLE_SIM_THRESHOLD_CROSS_SOURCE = 0.6
-
-const bigrams = (s) => {
-  const set = new Set()
-  for (let i = 0; i < s.length - 1; i++) set.add(s.slice(i, i + 2))
-  return set
-}
-
-const titleSimilarity = (a, b) => {
-  const A = bigrams(normalizeTitle(a))
-  const B = bigrams(normalizeTitle(b))
-  if (A.size === 0 || B.size === 0) return 0
-  let inter = 0
-  for (const x of A) if (B.has(x)) inter++
-  return (inter * 2) / (A.size + B.size)
-}
-
-// 一方のタイトルが他方を含む場合(施設名等の前置きの有無)も同一記事とみなす
-const titleContains = (a, b) => {
-  const A = normalizeTitle(a)
-  const B = normalizeTitle(b)
-  return Math.min(A.length, B.length) >= 6 && (A.includes(B) || B.includes(A))
-}
-
-// 「9月の休診日」「10月の休診日」のように月だけ異なる定期告知は別記事とみなす
-const monthsOf = (title) =>
-  (title.normalize("NFKC").match(/\d+月/g) ?? []).sort().join(",")
-const monthsConflict = (a, b) => {
-  const A = monthsOf(a)
-  const B = monthsOf(b)
-  return A !== "" && B !== "" && A !== B
-}
-
-// 同一ソースを日を変えて再クロールした際、生成AIの言い回しが毎回微妙に揺れることで
-// 完全一致では検出できない重複記事が発生する。同一source_id・同一開催日(あれば)を前提に、
-// タイトルの類似度で同一記事とみなせるものを既存contentsから探す。
-// 「〇〇 浅草ROX・3Gに新規オープン」のように定型部分が共通する別記事もあるため、最も類似度の高いものを選ぶ
-// google-news等の集約ソースは他ソースと同じ記事を拾うため、同一カテゴリならソース横断で照合する
-const findDuplicate = (existing, candidate, sourceId) => {
-  let best = null
-  let bestScore = 0
-  for (const c of existing) {
-    if (c.source_id !== sourceId && c.category !== candidate.category) continue
-    if (candidate.start_at && c.start_at && candidate.start_at !== c.start_at) {
-      continue
-    }
-    if (monthsConflict(c.title, candidate.title)) continue
-    const score = titleContains(c.title, candidate.title)
-      ? 1
-      : titleSimilarity(c.title, candidate.title)
-    const threshold =
-      c.source_id === sourceId
-        ? DUP_TITLE_SIM_THRESHOLD
-        : DUP_TITLE_SIM_THRESHOLD_CROSS_SOURCE
-    if (score >= threshold && score > bestScore) {
-      best = c
-      bestScore = score
-    }
-  }
-  return best
 }
 
 // 重複記事を検出した場合、破棄せず既存記事を更新する。
@@ -322,7 +252,7 @@ ${THEME_RULE}
 
 // claude CLIをheadlessで呼び出す。認証(CLAUDE_CODE_OAUTH_TOKEN / ANTHROPIC_API_KEY)はCLIが環境変数から自動解決する
 // stdinは即座にEOFを送る(繋がったままだとCLIが入力待ちと誤認し数秒遅延する)
-const runClaude = (userPrompt) =>
+const runClaude = (userPrompt, systemPrompt = EXTRACTION_SYSTEM_PROMPT) =>
   new Promise((resolve, reject) => {
     const child = execFile(
       "claude",
@@ -336,7 +266,7 @@ const runClaude = (userPrompt) =>
         "--effort",
         "low",
         "--system-prompt",
-        EXTRACTION_SYSTEM_PROMPT,
+        systemPrompt,
         "--allowedTools",
         "",
         "--safe-mode",
@@ -358,10 +288,10 @@ const runClaude = (userPrompt) =>
     child.stdin?.end()
   })
 
-const runClaudeWithRetry = async (userPrompt, sourceId) => {
+const runClaudeWithRetry = async (userPrompt, sourceId, systemPrompt) => {
   for (let attempt = 0; ; attempt++) {
     try {
-      return await runClaude(userPrompt)
+      return await runClaude(userPrompt, systemPrompt)
     } catch (err) {
       const isTimeout = err?.killed === true || err?.signal === "SIGTERM"
       const message = err?.stderr || err?.message || String(err)
@@ -442,6 +372,51 @@ ${text}${imageBlock}${linkBlock}`
   }
 }
 
+const DEDUPE_SYSTEM_PROMPT = `あなたは地域メディア「浅草ライブ」の編集アシスタント。
+今回新たに追加する記事が、既存記事(または今回追加する記事のうち番号の小さいもの)と同じ話題の重複かどうかを判定する。
+
+出力はJSON配列1つのみ。説明文やコードブロック(\`\`\`)で囲まず、出力後の訂正もしない。重複がなければ空配列 [] を返す。
+各要素: {"id": 新規記事の番号, "duplicate_of": 重複先の記事番号}
+
+重複とみなすもの:
+- 同じ催し・同じ店舗の開店/閉店・同じ商品発売・同じ発表を扱う記事(タイトルの言い回しや情報源が違っても同じ話題なら重複)
+
+重複とみなさないもの:
+- 同じシリーズ・定期公演でも回や開催日・期間が異なるもの
+- 同じ施設・会場・ブランドでも別の催し・別の店舗・別の商品
+- 既存記事の続報で新しい事実(追加開催・日程変更の発表・結果報告など)が主題のもの
+
+判断に迷う場合は重複に含めない。duplicate_of には一覧にある番号のみを使い、新規記事どうしの場合は番号の小さい方を duplicate_of にする。`
+
+// 新規記事と近い時期の既存記事を照合し、ヒューリスティックで拾えなかった重複を返す。失敗時は空配列
+const findDuplicatesWithClaude = async (newItems, references, today) => {
+  const line = (c) =>
+    `${c.id}\t公開:${c.published_at}\t期間:${c.start_at ?? "-"}〜${c.end_at ?? "-"}\t${c.title}`
+  const userPrompt = `今日の日付: ${today}
+
+--- 今回追加する記事 ---
+${newItems.map((c) => `${line(c)}\n\t要約: ${c.summary}`).join("\n")}
+
+--- 既存記事 ---
+${references.map(line).join("\n")}`
+
+  try {
+    const result = await runClaudeWithRetry(
+      userPrompt,
+      "dedupe",
+      DEDUPE_SYSTEM_PROMPT
+    )
+    if (result.is_error) throw new Error(String(result.result ?? "").slice(0, 200))
+    // 出力後に「訂正」として配列を出し直すことがあるため、最後に現れた配列を採用する
+    const arrays = String(result.result ?? "").match(/\[[^[\]]*\]/g) ?? []
+    const parsed = JSON.parse(arrays.at(-1) ?? "[]")
+    return Array.isArray(parsed) ? parsed : []
+  } catch (err) {
+    console.warn(`  [WARN] 重複照合失敗: ${err.message}`)
+    return []
+  }
+}
+
 // 選ばれた画像をダウンロードしpublic/images/contents/{id}.extへ保存、相対パスを返す
 const saveContentImage = async (imageUrl, referer, id) => {
   const buf = await downloadImage(imageUrl, referer)
@@ -451,6 +426,9 @@ const saveContentImage = async (imageUrl, referer, id) => {
   writeFileSync(outPath, buf)
   return `/images/contents/${id}.${ext}`
 }
+
+// 最終照合で新規記事と突き合わせる既存記事の範囲(公開日がこの日数以内、または開催中・開催予定)
+const DEDUPE_REFERENCE_DAYS = 45
 
 const MAX_LINK_CANDIDATES = 100
 const MAX_DETAIL_PAGES = 20
@@ -691,6 +669,60 @@ const main = async () => {
     await sleep(SOURCE_INTERVAL_MS)
   }
 
+
+  // 一覧・個別ページ単位の照合では、言い回しや情報源の違う同じ話題を拾いきれないため、最後にまとめて照合する
+  if (newContents.length > 0) {
+    console.log("\n[dedupe] 新規記事の重複照合中")
+    const since = toDateString(new Date(Date.now() - DEDUPE_REFERENCE_DAYS * 86400000))
+    const references = [
+      ...contents.filter(
+        (c) => c.published_at >= since || (c.end_at && c.end_at >= today)
+      ),
+      ...newContents,
+    ]
+    const pairs = await findDuplicatesWithClaude(newContents, references, today)
+    const byId = new Map(references.map((c) => [c.id, c]))
+    const newIds = new Set(newContents.map((c) => c.id))
+    const mergedInto = new Map()
+    // 新規どうしの連鎖(C→B→A)を解決できるよう番号の大きい方から統合する
+    const valid = pairs
+      .filter(
+        (p) =>
+          newIds.has(p?.id) &&
+          byId.has(p?.duplicate_of) &&
+          p.duplicate_of < p.id
+      )
+      .sort((a, b) => b.id - a.id)
+    for (const { id, duplicate_of } of valid) {
+      if (mergedInto.has(id)) continue
+      const dup = byId.get(id)
+      let target = byId.get(duplicate_of)
+      while (mergedInto.has(target.id)) target = mergedInto.get(target.id)
+      mergeIntoExisting(target, dup, { url: dup.source_url }, null)
+      for (const url of dup.source_urls ?? []) {
+        if (url !== target.source_url && !target.source_urls?.includes(url)) {
+          target.source_urls = [...(target.source_urls ?? []), url]
+        }
+      }
+      if (dup.image_url && !dryRun) {
+        const from = path.join(root, "public", dup.image_url)
+        if (!target.image_url) {
+          const to = `/images/contents/${target.id}${path.extname(dup.image_url)}`
+          renameSync(from, path.join(root, "public", to))
+          target.image_url = to
+        } else {
+          unlinkSync(from)
+        }
+      } else if (dup.image_url && !target.image_url) {
+        target.image_url = dup.image_url
+      }
+      newContents.splice(newContents.indexOf(dup), 1)
+      mergedInto.set(id, target)
+      summary.added--
+      summary.merged++
+      console.log(`  [MERGE] ${target.id} ${target.title} ← ${dup.id} ${dup.title}`)
+    }
+  }
 
   console.log("\n--- サマリー ---")
   console.log(`source取得成功: ${summary.fetched} / 失敗: ${summary.failed}`)
