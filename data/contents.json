@@ -765,7 +765,11 @@
     "place_id": null,
     "source_id": "prtimes",
     "source_url": "https://prtimes.jp/main/action.php?run=html&page=searchkey&search_word=%E6%B5%85%E8%8D%89",
-    "image_url": null
+    "image_url": null,
+    "source_urls": [
+      "https://news.google.com/rss/search?q=%E6%B5%85%E8%8D%89%20%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88&hl=ja&gl=JP&ceid=JP:ja"
+    ],
+    "tags": []
   },
   {
     "id": 56,
@@ -1332,23 +1336,6 @@
     "source_id": "rox",
     "source_url": "https://www.rox.co.jp/news/",
     "image_url": "/images/contents/128.webp",
-    "tags": []
-  },
-  {
-    "id": 129,
-    "type": "event",
-    "title": "ワコール発の下着セレクトショップ「ランジェノエル」がROXに出店",
-    "summary": "ワコール発の下着セレクトショップ「Linge Noel（ランジェノエル）」が9月3日から30日までROX2階特設会場でオープン中。",
-    "body": "ワコール発の下着セレクトショップ「Linge Noel（ランジェノエル）」が、浅草ROXの特設会場で期間限定オープンしている。いつ立ち寄っても新しいかわいいインナーやルームウェアが見つかるショップだ。\n\n## ショップの概要\n\nランジェノエルはワコール発の下着セレクトショップである。インナーからルームウェアまで、新しいアイテムが揃うのが魅力だ。\n\n## 商品ラインナップ\n\n- **キャラクタールームウェア**：トム＆ジェリーやミッキーなど人気キャラクターのルームウェアとTシャツが集合。価格は**2,970円（税込）〜**\n- **ワコール「サルート」**：サルートバーゲンを特別に提供。価格は**5,720円（税込）〜**\n\n普段使いのインナーから、ギフトにもなるかわいいアイテムまで幅広く選べる。\n\n## 基本情報\n\n- 店名：Linge Noel（ランジェノエル）\n- 会場：ROX 1F 特設会場\n- 期間：2026年10月28日（水）〜2027年3月31日（水）\n\n※期間・会場は最新の案内に基づく内容である。\n\nこの機会にぜひ立ち寄ってみてほしい。",
-    "category": "popup",
-    "area": "asakusa",
-    "published_at": "2026-08-24",
-    "start_at": "2026-09-03",
-    "end_at": "2026-09-30",
-    "place_id": null,
-    "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/129.webp",
     "tags": []
   },
   {
@@ -3531,7 +3518,10 @@
     "source_urls": [
       "https://prtimes.jp/main/html/rd/p/000001714.000018760.html",
       "https://prtimes.jp/main/html/rd/p/000000007.000177085.html",
-      "https://www.ccc.co.jp/news/press/20261005_009746.html"
+      "https://www.ccc.co.jp/news/press/20261005_009746.html",
+      "https://japan.storm.mg/articles/1169576",
+      "https://prtimes.jp/main/html/rd/p/000000028.000045910.html",
+      "https://hotelbank.jp/new-hotels/tokyo-sumu-asakusa-south-2610open/"
     ],
     "tags": []
   },
@@ -4104,23 +4094,6 @@
     "source_id": "google-news",
     "source_url": "https://news.yahoo.co.jp/articles/5074388d0b41a05a0618c1b1f7c9f26cc3c2dc6f",
     "image_url": "/images/contents/335.jpg"
-  },
-  {
-    "id": 336,
-    "type": "event",
-    "title": "Robot Planet ロボットプラネットが期間限定オープン",
-    "summary": "ROX 1F特設会場で、ロボホンやLOVOTなどのパートナーロボットを体験・購入できる催しが10月13日まで開かれている。",
-    "body": "ROX 1F特設会場で、期間限定ショップ「Robot Planet」が10月8日から13日まで開かれています。話題のロボットに出会える体験&販売会です。\n\n## 登場するロボット\n\n- **RoBoHoN(ロボホン)**:かわいいダンスや日常会話が楽しめるAIロボット。4,400円(税込)×72回\n- **LOVOT(らぼっと)**:最先端のテクノロジーが詰まったロボット。9,518円(税込)×7回\n- **Moflin(モフリン)**:ふわふわで思わずなでたくなるバディ\n\n「ロボットコンシェルジュ」が、あなたにぴったりの家族を紹介します。ロボホンとらぼっとは体験予約も受け付けています。",
-    "category": "popup",
-    "area": "asakusa",
-    "published_at": "2026-10-01",
-    "start_at": "2026-10-08",
-    "end_at": "2026-10-13",
-    "place_id": "rox",
-    "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/336.webp",
-    "tags": []
   },
   {
     "id": 337,
@@ -4707,27 +4680,6 @@
     "source_id": "google-news-kuramae",
     "source_url": "https://news.google.com/rss/search?q=%E8%94%B5%E5%89%8D&hl=ja&gl=JP&ceid=JP:ja",
     "image_url": null
-  },
-  {
-    "id": 374,
-    "type": "event",
-    "title": "アパートメントホテル「Sumu Asakusa South」開業",
-    "summary": "Sumu株式会社の実証実験型アパートメントホテル「Sumu Asakusa South」が、台東区寿3丁目に10月10日に開業した。「暮らすように泊まる」をコンセプトとする全17室の施設。",
-    "body": "Sumu株式会社は10月2日、浅草・蔵前エリアに新たに開業する実証実験型アパートメントホテル「Sumu Asakusa South」のメディアプレビューと試泊会を開催した。同施設は東京都台東区寿3丁目に位置する地上10階建て、全17室のホテルで、10月10日にオープンした。\n\n**コンセプトは「暮らすように泊まる」**\n\n「街の気配を感じながら、自分の時間を取り戻す、暮らすように泊まる拠点」を掲げる。中長期滞在が増え、旅と暮らしの境界が薄れる中、新しい旅の形を実験するホテルと位置づけられている。今年2月に開業したリノベーション物件の0号店「Sumu 東上野」で得た知見を生かした、新築物件としての1号店となる。\n\n**異業種との共創と地域貢献**\n\nAirbnb Partnersに参画する企業を中心とした共創プロジェクトで、運営はカソク株式会社、空間監修はADDReC株式会社、カルチャーコンテンツのキュレーションはCCCが担当する。「社会的インパクト不動産」として地域活性化と防災をKPIに設定し、有事の際には備蓄水や防災セットを地域住民に提供する。台東区の飲食店と連携し、子どもたちに無料で食事を提供するドネーション活動「Sumuごち」も始めている。\n\n**今後の展開**\n\n「Sumu 東上野」の稼働率は94%、平均滞在日数は3.4泊だった。同社は押上や新宿御苑などでも新築ホテルの開業を控え、2030年までに全国約500室の開発を目指す。",
-    "category": "new_opening",
-    "area": "kuramae",
-    "published_at": "2026-10-05",
-    "start_at": "2026-10-10",
-    "end_at": null,
-    "place_id": null,
-    "source_id": "google-news-kuramae",
-    "source_url": "https://japan.storm.mg/articles/1169576",
-    "image_url": "/images/contents/374.webp",
-    "tags": [],
-    "source_urls": [
-      "https://prtimes.jp/main/html/rd/p/000000028.000045910.html",
-      "https://hotelbank.jp/new-hotels/tokyo-sumu-asakusa-south-2610open/"
-    ]
   },
   {
     "id": 375,
@@ -6442,23 +6394,6 @@
     ]
   },
   {
-    "id": 468,
-    "type": "event",
-    "title": "猫好きの祭典「にゃんだらけ21」",
-    "summary": "東京浅草で、約300の出展者が集う猫好きの祭典「にゃんだらけ21」が開催される。",
-    "body": "猫好きのための祭典「にゃんだらけ21」が東京・浅草で開催される。\n\n約300の出展者の紹介ページが公開され、「猫の健康／シニア猫コーナー」の新情報なども発表されている。",
-    "category": "event",
-    "area": "asakusa",
-    "tags": [],
-    "published_at": "2026-09-04",
-    "start_at": null,
-    "end_at": null,
-    "place_id": null,
-    "source_id": "google-news",
-    "source_url": "https://news.google.com/rss/search?q=%E6%B5%85%E8%8D%89%20%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88&hl=ja&gl=JP&ceid=JP:ja",
-    "image_url": null
-  },
-  {
     "id": 469,
     "type": "event",
     "title": "令和8年 酉の市 浅草鷲神社(一の酉・二の酉)",
@@ -7353,25 +7288,9 @@
     "image_url": "/images/contents/514.jpg",
     "source_urls": [
       "https://news.nicovideo.jp/watch/nw19970729?news_ref=watch_50_nw18993444",
-      "https://www.crank-in.net/stage/play/194036"
+      "https://www.crank-in.net/stage/play/194036",
+      "https://natalie.mu/stage/news/695546"
     ]
-  },
-  {
-    "id": 515,
-    "type": "event",
-    "title": "浅草九劇開業10周年ラインナップ発表 第1弾は福原充則作・演出「くじけまみれ」",
-    "summary": "2017年3月開業の浅草九劇が2027年3月に10周年を迎え、記念ラインナップを発表。幕開けは福原充則作・演出「くじけまみれ」(2027年3月3日〜21日)。",
-    "body": "浅草九劇が2027年3月に開業10周年を迎える。レプロエンタテインメントが2017年3月に開業した劇場で、このたび記念ラインナップが発表された。幕開けを飾るのは、こけら落とし公演を手がけた福原充則の作・演出による「くじけまみれ」だ。\n\n## 10周年の幕開け「くじけまみれ」\n\n「くじけまみれ」は、福原が月影番外地に書き下ろした作品である。福原は2017年3月のこけら落とし公演、ベッド＆メイキングス第5回公演「あたらしいエクスプロージョン」でも作・演出を担当しており、10年の時を経て再び浅草九劇に登場する。出演は**峯村リエ**、**中野周平(蛙亭)**、**村上航**、**相原未来**、**渡辺碧斗**、**佐藤B作**の6人だ。\n\n福原は「10年前、浅草九劇のこけら落とし公演をやらせて頂きました。オープニングで本水を降らせました。ラストシーンで劇場の外看板を外してぶん投げました。誰も怒らず、10周年の公演もやらせて頂けることになってホッとしています」とコメントしている。「くじけまみれ」は15年前に書いた作品で、さみしい人たちが逆切れ・逆噴射して社会を不安定に陥れていく物語だという。福原は「年月を経て、そもそも不安定が過ぎる現実の中で上演した時に、どんな痛々しさが増すのか、今から慄いています」と語っている。\n\n- 公演期間:2027年3月3日(水)〜3月21日(日・祝)\n- 会場:浅草九劇(東京都)\n- 作・演出:福原充則\n- 出演:峯村リエ、中野周平(蛙亭)、村上航、相原未来、渡辺碧斗、佐藤B作\n\n## 2027年のラインナップ\n\n「くじけまみれ」以外の主催興行は次のとおりだ。\n\n- 2027年4月:益山貴司作・演出「ガールズ・インザ・ピンク」\n- 2027年9月:和物企画「わく和九・伍」\n- 2027年12月:中原和樹の新作ミュージカル\n- 時期未定:金子鈴幸の新作公演\n\n制作協力公演にはチーズtheater、ヨーロッパ企画イエティが並ぶ。貸館公演には優しい劇団、ナカゴー、東のボルゾイ、劇団ヅッカ、東京にこにこちゃんがラインナップされている。\n\n## 浅草九劇のこれまでとこれから\n\n浅草九劇は開館以来、新たな作品や才能との出会いを生み出し、オンライン配信など、演劇を中心にエンタテインメントの新たな届け方に挑戦してきた。10年間の集大成であり、これからも続く挑戦の第一歩として、10周年の幕開けにこけら落とし公演を手がけた福原の作品を再び上演する。\n\n古くから芸能や大衆文化が息づく浅草の街にある劇場として、ここでしか生まれない表現や出逢いを育んでいく姿勢だ。開館以来大切にしてきた**「人を育む場所」「エンタメを育む場所」**という姿勢を変わらず持ち続け、浅草という街とともに挑戦を続けていく。",
-    "category": "performance",
-    "area": "asakusa",
-    "tags": [],
-    "published_at": "2026-10-28",
-    "start_at": "2027-03-03",
-    "end_at": "2027-03-21",
-    "place_id": null,
-    "source_id": "google-news",
-    "source_url": "https://natalie.mu/stage/news/695546",
-    "image_url": null
   },
   {
     "id": 516,
@@ -7738,8 +7657,8 @@
     "id": 534,
     "type": "event",
     "title": "snaq.me stand HALLOWEEN(ハズレなしのハロウィンおやつくじ)",
-    "summary": "スナックミースタンドの押上・蔵前・清澄白河の全店で、2026年10月31日限定のハロウィンイベントを開催。商品購入者はハズレなしの「ハロウィン限定おやつくじ」に参加できる。",
-    "body": "## 1日限定のハロウィンイベント\n\n株式会社スナックミーは、2026年10月31日(土)、「snaq.me stand 押上」「snaq.me stand 蔵前」「snaq.me stand 清澄白河」の全店で、ハロウィンイベント「snaq.me stand HALLOWEEN」を開催します。\n\n## ハズレなしのおやつくじ\n\n商品を1点以上購入した人は、全員が「ハロウィン限定おやつくじ」に参加できます。くじはハズレなしで、必ずおやつがもらえます。\n\n- 1等:おやつ2,000円分\n- 2等:おやつ1,500円分\n- 3等:おやつ1,000円分\n\n景品の内容は店舗ごとに異なります。押上店は「りっすクッキー」や「フィナンシェケーキ」など、蔵前店は「フィナンシェケーキ」などが並びます。\n\n## 店舗情報\n\n蔵前店は都営浅草線蔵前駅A0出口から徒歩30秒で、営業時間は11時〜18時です。支払いはキャッシュレス決済のみで、おやつがなくなり次第終了となる場合があります。押上店では、りっすグッズの限定販売も行います。",
+    "summary": "スナックミーが2026年10月31日、押上・蔵前・清澄白河の全店で「snaq.me stand HALLOWEEN」を開催。商品を1点以上購入した人が参加できるハズレなしのおやつくじを実施する。",
+    "body": "## ハロウィン限定おやつくじを開催\n\n株式会社スナックミーは2026年10月31日(土)、「snaq.me stand 押上」「snaq.me stand 蔵前」「snaq.me stand 清澄白河」の全店でハロウィンイベント「snaq.me stand HALLOWEEN」を開催します。\n\n商品を1点以上購入した人全員が参加できる「ハロウィン限定おやつくじ」を実施します。くじはハズレなしで、必ずおやつがもらえます。\n\n## 景品と参加方法\n\n- 1等:おやつ2,000円分\n- 2等:おやつ1,500円分\n- 3等:おやつ1,000円分\n\n景品の内容は店舗ごとに異なります。ラインナップには、りっすクッキー、フィナンシェ、ケーキ、定期便やストアで人気のおやつが並びます。おやつがなくなり次第、終了となる場合があります。\n\n押上店では、りっすグッズの限定販売も行います。\n\n## 店舗情報\n\n蔵前店は台東区蔵前3-4-3 フィルパーク蔵前II 1Bにあり、都営浅草線蔵前駅A0出口から徒歩30秒です。営業時間は11時〜18時で、定休日は火曜日。支払いはキャッシュレス決済のみです。押上店は墨田区向島1-24-15 grande foret 1Fにあります。",
     "category": "campaign",
     "area": "kuramae",
     "tags": [],
@@ -7749,7 +7668,10 @@
     "place_id": null,
     "source_id": "prtimes-kuramae",
     "source_url": "https://prtimes.jp/main/html/rd/p/000000407.000031067.html",
-    "image_url": "/images/contents/534.jpg"
+    "image_url": "/images/contents/534.jpg",
+    "source_urls": [
+      "https://news.nicovideo.jp/watch/nw19942357?news_ref=watch_20_nw19790425"
+    ]
   },
   {
     "id": 535,
@@ -7805,23 +7727,6 @@
       "https://realsound.jp/book/2026/10/post-2570718.html",
       "https://news.google.com/rss/search?q=%E8%94%B5%E5%89%8D&hl=ja&gl=JP&ceid=JP:ja"
     ]
-  },
-  {
-    "id": 538,
-    "type": "event",
-    "title": "snaq.me stand HALLOWEEN(ハロウィン限定おやつくじ)",
-    "summary": "スナックミーが2026年10月31日、押上・蔵前・清澄白河の全店で「snaq.me stand HALLOWEEN」を開催。商品を1点以上購入した人が参加できるハズレなしのおやつくじを実施する。",
-    "body": "## ハロウィン限定おやつくじを開催\n\n株式会社スナックミーは2026年10月31日(土)、「snaq.me stand 押上」「snaq.me stand 蔵前」「snaq.me stand 清澄白河」の全店でハロウィンイベント「snaq.me stand HALLOWEEN」を開催します。\n\n商品を1点以上購入した人全員が参加できる「ハロウィン限定おやつくじ」を実施します。くじはハズレなしで、必ずおやつがもらえます。\n\n## 景品と参加方法\n\n- 1等:おやつ2,000円分\n- 2等:おやつ1,500円分\n- 3等:おやつ1,000円分\n\n景品の内容は店舗ごとに異なります。ラインナップには、りっすクッキー、フィナンシェ、ケーキ、定期便やストアで人気のおやつが並びます。おやつがなくなり次第、終了となる場合があります。\n\n押上店では、りっすグッズの限定販売も行います。\n\n## 店舗情報\n\n蔵前店は台東区蔵前3-4-3 フィルパーク蔵前II 1Bにあり、都営浅草線蔵前駅A0出口から徒歩30秒です。営業時間は11時〜18時で、定休日は火曜日。支払いはキャッシュレス決済のみです。押上店は墨田区向島1-24-15 grande foret 1Fにあります。",
-    "category": "event",
-    "area": "kuramae",
-    "tags": [],
-    "published_at": "2026-10-31",
-    "start_at": "2026-10-31",
-    "end_at": "2026-10-31",
-    "place_id": null,
-    "source_id": "google-news-kuramae",
-    "source_url": "https://news.nicovideo.jp/watch/nw19942357?news_ref=watch_20_nw19790425",
-    "image_url": "/images/contents/538.webp"
   },
   {
     "id": 539,
@@ -7993,8 +7898,8 @@
     "id": 548,
     "type": "event",
     "title": "藤正会",
-    "summary": "11月22日(日)、浅草公会堂で藤正会が開催されます。入場無料です。",
-    "body": "浅草公会堂で、藤間正次事務局による「藤正会」が開催されます。\n\n- **日時**:2026年11月22日(日) 開場11:00 / 開演11:30 / 終演予定18:30\n- **会場**:浅草公会堂\n- **入場**:無料(全席自由)\n\n問い合わせ先は藤間正次事務局(TEL.03-3641-5716)です。",
+    "summary": "11月22日、浅草公会堂で藤正会が開かれる。入場無料(全席自由)。",
+    "body": "浅草公会堂で、藤間正次事務局による「藤正会」が開催されます。\n\n## 開催概要\n\n- 日程:2026年11月22日(日)\n- 開場11:00/開演11:30/終演予定18:30\n- 入場無料(全席自由)\n\n入場無料で、日本舞踊の舞台を気軽に楽しめる機会です。お問い合わせは藤間正次事務局(TEL.03-3641-5716)まで。",
     "category": "performance",
     "area": "asakusa",
     "tags": [
@@ -8133,23 +8038,6 @@
     "source_urls": [
       "https://www.rox.co.jp/news/"
     ]
-  },
-  {
-    "id": 556,
-    "type": "event",
-    "title": "ROX 1Fに「Outdoor assist」期間限定ショップが登場",
-    "summary": "アウトドアやキャンプシーンをイメージしたセレクトショップ「Outdoor assist」のPOP UP SHOPが、11月18日から12月1日までROX 1F特設会場に出店する。",
-    "body": "2026年11月18日（水）から12月1日（火）まで、浅草ROX 1F特設会場に『Outdoor assist』のPOP UP SHOPがオープンします。\n\n## ショップ概要\n\nアウトドアやキャンプシーンをイメージしたセレクトショップで、人気のガレージアウトドアブランドのアパレル商品を取り揃えます。\n\n## 商品一例\n\n- **クリフメイヤー「シャギーボアベスト」**：ふんわり暖かい人気のボアベスト。9,790円（税込）\n- **ダックスター「オリオンビールコラボパーカー」**：オリオンビールとコラボした人気のパーカー。8,690円（税込）\n\n防寒アイテムを探したい季節にぴったりのラインナップです。ぜひお立ち寄りください。",
-    "category": "popup",
-    "area": "asakusa",
-    "tags": [],
-    "published_at": "2026-10-28",
-    "start_at": "2026-11-18",
-    "end_at": "2026-12-01",
-    "place_id": "rox",
-    "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/",
-    "image_url": "/images/contents/556.webp"
   },
   {
     "id": 557,
@@ -8348,7 +8236,8 @@
     "source_urls": [
       "https://topics.smt.docomo.ne.jp/article/yesnews/trend/yesnews-yes39302",
       "https://www.enjoytokyo.jp/event/2091256/",
-      "https://newscast.jp/smart/news/6987998"
+      "https://newscast.jp/smart/news/6987998",
+      "https://getnews.jp/archives/3753013"
     ]
   },
   {
@@ -8682,40 +8571,6 @@
     "image_url": "/images/contents/583.webp"
   },
   {
-    "id": 584,
-    "type": "event",
-    "title": "ワコール発「ランジェノエル」がROXに期間限定オープン",
-    "summary": "ワコール発の下着セレクトショップ「ランジェノエル」が、浅草ROX 1F特設会場に2027年3月31日まで出店している。",
-    "body": "浅草ROX 1F特設会場に、ワコール発の下着セレクトショップ「Linge Noel(ランジェノエル)」が期間限定でオープンしている。期間は10月28日(水)〜2027年3月31日(水)。\n\nインナーやルームウェアなど、いつでも新しいかわいいアイテムが見つかるショップ。\n\n## 商品の一例\n\n- **キャラクタールームウェア**(2,970円〜・税込):トム&ジェリー、ミッキーなどのルームウェアやTシャツ\n- **ワコール、サルート**(5,720円〜・税込):サルートバーゲンを特別に提供",
-    "category": "popup",
-    "area": "asakusa",
-    "tags": [],
-    "published_at": "2026-10-28",
-    "start_at": "2026-10-28",
-    "end_at": "2027-03-31",
-    "place_id": "rox",
-    "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/",
-    "image_url": null
-  },
-  {
-    "id": 585,
-    "type": "event",
-    "title": "アクセサリー・雑貨の「Pana Suru」が11月15日まで出店",
-    "summary": "ROX 1F特設会場で、アクセサリーや雑貨の期間限定ショップ「Pana Suru」が11月15日まで営業している。",
-    "body": "浅草ROX 1F特設会場で、2026年10月21日(水)から11月15日(日)まで「Pana Suru」が営業しています。\n\nアクセサリーや雑貨を通して「小さな好き」が集まる空間です。\n\n- アクセサリー(ピアス、イヤリング、ネックレス、ブローチ):1,650円(税込)\n- オリジナル刺繍バッグ:2,750円(税込)\n\nオープニングキャンペーンとして、アクセサリーのハッピーバッグ(1,100円均一)とラッキーパック(550円から)も用意されています。",
-    "category": "popup",
-    "area": "asakusa",
-    "tags": [],
-    "published_at": "2026-10-14",
-    "start_at": "2026-10-21",
-    "end_at": "2026-11-15",
-    "place_id": "rox",
-    "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/",
-    "image_url": null
-  },
-  {
     "id": 586,
     "type": "news",
     "title": "訪日イスラム教徒向けお土産専門店「SALAM OMIYAGE 浅草店」が開業",
@@ -8807,23 +8662,6 @@
     "place_id": "engei-hall",
     "source_id": "engei-hall",
     "source_url": "https://www.asakusaengei.com/schedule/",
-    "image_url": null
-  },
-  {
-    "id": 591,
-    "type": "event",
-    "title": "Pana Suruが浅草ROXに期間限定オープン、オープニングキャンペーンも",
-    "summary": "アクセサリーや雑貨の「Pana Suru」が、10月21日から11月15日まで浅草ROX 1F特設会場に出店している。",
-    "body": "浅草ROX 1F特設会場に、アクセサリーや雑貨を扱う「Pana Suru」が10月21日(水)〜11月15日(日)の期間限定でオープンしている。\n\n“小さな好き”が集まる空間として、自分へのご褒美や大切な人への贈り物にぴったりのアイテムを取りそろえる。\n\n## 商品の一例\n\n- **アクセサリー**(1,650円・税込):ピアス、イヤリング、ネックレス、ブローチ\n- **刺繍バッグ**(2,750円・税込):オリジナルデザイン\n\n## オープニングキャンペーン\n\n- **アクセサリー ハッピーバッグ**(1,100円均一):アクセサリー4点とポーチのお楽しみ袋\n- **ラッキーパック**(550円〜)",
-    "category": "popup",
-    "area": "asakusa",
-    "tags": [],
-    "published_at": "2026-10-14",
-    "start_at": "2026-10-21",
-    "end_at": "2026-11-15",
-    "place_id": "rox",
-    "source_id": "rox",
-    "source_url": "https://www.rox.co.jp/news/",
     "image_url": null
   },
   {
@@ -9012,25 +8850,6 @@
     "source_id": "google-news",
     "source_url": "https://news.yahoo.co.jp/articles/1b36e917e6c00fb351996d3807f30386189d1d44",
     "image_url": null
-  },
-  {
-    "id": 602,
-    "type": "event",
-    "title": "浅草花やしき×コジコジ「花やしきヘビューン」開催",
-    "summary": "日本最古の遊園地「浅草花やしき」で、「COJI-COJI」とのコラボイベント「花やしきヘビューン」が2026年12月5日から2027年1月18日まで開催される。",
-    "body": "日本最古の遊園地「浅草花やしき」にて、「COJI-COJI」とのコラボレーションイベント「花やしきヘビューン」が開催される。コジコジをはじめとしたメルヘンの国の仲間たちが、和装姿で園に来園するというコンセプトだ。\n\n## 見どころ\n\n- **スタンプラリー**:園内を周遊して楽しめる。クリアすると「オリジナルブロマイド」(全8種)をランダムで1枚プレゼント。\n- **オリジナルグッズ**:描き下ろしイラストを使用しためじるしチャーム、ダイカットクッション、折りたたみコームを販売。購入特典はイラストカード(8種)から1枚。\n- **ゲーム企画**:巨大ガラポン、まとあて、わっかなげを実施。まとあて&わっかなげでは「ビッグアクリルキーホルダー」(全2種)がもらえる。\n- **オリジナルアナウンス**:コジコジ(CV:あおきさやか)による新規収録アナウンスを園内で展開。\n- **コラボフード&ドリンク**:1品購入ごとにオリジナルコースター(8種)をランダムで1枚プレゼント。\n- **ネームステッカー**:自分の名前を入れてオリジナルステッカーが作れる。\n\nさらに、コジコジのスペシャルフォトセッション&ツーショット会や、三が日限定のお正月特別企画も実施される。\n\n## ご注意\n\n混雑緩和・安全対策のため、12月5日(土)~6日(日)の10:00~14:00に限り、グッズ購入には「グッズ購入権付きコラボチケット(日時指定)」が必要となる。12月31日と1月1日は遊園地の営業時間が異なるが、コラボイベントの開催時間の延長はない。最終入園は閉園30分前。詳細は特設ページで確認できる。",
-    "category": "campaign",
-    "area": "asakusa",
-    "tags": [
-      "kids"
-    ],
-    "published_at": "2026-11-04",
-    "start_at": "2026-12-05",
-    "end_at": "2027-01-18",
-    "place_id": "hanayashiki",
-    "source_id": "google-news",
-    "source_url": "https://getnews.jp/archives/3753013",
-    "image_url": "/images/contents/602.jpg"
   },
   {
     "id": 603,
@@ -9376,25 +9195,6 @@
     "place_id": null,
     "source_id": "tabelog-kuramae",
     "source_url": "https://tabelog.com/tokyo/A1311/A131103/",
-    "image_url": null
-  },
-  {
-    "id": 622,
-    "type": "event",
-    "title": "藤正会(日本舞踊の会)",
-    "summary": "11月22日、浅草公会堂で藤正会が開かれる。入場無料(全席自由)。",
-    "body": "浅草公会堂で、藤間正次事務局による「藤正会」が開催されます。\n\n## 開催概要\n\n- 日程:2026年11月22日(日)\n- 開場11:00/開演11:30/終演予定18:30\n- 入場無料(全席自由)\n\n入場無料で、日本舞踊の舞台を気軽に楽しめる機会です。お問い合わせは藤間正次事務局(TEL.03-3641-5716)まで。",
-    "category": "performance",
-    "area": "asakusa",
-    "tags": [
-      "free"
-    ],
-    "published_at": "2026-11-13",
-    "start_at": "2026-11-22",
-    "end_at": "2026-11-22",
-    "place_id": "koukaidou",
-    "source_id": "koukaidou",
-    "source_url": "https://asakusa-koukaidou.net/home/event.html",
     "image_url": null
   },
   {
